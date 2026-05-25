@@ -216,9 +216,9 @@ function sidebar(activeFile) {
     const isOpen = group.items.some(([, file]) => file === activeFile);
     const items = group.items.map(([label, file, description]) => {
       const active = file === activeFile ? ' active' : '';
-      return `<a class="nav-link${active}" href="${slugFor(file)}"><span>${escapeHtml(label)}</span><small>${escapeHtml(description || '')}</small></a>`;
+      return `<a class="nav-link${active}" href="${slugFor(file)}"><span>${escapeHtml(label)}</span></a>`;
     }).join('\n');
-    return `<details class="nav-section"${isOpen ? ' open' : ''}><summary><span><strong>${escapeHtml(group.section)}</strong><small>${escapeHtml(group.description || '')}</small></span></summary><div class="nav-items">${items}</div></details>`;
+    return `<details class="nav-section"${isOpen ? ' open' : ''}><summary><span><strong>${escapeHtml(group.section)}</strong></span></summary><div class="nav-items">${items}</div></details>`;
   }).join('\n');
 }
 

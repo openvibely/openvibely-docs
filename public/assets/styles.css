@@ -79,12 +79,9 @@ pre code { background: transparent; border: 0; padding: 0; }
 }
 .nav-section {
   margin-bottom: 0.45rem;
-  border: 1px solid transparent;
-  border-radius: 0.8rem;
 }
 .nav-section[open] {
-  background: rgba(25, 29, 36, 0.52);
-  border-color: rgba(217, 225, 238, 0.08);
+  background: transparent;
 }
 .nav-section summary {
   display: flex;
