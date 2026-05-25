@@ -13,6 +13,7 @@ OpenVibely is a web workbench for AI-assisted software work. The UI is the prima
 | Insights | Grades, Pulse, Reflection, and Analytics surfaces for understanding project activity and outcomes. | [Insights](insights.html) |
 | Models | UI-managed access to Anthropic, OpenAI, and Ollama with defaults, auth options, and capacity controls. | [Models](models.html) |
 | Agents | Reusable AI worker profiles with prompts, skills, plugins, MCP servers, permissions, and lifecycle hooks. | [Agents](agents.html) |
+| Skill curation | OpenVibely curates reusable skills from completed work so future tasks start with better learned behavior. | [Skill Curation](skills-and-learning.html) |
 | Review | Worktree-backed changes that users can inspect before merge or pull request creation. | [Git Worktrees](git-worktrees.html), [GitHub](github.html) |
 | Automation | Scheduled tasks, task chains, and structured multi-agent workflows. | [Automation In The UI](scheduled-tasks.html) |
 | Channels | Slack, Telegram, GitHub, and webhook entry points for creating and tracking work outside the web UI. | [Channels Overview](channels.html) |
@@ -33,6 +34,7 @@ OpenVibely is a web workbench for AI-assisted software work. The UI is the prima
 - It is UI-first: the app is built around project selection, sidebar navigation, modals, task boards, calendars, chat, alerts, and review screens.
 - It is project-first: tasks, chat, memory, schedules, workers, models, agents, and channels are scoped around the selected project.
 - It is review-first: AI work becomes visible task state, event streams, logs, diffs, comments, and GitHub-ready changes.
+- It learns from completed work: Skill Curator can observe completed tasks and autonomously improve the right scoped skill library afterward.
 - It is automation-ready: schedules, task chains, and workflows are managed from the app instead of hidden in scripts.
 - It is self-hosted: operators control configuration, authentication, model access, database, worker capacity, and channels.
 
@@ -42,6 +44,6 @@ OpenVibely is a web workbench for AI-assisted software work. The UI is the prima
 |---|---|
 | Try it quickly | [Installation](installation.html), then [Quickstart](quickstart.html) |
 | Understand the main UI | [Projects](projects.html), [Chat](chat.html), [Tasks](tasks.html), and [Schedule](schedule.html) |
-| Configure AI behavior | [Models](models.html), [Agents](agents.html), and [Personalities](personalities.html) |
+| Configure AI behavior | [Models](models.html), [Agents](agents.html), [Skill Curation](skills-and-learning.html), and [Personalities](personalities.html) |
 | Review generated code | [Task Lifecycle](task-lifecycle.html), [Git Worktrees](git-worktrees.html), and [GitHub](github.html) |
 | Run for a team | [Deployment Modes](deployment.html), [Authentication](authentication.html), [Workers](workers.html), and [Channels Overview](channels.html) |

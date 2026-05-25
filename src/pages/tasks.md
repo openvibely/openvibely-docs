@@ -36,7 +36,9 @@ The UI keeps the modal open and shows an inline error if the title conflicts wit
 
 Tasks move through statuses such as pending, queued, running, completed, failed, cancelled, and blocked. The page listens for live task events so board state can refresh while work is happening.
 
-Use task detail views to inspect execution output, thread messages, attachments, changed files, review comments, and worktree state.
+Around normal execution, Skill Curator can prepare useful skills before the task starts and autonomously improve standalone or agent-owned skills after the task completes.
+
+Use task detail views to inspect execution output, thread messages, attachments, changed files, review comments, lifecycle activity, and worktree state.
 
 ## Reviewing Work
 
@@ -54,7 +56,8 @@ When a project has a repository attached, task execution can produce worktree-ba
 
 | Page | Why It Matters |
 |---|---|
-| [Task Lifecycle](task-lifecycle.html) | Explains statuses and terminal states. |
+| [Task Lifecycle](task-lifecycle.html) | Explains statuses, hooks, and terminal states. |
+| [Skill Curation](skills-and-learning.html) | Explains how completed tasks help OpenVibely curate reusable skills. |
 | [Git Worktrees](git-worktrees.html) | Explains isolated repository changes. |
 | [Schedule](schedule.html) | Runs tasks later or repeatedly. |
 | [Task Chaining](task-chaining.html) | Connects dependent task work. |

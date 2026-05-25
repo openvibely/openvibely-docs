@@ -11,6 +11,7 @@ OpenVibely exposes a REST API and Swagger UI. The app registers Swagger at `/swa
 | Analytics | `/api/analytics/*` |
 | Capacity | `/api/capacity/*` |
 | Lifecycle | `/api/tasks/:id/lifecycle-executions`, `/api/lifecycle-executions/:id/events` |
+| Agent skills | `/agents/:id/skills`, `/agents/:id/lifecycle-hooks` |
 | Workflows | `/api/workflows/*` |
 | Collisions | `/api/collisions/*` |
 
@@ -21,6 +22,10 @@ curl -X POST http://localhost:3001/api/chat/message \
   -F "message=Summarize the current task board" \
   -F "project_id=default"
 ```
+
+## Lifecycle And Skills APIs
+
+Lifecycle APIs expose execution traces for task hooks. Agent skill routes manage on-disk agent-owned skills and lifecycle hook configuration used by the web UI.
 
 ## Swagger Source
 

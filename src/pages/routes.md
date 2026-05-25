@@ -10,7 +10,7 @@ This reference summarizes the major route groups registered by OpenVibely. Use r
 | Projects | `/projects`, `/projects/new`, `/projects/:id/edit` |
 | Tasks | `/tasks`, `/tasks/:taskId`, task executions, status, changes, thread, run, cancel, category, reorder, chain |
 | Schedule | `/schedule`, `/tasks/:taskId/schedule`, `/schedules/:id`, `/schedules/:scheduleId/reschedule` |
-| Agents | `/agents`, `/agents/generate`, plugin state/marketplaces/install, lifecycle hooks, skills JSON |
+| Agents | `/agents`, `/agents/generate`, plugin state/marketplaces/install, lifecycle hooks, skills JSON, agent-owned skill routes |
 | Models | `/models`, `/models/ollama/available`, model OAuth routes |
 | Workers | `/workers`, worker stats routes |
 | Channels | `/channels`, GitHub, Slack, Telegram, webhooks |
@@ -21,6 +21,7 @@ This reference summarizes the major route groups registered by OpenVibely. Use r
 | Workflows | `/workflows`, workflow steps, and executions |
 | Insights | `/insights`, `/upcoming`, `/history`, `/suggestions`, `/backlog` |
 | Events | `/events/live`, `/events/chat/:exec_id` |
+| Lifecycle APIs | `/api/tasks/:id/lifecycle-executions`, `/api/lifecycle-executions/:id/events` |
 
 ## Swagger
 

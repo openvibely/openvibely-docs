@@ -20,10 +20,11 @@ Choose the path that matches what you want to accomplish in the OpenVibely web a
 
 ## Agent Builder
 
-- Read [Agents](agents.html), [Models](models.html), [Memory](memory.html), and [Personalities](personalities.html).
-- Define system prompts, tools, skills, MCP servers, routing hints, and permissions.
+- Read [Agents](agents.html), [Skill Curation](skills-and-learning.html), [Models](models.html), [Memory](memory.html), and [Personalities](personalities.html).
+- Define system prompts, tools, skills, MCP servers, routing hints, lifecycle hooks, and permissions.
 - Use scoped file permissions when an agent should only work in a specific directory.
 - Test agents on normal Tasks before using them in larger workflows.
+- Review how completed tasks improve standalone or agent-owned skills so learning stays in the right scope.
 
 ## Automation Designer
 

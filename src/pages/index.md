@@ -1,6 +1,8 @@
 # OpenVibely Docs
 
-OpenVibely is a self-hosted web app for managing AI coding work from a project-aware UI. Users open the app, choose a project, chat about work, create tasks, watch execution, review diffs, schedule follow-up work, and connect team channels.
+OpenVibely turns AI coding from scattered prompts and terminal sessions into a self-hosted command center for real project work. Give it your repositories, models, agents, schedules, review flow, and team channels, then manage everything from one UI where every task is tied to project context and every result is visible before it ships.
+
+It is built for teams that want AI help without losing control. Start in chat when an idea is fuzzy, promote the plan into tracked tasks, watch execution live, review the diffs, and schedule follow-up work when the project needs ongoing attention. As work completes, lifecycle hooks and Skill Curation help OpenVibely learn what worked, improve reusable skills, and get more capable the more you use it.
 
 ## Start Fast
 
@@ -40,6 +42,7 @@ OpenVibely is organized around a selected project. The sidebar project selector 
 | Chat-first planning | Start from a conversation when the work is unclear, then turn the plan into executable tasks. |
 | Task board execution | Queue coding work, stream progress, inspect logs and threads, review changed files, and decide what ships. |
 | Reusable agents | Capture system prompts, tools, skills, plugins, permissions, routing hints, and lifecycle behavior as reusable worker profiles. |
+| Skill curation | OpenVibely learns from completed work and autonomously improves reusable standalone or agent-owned skills. |
 | Reviewable changes | Use Git worktrees and GitHub integration so AI output becomes visible diffs and pull requests rather than hidden edits. |
 | Automation | Schedule recurring work, chain dependent tasks, and run structured multi-agent workflows. |
 | External channels | Create and monitor work through Slack, Telegram, GitHub, and inbound webhooks. |
@@ -51,7 +54,7 @@ OpenVibely is organized around a selected project. The sidebar project selector 
 |---|---|
 | Start Here | Product overview, install, UI quickstart, first setup, and learning paths. |
 | Web App Tour | The screens users click every day: Dashboard, Projects, Chat, Tasks, Schedule, Agents, Models, Workers, Alerts, and Insights. |
-| Core Workflows | How UI actions become task state, worktrees, attachments, memory, and review. |
+| Core Workflows | How UI actions become task state, worktrees, attachments, memory, skills, learning, and review. |
 | Automation In The UI | Scheduling, task chains, and structured multi-agent workflows. |
 | Channels | Slack, Telegram, GitHub, and webhooks as alternate front doors into project work. |
 | Operate OpenVibely | Model providers, configuration, deployment, authentication, and troubleshooting. |

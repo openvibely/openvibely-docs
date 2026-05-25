@@ -18,6 +18,7 @@ OpenVibely supports one-time, second-based, minute-based, hourly, daily, weekly,
 ## Good Uses
 
 - Run periodic maintenance prompts.
+- Let system maintenance keep reusable skill libraries healthy over time.
 - Schedule backlog or health checks.
 - Repeat documentation, testing, or cleanup tasks.
 - Start a known task outside normal working hours.
@@ -34,4 +35,5 @@ OpenVibely supports one-time, second-based, minute-based, hourly, daily, weekly,
 |---|---|
 | [Schedule](schedule.html) | The UI surface for managing scheduled task runs. |
 | [Tasks](tasks.html) | Scheduled work runs existing task definitions. |
+| [Skill Curation](skills-and-learning.html) | Skill Curator can keep reusable skills healthy through scheduled system work. |
 | [Alerts](alerts.html) | Failed runs can create alerts. |

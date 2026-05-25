@@ -28,6 +28,21 @@ Open `Agents` from the System section of the sidebar. Create an agent manually, 
 
 When creating a task, users can choose an agent or leave selection on auto-routing. An agent can also define model behavior, so task execution can inherit a consistent combination of instructions, tools, and provider settings.
 
+When a task is assigned to an agent, Skill Curator works within that agent’s own skill library. After the task completes, autonomous curation can improve only that assigned agent’s skills when the lesson is specific to the agent’s role.
+
+## Skills And Lifecycle Hooks
+
+Agents can own skills on disk, and those skills can evolve from completed work.
+
+| Capability | User Impact |
+|---|---|
+| Agent-owned skills | Keep role-specific instructions and reusable habits attached to one agent. |
+| Lifecycle hooks | Run supporting steps before or after task execution. |
+| Skill routing | Select relevant agent skills for assigned-agent tasks. |
+| Agent skill learning | Improve the assigned agent’s skills without writing into unrelated agents. |
+
+Use agent-owned skills when the knowledge should stay with that agent. Use standalone skills when the knowledge should help many agents or no-agent tasks.
+
 ## Best Practices
 
 - Name agents by the work they perform, not by an implementation detail.
@@ -35,12 +50,14 @@ When creating a task, users can choose an agent or leave selection on auto-routi
 - Use permissions and scoped file settings to make consequences explicit.
 - Prefer routing hints when multiple agents could plausibly handle similar work.
 - Use project-scoped agents for repository-specific conventions.
+- Let agent-owned skills capture role-specific learning that should improve future assigned tasks.
 
 ## Related Pages
 
 | Page | Why It Matters |
 |---|---|
 | [Tasks](tasks.html) | Tasks can run with a selected agent. |
+| [Skill Curation](skills-and-learning.html) | Explains standalone skills, agent-owned skills, and autonomous curation. |
 | [Models](models.html) | Agents can inherit or choose model behavior. |
 | [Personalities](personalities.html) | Personality settings affect tone and behavior. |
 | [Workflows](workflows.html) | Multi-agent workflows coordinate agents across larger work. |
