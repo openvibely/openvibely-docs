@@ -226,7 +226,17 @@ function clientScript() {
   return `<script>
     (function () {
       var sidebar = document.querySelector('.sidebar');
+      var toggle = document.querySelector('.menu-toggle');
+      var backdrop = document.querySelector('.nav-backdrop');
+      var mobileNav = window.matchMedia('(max-width: 900px)');
       var sections = Array.from(document.querySelectorAll('.nav-section'));
+
+      function setNavOpen(open) {
+        document.body.classList.toggle('nav-open', open);
+        if (sidebar) sidebar.setAttribute('aria-hidden', mobileNav.matches && !open ? 'true' : 'false');
+        if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
       sections.forEach(function (section) {
         section.addEventListener('toggle', function () {
           if (!section.open) return;
@@ -235,6 +245,29 @@ function clientScript() {
           });
         });
       });
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          setNavOpen(!document.body.classList.contains('nav-open'));
+        });
+      }
+      if (backdrop) {
+        backdrop.addEventListener('click', function () {
+          setNavOpen(false);
+        });
+      }
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') setNavOpen(false);
+      });
+      document.querySelectorAll('.nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (mobileNav.matches) setNavOpen(false);
+        });
+      });
+      mobileNav.addEventListener('change', function () {
+        setNavOpen(false);
+      });
+
       if (sidebar) {
         var savedScroll = sessionStorage.getItem('openvibely-docs-sidebar-scroll');
         if (savedScroll !== null) sidebar.scrollTop = Number(savedScroll) || 0;
@@ -245,6 +278,7 @@ function clientScript() {
           sessionStorage.setItem('openvibely-docs-sidebar-scroll', String(sidebar.scrollTop));
         });
       }
+      setNavOpen(false);
     })();
   </script>`;
 }
@@ -260,17 +294,21 @@ function pageTemplate({ title, body, activeFile }) {
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <aside class="sidebar">
+  <aside id="docs-sidebar" class="sidebar" aria-label="Documentation navigation">
     <div class="brand"><span class="brand-mark">OV</span><span>OpenVibely Docs</span></div>
     <nav>${sidebar(activeFile)}</nav>
     <div class="sidebar-footer"><a href="llms.txt">llms.txt</a><a href="llms-full.txt">llms-full.txt</a></div>
   </aside>
+  <div class="nav-backdrop" aria-hidden="true"></div>
   <main class="main">
     <div class="topbar">
-      <a href="index.html">Overview</a>
-      <a href="quickstart.html">Quickstart</a>
-      <a href="features-overview.html">Features</a>
-      <a href="https://github.com/openvibely/openvibely">GitHub</a>
+      <button class="menu-toggle" type="button" aria-controls="docs-sidebar" aria-expanded="false">Menu</button>
+      <nav class="top-links" aria-label="Primary links">
+        <a href="index.html">Overview</a>
+        <a href="quickstart.html">Quickstart</a>
+        <a href="features-overview.html">Features</a>
+        <a href="https://github.com/openvibely/openvibely">GitHub</a>
+      </nav>
     </div>
     <article class="content">${body}</article>
   </main>
