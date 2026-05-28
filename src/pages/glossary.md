@@ -6,7 +6,7 @@
 | Alert | Project-scoped notification such as task failure or follow-up needed |
 | Channel | External integration such as GitHub, Slack, Telegram, or webhooks |
 | Chat | Project-scoped conversational orchestration UI |
-| Memory | Project-local durable knowledge written under `.openvibely/memory` in the selected repo |
+| Memory | Project-local durable knowledge managed under `.openvibely/memories` in the selected repo |
 | Model Config | Provider and authentication configuration used to run AI work |
 | Project | Workspace boundary for repository, tasks, schedules, chat, memory, workers, and integrations |
 | Schedule | One-time or recurring task execution plan |

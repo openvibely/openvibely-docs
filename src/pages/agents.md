@@ -15,7 +15,7 @@ Open `Agents` from the System section of the sidebar. Create an agent manually, 
 | Plugins and MCP | Marketplace-backed integrations and runtime tool servers. |
 | Routing | Describes when the agent is good, when to avoid it, and how confident routing should be. |
 | Permissions | Controls what workflow capabilities the agent is allowed to use. |
-| Lifecycle hooks | Adds behavior around task execution events. |
+| Lifecycle hooks | Adds behavior around task execution events, including memory recall/update and skill curation when configured. |
 
 ## Scopes
 
@@ -29,6 +29,17 @@ Open `Agents` from the System section of the sidebar. Create an agent manually, 
 When creating a task, users can choose an agent or leave selection on auto-routing. An agent can also define model behavior, so task execution can inherit a consistent combination of instructions, tools, and provider settings.
 
 When a task is assigned to an agent, Skill Curator works within that agent’s own skill library. After the task completes, autonomous curation can improve only that assigned agent’s skills when the lesson is specific to the agent’s role.
+
+## System Curators
+
+OpenVibely includes protected system agents for learning work users should not have to manage manually.
+
+| System Agent | What It Does |
+|---|---|
+| `System: Memory Curator` | Autonomously creates and updates durable project memory from completed work, recalls relevant memory before tasks, and runs scheduled consolidation. |
+| `Skill Curator` | Routes reusable skills into tasks and improves standalone or agent-owned skill libraries from completed work. |
+
+`System: Memory Curator` is not selectable as a primary task agent. It uses scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and keeps memory learning isolated from task worktrees.
 
 ## Skills And Lifecycle Hooks
 
@@ -57,6 +68,7 @@ Use agent-owned skills when the knowledge should stay with that agent. Use stand
 | Page | Why It Matters |
 |---|---|
 | [Tasks](tasks.html) | Tasks can run with a selected agent. |
+| [Memory](memory.html) | Explains the protected Memory Curator and managed project memory. |
 | [Skill Curation](skills-and-learning.html) | Explains standalone skills, agent-owned skills, and autonomous curation. |
 | [Models](models.html) | Agents can inherit or choose model behavior. |
 | [Personalities](personalities.html) | Personality settings affect tone and behavior. |

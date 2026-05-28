@@ -1,8 +1,8 @@
 # OpenVibely Docs
 
-OpenVibely turns AI coding from scattered prompts and terminal sessions into a self-hosted command center for real project work. Give it your repositories, models, agents, schedules, review flow, and team channels, then manage everything from one UI where every task is tied to project context and every result is visible before it ships.
+OpenVibely turns AI coding from one-off prompts into a self-hosted command center that learns your projects as you use it. Give it your repositories, models, agents, schedules, review flow, and team channels, then manage work from one UI where tasks stay tied to project context, changes stay reviewable, and useful lessons are carried into the next run.
 
-It is built for teams that want AI help without losing control. Start in chat when an idea is fuzzy, promote the plan into tracked tasks, watch execution live, review the diffs, and schedule follow-up work when the project needs ongoing attention. As work completes, lifecycle hooks and Skill Curation help OpenVibely learn what worked, improve reusable skills, and get more capable the more you use it.
+It is built for teams that want faster AI-assisted development without losing control. Start in chat when an idea is fuzzy, promote the plan into tracked tasks, watch execution live, review the diffs, and schedule follow-up work when the project needs ongoing attention. As work completes, OpenVibely gets smarter on its own: Memory Curator creates and updates durable project memory, consolidates stale or duplicate notes, Skill Curation improves reusable task behavior, and future work starts with more of the context your team has already taught it.
 
 ## Start Fast
 
@@ -42,11 +42,11 @@ OpenVibely is organized around a selected project. The sidebar project selector 
 | Chat-first planning | Start from a conversation when the work is unclear, then turn the plan into executable tasks. |
 | Task board execution | Queue coding work, stream progress, inspect logs and threads, review changed files, and decide what ships. |
 | Reusable agents | Capture system prompts, tools, skills, plugins, permissions, routing hints, and lifecycle behavior as reusable worker profiles. |
+| Memory curation | Autonomously create, recall, update, and consolidate durable project memory so repeated context does not have to be re-explained. |
 | Skill curation | OpenVibely learns from completed work and autonomously improves reusable standalone or agent-owned skills. |
 | Reviewable changes | Use Git worktrees and GitHub integration so AI output becomes visible diffs and pull requests rather than hidden edits. |
 | Automation | Schedule recurring work, chain dependent tasks, and run structured multi-agent workflows. |
 | External channels | Create and monitor work through Slack, Telegram, GitHub, and inbound webhooks. |
-| Memory | Store optional project memory under `.openvibely/memory` so future work can reuse learned context. |
 
 ## How The Docs Are Organized
 

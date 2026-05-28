@@ -6,7 +6,7 @@ Insights are the analysis and reflection surfaces in the OpenVibely sidebar. The
 
 | UI Label | What Users Use It For |
 |---|---|
-| Grades | View proactive insights, health checks, knowledge extraction, and idea grading. |
+| Grades | View proactive insights, health checks, knowledge signals, and idea grading. |
 | Pulse | See upcoming work and generated pulse summaries. |
 | Reflection | Review historical task activity and generated reflections. |
 | Analytics | Understand execution rates, duration trends, agent usage, frequent tasks, and failure trends. |

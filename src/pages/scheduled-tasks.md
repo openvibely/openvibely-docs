@@ -18,10 +18,14 @@ OpenVibely supports one-time, second-based, minute-based, hourly, daily, weekly,
 ## Good Uses
 
 - Run periodic maintenance prompts.
-- Let system maintenance keep reusable skill libraries healthy over time.
+- Let system maintenance keep managed memory and reusable skill libraries healthy over time.
 - Schedule backlog or health checks.
 - Repeat documentation, testing, or cleanup tasks.
 - Start a known task outside normal working hours.
+
+## System Maintenance
+
+OpenVibely can create visible scheduled system tasks for learning maintenance. `System: Memory Consolidation` is assigned to `System: Memory Curator` and keeps one project's `.openvibely/memories` library focused by merging duplicates, removing stale facts, and keeping `MEMORIES.md` as the compact index. `System: Skill Library Maintenance` keeps standalone skills useful over time.
 
 ## Cautions
 
@@ -35,5 +39,6 @@ OpenVibely supports one-time, second-based, minute-based, hourly, daily, weekly,
 |---|---|
 | [Schedule](schedule.html) | The UI surface for managing scheduled task runs. |
 | [Tasks](tasks.html) | Scheduled work runs existing task definitions. |
+| [Memory](memory.html) | Memory Curator can consolidate managed project memory through scheduled system work. |
 | [Skill Curation](skills-and-learning.html) | Skill Curator can keep reusable skills healthy through scheduled system work. |
 | [Alerts](alerts.html) | Failed runs can create alerts. |

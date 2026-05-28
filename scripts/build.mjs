@@ -43,7 +43,7 @@ const nav = [
       ['Task Lifecycle', 'task-lifecycle.md', 'From prompt to queued, running, completed, or failed'],
       ['Git Worktrees', 'git-worktrees.md', 'Isolated changes and reviewable diffs'],
       ['Attachments', 'attachments.md', 'Files attached to tasks and chat'],
-      ['Memory', 'memory.md', 'Project knowledge captured for future work'],
+      ['Memory', 'memory.md', 'Autonomous project memory creation, recall, updates, and consolidation'],
       ['Skill Curation', 'skills-and-learning.md', 'OpenVibely curates reusable skills from completed work'],
       ['Personalities', 'personalities.md', 'Reusable tone and behavior profiles'],
     ],

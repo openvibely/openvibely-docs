@@ -21,7 +21,7 @@ Tasks and chat need a model config to execute. Models also carry capacity settin
 - Keep auto-merge off until you trust the task output and review flow.
 - Start with one or two workers before raising concurrency.
 - Configure auth before exposing a server on the public internet.
-- Enable memory only for projects with a real local repository path, because memory files are written under that repo's `.openvibely/memory` directory.
+- Enable memory only for projects with a real local repository path, because managed memory is written under that repo's `.openvibely/memories` directory.
 
 ## Common First Project Flow
 
@@ -36,5 +36,5 @@ Model -> Project -> Chat or Task -> Run -> Review diff -> Merge or open PR
 | Agents | You repeat the same prompting, tools, permissions, or style across tasks. |
 | Schedule | Work should run later or repeat. |
 | Channels | A team should create or monitor work from Slack, Telegram, GitHub, or webhooks. |
-| Memory | Future tasks should reuse project knowledge captured from previous work. |
+| Memory | Future tasks should automatically receive relevant project knowledge, and completed work should be turned into durable memory when it contains reusable context. |
 | Automation | You want scheduled runs, task chains, or structured multi-agent workflows. |

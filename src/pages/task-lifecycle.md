@@ -8,7 +8,7 @@ Typical task execution moves from `pending` to `queued` to `running`, then to a 
 
 ## Lifecycle Hooks
 
-Lifecycle hooks are system steps that run around normal task execution. They let OpenVibely select skills, prepare context, and learn from finished work while preserving the user’s normal task flow.
+Lifecycle hooks are system steps that run around normal task execution. They let OpenVibely recall relevant project memory, select useful skills, prepare context, create or update memory from completed work, and learn from finished work while preserving the user’s normal task flow.
 
 ```text
 route_task
@@ -20,8 +20,8 @@ route_task
 | Hook | User Impact |
 |---|---|
 | `route_task` | Selects the most relevant standalone or agent-owned skills for the task. |
-| `before_run` | Adds hook-provided context before the main task starts when configured. |
-| `after_complete` | Observes the result and can improve skills so future tasks benefit. |
+| `before_run` | Adds hook-provided context before the main task starts, including relevant managed memory when enabled. |
+| `after_complete` | Observes the result and can create or update memory, or improve skills, so future tasks benefit. |
 
 The main task still runs normally with its chosen execution profile. Lifecycle hook activity is supporting behavior, not a replacement for the task prompt.
 
@@ -54,6 +54,7 @@ The main task still runs normally with its chosen execution profile. Lifecycle h
 | Page | Why It Matters |
 |---|---|
 | [Tasks](tasks.html) | Main board and task detail workflows. |
+| [Memory](memory.html) | How Memory Curator recalls, updates, and consolidates project knowledge. |
 | [Skill Curation](skills-and-learning.html) | How lifecycle hooks let OpenVibely curate skills from completed work. |
 | [Git Worktrees](git-worktrees.html) | Reviewable file changes after execution. |
 | [Workers](workers.html) | Capacity affects when queued work starts. |

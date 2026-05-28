@@ -1,6 +1,6 @@
 # Skill Curation
 
-OpenVibely gets better the more you use it. Skill Curator can observe completed work, decide what is worth keeping, and autonomously create or improve reusable skills so future tasks inherit better project and agent knowledge.
+OpenVibely gets better the more you use it. Skill Curator can observe completed work, decide what is worth keeping as reusable behavior, and autonomously create or improve skills so future tasks inherit better project and agent guidance.
 
 This does not replace the task itself. Your task still runs normally with the selected model and, when chosen, the assigned agent. The curation work happens around that task as supporting lifecycle activity.
 
@@ -80,7 +80,7 @@ After a task finishes, `observe_task_for_learning` receives task context such as
 | `skill_manage` | Writes standalone skills only. |
 | `agent_skill_manage` | Writes only skills owned by the agent used for the completed task. |
 
-This is the learning loop: OpenVibely sees what worked, records repeatable knowledge in the right place, and makes that knowledge available to future task runs.
+This is the skill learning loop: OpenVibely sees what worked, records repeatable behavior in the right skill library, and makes that guidance available to future task runs. Memory Curator handles the separate project-memory loop for durable context and decisions.
 
 ## Scheduled Skill Maintenance
 
@@ -104,5 +104,5 @@ Agent-owned skills are managed through after-complete curation for tasks that ra
 |---|---|
 | [Task Lifecycle](task-lifecycle.html) | Shows where hooks fit around task execution. |
 | [Agents](agents.html) | Explains agent profiles, lifecycle hooks, and agent-owned skills. |
-| [Memory](memory.html) | Covers durable project knowledge that complements skills. |
+| [Memory](memory.html) | Covers autonomous project memory recall, updates, and consolidation. |
 | [Scheduled Tasks](scheduled-tasks.html) | Covers recurring system maintenance and user schedules. |

@@ -24,8 +24,8 @@ This page collects common operational issues that follow from the source-verifie
 
 - Confirm the project has a local `repo_path`.
 - Confirm memory is enabled for the project.
-- Check extraction or consolidation run status for `error`.
-- Remember memory writes to `.openvibely/memory` inside the selected repo.
+- Check Memory Curator lifecycle activity or `System: Memory Consolidation` run status for `error`.
+- Remember memory writes to `.openvibely/memories` inside the selected repo.
 
 ## Tasks Stay Queued
 
