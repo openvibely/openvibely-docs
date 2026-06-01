@@ -50,15 +50,18 @@ OpenVibely is organized around a selected project. The sidebar project selector 
 
 ## How The Docs Are Organized
 
+The docs start with a high-level user guide, then go deeper into the subfeatures that matter during real work: central Chat orchestration, prompt queueing and steering, task diffs, review comments, worktrees, schedules, alerts, memory, models, agents, channels, and operations.
+
 | Section | Use It For |
 |---|---|
-| Start Here | Product overview, install, UI quickstart, first setup, and learning paths. |
-| Web App Tour | The screens users click every day: Dashboard, Projects, Chat, Tasks, Schedule, Agents, Models, Workers, Alerts, and Insights. |
-| Core Workflows | How UI actions become task state, worktrees, attachments, memory, skills, learning, and review. |
-| Automation In The UI | Scheduling, task chains, and structured multi-agent workflows. |
+| Get Started | Product overview, feature hub, install, UI quickstart, first setup, and learning paths. |
+| Workspace | Daily project screens: Dashboard, Projects, Chat, Orchestrate from Chat, Tasks, Schedule, and Alerts. |
+| Agents | Reusable worker profiles, Memory, Skill Curation, Personalities, and Multi-Agent Workflows. |
+| Capabilities | Task lifecycle, prompt queue and steering, task diffs, review workflows, worktrees, attachments, scheduled tasks, task chaining, and insights. |
 | Channels | Slack, Telegram, GitHub, and webhooks as alternate front doors into project work. |
-| Operate OpenVibely | Model providers, configuration, deployment, authentication, and troubleshooting. |
-| Developer Reference | Optional lookup material for people extending or integrating with OpenVibely. |
+| Models | Model configs, provider setup, defaults, and worker capacity. |
+| Platforms | Deployment, authentication, configuration, and environment setup. |
+| Gateway & Ops | API reference, routes, troubleshooting, glossary, and machine-readable docs. |
 
 ## Source Verification
 

@@ -66,15 +66,11 @@ pre code { background: transparent; border: 0; padding: 0; }
   margin: 0.35rem 0 1.5rem;
 }
 .brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 2rem;
   height: 2rem;
   border-radius: 0.7rem;
-  background: linear-gradient(135deg, var(--primary), #9f7aea);
-  color: white;
-  font-size: 0.75rem;
+  object-fit: cover;
   box-shadow: 0 10px 24px rgba(116, 128, 255, 0.3);
 }
 .nav-section {

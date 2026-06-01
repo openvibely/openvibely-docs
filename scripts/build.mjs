@@ -9,52 +9,56 @@ const distDir = join(root, 'dist');
 
 const nav = [
   {
-    section: 'Start Here',
-    description: 'What the UI does and how to begin',
+    section: 'Get Started',
+    description: 'Overview, install, quickstart, and setup path',
     items: [
       ['Overview', 'index.md', 'The product, the web UI, and the main workflow'],
-      ['Features Overview', 'features-overview.md', 'A high-level map of what OpenVibely provides'],
-      ['Installation', 'installation.md', 'Run OpenVibely and open the web app'],
+      ['Features Overview', 'features-overview.md', 'A high-level hub for the OpenVibely app'],
+      ['Install', 'installation.md', 'Run OpenVibely and open the web app'],
       ['Quickstart', 'quickstart.md', 'Use the UI to create a project and run work'],
       ['First-Time Setup', 'first-time-setup.md', 'Recommended setup order inside the app'],
       ['Learning Paths', 'learning-paths.md', 'Pick the path that matches your role'],
     ],
   },
   {
-    section: 'Web App Tour',
-    description: 'The screens users live in every day',
+    section: 'Workspace',
+    description: 'Daily project work in the UI',
     items: [
       ['Dashboard', 'dashboard.md', 'Project health and entry point into tasks'],
       ['Projects', 'projects.md', 'Create, switch, and configure workspaces'],
       ['Chat', 'chat.md', 'Plan and orchestrate from a project conversation'],
+      ['Orchestrate From Chat', 'orchestrate-from-chat.md', 'Use one chat window to plan, create, run, and manage parallel tasks'],
       ['Tasks', 'tasks.md', 'Run, monitor, and review AI coding work'],
       ['Schedule', 'schedule.md', 'Calendar-driven project work'],
-      ['Agents', 'agents.md', 'Reusable AI worker profiles'],
-      ['Models', 'models.md', 'Provider access and model defaults'],
-      ['Workers', 'workers.md', 'Capacity controls for active execution'],
       ['Alerts', 'alerts.md', 'Failures and follow-up notifications'],
-      ['Insights', 'insights.md', 'Grades, Pulse, Reflection, and Analytics'],
     ],
   },
   {
-    section: 'Core Workflows',
-    description: 'How UI actions become reviewable work',
+    section: 'Agents',
+    description: 'Reusable worker profiles and learned behavior',
     items: [
-      ['Task Lifecycle', 'task-lifecycle.md', 'From prompt to queued, running, completed, or failed'],
-      ['Git Worktrees', 'git-worktrees.md', 'Isolated changes and reviewable diffs'],
-      ['Attachments', 'attachments.md', 'Files attached to tasks and chat'],
+      ['Agents Overview', 'agents.md', 'Reusable AI worker profiles'],
       ['Memory', 'memory.md', 'Autonomous project memory creation, recall, updates, and consolidation'],
       ['Skill Curation', 'skills-and-learning.md', 'OpenVibely curates reusable skills from completed work'],
       ['Personalities', 'personalities.md', 'Reusable tone and behavior profiles'],
+      ['Multi-Agent Workflows', 'workflows.md', 'Coordinate work across agents'],
     ],
   },
   {
-    section: 'Automation In The UI',
-    description: 'Schedule and coordinate repeatable work',
+    section: 'Capabilities',
+    description: 'Feature deep dives and review workflows',
     items: [
-      ['Scheduled Tasks', 'scheduled-tasks.md', 'Recurring and one-off task runs'],
-      ['Task Chaining', 'task-chaining.md', 'Dependent work launched from tasks'],
-      ['Multi-Agent Workflows', 'workflows.md', 'Coordinate work across agents'],
+      ['Task Lifecycle', 'task-lifecycle.md', 'From prompt to queued, running, completed, or failed'],
+      ['Lifecycle Hooks', 'lifecycle-hooks.md', 'Supporting hooks for memory, skills, routing, and learning'],
+      ['Task Threads & Follow-Ups', 'task-threads-followups.md', 'Continue one task through queued follow-ups and preserved context'],
+      ['Task Chaining & Branch Lineage', 'task-chaining.md', 'Dependent work with parent/child task and branch context'],
+      ['Prompt Queue & Steering', 'prompt-queue-steering.md', 'Keep chat moving with queued follow-ups and active-turn steering'],
+      ['Task Diffs & Review', 'task-diffs-review.md', 'Inspect generated file changes, live diffs, and review comments'],
+      ['Review Workflows', 'review-workflows.md', 'Inspect, comment on, merge, or publish generated changes'],
+      ['Git Worktrees & Merge Safety', 'git-worktrees.md', 'Isolated changes, branch safety, conflicts, and cleanup'],
+      ['Attachments As Context', 'attachments.md', 'Files attached to chat, tasks, queues, and follow-ups'],
+      ['Scheduled Task Runs', 'scheduled-tasks.md', 'Recurring, one-off, and system maintenance runs'],
+      ['Insights', 'insights.md', 'Grades, Pulse, Reflection, and Analytics'],
     ],
   },
   {
@@ -65,27 +69,36 @@ const nav = [
       ['GitHub', 'github.md', 'Repository access and pull request workflows'],
       ['Slack', 'slack.md', 'Team chat integration'],
       ['Telegram', 'telegram.md', 'Mobile bot control'],
-      ['Webhooks', 'webhooks.md', 'Trigger work from external systems'],
+      ['Webhook Triggers', 'webhooks.md', 'Create one project task from trusted external systems'],
     ],
   },
   {
-    section: 'Operate OpenVibely',
-    description: 'Run, secure, and configure an instance',
+    section: 'Models',
+    description: 'Provider access and execution capacity',
     items: [
+      ['Models Overview', 'models.md', 'Provider access and model defaults'],
+      ['Model Selection & Tool Policy', 'model-selection-tool-policy.md', 'Mode-gated tools, provider behavior, and model choice'],
       ['Model Providers', 'model-providers.md', 'Provider-specific setup details'],
-      ['Configuration', 'configuration.md', 'Runtime settings for operators'],
+      ['Worker Capacity & Dispatch', 'workers.md', 'Capacity controls for active execution'],
+    ],
+  },
+  {
+    section: 'Platforms',
+    description: 'Deployment modes and access control',
+    items: [
       ['Deployment Modes', 'deployment.md', 'Server, desktop, Docker, and VPS setups'],
       ['Authentication', 'authentication.md', 'Local auth, OAuth, and access control'],
-      ['Troubleshooting', 'troubleshooting.md', 'Common setup and runtime issues'],
+      ['Configuration', 'configuration.md', 'Runtime settings for operators'],
+      ['Environment Variables', 'environment.md', 'Complete environment variable reference'],
     ],
   },
   {
-    section: 'Developer Reference',
-    description: 'Optional lookup material for builders',
+    section: 'Gateway & Ops',
+    description: 'Reference, APIs, operations, and troubleshooting',
     items: [
       ['API Reference', 'api-reference.md', 'Swagger and integration endpoints'],
       ['Routes', 'routes.md', 'Implemented web and API routes'],
-      ['Environment Variables', 'environment.md', 'Complete environment variable reference'],
+      ['Troubleshooting', 'troubleshooting.md', 'Common setup and runtime issues'],
       ['Glossary', 'glossary.md', 'Product terms and meanings'],
       ['LLM Index', 'llms.md', 'Machine-readable docs entry points'],
     ],
@@ -296,7 +309,7 @@ function pageTemplate({ title, body, activeFile }) {
 </head>
 <body>
   <aside id="docs-sidebar" class="sidebar" aria-label="Documentation navigation">
-    <div class="brand"><span class="brand-mark">OV</span><span>OpenVibely Docs</span></div>
+    <div class="brand"><img class="brand-mark" src="assets/avatar.png" alt="OpenVibely"><span>OpenVibely Docs</span></div>
     <nav>${sidebar(activeFile)}</nav>
     <div class="sidebar-footer"><a href="llms.txt">llms.txt</a><a href="llms-full.txt">llms-full.txt</a></div>
   </aside>

@@ -28,7 +28,7 @@ Choose the path that matches what you want to accomplish in the OpenVibely web a
 
 ## Automation Designer
 
-- Read [Scheduled Tasks](scheduled-tasks.html), [Task Chaining](task-chaining.html), and [Workflows](workflows.html).
+- Read [Scheduled Task Runs](scheduled-tasks.html), [Task Chaining & Branch Lineage](task-chaining.html), and [Workflows](workflows.html).
 - Start with explicit schedules or task chains before adding broader workflow coordination.
 - Use Alerts, Reflection, and Analytics to audit what ran.
 

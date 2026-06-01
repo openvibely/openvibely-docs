@@ -54,7 +54,9 @@ The main task still runs normally with its chosen execution profile. Lifecycle h
 | Page | Why It Matters |
 |---|---|
 | [Tasks](tasks.html) | Main board and task detail workflows. |
+| [Lifecycle Hooks](lifecycle-hooks.html) | Deeper explanation of hook timing, boundaries, memory, and skill behavior. |
+| [Task Threads & Follow-Ups](task-threads-followups.html) | Follow-up execution continues one task thread. |
 | [Memory](memory.html) | How Memory Curator recalls, updates, and consolidates project knowledge. |
 | [Skill Curation](skills-and-learning.html) | How lifecycle hooks let OpenVibely curate skills from completed work. |
-| [Git Worktrees](git-worktrees.html) | Reviewable file changes after execution. |
-| [Workers](workers.html) | Capacity affects when queued work starts. |
+| [Git Worktrees & Merge Safety](git-worktrees.html) | Reviewable file changes after execution. |
+| [Worker Capacity & Dispatch](workers.html) | Capacity affects when queued work starts. |

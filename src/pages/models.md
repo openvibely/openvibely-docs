@@ -13,9 +13,10 @@ Open `Models` from the System section of the sidebar and create a model config.
 | Model identifier | Selects the provider model used for execution. |
 | Default model | Lets tasks run without choosing a model every time. |
 | Reasoning, tokens, temperature | Tunes model behavior where supported. |
-| Max workers | Limits how much concurrent work this model can run. |
+| Max workers | Limits how much concurrent task work this model can run. |
 | Worker timeout | Prevents stalled model executions from holding capacity forever. |
 | Auto-start tasks | Allows tasks created with the model to start immediately when configured. |
+| Tool policy | Changes by surface and mode, especially Chat `Plan` versus `Orchestrate`. |
 
 ## Supported Providers
 
@@ -37,5 +38,6 @@ Set an app-level default model if most work should use the same provider. Set a 
 |---|---|
 | [Quickstart](quickstart.html) | The first task requires at least one usable model. |
 | [Agents](agents.html) | Agents can inherit or choose model behavior. |
-| [Workers](workers.html) | Model configs participate in capacity control. |
+| [Model Selection & Tool Policy](model-selection-tool-policy.html) | Explains Plan/Orchestrate tool boundaries and provider-native tools. |
+| [Worker Capacity & Dispatch](workers.html) | Model configs participate in capacity control. |
 | [Model Providers](model-providers.html) | Provider-specific setup details live there. |

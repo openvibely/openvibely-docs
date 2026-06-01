@@ -37,6 +37,6 @@ Use the task board for immediate work. Use Schedule when the timing matters.
 | Page | Why It Matters |
 |---|---|
 | [Tasks](tasks.html) | Scheduled work runs existing task definitions. |
-| [Scheduled Tasks](scheduled-tasks.html) | Deeper automation guidance for recurring work. |
+| [Scheduled Task Runs](scheduled-tasks.html) | Deeper automation guidance for recurring work. |
 | [Alerts](alerts.html) | Failed scheduled runs can create alerts. |
 | [Memory](memory.html) | Some schedule-adjacent controls may surface project memory behavior. |

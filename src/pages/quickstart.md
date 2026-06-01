@@ -48,5 +48,5 @@ Open the task detail view to inspect the prompt, thread, execution output, attac
 |---|---|
 | Understand the main surfaces | [Projects](projects.html), [Chat](chat.html), and [Tasks](tasks.html) |
 | Configure reusable AI behavior | [Agents](agents.html) and [Models](models.html) |
-| Automate recurring work | [Schedule](schedule.html) and [Scheduled Tasks](scheduled-tasks.html) |
-| Review code safely | [Git Worktrees](git-worktrees.html) and [Task Lifecycle](task-lifecycle.html) |
+| Automate recurring work | [Schedule](schedule.html) and [Scheduled Task Runs](scheduled-tasks.html) |
+| Review code safely | [Git Worktrees & Merge Safety](git-worktrees.html) and [Task Lifecycle](task-lifecycle.html) |

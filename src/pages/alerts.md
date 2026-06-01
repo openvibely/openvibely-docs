@@ -39,5 +39,5 @@ Alerts are not a replacement for the task board. Use them as a notification laye
 | Page | Why It Matters |
 |---|---|
 | [Tasks](tasks.html) | Most alerts point back to task activity. |
-| [Workers](workers.html) | Capacity and timeouts can affect failures and delays. |
+| [Worker Capacity & Dispatch](workers.html) | Capacity and timeouts can affect failures and delays. |
 | [Insights](insights.html) | Longer-term trends appear in insight surfaces. |

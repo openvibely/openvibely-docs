@@ -1,10 +1,12 @@
-# Webhooks
+# Webhook Triggers
 
-Webhooks let trusted external systems create project-scoped OpenVibely tasks. Use them for event-driven work such as deployment follow-ups, monitoring alerts, issue triage, or scheduled jobs from another tool.
+Webhooks let trusted external systems create project-scoped OpenVibely tasks. Use them for event-driven work such as deployment follow-ups, monitoring alerts, issue triage, release checks, or scheduled jobs from another tool.
+
+A webhook is a task entry point. It is not an interactive Chat session and it does not bypass task review, worker capacity, or project boundaries.
 
 ## What Users Configure
 
-Open `Channels`, choose Webhooks, and create a webhook for the project that should receive work. Each webhook has a display name, enabled state, secret, prompt shaping options, and default priority.
+Open `Channels`, choose Webhooks, and create a webhook for the project that should receive work.
 
 | Field | User Impact |
 |---|---|
@@ -17,6 +19,18 @@ Open `Channels`, choose Webhooks, and create a webhook for the project that shou
 | Prompt template | Controls the generated task prompt. |
 | Default priority | Sets the priority for created tasks. |
 
+## Trigger Boundary
+
+Each webhook call creates one task in the configured project. The created task uses the webhook's routing/token information, configured prompt shaping, and default priority, then appears in normal OpenVibely task workflows.
+
+Webhook-created work is marked as webhook-originated so operators can distinguish it from UI-created work.
+
+## Authentication
+
+Webhook endpoints use a path token for inbound routing and a secret for authentication when configured. Senders can authenticate with the configured secret header or supported signature form. If a webhook has a secret, unauthenticated calls should be rejected.
+
+Keep webhook URLs and secrets private. Rotate secrets if they are exposed, and disable webhooks that are no longer in active use.
+
 ## Recommended Workflow
 
 1. Create a webhook for one project.
@@ -24,15 +38,32 @@ Open `Channels`, choose Webhooks, and create a webhook for the project that shou
 3. Send a test payload from the UI or the external system.
 4. Confirm the created task appears in the intended project.
 5. Review the generated title and prompt before enabling broader automation.
+6. Monitor failures through Alerts and task history.
 
-## Safety Guidance
+## Examples
 
-Keep webhooks project-specific and rotate secrets if they are exposed. Disable a webhook when an external system no longer needs to create tasks.
+| External Event | Created Task Pattern |
+|---|---|
+| Monitoring alert | Investigate the alert and propose or apply a fix. |
+| Deployment failure | Read logs from the payload and create a remediation task. |
+| Issue triage | Convert an issue event into a scoped task for the project. |
+| Release checklist | Run a known verification prompt at a release gate. |
+| External scheduler | Create a task in OpenVibely without relying on the built-in Schedule page. |
+
+## What It Does Not Do
+
+- It does not create multiple tasks from one webhook call.
+- It does not give the sender arbitrary project access beyond the configured webhook behavior.
+- It does not skip task review, diffs, or merge safety.
+- It does not replace Slack or Telegram for interactive conversations.
+- It does not require users to manually assign agents to external channels.
 
 ## Related Pages
 
 | Page | Why It Matters |
 |---|---|
 | [Channels Overview](channels.html) | Webhooks are one of several external entry points. |
-| [Projects](projects.html) | Every webhook-created task lands in a project. |
-| [Tasks](tasks.html) | Webhook-created work is reviewed and run as normal task work. |
+| [Tasks](tasks.html) | Webhook-created work appears as normal project work. |
+| [Worker Capacity & Dispatch](workers.html) | Webhook-created tasks still need execution capacity. |
+| [Alerts](alerts.html) | Failed webhook-originated work can create attention notices. |
+| [Configuration](configuration.html) | Operators control runtime and integration settings. |

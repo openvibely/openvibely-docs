@@ -36,7 +36,7 @@ The UI keeps the modal open and shows an inline error if the title conflicts wit
 
 Tasks move through statuses such as pending, queued, running, completed, failed, cancelled, and blocked. The page listens for live task events so board state can refresh while work is happening.
 
-Around normal execution, Skill Curator can prepare useful skills before the task starts and autonomously improve standalone or agent-owned skills after the task completes.
+Around normal execution, lifecycle hooks can recall memory, prepare useful skills, and learn from completed work. Follow-up messages continue from the existing task thread and respect worker capacity, so they may queue when project or model execution slots are full.
 
 Use task detail views to inspect execution output, thread messages, attachments, changed files, review comments, lifecycle activity, and worktree state.
 
@@ -48,16 +48,22 @@ When a project has a repository attached, task execution can produce worktree-ba
 |---|---|
 | Thread | Follow the conversation and follow-up messages around the task. |
 | Execution detail | Inspect model output, errors, and run history. |
-| Changes | See modified files and diffs. |
+| Changes | See modified files, live or preserved diffs, file-level cards, and review comments. |
 | Review comments | Track comments attached to generated code. |
 | Worktree actions | Merge, clean up, resolve conflicts, or create a PR when supported. |
+
+## Diff Review
+
+Open a task detail page and select `Changes` to inspect generated code. Worktree-backed tasks can show live branch and uncommitted diffs while work is still active, then fall back to preserved execution diffs after merge or cleanup. The diff viewer groups changes by file, supports large-file lazy loading, and lets reviewers attach comments before sending feedback back to the agent.
 
 ## Related Pages
 
 | Page | Why It Matters |
 |---|---|
 | [Task Lifecycle](task-lifecycle.html) | Explains statuses, hooks, and terminal states. |
-| [Skill Curation](skills-and-learning.html) | Explains how completed tasks help OpenVibely curate reusable skills. |
-| [Git Worktrees](git-worktrees.html) | Explains isolated repository changes. |
-| [Schedule](schedule.html) | Runs tasks later or repeatedly. |
-| [Task Chaining](task-chaining.html) | Connects dependent task work. |
+| [Task Threads & Follow-Ups](task-threads-followups.html) | Explains how one task continues through follow-up turns. |
+| [Task Diffs & Review](task-diffs-review.html) | Explains the Changes tab, live diffs, file cards, and review comments. |
+| [Lifecycle Hooks](lifecycle-hooks.html) | Explains supporting memory, skill, routing, and learning hooks. |
+| [Git Worktrees & Merge Safety](git-worktrees.html) | Explains isolated repository changes. |
+| [Scheduled Task Runs](scheduled-tasks.html) | Runs tasks later or repeatedly. |
+| [Task Chaining & Branch Lineage](task-chaining.html) | Connects dependent task work. |

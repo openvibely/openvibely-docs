@@ -32,5 +32,5 @@ Operators can preconfigure GitHub App settings with `GITHUB_APP_ID`, `GITHUB_APP
 | Page | Why It Matters |
 |---|---|
 | [Projects](projects.html) | GitHub repositories can become project sources. |
-| [Git Worktrees](git-worktrees.html) | Task changes are isolated before merge or PR actions. |
+| [Git Worktrees & Merge Safety](git-worktrees.html) | Task changes are isolated before merge or PR actions. |
 | [Tasks](tasks.html) | Pull request actions live in task review flows. |

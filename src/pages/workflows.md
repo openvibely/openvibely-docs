@@ -35,4 +35,4 @@ Use workflows when the work has a known structure and needs coordination. Use ta
 | Page | Why It Matters |
 |---|---|
 | [Agents](agents.html) | Workflows coordinate agents. |
-| [Task Chaining](task-chaining.html) | Chaining is simpler parent-child automation. |
+| [Task Chaining & Branch Lineage](task-chaining.html) | Chaining is simpler parent-child automation. |

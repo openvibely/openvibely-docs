@@ -102,7 +102,8 @@ Agent-owned skills are managed through after-complete curation for tasks that ra
 
 | Page | Why It Matters |
 |---|---|
+| [Lifecycle Hooks](lifecycle-hooks.html) | Shows hook timing, boundaries, and supporting behavior in more detail. |
 | [Task Lifecycle](task-lifecycle.html) | Shows where hooks fit around task execution. |
 | [Agents](agents.html) | Explains agent profiles, lifecycle hooks, and agent-owned skills. |
 | [Memory](memory.html) | Covers autonomous project memory recall, updates, and consolidation. |
-| [Scheduled Tasks](scheduled-tasks.html) | Covers recurring system maintenance and user schedules. |
+| [Scheduled Task Runs](scheduled-tasks.html) | Covers recurring system maintenance and user schedules. |

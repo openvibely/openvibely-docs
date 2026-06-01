@@ -70,7 +70,8 @@ Agents can be allowed to read or write project memory. The Memory Curator has pr
 | Page | Why It Matters |
 |---|---|
 | [Projects](projects.html) | Memory is scoped to a project repository. |
-| [Task Lifecycle](task-lifecycle.html) | Memory recall and updates run through lifecycle hooks around task execution. |
+| [Lifecycle Hooks](lifecycle-hooks.html) | Memory recall and updates run through lifecycle hooks around task execution. |
+| [Task Lifecycle](task-lifecycle.html) | Shows where memory fits in the broader task flow. |
 | [Agents](agents.html) | Agents can be configured with memory permissions. |
 | [Skill Curation](skills-and-learning.html) | Skills capture reusable task behavior while memory captures durable project knowledge. |
-| [Attachments](attachments.html) | Attachments are temporary context; memory is durable project knowledge. |
+| [Attachments As Context](attachments.html) | Attachments are temporary context; memory is durable project knowledge. |
