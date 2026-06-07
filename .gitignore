@@ -18,7 +18,8 @@ pnpm-debug.log*
 .env.*
 !.env.example
 
-# OpenVibely local memory/state
-.openvibely/
+# OpenVibely local memory/state (exclude runtime state, keep skills)
+.openvibely/*
+!.openvibely/skills/
 
 .worktrees
