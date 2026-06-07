@@ -7,10 +7,10 @@ This is a concise reference. See [Configuration](configuration.html) for explana
 | Variable | Default |
 |---|---|
 | `PORT` | `3001` server, `0` desktop |
-| `DATABASE_PATH` | `./openvibely.db` or app-data path |
+| `DATABASE_PATH` | `~/.openvibely/openvibely.db` |
 | `DATABASE_URL` | empty |
 | `ENVIRONMENT` | `development` |
-| `PROJECT_REPO_ROOT` | `./repos` or app-data path |
+| `PROJECT_REPO_ROOT` | `~/.openvibely/repos` |
 | `OPENVIBELY_APP_DATA_DIR` | empty unless set |
 | `OPENVIBELY_ENABLE_LOCAL_REPO_PATH` | false server, true desktop when unset |
 | `OPENVIBELY_PLUGIN_ROOT` | app-local plugin root when unset |

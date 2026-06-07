@@ -15,21 +15,24 @@ Important defaults:
 | Setting | Default |
 |---|---|
 | Port | `3001` |
-| DB path | `./openvibely.db` |
-| Repo root | `./repos` |
-| Local repo paths | Disabled unless enabled by env |
+| DB path | `~/.openvibely/openvibely.db` |
+| Repo root | `~/.openvibely/repos` |
+| Local repo paths | Disabled unless `OPENVIBELY_ENABLE_LOCAL_REPO_PATH=true` |
 
 ## Desktop Mode
 
-Desktop mode uses Wails and OS app-data directories. The backend binds to an ephemeral port by default, and the Wails WebView loads the backend URL.
+Desktop mode uses Wails. The backend binds to an ephemeral port by default and the Wails WebView loads the backend URL.
 
-| OS | App Data Path |
-|---|---|
-| macOS | `~/Library/Application Support/OpenVibely` |
-| Linux | `~/.local/share/openvibely` unless `XDG_DATA_HOME` is set |
-| Windows | `%LOCALAPPDATA%\OpenVibely` or `%APPDATA%\OpenVibely` fallback |
+Desktop defaults:
 
-Desktop defaults local repo paths to enabled.
+| Setting | Default | Override |
+|---|---|---|
+| Port | `0` (ephemeral) | `PORT` |
+| DB path | `~/.openvibely/openvibely.db` | `DATABASE_PATH` or `OPENVIBELY_APP_DATA_DIR` |
+| Repo root | `~/.openvibely/repos` | `PROJECT_REPO_ROOT` or `OPENVIBELY_APP_DATA_DIR` |
+| Local repo paths | enabled | `OPENVIBELY_ENABLE_LOCAL_REPO_PATH` |
+
+Both server and desktop modes share `~/.openvibely` as the default app-data directory, so they share the same database unless an explicit `DATABASE_PATH` or `OPENVIBELY_APP_DATA_DIR` separates them.
 
 ## Docker / VPS
 
