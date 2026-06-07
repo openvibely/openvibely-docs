@@ -9,7 +9,7 @@ Open `Models` from the System section of the sidebar and create a model config.
 | UI Concept | Product Effect |
 |---|---|
 | Provider | Chooses Anthropic, OpenAI, or Ollama. |
-| Auth method | Uses CLI auth, OAuth, API key, or local Ollama configuration depending on provider. |
+| Auth method | Uses OAuth, API key, or local Ollama configuration depending on provider. |
 | Model identifier | Selects the provider model used for execution. |
 | Default model | Lets tasks run without choosing a model every time. |
 | Reasoning, tokens, temperature | Tunes model behavior where supported. |
@@ -22,8 +22,8 @@ Open `Models` from the System section of the sidebar and create a model config.
 
 | Provider | Typical Use |
 |---|---|
-| Anthropic | Hosted Claude models through CLI, OAuth, or API key auth. |
-| OpenAI | Hosted OpenAI/Codex-compatible flows through CLI, OAuth, or API key auth. |
+| Anthropic | Hosted Claude models through OAuth or API key auth. |
+| OpenAI | Hosted OpenAI/Codex-compatible flows through OAuth or API key auth. |
 | Ollama | Local models through a local or configured Ollama base URL. |
 
 A `test` provider exists in source code for tests and is not documented as a normal production provider.

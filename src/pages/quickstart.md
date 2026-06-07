@@ -16,8 +16,8 @@ Open `Models` from the sidebar and create a model configuration. OpenVibely supp
 
 | Provider | Typical Setup |
 |---|---|
-| Anthropic | CLI, OAuth, or API key auth. |
-| OpenAI | CLI, OAuth, or API key auth. |
+| Anthropic | OAuth or API key auth. |
+| OpenAI | OAuth or API key auth. |
 | Ollama | Local model server, defaulting to `http://localhost:11434` when no base URL is set. |
 
 Set a default model if you want new tasks to work without choosing a model every time.

@@ -14,6 +14,7 @@ Open `Channels`, choose Slack, then configure the connection using OAuth or manu
 | Authorized users | Only approved Slack users can interact with OpenVibely. |
 | Connection test | Operators can confirm the bot is reachable before inviting broad use. |
 | Project-aware work | Slack-created work still lands in OpenVibely projects and task review flows. |
+| Task Goals | Tasks created or managed through Slack support Goals the same way web tasks do. Goal state is visible and managed in the web app. |
 
 ## Setup Flow
 

@@ -6,7 +6,7 @@ The fastest local setup is to clone the repository and run the startup script. T
 
 - Go `1.26.3+`.
 - Git for cloning and project worktree operations.
-- Optional provider CLIs or credentials depending on which model authentication method you use.
+- Provider credentials (OAuth or API key) depending on which model authentication method you use.
 
 ## Fresh Clone
 

@@ -14,6 +14,7 @@ Open `Channels`, choose Telegram, save a bot token, test the bot, and add author
 | Authorized users | Restrict bot access to known users. |
 | Send responses toggle | Decide whether task responses are sent back through Telegram. |
 | Project/task continuity | Telegram-created work still appears in the same OpenVibely task board. |
+| Task Goals | Tasks created or managed through Telegram support Goals the same way web tasks do. Goal state is visible and managed in the web app. |
 
 ## Setup Flow
 

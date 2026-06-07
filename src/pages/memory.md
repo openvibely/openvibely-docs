@@ -1,6 +1,6 @@
 # Memory
 
-Memory is how OpenVibely stops acting like a brand-new assistant on every task. The built-in `System: Memory Curator` autonomously turns completed work into durable project knowledge, recalls the right pieces before future runs, and consolidates the memory library so it stays focused instead of becoming a transcript dump.
+Memory is how OpenVibely stops acting like a brand-new assistant on every task. `System: Memory Curator` is a protected on-disk system agent that autonomously turns completed work into durable project knowledge, recalls the right pieces before future runs, and consolidates the memory library so it stays focused instead of becoming a transcript dump.
 
 The result is a project-aware learning loop: you explain an architecture decision, preference, incident, workflow constraint, or correction once; OpenVibely can preserve it in managed memory; later tasks receive the relevant context automatically.
 
@@ -19,7 +19,7 @@ Memory is project-local and repository-backed. OpenVibely stores managed memory 
 
 ## Memory Curator
 
-`System: Memory Curator` is a protected built-in system agent. Users do not select it as the primary worker for normal tasks. It runs around the task lifecycle with scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and does not get a runtime git worktree.
+`System: Memory Curator` is a protected on-disk system agent. Its skills live under `.openvibely/agents/memory_curator/` in the project repository and can be reviewed there, but the agent itself is protected and not user-editable. Users do not select it as the primary worker for normal tasks. It runs around the task lifecycle with scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and does not get a runtime git worktree.
 
 | Memory Curator Skill | When It Runs | Purpose |
 |---|---|---|

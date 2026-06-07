@@ -37,9 +37,20 @@ OpenVibely includes protected system agents for learning work users should not h
 | System Agent | What It Does |
 |---|---|
 | `System: Memory Curator` | Autonomously creates and updates durable project memory from completed work, recalls relevant memory before tasks, and runs scheduled consolidation. |
+| `System: Goal Agent` | Evaluates active task goals after each task turn via the `evaluate_task_goal` lifecycle hook, queuing continuation follow-ups until the goal is achieved or blocked. |
 | `Skill Curator` | Routes reusable skills into tasks and improves standalone or agent-owned skill libraries from completed work. |
 
-`System: Memory Curator` is not selectable as a primary task agent. It uses scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and keeps memory learning isolated from task worktrees.
+`System: Memory Curator` is a protected on-disk system agent. Its skills live under `.openvibely/agents/memory_curator/` and can be reviewed there, but the agent is not user-editable or selectable as a primary task agent. It uses scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and keeps memory learning isolated from task worktrees.
+
+## Agent Detail Tabs
+
+The agent detail page has three tabs: **Details**, **Skills**, and **Lifecycle Hooks**.
+
+**Details** covers identity, instructions, tools, routing, and permissions — the core agent configuration.
+
+**Skills** shows skills owned by this agent. From this tab you can create a new skill, edit an existing one, change skill state (enable, disable, always-use, archive), or preview which skills the router would currently select for a hypothetical task. System agents show a protected banner instead of edit controls.
+
+**Lifecycle Hooks** lists the hooks configured for this agent. Each row shows the hook type (`route_task`, `before_run`, `after_complete`), the assigned skill, run policy, and tool-scope permissions. The tool-scope section controls what that hook's skill is allowed to do: read or write skills, read or write repository files, use shell or tools, and similar. An explainer callout on the tab summarizes what tool-scope means for that hook type.
 
 ## Skills And Lifecycle Hooks
 
@@ -68,6 +79,7 @@ Use agent-owned skills when the knowledge should stay with that agent. Use stand
 | Page | Why It Matters |
 |---|---|
 | [Tasks](tasks.html) | Tasks can run with a selected agent. |
+| [Task Goals](task-goals.html) | System: Goal Agent drives persistent task objectives through the after_complete hook. |
 | [Memory](memory.html) | Explains the protected Memory Curator and managed project memory. |
 | [Skill Curation](skills-and-learning.html) | Explains standalone skills, agent-owned skills, and autonomous curation. |
 | [Models](models.html) | Agents can inherit or choose model behavior. |

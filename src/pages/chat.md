@@ -1,6 +1,43 @@
 # Chat
 
-Chat is the project-scoped conversation and orchestration surface. It is meant for exploration, planning, follow-up, and turning natural language into executable work without leaving the selected project or opening a separate AI session for every task.
+Chat is your single control center for everything happening in a project. Describe what you want — a bug fix, a new feature, a refactor across multiple files — and Chat creates the tasks, runs them in parallel, and reports back. No terminal, no separate AI windows, no manual task wiring. One conversation drives the whole project.
+
+## Chat As Your Single Control Center
+
+The fundamental idea behind Chat is that you should never need more than one window open. Instead of keeping a terminal running, a separate AI session for research, another for writing code, and a third for tests, you stay on the Chat page and describe what you want done. OpenVibely creates the tasks, runs them, and reports back — all from that one conversation.
+
+This matters most when a goal has multiple parts. Say you want to add a new feature with backend changes, frontend wiring, and tests. Rather than creating each task manually, switching between them, and tracking what finished, you describe the goal once in Chat and ask it to break the work apart. Chat creates the task cards, starts the independent ones in parallel, and remains the place you return to ask what is done, what is blocked, and what should happen next. Each task keeps its own thread, diff review, and lifecycle — but the original goal and the coordination stay in the Chat window.
+
+Chat embeds clickable task links inline as it creates work, so you can jump to a task detail, review the diff, send a follow-up, and come back to Chat without losing your place in the conversation.
+
+**What Chat can orchestrate from a single conversation:**
+
+- Create one task or many tasks from a single natural-language request
+- Set a persistent goal on a task so the Goal Agent drives it to completion automatically
+- Execute tasks and report their status back into the conversation
+- Send follow-up instructions into individual task threads
+- Inspect task state, changes, agent output, and lifecycle events
+- Schedule work, manage alerts, and coordinate across the whole project
+- Accept steering or queue new prompts while a response is already in progress
+
+That is the core OpenVibely flow: stay on the Chat page while the orchestrator handles the parallel work. The Tasks page is the board and review surface, but Chat is where the work begins and where coordination stays.
+
+## How Chat Writes Task Prompts
+
+When Chat creates a task, it does not paste your words verbatim. It rewrites your request into a detailed, actionable instruction the executing agent can work from immediately.
+
+If you say "fix the login bug," Chat creates a prompt along the lines of "Debug and fix the login bug that prevents users from signing in. Investigate the authentication flow, identify the root cause, and implement a fix with tests." The agent receives something specific enough to act on — you never had to spell all that out.
+
+This matters because the coding agent that runs the task has no memory of your conversation. The task prompt is everything it knows. A thin prompt produces thin results. Chat's rewrite closes that gap automatically.
+
+**What gets embedded in the rewritten prompt:**
+
+- The intent and scope of your request, expanded into a clear instruction
+- Any file paths, code snippets, or configuration you pasted into Chat — included verbatim so the agent acts on the exact code you showed it
+- Screenshots or attachments referenced alongside the relevant instruction
+- Concrete acceptance criteria or constraints you mentioned in passing
+
+You can always open the task and read the full prompt Chat wrote. If it missed something, edit it before the task runs. But in most cases Chat produces a prompt that would have taken several minutes to write yourself.
 
 ## What Users Do
 
@@ -24,13 +61,7 @@ The chat input includes a mode selector with two options. OpenVibely defaults to
 | `Orchestrate` | You want Chat to help create, inspect, or coordinate real project work. | Enables action-oriented chat tools such as creating and managing tasks, reading project state, and coordinating workflow actions. |
 | `Plan` | You want to think through an approach before anything is created or changed. | Keeps the conversation planning-oriented and limits action tools so the assistant can analyze, propose steps, and refine the plan first. |
 
-A good default workflow is to start in `Plan` for vague or risky work, then switch to `Orchestrate` when the next task is clear.
-
-## Central Task Orchestration
-
-Use `Orchestrate` mode when one conversation should manage several pieces of project work. Chat can create multiple task cards, execute independent tasks, inspect task threads, send follow-ups into tasks, schedule work, and keep the original goal visible in one place.
-
-That is the core OpenVibely flow: stay on the Chat page while the orchestrator breaks a goal into parallel tasks, tracks what is running, and helps decide what to do next. The Tasks page remains the board and review surface, but Chat is where coordination can stay centralized.
+A good default workflow is to start in `Plan` for vague or risky work, then switch to `Orchestrate` when the next task is clear. When a `Plan` turn finishes, Chat surfaces a prompt to continue in `Orchestrate` mode so you can move from analysis to action without manually switching modes.
 
 ## Queueing And Steering
 
@@ -56,6 +87,7 @@ Use Tasks instead when you already know the exact unit of work and want board st
 | Page | Why It Matters |
 |---|---|
 | [Orchestrate From Chat](orchestrate-from-chat.html) | Shows the one-window flow for planning, creating, running, and managing multiple tasks. |
+| [Task Goals](task-goals.html) | Chat can set, pause, resume, and clear goals on tasks from Orchestrate mode. |
 | [Prompt Queue & Steering](prompt-queue-steering.html) | Explains what happens when prompts arrive during an active chat turn. |
 | [Tasks](tasks.html) | Chat can lead into executable task work. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Chat can inspect or send follow-ups into task threads. |

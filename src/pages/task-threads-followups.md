@@ -47,6 +47,12 @@ Interactive project Chat intentionally stays responsive even when task workers a
 | "This completed task should now update the docs too." | Task follow-up or a chained child task, depending on whether it is the same unit of work |
 | "Split this feature into backend, frontend, and tests." | Chat Orchestrate or task chaining |
 
+## Steering From A Task Thread
+
+When a follow-up is queued and the task thread shows a pending input row, a **Steer** button appears on that row. Steering from a task thread works the same way as Chat steering: it redirects the active turn rather than queuing behind it.
+
+Use task-thread steering when you have already sent a follow-up but want to correct or narrow it before the worker picks it up. If the turn has already started, the steer may be rejected and you should send a new follow-up instead.
+
 ## What It Does Not Do
 
 - It does not bypass worker capacity for task execution.

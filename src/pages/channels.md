@@ -23,6 +23,7 @@ Open `Channels` from the System section of the app sidebar. Configure one channe
 - Slack and Telegram support authorized users so only approved people can interact with OpenVibely from chat tools.
 - GitHub is both a channel and a repository provider, so it affects project setup and pull request review flows.
 - Webhooks are best for trusted automation systems that need to create repeatable task requests.
+- Tasks created through any channel support the same features as web-created tasks, including Task Goals, lifecycle hooks, and review workflows.
 
 ## Recommended Rollout
 

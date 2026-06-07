@@ -4,6 +4,25 @@ OpenVibely gets better the more you use it. Skill Curator can observe completed 
 
 This does not replace the task itself. Your task still runs normally with the selected model and, when chosen, the assigned agent. The curation work happens around that task as supporting lifecycle activity.
 
+## The Skills Page
+
+Open `Skills` from the sidebar. The Skills page lists all skills in scope for the selected project: standalone and agent-owned, global and project-scoped.
+
+Each skill card shows the skill name, key, scope, and current state badges. Use the per-card dropdown to create, edit, enable or disable, toggle always-use, or archive a skill. The search bar filters by name or key.
+
+To add a skill manually, click `+ Create Skill`. To import a pre-written skill package, use `Import Skill Package`.
+
+## Skill States
+
+| State | What It Means |
+|---|---|
+| Enabled | Default. The skill is available for routing and appears in the routing context. |
+| Disabled | Hidden from routing. The skill does not appear as a routing candidate and is excluded from the `skills_list` tool output. Use this to suppress a skill without deleting it. |
+| Always Use | Forces the skill into every task run for its scope, regardless of routing selection. Stored in the `SKILLS.md` index. Use sparingly; always-use skills add context to every task even when they may not be relevant. |
+| Archived | Soft-deleted. Archived skills are removed from normal views and routing but remain on disk. |
+
+The always-use toggle can be set from the skill card dropdown or from the create/edit modal. A skill can be both always-use and enabled; a disabled skill's always-use flag has no effect while it is disabled.
+
 ## How A Task Uses Skills
 
 A task run can include these lifecycle steps:

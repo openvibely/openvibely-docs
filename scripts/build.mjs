@@ -51,6 +51,7 @@ const nav = [
       ['Task Lifecycle', 'task-lifecycle.md', 'From prompt to queued, running, completed, or failed'],
       ['Lifecycle Hooks', 'lifecycle-hooks.md', 'Supporting hooks for memory, skills, routing, and learning'],
       ['Task Threads & Follow-Ups', 'task-threads-followups.md', 'Continue one task through queued follow-ups and preserved context'],
+      ['Task Goals', 'task-goals.md', 'Persistent objectives with autonomous continuation and evaluation'],
       ['Task Chaining & Branch Lineage', 'task-chaining.md', 'Dependent work with parent/child task and branch context'],
       ['Prompt Queue & Steering', 'prompt-queue-steering.md', 'Keep chat moving with queued follow-ups and active-turn steering'],
       ['Task Diffs & Review', 'task-diffs-review.md', 'Inspect generated file changes, live diffs, and review comments'],

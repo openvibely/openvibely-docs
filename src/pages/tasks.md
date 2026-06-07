@@ -40,6 +40,8 @@ Around normal execution, lifecycle hooks can recall memory, prepare useful skill
 
 Use task detail views to inspect execution output, thread messages, attachments, changed files, review comments, lifecycle activity, and worktree state.
 
+When a task has an active goal, a Goal panel appears above the tab row showing the objective, status badge, agent reason, and last-checked timestamp. Goal settings live in the task edit dialog.
+
 ## Reviewing Work
 
 When a project has a repository attached, task execution can produce worktree-backed changes. Review those changes before merging or creating a pull request.
@@ -60,6 +62,7 @@ Open a task detail page and select `Changes` to inspect generated code. Worktree
 
 | Page | Why It Matters |
 |---|---|
+| [Task Goals](task-goals.html) | Persistent objectives that drive autonomous continuation across turns. |
 | [Task Lifecycle](task-lifecycle.html) | Explains statuses, hooks, and terminal states. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Explains how one task continues through follow-up turns. |
 | [Task Diffs & Review](task-diffs-review.html) | Explains the Changes tab, live diffs, file cards, and review comments. |

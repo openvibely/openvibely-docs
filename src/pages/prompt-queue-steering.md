@@ -32,6 +32,8 @@ Queued messages are useful when you want to preserve ordering. The active answer
 
 Steering is for correcting or redirecting the active response before it finishes. The web UI tracks the active turn and requires the expected turn id so a stale browser tab cannot accidentally steer the wrong response.
 
+Steering also works on task threads, not just Chat. When a follow-up is queued in a task thread, a Steer button appears on the pending input row. See [Task Threads & Follow-Ups](task-threads-followups.html) for details.
+
 Use steering for immediate corrections:
 
 ```text
