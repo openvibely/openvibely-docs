@@ -63,6 +63,23 @@ The chat input includes a mode selector with two options. OpenVibely defaults to
 
 A good default workflow is to start in `Plan` for vague or risky work, then switch to `Orchestrate` when the next task is clear. When a `Plan` turn finishes, Chat surfaces a prompt to continue in `Orchestrate` mode so you can move from analysis to action without manually switching modes.
 
+## Parallel Task Example
+
+When a goal has multiple independent parts, ask Chat to split them explicitly:
+
+```
+Plan the changes needed for OAuth login, then create separate tasks for backend routes, UI wiring, tests, and docs. Run the independent tasks in parallel where possible and keep this chat updated as they finish.
+```
+
+In `Orchestrate` mode, Chat creates multiple task cards and can execute them immediately. Each task keeps its own status, thread, lifecycle events, diff review, and worktree actions — but the original Chat page stays the place to ask what is done, what is blocked, and what comes next.
+
+## What Stays Centralized
+
+- The selected project context stays fixed for the whole conversation.
+- Chat history keeps the original goal, plan, and follow-up decisions together in one place.
+- Task links produced by Chat open the relevant task detail without leaving the project workflow.
+- Running chat turns can accept steering or queue follow-up prompts instead of forcing a new session.
+
 ## Queueing And Steering
 
 If Chat is already responding, a new prompt can become queued input for the next turn. When the UI offers active-turn steering, a prompt can instead redirect the current response. This keeps the project conversation responsive without forcing users to open another thread just to add context or correct scope.
@@ -86,7 +103,6 @@ Use Tasks instead when you already know the exact unit of work and want board st
 
 | Page | Why It Matters |
 |---|---|
-| [Orchestrate From Chat](orchestrate-from-chat.html) | Shows the one-window flow for planning, creating, running, and managing multiple tasks. |
 | [Task Goals](task-goals.html) | Chat can set, pause, resume, and clear goals on tasks from Orchestrate mode. |
 | [Prompt Queue & Steering](prompt-queue-steering.html) | Explains what happens when prompts arrive during an active chat turn. |
 | [Tasks](tasks.html) | Chat can lead into executable task work. |

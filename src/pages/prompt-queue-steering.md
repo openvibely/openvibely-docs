@@ -70,7 +70,7 @@ In `Orchestrate` mode, Chat can perform write actions such as creating tasks, ed
 
 | Page | Why It Matters |
 |---|---|
-| [Orchestrate From Chat](orchestrate-from-chat.html) | Shows how queueing and steering support one-window multi-task coordination. |
+| [Chat](chat.html) | Shows how queueing and steering support one-window multi-task coordination. |
 | [Chat](chat.html) | Explains Plan and Orchestrate modes. |
 | [Channels Overview](channels.html) | Shows how Slack, Telegram, GitHub, and webhooks enter OpenVibely workflows. |
 | [Worker Capacity & Dispatch](workers.html) | Explains the task execution capacity that is separate from Chat responsiveness. |

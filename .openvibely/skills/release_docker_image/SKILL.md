@@ -14,38 +14,63 @@ Use this skill when asked to cut a release of the docs Docker image, publish a n
 
 The user may provide an optional version tag (e.g. `v1.5.0`). If none is given, release as `latest` only.
 
-## Step 1 — Pre-flight Checks
+## Step 1 — Choose The Release Source
 
-Confirm the following before building anything:
+Before running release commands, identify the exact checkout that should be published:
 
-**1a. On the main branch with a clean tree**
 ```
-git -C <repo> branch --show-current
-git -C <repo> status --porcelain
+pwd
+git rev-parse --show-toplevel
+git branch --show-current
+git status --porcelain
+git rev-parse --short HEAD
 ```
-The branch must be `main`. If there are uncommitted changes, stop and tell the user — never release from a dirty tree.
 
-**1b. Docs build is clean**
+For an official release, prefer the repo root on `main` with a clean tree. If the task is running inside a `.worktrees/...` checkout or any branch other than `main`, do not silently switch checkouts and do not silently bypass the branch check. Tell the user the current checkout/branch and ask whether to release that worktree/branch or wait until the changes are merged to `main`.
+
+Only proceed from a non-`main` branch or task worktree when the user explicitly confirms releasing that exact source, or when the user's request clearly refers to the current unmerged task output. In the final report, state that the image was built from a non-`main` worktree/branch and include the short SHA.
+
+The chosen release source must be clean. If `git status --porcelain` shows uncommitted changes in the checkout being released, stop and tell the user; never publish from a dirty tree.
+
+## Step 2 — Pre-flight Checks
+
+Run all pre-flight checks from the chosen release source before building anything.
+
+**2a. Docs build is clean**
 ```
 npm run build
 ```
 The static build must pass with zero errors. Do not publish an image from a broken build.
 
-**1c. Docker daemon is running**
+**2b. Docker daemon is running**
 ```
 docker info
 ```
 If Docker is not running, stop and tell the user to start Docker Desktop or the Docker daemon.
 
-**1d. Logged in to Docker Hub**
-```
-docker login
-```
-Must be authenticated as a user with push access to `openvibely/openvibely-docs`. If not logged in, prompt the user to run `docker login` and re-trigger the skill.
+**2c. Docker Hub credentials are available**
 
-## Step 2 — Build the Image
+Use a non-interactive config check first so the release workflow does not hang on a credential prompt:
+```
+python3 - <<'PY'
+import json, pathlib
+p = pathlib.Path.home() / '.docker' / 'config.json'
+if not p.exists():
+    print('not-logged-in')
+    raise SystemExit
+c = json.loads(p.read_text())
+auths = c.get('auths') or {}
+has_auth = any(k in auths for k in ('https://index.docker.io/v1/', 'index.docker.io', 'docker.io'))
+has_store = bool(c.get('credsStore') or c.get('credHelpers'))
+print('logged-in' if has_auth or has_store else 'not-logged-in')
+PY
+```
 
-Build the multi-stage image from the repo root:
+This check only verifies that Docker has stored credentials or a credential helper. If the later push returns an auth error, stop and tell the user to run `docker login`, then re-trigger the release.
+
+## Step 3 — Build the Image
+
+Build the multi-stage image from the chosen release source root:
 
 ```
 docker build \
@@ -64,9 +89,9 @@ docker build \
   .
 ```
 
-Do not use `--no-cache` by default — the layer cache is safe to use here since Step 1 verified the build is clean.
+Do not use `--no-cache` by default — the layer cache is safe to use here since the docs build was verified first.
 
-## Step 3 — Smoke-Check the Image Locally
+## Step 4 — Smoke-Check the Image Locally
 
 Run the image briefly to confirm it starts and serves:
 
@@ -77,9 +102,9 @@ curl -sf http://localhost:4173/ | head -c 200
 docker stop ov-docs-check
 ```
 
-If `curl` returns a non-zero exit or no output, stop, report the failure output, and do not push.
+If `curl` returns a non-zero exit or no output, stop, report the failure output, and do not push. If the container name or port is already in use, stop the stale container or use a different temporary name/port and report what changed.
 
-## Step 4 — Push to Docker Hub
+## Step 5 — Push to Docker Hub
 
 Push `latest`:
 ```
@@ -91,11 +116,15 @@ If a version tag was provided, push it too:
 docker push openvibely/openvibely-docs:<version>
 ```
 
-## Step 5 — Report
+Capture the digest from the push output for the final report.
+
+## Step 6 — Report
 
 Confirm to the user:
 - Tags pushed (e.g. `openvibely/openvibely-docs:latest`, `openvibely/openvibely-docs:v1.5.0`)
+- The checkout path and branch used for the release
 - The git commit SHA the image was built from (`git rev-parse --short HEAD`)
+- Whether the release source was `main` or a non-`main` worktree/branch
 - Image digest returned by the push (from `docker push` output)
 
 If only `latest` was pushed and no version tag was given, suggest the user consider tagging the commit in git for traceability:

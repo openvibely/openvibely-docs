@@ -85,6 +85,6 @@ The Chat bypass is intentional. You can keep planning, creating tasks, and check
 | [Tasks](tasks.html) | Tasks are the work that workers execute |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Follow-ups queue when task capacity is full |
 | [Chat](chat.html) | Chat bypasses task limits and stays responsive while workers are busy |
-| [Orchestrate From Chat](orchestrate-from-chat.html) | Launching many parallel tasks from Chat makes worker limits matter more |
+| [Chat](chat.html) | Launching many parallel tasks from Chat makes worker limits matter more |
 | [Models](models.html) | Configure per-model pool limits on the Models page |
 | [Projects](projects.html) | Projects can have their own worker caps set here or on the project settings page |

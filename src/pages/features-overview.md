@@ -8,7 +8,7 @@ OpenVibely is a web workbench for AI-assisted software work that gets more usefu
 |---|---|---|
 | Dashboard | A selected-project landing page with task counts, category entry points, and an empty state for first-time setup. | [Dashboard](dashboard.html) |
 | Projects | A workspace boundary that controls repository context, task lists, chat, schedules, workers, memory, and channels. | [Projects](projects.html) |
-| Chat | A project-aware conversation for exploration, attachments, `Plan` mode, and `Orchestrate` mode. Chat can centrally create, run, and coordinate multiple parallel tasks from one window. | [Chat](chat.html), [Orchestrate From Chat](orchestrate-from-chat.html) |
+| Chat | A project-aware conversation for exploration, attachments, `Plan` mode, and `Orchestrate` mode. Chat can centrally create, run, and coordinate multiple parallel tasks from one window. | [Chat](chat.html) |
 | Tasks | A board for backlog, active, and completed work with run/cancel controls, streaming progress, threads, attachments, diffs, and review. | [Tasks](tasks.html), [Task Threads & Follow-Ups](task-threads-followups.html), [Task Diffs & Review](task-diffs-review.html) |
 | Scheduling | Time-based automation for one-time, recurring, and system maintenance runs. | [Schedule](schedule.html), [Scheduled Task Runs](scheduled-tasks.html) |
 | Alerts | Project-scoped failure, follow-up, and attention notices with unread state. | [Alerts](alerts.html) |
@@ -46,7 +46,7 @@ OpenVibely is a web workbench for AI-assisted software work that gets more usefu
 | If You Want To... | Read This |
 |---|---|
 | Try it quickly | [Installation](installation.html), then [Quickstart](quickstart.html) |
-| Understand the main UI | [Dashboard](dashboard.html), [Projects](projects.html), [Chat](chat.html), [Orchestrate From Chat](orchestrate-from-chat.html), [Tasks](tasks.html), [Schedule](schedule.html), and [Alerts](alerts.html) |
+| Understand the main UI | [Dashboard](dashboard.html), [Projects](projects.html), [Chat](chat.html), [Tasks](tasks.html), [Schedule](schedule.html), and [Alerts](alerts.html) |
 | Understand work mechanics | [Task Threads & Follow-Ups](task-threads-followups.html), [Task Chaining & Branch Lineage](task-chaining.html), [Lifecycle Hooks](lifecycle-hooks.html), [Worker Capacity & Dispatch](workers.html), and [Scheduled Task Runs](scheduled-tasks.html) |
 | Configure AI behavior | [Models](models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Agents](agents.html), [Memory](memory.html), [Skill Curation](skills-and-learning.html), and [Personalities](personalities.html) |
 | Review generated code | [Task Diffs & Review](task-diffs-review.html), [Review Workflows](review-workflows.html), [Task Lifecycle](task-lifecycle.html), [Git Worktrees & Merge Safety](git-worktrees.html), and [GitHub](github.html) |

@@ -66,7 +66,7 @@ For repository-backed work, lineage is not only a task relationship. OpenVibely 
 
 | Page | Why It Matters |
 |---|---|
-| [Orchestrate From Chat](orchestrate-from-chat.html) | Best for centrally managing parallel or evolving work. |
+| [Chat](chat.html) | Best for centrally managing parallel or evolving work from one window. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Best when continuing the same task is enough. |
 | [Task Lifecycle](task-lifecycle.html) | Explains blocked and terminal states. |
 | [Git Worktrees & Merge Safety](git-worktrees.html) | Explains isolated branches and safe review. |

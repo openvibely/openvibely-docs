@@ -27,7 +27,6 @@ const nav = [
       ['Dashboard', 'dashboard.md', 'Project health and entry point into tasks'],
       ['Projects', 'projects.md', 'Create, switch, and configure workspaces'],
       ['Chat', 'chat.md', 'Plan and orchestrate from a project conversation'],
-      ['Orchestrate From Chat', 'orchestrate-from-chat.md', 'Use one chat window to plan, create, run, and manage parallel tasks'],
       ['Tasks', 'tasks.md', 'Run, monitor, and review AI coding work'],
       ['Schedule', 'schedule.md', 'Calendar-driven project work'],
       ['Alerts', 'alerts.md', 'Failures and follow-up notifications'],

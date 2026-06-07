@@ -10,7 +10,7 @@ When scanning `git diff <base>..HEAD --name-only`, group files by domain and map
 
 | Source path pattern | Docs area to check |
 |---|---|
-| `web/templates/pages/chat.templ` | `chat.md`, `orchestrate-from-chat.md` |
+| `web/templates/pages/chat.templ` | `chat.md` |
 | `web/templates/pages/task_detail.templ` | `tasks.md`, `task-lifecycle.md`, `task-threads-followups.md`, `task-diffs-review.md` |
 | `web/templates/pages/tasks.templ` | `tasks.md` |
 | `web/templates/pages/agents.templ` | `agents.md` |
@@ -111,9 +111,17 @@ When a large diff spans many areas, use this checklist to avoid missing a covera
 | Task Thread Steering | `task-threads-followups.md` | `prompt-queue-steering.md` |
 | Memory Curator | `memory.md` | `agents.md` |
 | Model Effort/Reasoning | `model-providers.md` | `models.md` |
-| Chat Orchestration | `chat.md` | `orchestrate-from-chat.md` |
+| Chat Orchestration | `chat.md` | Related capability pages only; do not recreate a separate Orchestrate From Chat page |
 | Workers / Parallelism | `workers.md` | — |
 | Diff Viewer | `task-diffs-review.md` | — |
+
+---
+
+## Consolidation Checks
+
+Before adding a new docs page, check whether an existing canonical page already owns the user's mental model. If two pages explain the same workflow, merge the unique examples and workflow detail into the canonical page, remove the duplicate page from navigation, update all cross-links, and rebuild so stale generated pages disappear.
+
+For Chat, keep `chat.md` as the canonical page. It should sell Chat as the single control center, explain Plan and Orchestrate modes, include prompt rewrite/enrichment behavior, show a parallel-task example, and explain what stays centralized. Do not split the same story into a separate `orchestrate-from-chat.md` page unless the user explicitly requests a separate deep-dive page.
 
 ---
 

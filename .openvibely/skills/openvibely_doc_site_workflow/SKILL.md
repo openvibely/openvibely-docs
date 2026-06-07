@@ -16,6 +16,7 @@ Use this skill when working in the OpenVibely docs-site repository or updating d
 - Keep navigation labels concise. Avoid verbose sidebar descriptions and avoid reintroducing removed automation topics unless explicitly requested.
 - For product copy, Skill Curation, Memory Curator, UX, and removed-topic guardrails, apply `references/feature-copy-lessons.md`.
 - For runtime, Docker preview, navigation, mobile UI, and removal workflow details, apply `references/completed-task-lessons.md` when relevant.
+- When editing header branding, keep the `avatar.png` brand mark clipped as a circle; `.brand-mark` should use `border-radius: 50%` with `object-fit: cover` so the circular artwork is not cropped by a rounded-rectangle mask.
 - When adding or updating project skills that should be merged to main, keep them under `.openvibely/skills/` and verify they are not ignored. The repo should ignore local OpenVibely state with `.openvibely/*` while unignoring `!.openvibely/skills/`; confirm with `git check-ignore -v .openvibely/skills/<skill>/SKILL.md` and `git status .openvibely/skills/`.
 - When asked what project skills exist or how to invoke them, use `skills_list` and `skill_view` as the source of truth instead of assuming `.openvibely/skills/` exists in the current task worktree; follow-up worktrees may not include newly created skill files even though the project skill library does.
 - After editing source or build code, run `npm run build` and fix all errors before completion.

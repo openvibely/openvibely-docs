@@ -65,7 +65,7 @@ Provider features differ. Tool availability should be read from the selected mod
 | Page | Why It Matters |
 |---|---|
 | [Chat](chat.html) | Explains Plan and Orchestrate from the user perspective. |
-| [Orchestrate From Chat](orchestrate-from-chat.html) | Shows how Chat coordinates multiple tasks. |
+| [Chat](chat.html) | Shows how Chat coordinates multiple tasks from one window. |
 | [Models Overview](models.html) | Covers model setup and defaults. |
 | [Model Providers](model-providers.html) | Provider-specific setup details. |
 | [Worker Capacity & Dispatch](workers.html) | Model configs participate in capacity control. |
