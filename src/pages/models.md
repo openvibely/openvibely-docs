@@ -31,9 +31,9 @@ A `test` provider exists in source code for tests and is not documented as a nor
 
 ## OpenAI-Compatible Models
 
-Choose an OpenAI-compatible preset when your provider or gateway already matches one of the supported setup patterns. Presets fill in the expected endpoint details and, when the provider exposes a compatible model list, the Models screen can discover available models for you.
+Choose an OpenAI-compatible preset when your provider or gateway already matches one of the supported setup patterns. OpenVibely ships presets for hosted gateways and providers such as OpenRouter, NVIDIA NIM, DeepInfra, Fireworks, Groq, Mistral, Cerebras, Together, Hugging Face Router, DeepSeek, Moonshot, DashScope/Qwen, Z.AI/GLM, StepFun, Tencent TokenHub, and several local runtimes including vLLM, LM Studio, SGLang, LiteLLM, Inferrs, and ds4. Presets fill in the expected endpoint details and, when the provider exposes a compatible model list, the Models screen can discover available models for you.
 
-Use a custom OpenAI-compatible endpoint for local gateways, self-hosted inference, or providers that are not listed as presets. In that case, provide the base URL, auth header behavior if required, and either discover models from the endpoint or enter the model ID manually. Public endpoints should use HTTPS; plain HTTP is intended for localhost or private network hosts.
+Use a custom OpenAI-compatible endpoint for local gateways, self-hosted inference, or providers that are not listed as presets. In that case, provide the base URL, auth header behavior if required, and either discover models from the endpoint or enter the model ID manually. Public endpoints should use HTTPS; plain HTTP is intended for localhost or private network hosts. The full preset list lives in [Model Providers](model-providers.html).
 
 ## Choosing Defaults
 

@@ -23,11 +23,23 @@ If a task is complex enough that `high` is producing shallow plans or missing ed
 
 ## OpenAI-Compatible Providers
 
-OpenAI-compatible configs are for providers and gateways that expose an OpenAI-style Chat Completions API. The Models UI includes presets for common hosted providers and inference gateways, plus a custom option for local gateways and self-hosted endpoints.
+OpenAI-compatible configs are for providers and gateways that expose an OpenAI-style Chat Completions API. The Models UI includes built-in presets for common hosted providers, inference gateways, and local runtimes, plus a custom option for anything else.
 
-Use a preset when available so OpenVibely can fill the expected endpoint pattern and attempt model discovery. Use `Custom` when you need to supply your own base URL, model list URL, auth header name or prefix, extra headers, or extra request body fields. If discovery returns no usable model list, enter the model ID manually.
+Use a preset when available so OpenVibely can fill the expected endpoint pattern and attempt model discovery. Use `Custom OpenAI-Compatible` when you need to supply your own base URL, model list URL, auth header name or prefix, extra headers, or extra request body fields. If discovery returns no usable model list, enter the model ID manually.
 
 Public OpenAI-compatible endpoints should use HTTPS. Plain HTTP base URLs are accepted for localhost and private network hosts so local gateways can be used without public TLS.
+
+### Built-In Presets
+
+OpenVibely ships presets for these OpenAI-compatible providers:
+
+| Category | Presets |
+|---|---|
+| Hosted gateways and provider routers | OpenRouter, NVIDIA NIM, DeepInfra, Fireworks, Groq, Mistral, Cerebras, Together, Hugging Face Router, DeepSeek, Moonshot, NovitaAI, Venice, Kilo Code, Arcee AI, GMI Cloud, Chutes |
+| Regional and platform providers | Qwen / DashScope, Qwen / DashScope Intl, Alibaba Coding Plan, Z.AI / GLM, Qianfan, StepFun, StepFun Step Plan, Tencent TokenHub, Tencent TokenHub Intl, Xiaomi MiMo |
+| Local and self-hosted runtimes | Local vLLM, LM Studio, SGLang, LiteLLM, Inferrs Local, ds4 Local |
+
+These presets are convenience defaults, not separate provider types. They all save as OpenAI-compatible model configs with preset-specific base URLs and discovery behavior.
 
 ## OAuth Variables
 
