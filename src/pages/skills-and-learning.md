@@ -10,7 +10,7 @@ Open `Skills` from the sidebar. The Skills page lists all skills in scope for th
 
 Each skill card shows the skill name, key, scope, and current state badges. Use the per-card dropdown to create, edit, enable or disable, toggle always-use, or archive a skill. The search bar filters by name or key.
 
-To add a skill manually, click `+ Create Skill`. To import a pre-written skill package, use `Import Skill Package`.
+To add a skill manually, click `+ Create Skill`. To import a pre-written standalone skill package, use `Import Skill Package`.
 
 ## Skill States
 
@@ -54,6 +54,14 @@ Skill Curator is the built-in system agent that owns the lifecycle skills used f
 | `maintain_skill_library` | Maintains reusable standalone skills during scheduled maintenance. |
 
 Skill Curator is what makes the feature autonomous. It can prepare existing reusable knowledge before a task runs, then decide whether the completed work taught OpenVibely something worth keeping for the next run.
+
+## Importing Skill Packages
+
+A standalone skill package can be either a `SKILL.md` file or a folder containing `SKILL.md`. The package body describes the reusable behavior, and optional support files can live under `references/`, `templates/`, `scripts/`, or `assets/`.
+
+When importing, choose whether the skill should be global or project-scoped. Project-scoped imports stay tied to the selected project and can override a global skill with the same key.
+
+Standalone imports must not declare `agent.key`. Agent-owned skills belong to a specific agent and are managed through the agent skill surfaces and lifecycle curation, not the standalone package import flow.
 
 ## Standalone Skills
 

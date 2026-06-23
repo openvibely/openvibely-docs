@@ -26,6 +26,10 @@ OpenVibely is configured primarily with environment variables. `start.sh` loads 
 
 If `AUTH_ENABLED` is unset, auth is inferred enabled when both username and password are present. If auth is enabled, username, password, and session secret are required.
 
+## Model Provider Configuration
+
+Most model setup happens in the Models UI, not environment variables. Use that screen to configure provider auth, default models, OpenAI-compatible base URLs, gateway headers, and model discovery/manual model IDs. Environment variables are mainly for bootstrap secrets and deployment-wide OAuth settings.
+
 ## Integration Variables
 
 - `ANTHROPIC_API_KEY`

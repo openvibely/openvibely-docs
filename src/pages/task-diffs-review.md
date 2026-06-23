@@ -12,7 +12,7 @@ Open a task detail page and select the `Changes` tab. That view is the user-faci
 | File cards | Review each changed file with status, hunks, line numbers, and binary or rename metadata where available. |
 | Inline or split view | Change how textual diffs are displayed when loading a file. |
 | Review comments | Attach feedback to lines and submit the review back to the task. |
-| Worktree actions | Merge locally, resolve conflicts, clean up, or create a pull request when supported. |
+| Worktree actions | Rebase stale task branches, merge locally, resolve conflicts, clean up, or create a pull request when supported. |
 
 ## What The Diff Includes
 
@@ -48,7 +48,8 @@ Use review comments when the task is close but needs specific edits. Use a norma
 4. Add line comments for specific corrections.
 5. Submit the review if the agent should revise the work.
 6. Re-check the updated diff after the follow-up run completes.
-7. Merge locally, clean up the worktree, or create a pull request when the result is ready.
+7. Rebase onto the merge target first if the task branch is stale and the Changes tab offers that action.
+8. Merge locally, clean up the worktree, or create a pull request when the result is ready.
 
 ## Related Pages
 

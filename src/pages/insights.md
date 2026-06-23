@@ -30,7 +30,15 @@ OAuth-connected provider accounts (Anthropic, OpenAI) show a usage snapshot card
 - Average Execution Time by Model so users can compare latency across providers and models.
 - Execution rate, duration trend, agent usage, frequent task, and failure trend charts for task-level health.
 
-Analytics charts are rendered in the browser timezone so time-axis labels match local working hours.
+**Skill Curation**
+
+- Skill activity charts show when skills are selected, loaded, viewed, created, and edited.
+- Top Skills highlights the reusable guidance seeing the most activity.
+- Follow-through compares selected skills with later usage so teams can see whether routing choices are becoming useful task context.
+- Top Agent/Skill Pairs shows which agents and skills are working together most often.
+- Least Active Enabled Skills helps identify enabled skills that may need cleanup, consolidation, or clearer descriptions.
+
+Analytics charts are rendered in the browser timezone so time-axis labels match local working hours. Long-range views can be used to inspect skill learning trends over time, not just short-term task usage.
 
 ## How Insights Fit The Workflow
 

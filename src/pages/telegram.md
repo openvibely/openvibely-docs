@@ -15,6 +15,11 @@ Open `Channels`, choose Telegram, save a bot token, test the bot, and add author
 | Send responses toggle | Decide whether task responses are sent back through Telegram. |
 | Project/task continuity | Telegram-created work still appears in the same OpenVibely task board. |
 | Task Goals | Tasks created or managed through Telegram support Goals the same way web tasks do. Goal state is visible and managed in the web app. |
+| Early follow-ups | Replies sent before the first task run exists are preserved as follow-ups for that task instead of being dropped. |
+
+## Task Follow-Ups
+
+Telegram-created work still belongs to the normal OpenVibely task flow. If a user replies with clarification before the first execution has started, OpenVibely keeps that reply with the task so it can be applied as follow-up context when execution begins.
 
 ## Setup Flow
 

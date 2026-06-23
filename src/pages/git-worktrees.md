@@ -14,6 +14,7 @@ Worktree-backed execution gives each task a place to make changes, track branch/
 | Merge target | Defines where reviewed work should land. |
 | Merge status | Shows whether merging is pending, merged, failed, or conflicted. |
 | Auto-merge | Lets eligible completed work merge automatically when enabled. |
+| Rebase | Updates a task branch onto its merge target when review needs the latest base before merge or PR creation. |
 | Cleanup | Removes isolated task workspace after it is no longer needed. |
 
 ## Review Flow
@@ -22,7 +23,8 @@ Worktree-backed execution gives each task a place to make changes, track branch/
 2. Open the task detail view.
 3. Inspect thread output and changed files.
 4. Read or add review comments when relevant.
-5. Merge, create a pull request, resolve conflicts, abort, or clean up the worktree depending on the result.
+5. If the task branch is stale, rebase it onto the merge target before final review.
+6. Merge, create a pull request, resolve conflicts, abort, or clean up the worktree depending on the result.
 
 ## Merge Safety Boundaries
 
@@ -40,6 +42,12 @@ Worktree-backed execution gives each task a place to make changes, track branch/
 Task follow-ups continue from the task's worktree when available. If the follow-up makes new file changes, OpenVibely can capture updated diff output and reset review state that was previously merged or conflicted. If the follow-up is read-only and makes no changes, merged state should not be disturbed.
 
 This is why follow-ups are useful for review feedback: the task remains one unit of work, but new changes still become visible for review.
+
+## Rebase Before Merge
+
+When the Changes tab offers `Rebase onto <target>`, use it to bring the task branch up to date with the merge target before final review. This is useful when the base branch has moved since the task started and you want to review or merge against current code.
+
+Treat rebase like any other review action: confirm the updated diff still matches the task intent, resolve conflicts if they appear, and only merge or create a pull request after the rebased result looks safe.
 
 ## Auto-Merge Discipline
 

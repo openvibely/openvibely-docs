@@ -19,8 +19,9 @@ Review workflows are how OpenVibely keeps AI-generated work visible and controll
 2. Read the execution output and thread history to understand what the model attempted.
 3. Inspect changed files and diffs from the task detail view.
 4. Add follow-up instructions if the result needs another pass.
-5. Merge locally or create a pull request when the project and GitHub integration support it.
-6. Clean up the worktree after the generated changes are no longer needed.
+5. Rebase the task branch onto the merge target when the Changes tab offers it and the base branch has moved.
+6. Merge locally or create a pull request when the project and GitHub integration support it.
+7. Clean up the worktree after the generated changes are no longer needed.
 
 ## How Review Relates To GitHub
 

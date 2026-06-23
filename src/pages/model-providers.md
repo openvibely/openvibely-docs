@@ -19,6 +19,15 @@ If a task is complex enough that `high` is producing shallow plans or missing ed
 | Anthropic | `anthropic` | OAuth, API key; Anthropic API key can also serve as vision fallback when no vision-capable model is configured |
 | OpenAI | `openai` | OAuth, API key; OAuth includes account/workspace tracking |
 | Ollama | `ollama` | Local provider with configurable base URL and default `http://localhost:11434` |
+| OpenAI-compatible | `openai_compatible` plus preset-specific values | OpenAI-style Chat Completions providers, gateways, and local endpoints with base URL, optional auth header settings, optional extra headers/body, and model discovery when supported |
+
+## OpenAI-Compatible Providers
+
+OpenAI-compatible configs are for providers and gateways that expose an OpenAI-style Chat Completions API. The Models UI includes presets for common hosted providers and inference gateways, plus a custom option for local gateways and self-hosted endpoints.
+
+Use a preset when available so OpenVibely can fill the expected endpoint pattern and attempt model discovery. Use `Custom` when you need to supply your own base URL, model list URL, auth header name or prefix, extra headers, or extra request body fields. If discovery returns no usable model list, enter the model ID manually.
+
+Public OpenAI-compatible endpoints should use HTTPS. Plain HTTP base URLs are accepted for localhost and private network hosts so local gateways can be used without public TLS.
 
 ## OAuth Variables
 

@@ -28,6 +28,8 @@ After that finishes, create a second task for tests and make it depend on the im
 
 Queued messages are useful when you want to preserve ordering. The active answer can finish without interruption, then the queued prompt becomes the next unit of chat work.
 
+A queued input can be cancelled before it is applied. When the active turn can still be redirected, a queued input can also be converted into steering so the instruction targets the current response instead of waiting for the next turn.
+
 ## Steering
 
 Steering is for correcting or redirecting the active response before it finishes. The web UI tracks the active turn and requires the expected turn id so a stale browser tab cannot accidentally steer the wrong response.
