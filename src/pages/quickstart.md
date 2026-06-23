@@ -12,15 +12,18 @@ Open `http://localhost:3001` in your browser.
 
 ## 2. Add A Model In The App
 
-Open `Models` from the sidebar and create a model configuration. OpenVibely supports user-facing configs for Anthropic, OpenAI, and Ollama.
+Open `Models` from the sidebar and create a model configuration. For the fastest path, add Codex `gpt-5.5` with `high` reasoning effort and set it as the default model.
 
-| Provider | Typical Setup |
+| Provider Path | Typical Setup |
 |---|---|
-| Anthropic | OAuth or API key auth. |
-| OpenAI | OAuth or API key auth. |
+| OpenAI | OAuth or API key auth for Codex models. Recommended default: `gpt-5.5` with `high` effort. |
+| Anthropic | OAuth or API key auth for Claude models. Useful as a secondary coding model. |
 | Ollama | Local model server, defaulting to `http://localhost:11434` when no base URL is set. |
+| OpenAI-compatible | Use a built-in preset or custom endpoint for OpenAI-style Chat Completions providers and gateways. Presets include OpenRouter, NVIDIA NIM, DeepInfra, Fireworks, Groq, Mistral, Cerebras, Together, Hugging Face Router, DeepSeek, Qwen / DashScope, Z.AI / GLM, Tencent TokenHub, LiteLLM, vLLM, LM Studio, SGLang, and more. |
 
-Set a default model if you want new tasks to work without choosing a model every time.
+Use the preset list when your provider appears there; OpenVibely can fill the expected endpoint pattern and try model discovery. Use `Custom OpenAI-Compatible` for a gateway or local runtime that needs its own base URL, auth header, extra headers/body, or manual model ID.
+
+Set a default model if you want new tasks to work without choosing a model every time. See [Model Providers](model-providers.html) for the full provider setup guide.
 
 ## 3. Create A Project From The Sidebar
 
