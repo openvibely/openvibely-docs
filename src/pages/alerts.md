@@ -34,10 +34,13 @@ Open `Alerts` from the System section of the sidebar.
 
 Alerts are not a replacement for the task board. Use them as a notification layer: they point you back to a task, execution, or project event that deserves attention. When a task fails, open the task detail page to inspect execution output, thread history, and any generated changes.
 
+A repository-changing task also creates an alert when its isolated worktree cannot be prepared. OpenVibely does not fall back to the main checkout; correct the repository or initial-commit problem before retrying.
+
 ## Related Pages
 
 | Page | Why It Matters |
 |---|---|
+| [Git Worktrees & Merge Safety](git-worktrees.html) | Worktree setup failures are fail-closed and actionable. |
 | [Tasks](tasks.html) | Most alerts point back to task activity. |
 | [Worker Capacity & Dispatch](workers.html) | Capacity and timeouts can affect failures and delays. |
 | [Insights](insights.html) | Longer-term trends appear in insight surfaces. |

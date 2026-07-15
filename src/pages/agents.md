@@ -4,13 +4,15 @@ Agents are reusable AI worker profiles. In the UI, they let users capture how a 
 
 ## What Users Do In Agents
 
-Open `Agents` from the System section of the sidebar. Create an agent manually, generate one from a prompt, edit an existing profile, attach skills or plugins, and choose whether tasks should use that agent explicitly or let routing select one.
+Open `Agents` from the System section of the sidebar. Create an agent manually, generate one from a prompt, edit an existing profile, attach skills or plugins, and choose whether tasks should use that agent explicitly or let routing select one. Enabled state and advanced settings persist with the agent definition.
+
+Project-scoped agents can be deleted from the UI, which removes their on-disk agent directory and index entry. Protected system agents cannot be deleted or edited as normal user agents.
 
 | Agent Area | Product Meaning |
 |---|---|
 | Identity | Name, description, key, scope, and project association help users find the right profile. |
 | Instructions | System prompt and model defaults shape how the agent works. |
-| Tools | File, shell, web, notebook, scoped-file, and management tools define what the agent can do. |
+| Tools | File, shell, web, notebook, scoped-file, task/swarm management, scheduling, messaging, and integration tools define what the agent can do when the current surface and provider support them. |
 | Skills | Reusable instructions and slash-command style capabilities. |
 | Plugins and MCP | Marketplace-backed integrations and runtime tool servers. |
 | Routing | Describes when the agent is good, when to avoid it, and how confident routing should be. |
@@ -78,6 +80,8 @@ Use agent-owned skills when the knowledge should stay with that agent. Use stand
 
 | Page | Why It Matters |
 |---|---|
+| [Runtime Capabilities](runtime-capabilities.html) | Mode, provider, integration, and agent policy jointly control available actions. |
+| [Outbound Messaging](outbound-messaging.html) | Agents may send through project-scoped targets when policy allows. |
 | [Tasks](tasks.html) | Tasks can run with a selected agent. |
 | [Task Goals](task-goals.html) | System: Goal Agent drives persistent task objectives through the after_complete hook. |
 | [Memory](memory.html) | Explains the protected Memory Curator and managed project memory. |

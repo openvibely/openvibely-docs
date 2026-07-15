@@ -40,8 +40,10 @@ This is a concise reference. See [Configuration](configuration.html) for explana
 | Channel | Variables |
 |---|---|
 | Telegram | `TELEGRAM_BOT_TOKEN` |
+| Discord | `DISCORD_BOT_TOKEN` |
 | GitHub | `GITHUB_APP_ID`, `GITHUB_APP_SLUG`, `GITHUB_APP_PRIVATE_KEY` |
 | Slack | `SLACK_CLIENT_ID`, `SLACK_CLIENT_SECRET`, `SLACK_APP_TOKEN`, `SLACK_BOT_TOKEN` |
+| Email | Configure provider presets or custom IMAP/SMTP settings in the Channels UI. |
 
 ## Git SSL
 

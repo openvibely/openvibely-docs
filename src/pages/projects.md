@@ -33,7 +33,7 @@ Local path access is explicit because it lets the server read local filesystem p
 | Memory | Repository-local managed memory is stored under `.openvibely/memories` when memory is enabled. |
 | Skills | Project-scoped skills and agent-owned skills can override global behavior for this repository. |
 | Workers | Project worker limits prevent one workspace from consuming all execution capacity. |
-| Channels | Slack, Telegram, GitHub, and webhooks can be connected to project work. |
+| Channels | Channel-origin Chat maintains active project context. Outbound Message Targets and explicit-unsaved-target policy belong to the selected project, while inbound channel allowlists remain system-level. |
 | Insights | Grades, Pulse, Reflection, and Analytics summarize project activity. |
 
 ## First Project Checklist

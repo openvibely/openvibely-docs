@@ -4,13 +4,11 @@ Model providers are configured through the Models UI and stored as `LLMConfig` r
 
 ## Recommended Setup
 
-**Start with Codex `gpt-5.5` at `high` reasoning effort.** This is the default model and the setup OpenVibely is tuned against. It handles the full range of tasks — code generation, multi-file edits, test writing, debugging — and the `high` effort level gives it enough reasoning depth to produce solid results without the latency cost of `xhigh`. For most teams this is the only model config they need.
+Start with one provider and model that fits your team's quality, latency, and cost requirements, then add specialized configs only when needed. OpenVibely's Codex fallback model is `gpt-5.6-sol`; when no reasoning effort is configured for GPT-5.6 variants, the runtime default is `medium`.
 
-If a task is complex enough that `high` is producing shallow plans or missing edge cases, switch that model config to `xhigh`. Reserve `xhigh` for the tasks where deeper reasoning is worth the extra time.
+Use higher reasoning effort for difficult implementation or review work when the additional latency is justified. Avoid assuming that a model name alone determines capability: runtime tools also depend on provider support, Chat mode, agent permissions, and configured integrations.
 
-**Secondary: Claude Opus** for teams that prefer Anthropic. Opus at `medium` effort performs comparably for most coding tasks at a lower latency and cost than higher effort levels.
-
-**Avoid low effort for task execution.** `low` is fast but the model skips reasoning steps that matter for correctness. It is fine for lightweight utility tasks but not recommended as a default.
+Claude Opus and Sonnet configs are alternatives for teams using Anthropic. Local Ollama and OpenAI-compatible configs are useful when data location, custom gateways, or local capacity matter.
 
 ## Provider Matrix
 
@@ -20,6 +18,7 @@ If a task is complex enough that `high` is producing shallow plans or missing ed
 | OpenAI | `openai` | OAuth, API key; OAuth includes account/workspace tracking |
 | Ollama | `ollama` | Local provider with configurable base URL and default `http://localhost:11434` |
 | OpenAI-compatible | `openai_compatible` plus preset-specific values | OpenAI-style Chat Completions providers, gateways, and local endpoints with base URL, optional auth header settings, optional extra headers/body, and model discovery when supported |
+| Mixture of Models | `mixture` | Virtual config composed from existing non-mixture reference and aggregator model configs; no separate provider credential |
 
 ## OpenAI-Compatible Providers
 
@@ -53,25 +52,29 @@ When a model supports reasoning modes, the model config UI shows an **Effort** d
 
 | Model | Effort levels |
 |---|---|
+| `gpt-5.6-sol` | low · medium · high · xhigh · **max** |
+| `gpt-5.6-terra` | low · medium · high · xhigh · **max** |
+| `gpt-5.6-luna` | low · medium · high · xhigh · **max** |
 | `gpt-5.5` | low · medium · high · **xhigh** |
 | `gpt-5.5-pro` | low · medium · high · **xhigh** |
 | `gpt-5.4` | low · medium · high · **xhigh** |
 | `gpt-5.3-codex` | low · medium · high · **xhigh** |
 | `gpt-5.2-codex` | low · medium · high · **xhigh** |
 | `gpt-5.1-codex-max` | low · medium · high · **xhigh** |
-| `gpt-5.4-mini` | low · medium · high |
-| `gpt-5.3-codex-spark` | low · medium · high |
+| `gpt-5.4-mini` | low · medium · high · **xhigh** |
+| `gpt-5.3-codex-spark` | low · medium · high · **xhigh** |
 | `gpt-5.1-codex` | low · medium · high |
 | `gpt-5.1-codex-mini` | low · medium · high |
 | `gpt-5-codex` | low · medium · high |
 | `gpt-5-codex-mini` | low · medium · high |
 
-The default effort level is `high`. The environment variable `OPENVIBELY_CODEX_REASONING_EFFORT` sets a fallback effort when the model config does not specify one.
+The default effort is model-dependent. GPT-5.6, GPT-5.5, and GPT-5.4 variants default to `medium`; older variants generally default to `high`. The environment variable `OPENVIBELY_CODEX_REASONING_EFFORT` sets a fallback effort when the model config does not specify one.
 
 **Anthropic (Claude) models**
 
 | Model | Effort levels |
 |---|---|
+| Claude Sonnet 5 | low · medium · high · **max** |
 | Claude Opus 4.8 | low · medium · high · **max** |
 | Claude Opus 4.7 | low · medium · high · **max** |
 | Claude Opus 4.6 | low · medium · high · **max** |

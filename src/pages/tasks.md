@@ -32,9 +32,19 @@ Click `+ Add Task` and fill out the modal.
 
 The UI keeps the modal open and shows an inline error if the title conflicts with an existing task in the project.
 
+## Swarm Tasks
+
+Enable `Swarm mode` when one goal should be delegated across multiple task roles. A planner creates independent worker scopes, an optional reviewer checks the combined result, and an optional merger integrates approved work. Each child is a real task with its own thread, model assignment, worktree, diff, retry, and follow-up history.
+
+Set the maximum planned worker count and default isolation in the task dialog, then create the parent in Active or Backlog. Active starts planning; Backlog defers the planner until you run the task or move it to Active. The board groups child status under the parent while still linking to every child task.
+
+`Max workers` limits planned slices, not actual concurrency. Global, project, and per-model limits on the Workers page still determine how many children execute at once. See [Swarm Orchestration](swarm-orchestration.html) for roles, isolation, reruns, review, and merge behavior.
+
 ## Running And Monitoring
 
 Tasks move through statuses such as pending, queued, running, completed, failed, cancelled, and blocked. The page listens for live task events so board state can refresh while work is happening.
+
+While a thread response is active, the send control becomes `Stop response`. This stops the active model run and records cancellation in the thread. It is different from cancelling a queued follow-up before it starts or cancelling the entire task from the board/detail controls.
 
 Around normal execution, lifecycle hooks can recall memory, prepare useful skills, and learn from completed work. Follow-up messages continue from the existing task thread and respect worker capacity, so they may queue when project or model execution slots are full.
 
@@ -62,6 +72,8 @@ Open a task detail page and select `Changes` to inspect generated code. Worktree
 
 | Page | Why It Matters |
 |---|---|
+| [Swarm Orchestration](swarm-orchestration.html) | Coordinates planner, worker, reviewer, and merger child tasks. |
+| [Runtime Capabilities](runtime-capabilities.html) | Explains which task management actions a run may receive. |
 | [Task Goals](task-goals.html) | Persistent objectives that drive autonomous continuation across turns. |
 | [Task Lifecycle](task-lifecycle.html) | Explains statuses, hooks, and terminal states. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Explains how one task continues through follow-up turns. |

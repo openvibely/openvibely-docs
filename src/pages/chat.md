@@ -12,12 +12,13 @@ Chat embeds clickable task links inline as it creates work, so you can jump to a
 
 **What Chat can orchestrate from a single conversation:**
 
-- Create one task or many tasks from a single natural-language request
+- Create one task, many independent tasks, or one coordinated swarm from a natural-language request
 - Set a persistent goal on a task so the Goal Agent drives it to completion automatically
 - Execute tasks and report their status back into the conversation
 - Send follow-up instructions into individual task threads
 - Inspect task state, changes, agent output, and lifecycle events
 - Schedule work, manage alerts, and coordinate across the whole project
+- Send proactive messages through saved Slack, Telegram, Discord, or Email outbound targets
 - Accept steering or queue new prompts while a response is already in progress
 
 That is the core OpenVibely flow: stay on the Chat page while the orchestrator handles the parallel work. The Tasks page is the board and review surface, but Chat is where the work begins and where coordination stays.
@@ -61,7 +62,7 @@ The chat input includes a mode selector with two options. OpenVibely defaults to
 | `Orchestrate` | You want Chat to help create, inspect, or coordinate real project work. | Enables action-oriented chat tools such as creating and managing tasks, reading project state, and coordinating workflow actions. |
 | `Plan` | You want to think through an approach before anything is created or changed. | Keeps the conversation planning-oriented and limits action tools so the assistant can analyze, propose steps, and refine the plan first. |
 
-A good default workflow is to start in `Plan` for vague or risky work, then switch to `Orchestrate` when the next task is clear. When a `Plan` turn finishes, Chat surfaces a prompt to continue in `Orchestrate` mode so you can move from analysis to action without manually switching modes.
+A good default workflow is to start in `Plan` for vague or risky work, then switch to `Orchestrate` when the next task is clear. Plan mode does not execute mutation markers or action text; Orchestrate-capable providers use runtime tool calls for real actions. When a `Plan` turn finishes, Chat surfaces a prompt to continue in `Orchestrate` mode so you can move from analysis to action without manually switching modes.
 
 ## Parallel Task Example
 
@@ -79,6 +80,20 @@ In `Orchestrate` mode, Chat creates multiple task cards and can execute them imm
 - Chat history keeps the original goal, plan, and follow-up decisions together in one place.
 - Task links produced by Chat open the relevant task detail without leaving the project workflow.
 - Running chat turns can accept steering or queue follow-up prompts instead of forcing a new session.
+
+## Outbound Messages
+
+In `Orchestrate` mode, Chat can send messages through configured Slack, Telegram, Discord, and Email channels. Save allowed destinations under `Channels` -> `Outbound Message Targets`, optionally mark one Home target per platform, and ask Chat to send to the saved name or destination. Inbound Authorized Users and outbound targets are separate controls: one determines who may instruct OpenVibely, while the other determines where agents may proactively send.
+
+By default, sends are limited to saved or Home targets. Operators can separately allow explicit unsaved destinations when that broader policy is required. See [Outbound Messaging](outbound-messaging.html) for target formats, project scope, and safety controls.
+
+## Stop An Active Response
+
+While Chat is generating, the send control becomes `Stop response`. Use it to cancel the active model run; the conversation records that cancellation instead of presenting the turn as a normal completion. This does not remove prompts already queued for later. Cancel a queued row separately if it should not run.
+
+## Streaming And Reconnects
+
+Chat reconnects live streams from the last received output offset and catches up from durable output before showing terminal completion. Composer attachments are preserved across the reconnect. If a browser or gateway connection drops briefly, wait for catch-up before resending the prompt to avoid duplicate work.
 
 ## Queueing And Steering
 
@@ -103,6 +118,9 @@ Use Tasks instead when you already know the exact unit of work and want board st
 
 | Page | Why It Matters |
 |---|---|
+| [Swarm Orchestration](swarm-orchestration.html) | Chat can create a coordinated parent with planner, worker, reviewer, and merger roles. |
+| [Runtime Capabilities](runtime-capabilities.html) | Shows which actions Orchestrate, tasks, and providers can receive. |
+| [Outbound Messaging](outbound-messaging.html) | Configures safe project-scoped destinations for proactive sends. |
 | [Task Goals](task-goals.html) | Chat can set, pause, resume, and clear goals on tasks from Orchestrate mode. |
 | [Prompt Queue & Steering](prompt-queue-steering.html) | Explains what happens when prompts arrive during an active chat turn. |
 | [Tasks](tasks.html) | Chat can lead into executable task work. |

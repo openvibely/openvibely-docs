@@ -56,6 +56,12 @@ Global and project limits stack as a dual-layer cap:
 
 A non-zero Queue with `At capacity` status means tasks are waiting. They'll be dispatched as soon as a slot frees.
 
+## Swarms And Capacity
+
+A swarm's `Max workers` setting limits how many worker slices its planner may create. It does not create or reserve execution slots. Swarm child tasks enter the same dispatcher as other tasks and must fit within global, project, and per-model limits.
+
+For example, a swarm may plan six workers while the project limit is two. All six remain visible, but at most two from that project can execute concurrently, subject to the global and selected-model limits.
+
 ## What Stays Outside Worker Limits
 
 | Work type | Behavior |
@@ -82,6 +88,7 @@ The Chat bypass is intentional. You can keep planning, creating tasks, and check
 
 | Page | Why It Matters |
 |---|---|
+| [Swarm Orchestration](swarm-orchestration.html) | Planned worker count is separate from actual execution concurrency. |
 | [Tasks](tasks.html) | Tasks are the work that workers execute |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Follow-ups queue when task capacity is full |
 | [Chat](chat.html) | Chat bypasses task limits and stays responsive while workers are busy |

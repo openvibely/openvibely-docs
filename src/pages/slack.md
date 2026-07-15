@@ -11,7 +11,9 @@ Open `Channels`, choose Slack, then configure the connection using OAuth or manu
 | Capability | User Impact |
 |---|---|
 | Team chat entry point | People can request project work without opening the web app first. |
-| Authorized users | Only approved Slack users can interact with OpenVibely. |
+| Authorized users | Only approved Slack users can interact with OpenVibely. The allowlist is system-level across projects and deny-by-default. |
+| File and image ingestion | App mentions and explicitly mentioned channel file-share events can attach authenticated Slack files; supported images can reach a vision-capable model. |
+| Outbound targets | Project-scoped channel, thread, and user-DM targets allow proactive agent sends. |
 | Connection test | Operators can confirm the bot is reachable before inviting broad use. |
 | Project-aware work | Slack-created work still lands in OpenVibely projects and task review flows. |
 | Task Goals | Tasks created or managed through Slack support Goals the same way web tasks do. Goal state is visible and managed in the web app. |
@@ -38,6 +40,8 @@ Operators may provide `SLACK_CLIENT_ID`, `SLACK_CLIENT_SECRET`, `SLACK_APP_TOKEN
 
 | Page | Why It Matters |
 |---|---|
+| [Outbound Messaging](outbound-messaging.html) | Configure project-scoped channels, threads, and user DMs. |
+| [Attachments As Context](attachments.html) | Slack files and images can become Chat context. |
 | [Channels Overview](channels.html) | Shared rollout guidance for external channels. |
 | [Projects](projects.html) | Slack work should be tied to a project. |
 | [Tasks](tasks.html) | Slack-created work is reviewed as normal task work. |

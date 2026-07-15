@@ -35,6 +35,6 @@ Model -> Project -> Chat or Task -> Run -> Review diff -> Merge or open PR
 |---|---|
 | Agents | You repeat the same prompting, tools, permissions, or style across tasks. |
 | Schedule | Work should run later or repeat. |
-| Channels | A team should create or monitor work from Slack, Telegram, GitHub, or webhooks. |
+| Channels | A team should create, monitor, or report work through Slack, Telegram, Discord, Email, GitHub, outbound targets, or webhooks. |
 | Memory | Future tasks should automatically receive relevant project knowledge, and completed work should be turned into durable memory when it contains reusable context. |
 | Automation | You want scheduled runs, task chains, or structured multi-agent workflows. |

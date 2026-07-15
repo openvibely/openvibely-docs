@@ -14,7 +14,7 @@ Choose the path that matches what you want to accomplish in the OpenVibely web a
 
 - Read [Deployment Modes](deployment.html), [Authentication](authentication.html), and [Configuration](configuration.html).
 - Set storage, repository root, base URL, and auth variables deliberately.
-- Configure GitHub, Slack, Telegram, or webhooks as needed.
+- Configure GitHub, Slack, Telegram, Discord, Email, outbound targets, or webhooks as needed.
 - Tune worker capacity by global, project, and model limits.
 - Use Alerts and Insights to monitor the instance after work starts running.
 

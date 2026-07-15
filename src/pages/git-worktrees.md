@@ -37,6 +37,12 @@ Worktree-backed execution gives each task a place to make changes, track branch/
 | Descendant checks | Protects parent branches while chained child tasks are still non-terminal. |
 | Follow-up merge reset | If a merged or conflicted task receives new follow-up changes, review can become pending again. |
 
+## Worktree Setup Failures
+
+Repository-changing tasks fail closed when an isolated worktree cannot be created. OpenVibely does not fall back to editing the project's main checkout. The task fails and creates an alert so the repository problem can be corrected before retrying.
+
+A repository must have an initial commit before Git can create a task worktree. If setup fails, open the task error and Alert, verify repository metadata and the merge target, create the initial commit when the repository is empty, then rerun the task.
+
 ## Follow-Ups And Worktrees
 
 Task follow-ups continue from the task's worktree when available. If the follow-up makes new file changes, OpenVibely can capture updated diff output and reset review state that was previously merged or conflicted. If the follow-up is read-only and makes no changes, merged state should not be disturbed.
@@ -67,6 +73,8 @@ Good auto-merge candidates are low-risk, repetitive, well-tested tasks. Risky mi
 
 | Page | Why It Matters |
 |---|---|
+| [Swarm Orchestration](swarm-orchestration.html) | Worktree is the default isolation for code-writing swarm workers. |
+| [Alerts](alerts.html) | Worktree setup failure creates an actionable project alert. |
 | [Task Diffs & Review](task-diffs-review.html) | Explains the Changes tab and review comments. |
 | [Review Workflows](review-workflows.html) | Explains review, merge, and PR decisions. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Follow-up changes can reopen review. |

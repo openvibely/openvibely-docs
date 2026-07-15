@@ -55,7 +55,7 @@ Keep webhook URLs and secrets private. Rotate secrets if they are exposed, and d
 - It does not create multiple tasks from one webhook call.
 - It does not give the sender arbitrary project access beyond the configured webhook behavior.
 - It does not skip task review, diffs, or merge safety.
-- It does not replace Slack or Telegram for interactive conversations.
+- It does not replace Slack, Telegram, Discord, or Email for interactive conversations.
 - It does not require users to manually assign agents to external channels.
 
 ## Related Pages

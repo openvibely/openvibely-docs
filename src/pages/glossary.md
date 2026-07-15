@@ -4,7 +4,7 @@
 |---|---|
 | Agent | Reusable execution profile with prompts, tools, skills, permissions, and optional lifecycle behavior |
 | Alert | Project-scoped notification such as task failure or follow-up needed |
-| Channel | External integration such as GitHub, Slack, Telegram, or webhooks |
+| Channel | External integration such as GitHub, Slack, Telegram, Discord, Email, or webhooks |
 | Chat | Project-scoped conversational orchestration UI |
 | Memory | Project-local durable knowledge managed under `.openvibely/memories` in the selected repo |
 | Model Config | Provider and authentication configuration used to run AI work |

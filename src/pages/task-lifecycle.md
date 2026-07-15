@@ -6,6 +6,8 @@ A task moves from an idea into queued work, active execution, review, learning, 
 
 Typical task execution moves from `pending` to `queued` to `running`, then to a terminal status: `completed`, `failed`, or `cancelled`. Chained child tasks may begin as `blocked` until their parent condition is met.
 
+`Stop response` cancels the currently active model turn and records cancellation in the thread. Cancelling a queued follow-up removes that pending input, while cancelling the task targets the broader task execution. Choose the control that matches the intended scope.
+
 ## Lifecycle Hooks
 
 Lifecycle hooks are system steps that run around normal task execution. They let OpenVibely recall relevant project memory, select useful skills, prepare context, create or update memory from completed work, and learn from finished work while preserving the user’s normal task flow.

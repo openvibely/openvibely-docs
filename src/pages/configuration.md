@@ -34,6 +34,7 @@ Most model setup happens in the Models UI, not environment variables. Use that s
 
 - `ANTHROPIC_API_KEY`
 - `TELEGRAM_BOT_TOKEN`
+- `DISCORD_BOT_TOKEN`
 - `GITHUB_APP_ID`
 - `GITHUB_APP_SLUG`
 - `GITHUB_APP_PRIVATE_KEY`
@@ -41,6 +42,8 @@ Most model setup happens in the Models UI, not environment variables. Use that s
 - `SLACK_CLIENT_SECRET`
 - `SLACK_APP_TOKEN`
 - `SLACK_BOT_TOKEN`
+
+Email IMAP/SMTP settings, channel Authorized Users/Senders, Outbound Message Targets, and the explicit-unsaved-target policy are configured in the Channels UI. Inbound allowlists are system-level; outbound targets and policy are stored per project.
 
 ## Deployment Variables
 

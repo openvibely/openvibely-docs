@@ -28,11 +28,12 @@ Workflow configuration can include max retries, quality threshold, cost budget, 
 
 ## When To Use Workflows
 
-Use workflows when the work has a known structure and needs coordination. Use task chaining when one task should simply trigger a known next task.
+Use workflows when the work has a known structure and needs coordination. Use task chaining when one task should simply trigger a known next task. Use Swarm mode when one goal should be planned dynamically into parallel worker-owned slices followed by optional review and merge roles.
 
 ## Related Pages
 
 | Page | Why It Matters |
 |---|---|
+| [Swarm Orchestration](swarm-orchestration.html) | A planner dynamically creates parallel worker, reviewer, and merger roles. |
 | [Agents](agents.html) | Workflows coordinate agents. |
 | [Task Chaining & Branch Lineage](task-chaining.html) | Chaining is simpler parent-child automation. |

@@ -50,7 +50,7 @@ OpenVibely is organized around a selected project. The sidebar project selector 
 | Skill curation | OpenVibely learns from completed work and autonomously improves reusable standalone or agent-owned skills. |
 | Reviewable changes | Use Git worktrees and GitHub integration so AI output becomes visible diffs and pull requests rather than hidden edits. |
 | Automation | Schedule recurring work, chain dependent tasks, and run structured multi-agent workflows. |
-| External channels | Create and monitor work through Slack, Telegram, GitHub, and inbound webhooks. |
+| External channels | Create, monitor, and report work through Slack, Telegram, Discord, Email, GitHub, outbound targets, and inbound webhooks. |
 
 ## How The Docs Are Organized
 
@@ -62,7 +62,7 @@ The docs start with a high-level user guide, then go deeper into the subfeatures
 | Workspace | Daily project screens: Dashboard, Projects, Chat, Orchestrate from Chat, Tasks, Schedule, and Alerts. |
 | Agents | Reusable worker profiles, Memory, Skill Curation, Personalities, and Multi-Agent Workflows. |
 | Capabilities | Task lifecycle, prompt queue and steering, task diffs, review workflows, worktrees, attachments, scheduled tasks, task chaining, and insights. |
-| Channels | Slack, Telegram, GitHub, and webhooks as alternate front doors into project work. |
+| Channels | Slack, Telegram, Discord, Email, GitHub, outbound messaging, and webhooks as alternate front doors and reporting paths for project work. |
 | Models | Model configs, provider setup, defaults, and worker capacity. |
 | Platforms | Deployment, authentication, configuration, and environment setup. |
 | Gateway & Ops | API reference, routes, troubleshooting, glossary, and machine-readable docs. |

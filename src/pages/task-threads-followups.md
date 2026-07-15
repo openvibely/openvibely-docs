@@ -19,7 +19,7 @@ Use follow-ups when the task is still the right unit of work but needs clarifica
 
 A follow-up is useful after a task has produced enough context to continue from. Common triggers include asking the agent to address review comments, refine an implementation, explain a failure, add tests, resolve a small issue discovered during review, or continue a task that explicitly asked for more direction.
 
-Channel-created tasks can also receive follow-up context early. If a Slack or Telegram reply arrives before the first execution exists, OpenVibely keeps it with the task so the instruction is available when the task starts.
+Channel-created tasks can also receive follow-up context early. If a Slack, Telegram, Discord, or Email reply arrives before the first execution exists, OpenVibely keeps it with the task so the instruction is available when the task starts.
 
 Follow-ups are different from Chat orchestration. Chat is the central place to coordinate many tasks. A task follow-up is scoped to one existing task thread.
 
@@ -28,6 +28,8 @@ Follow-ups are different from Chat orchestration. Chat is the central place to c
 Task follow-ups are execution work, so they respect worker capacity. If project or model capacity is full, OpenVibely accepts the follow-up and queues it instead of dropping the message.
 
 Interactive project Chat intentionally stays responsive even when task workers are full. That is why Chat can keep orchestrating while task follow-ups wait for available execution slots.
+
+Task-thread streams reconnect from their last received output offset and replay durable output before finalizing a turn. A brief browser or gateway disconnect should not require resending the follow-up; wait for catch-up first.
 
 ## Context Rules
 
@@ -54,6 +56,10 @@ Interactive project Chat intentionally stays responsive even when task workers a
 When a follow-up is queued and the task thread shows a pending input row, a **Steer** button appears on that row. Steering from a task thread works the same way as Chat steering: it redirects the active turn rather than queuing behind it.
 
 Use task-thread steering when you have already sent a follow-up but want to correct or narrow it before the worker picks it up. You can also cancel a queued follow-up before it is applied. If the turn has already started, the steer may be rejected and you should send a new follow-up instead.
+
+## Stop An Active Follow-Up
+
+While a follow-up response is running, the send control becomes `Stop response`. Stopping cancels the active model run and records a cancellation state in the thread. It does not cancel other queued follow-ups or the entire task; use the queued-row cancel action or task cancel control for those separate intents.
 
 ## What It Does Not Do
 

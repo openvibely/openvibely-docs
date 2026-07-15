@@ -48,6 +48,8 @@ const nav = [
     description: 'Feature deep dives and review workflows',
     items: [
       ['Task Lifecycle', 'task-lifecycle.md', 'From prompt to queued, running, completed, or failed'],
+      ['Swarm Orchestration', 'swarm-orchestration.md', 'Coordinate planner, worker, reviewer, and merger task roles'],
+      ['Runtime Capabilities', 'runtime-capabilities.md', 'Mode, provider, agent, and integration action boundaries'],
       ['Lifecycle Hooks', 'lifecycle-hooks.md', 'Supporting hooks for memory, skills, routing, and learning'],
       ['Task Threads & Follow-Ups', 'task-threads-followups.md', 'Continue one task through queued follow-ups and preserved context'],
       ['Task Goals', 'task-goals.md', 'Persistent objectives with autonomous continuation and evaluation'],
@@ -66,9 +68,13 @@ const nav = [
     description: 'Use OpenVibely from team tools',
     items: [
       ['Channels Overview', 'channels.md', 'How external channels connect to projects'],
+      ['Outbound Messaging', 'outbound-messaging.md', 'Project-scoped destinations and proactive agent sends'],
       ['GitHub', 'github.md', 'Repository access and pull request workflows'],
+      ['GitHub Autonomous SDLC', 'github-autonomous-sdlc.md', 'Visible scheduled issue-to-PR automation'],
       ['Slack', 'slack.md', 'Team chat integration'],
       ['Telegram', 'telegram.md', 'Mobile bot control'],
+      ['Discord', 'discord.md', 'Bot DMs, mentioned server messages, threads, and attachments'],
+      ['Email', 'email.md', 'Authorized inbox intake and threaded SMTP replies'],
       ['Webhook Triggers', 'webhooks.md', 'Create one project task from trusted external systems'],
     ],
   },
@@ -77,6 +83,7 @@ const nav = [
     description: 'Provider access and execution capacity',
     items: [
       ['Models Overview', 'models.md', 'Provider access and model defaults'],
+      ['Mixture of Models', 'mixture-of-models.md', 'Reference-model advice with an acting aggregator'],
       ['Model Selection & Tool Policy', 'model-selection-tool-policy.md', 'Mode-gated tools, provider behavior, and model choice'],
       ['Model Providers', 'model-providers.md', 'Provider-specific setup details'],
       ['Worker Capacity & Dispatch', 'workers.md', 'Capacity controls for active execution'],

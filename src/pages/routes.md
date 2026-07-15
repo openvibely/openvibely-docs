@@ -13,7 +13,7 @@ This reference summarizes the major route groups registered by OpenVibely. Use r
 | Agents | `/agents`, `/agents/generate`, plugin state/marketplaces/install, lifecycle hooks, skills JSON, agent-owned skill routes |
 | Models | `/models`, `/models/ollama/available`, model OAuth routes |
 | Workers | `/workers`, worker stats routes |
-| Channels | `/channels`, GitHub, Slack, Telegram, webhooks |
+| Channels | `/channels`, GitHub, Slack, Telegram, Discord, Email, outbound message targets, webhooks |
 | Personality | `/personality`, custom personality routes |
 | Worktrees | `/tasks/:taskId/worktree`, merge, PR, resolve, abort, cleanup, settings |
 | Chat | `/chat`, `/chat/send`, chat attachments, clear history |

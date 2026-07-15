@@ -12,7 +12,7 @@ Open `Schedule` from the Workspace section of the sidebar.
 | Choose recurrence | Runs the task once or repeats it at an interval. |
 | Enable or disable | Controls whether future runs should happen. |
 | Reschedule | Changes when the task should run next. |
-| Delete schedule | Removes the future automation without deleting the underlying task. |
+| Delete schedule | Removes the future automation without deleting the underlying task. Deleting a scheduled task from task detail returns to Schedule. |
 
 ## Repeat Types
 
@@ -36,6 +36,7 @@ Use the task board for immediate work. Use Schedule when the timing matters.
 
 | Page | Why It Matters |
 |---|---|
+| [GitHub Autonomous SDLC](github-autonomous-sdlc.html) | Uses visible schedules for recurring issue intake and feedback forwarding. |
 | [Tasks](tasks.html) | Scheduled work runs existing task definitions. |
 | [Scheduled Task Runs](scheduled-tasks.html) | Deeper automation guidance for recurring work. |
 | [Alerts](alerts.html) | Failed scheduled runs can create alerts. |

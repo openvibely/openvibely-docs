@@ -11,7 +11,9 @@ Open `Channels`, choose Telegram, save a bot token, test the bot, and add author
 | Capability | User Impact |
 |---|---|
 | Mobile control | Create or follow work from a Telegram chat. |
-| Authorized users | Restrict bot access to known users. |
+| Authorized users | Restrict bot access to known numeric user IDs. Authorization is system-level across projects and deny-by-default. |
+| Rich responses | Stream and deliver formatted Markdown while avoiding duplicate final messages, with MarkdownV2/plain-text fallback when needed. |
+| Outbound targets | Save project-scoped chats, topics, or direct recipients for proactive agent messages. |
 | Send responses toggle | Decide whether task responses are sent back through Telegram. |
 | Project/task continuity | Telegram-created work still appears in the same OpenVibely task board. |
 | Task Goals | Tasks created or managed through Telegram support Goals the same way web tasks do. Goal state is visible and managed in the web app. |
@@ -32,12 +34,13 @@ Telegram-created work still belongs to the normal OpenVibely task flow. If a use
 
 ## Configuration Notes
 
-Operators can bootstrap Telegram with `TELEGRAM_BOT_TOKEN`. The channel settings remain the user-facing place to test, authorize, and remove Telegram access.
+Operators can bootstrap Telegram with `TELEGRAM_BOT_TOKEN`. The channel settings remain the user-facing place to test, authorize, and remove Telegram access. Add at least one authorized numeric user ID before testing inbound commands; an empty list is not public access.
 
 ## Related Pages
 
 | Page | Why It Matters |
 |---|---|
+| [Outbound Messaging](outbound-messaging.html) | Configure project-scoped chats, topics, Home targets, and direct recipients. |
 | [Channels Overview](channels.html) | Shared rollout guidance for external channels. |
 | [Tasks](tasks.html) | Telegram-created work becomes normal task work. |
 | [Alerts](alerts.html) | Task failures and follow-up needs should still be watched in the app. |

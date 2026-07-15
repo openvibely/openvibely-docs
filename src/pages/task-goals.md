@@ -55,6 +55,8 @@ Task Goals are most useful for tasks that require iterative work toward a well-d
 
 Avoid using goals for vague or open-ended objectives that do not have a clear completion signal, because the Goal Agent can only mark achieved when current transcript evidence proves every requirement is met.
 
+Do not use a persisted goal as the recurrence engine for scheduled inbox, finder, or maintenance loops. Let the schedule repeat the loop task, and put a goal on a distinct implementation task only when that work needs autonomous continuation.
+
 ## Setting Goals From Chat
 
 In `Orchestrate` mode, Chat has the full set of goal tools available alongside its task-creation tools. This means you can describe a piece of work once and Chat will both create the task and set the goal on it in the same turn — the Goal Agent then drives that task autonomously from that point on without you sending follow-ups.
@@ -80,7 +82,7 @@ You can also manage goals on already-existing tasks from Chat — just reference
 
 ## Channels
 
-Tasks created or managed through Slack and Telegram support Goals the same way web-created tasks do. The goal panel and edit controls are reflected in the web app regardless of which channel originated the task.
+Tasks created or managed through Slack, Telegram, Discord, and Email support Goals the same way web-created tasks do. The goal panel and edit controls are reflected in the web app regardless of which channel originated the task.
 
 ## System: Goal Agent
 
@@ -90,6 +92,7 @@ Tasks created or managed through Slack and Telegram support Goals the same way w
 
 | Page | Why It Matters |
 |---|---|
+| [GitHub Autonomous SDLC](github-autonomous-sdlc.html) | Goals belong on implementation tasks, not recurring Dev Inbox/finder schedules. |
 | [Chat](chat.html) | Orchestrate mode can create tasks and set goals on them in a single turn. |
 | [Tasks](tasks.html) | Task detail screen where the Goal panel and edit controls live. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Goal continuations are queued as normal task-thread follow-ups. |

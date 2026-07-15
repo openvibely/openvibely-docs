@@ -41,6 +41,7 @@ Plan mode is safest when the user wants an approach, comparison, or review befor
 | OpenAI | Supports OpenAI auth paths, OAuth account/workspace details, and provider-managed web/search-style tools where configured. |
 | Ollama | Runs against a local or configured Ollama base URL and is useful when local model control matters. |
 | OpenAI-compatible | Runs OpenAI-style Chat Completions providers, gateways, and local runtimes through built-in presets or a custom endpoint. Presets include hosted routers such as OpenRouter, NVIDIA NIM, DeepInfra, Fireworks, Groq, Mistral, Cerebras, Together, Hugging Face Router, DeepSeek, Moonshot, and regional/local options such as DashScope/Qwen, Z.AI/GLM, StepFun, Tencent TokenHub, vLLM, LM Studio, SGLang, and LiteLLM. |
+| Mixture of Models | Runs private, tool-free reference calls first, then lets the configured aggregator act with only the tools supported by its provider and policy. |
 
 Provider features differ. Tool availability should be read from the selected mode and configured provider rather than assumed from the model name alone. OpenAI-compatible presets provide endpoint and discovery defaults, but they do not guarantee identical provider-native tools across every backend.
 
@@ -65,6 +66,8 @@ Provider features differ. Tool availability should be read from the selected mod
 
 | Page | Why It Matters |
 |---|---|
+| [Runtime Capabilities](runtime-capabilities.html) | Lists task, swarm, schedule, goal, messaging, and GitHub capability groups. |
+| [Mixture of Models](mixture-of-models.html) | Reference calls are private and tool-free; aggregator policy controls action. |
 | [Chat](chat.html) | Explains Plan and Orchestrate from the user perspective. |
 | [Chat](chat.html) | Shows how Chat coordinates multiple tasks from one window. |
 | [Models Overview](models.html) | Covers model setup and defaults. |

@@ -35,6 +35,7 @@ A scheduled run is not a hidden background mutation. It creates visible task act
 
 ## Good Uses
 
+- Run GitHub Dev Inbox and finder prompts as visible issue-to-PR automation.
 - Run periodic maintenance prompts.
 - Let system maintenance keep managed memory and reusable skill libraries healthy over time.
 - Schedule repository health checks.
@@ -55,6 +56,7 @@ Because these are visible schedules, users can inspect when maintenance is confi
 
 ## Cautions
 
+- Recurring loop tasks should be schedule-driven. Do not add a persisted Task Goal unless the work itself needs goal-driven continuation.
 - A recurring schedule can repeatedly create model cost and repository changes.
 - Review the task prompt and auto-merge setting before scheduling.
 - Disable risky schedules instead of deleting them when you may need the history.
@@ -65,6 +67,8 @@ Because these are visible schedules, users can inspect when maintenance is confi
 
 | Page | Why It Matters |
 |---|---|
+| [GitHub Autonomous SDLC](github-autonomous-sdlc.html) | Scheduled inbox and finder tasks form a visible GitHub loop. |
+| [Task Goals](task-goals.html) | Use goals on implementation work, not as the default recurrence engine. |
 | [Schedule](schedule.html) | The UI surface for managing scheduled task runs. |
 | [Worker Capacity & Dispatch](workers.html) | Scheduled runs wait for execution capacity when needed. |
 | [Memory](memory.html) | Memory Curator can consolidate managed project memory through scheduled system work. |

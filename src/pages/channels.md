@@ -6,22 +6,31 @@ Channels let people create, monitor, and respond to OpenVibely work from the too
 
 | Channel | What It Enables |
 |---|---|
-| GitHub | Connect repositories, import project sources, and open pull requests from reviewed task changes. |
-| Slack | Let approved team members create and track work from Slack conversations. |
-| Telegram | Control OpenVibely from a mobile bot and receive task responses when enabled. |
+| GitHub | Connect repositories, control issues and pull requests, and run visible issue-to-PR automation. |
+| Slack | Let approved team members create and track work from Slack conversations, including file attachments. |
+| Telegram | Control OpenVibely from a mobile bot and receive richly formatted task responses when enabled. |
+| Discord | Create and continue work through bot DMs or bot-mentioned server messages, with attachment support. |
+| Email | Turn authorized inbox messages and attachments into threaded Chat or task work, with SMTP replies. |
 | Webhooks | Let external systems create project-scoped tasks from structured events. |
 
 ## How To Set Them Up
 
-Open `Channels` from the System section of the app sidebar. Configure one channel at a time, test the connection when the UI offers a test action, and connect each channel to the projects where it should be allowed to create or monitor work.
+Open `Channels` from the System section of the app sidebar. Configure one channel at a time, test the connection when the UI offers a test action, add authorized identities, and select the project where incoming work should continue.
+
+## Authorization Scope
+
+Slack, Telegram, Discord, and Email inbound allowlists are system-level across projects and deny access until an authorized user or sender is added. Telegram runtime authorization is also deny-by-default; do not treat an empty list as public access even if an older Channels UI build says otherwise.
+
+Outbound Message Targets and the `Allow explicit unsaved targets` policy are project-scoped. Inbound authorization answers who may instruct OpenVibely; outbound policy answers where agents in the selected project may send. See [Outbound Messaging](outbound-messaging.html).
 
 ## Shared Concepts
 
 - Channels should be treated as alternate front doors into the same project/task workflows users see in the web app.
 - Channel chat routes into the shared Chat orchestrator, which decides what to do with incoming prompts using project context, surface permissions, and available chat actions.
 - Channels do not require users to manually assign agents to rooms; the prompt enters the selected project workflow and can create or coordinate work through the orchestrator.
-- Slack and Telegram support authorized users so only approved people can interact with OpenVibely from chat tools.
-- GitHub is both a channel and a repository provider, so it affects project setup and pull request review flows.
+- Slack, Telegram, Discord, and Email support authorized users or senders so only approved people can interact with OpenVibely.
+- Outbound Message Targets are project-scoped saved Slack, Telegram, Discord, and Email destinations. They let Chat and task agents send proactive messages through the existing channel credentials while keeping outbound permissions separate from inbound authorization.
+- GitHub is both a channel and a repository provider. It supports issue controls, API-backed task pull request publication, authorized review-feedback forwarding, and scheduled autonomous SDLC loops.
 - Webhooks are best for trusted automation systems that need to create repeatable task requests.
 - Tasks created through any channel support the same features as web-created tasks, including Task Goals, lifecycle hooks, and review workflows.
 
@@ -38,7 +47,11 @@ Open `Channels` from the System section of the app sidebar. Configure one channe
 | Page | Why It Matters |
 |---|---|
 | [Prompt Queue & Steering](prompt-queue-steering.html) | Explains how channel and web prompts share the Chat orchestrator path. |
+| [Outbound Messaging](outbound-messaging.html) | Saved project destinations, Home targets, and explicit-target policy. |
 | [GitHub](github.html) | Repository access and pull request workflows. |
+| [GitHub Autonomous SDLC](github-autonomous-sdlc.html) | Scheduled issue intake and authorized PR feedback. |
 | [Slack](slack.html) | Team chat setup and authorized users. |
 | [Telegram](telegram.html) | Mobile bot setup and response behavior. |
+| [Discord](discord.html) | DMs, mention-gated server messages, threads, and attachments. |
+| [Email](email.html) | IMAP intake, authorized senders, attachments, and SMTP replies. |
 | [Webhook Triggers](webhooks.html) | Event-driven task creation. |
