@@ -92,7 +92,7 @@ Tasks created or managed through Slack, Telegram, Discord, and Email support Goa
 
 | Page | Why It Matters |
 |---|---|
-| [GitHub Autonomous SDLC](github-autonomous-sdlc.html) | Goals belong on implementation tasks, not recurring Dev Inbox/finder schedules. |
+| [GitHub Autonomous SDLC Skill](github-autonomous-sdlc.html) | Goals belong on implementation tasks, not recurring Dev Inbox/finder schedules. |
 | [Chat](chat.html) | Orchestrate mode can create tasks and set goals on them in a single turn. |
 | [Tasks](tasks.html) | Task detail screen where the Goal panel and edit controls live. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Goal continuations are queued as normal task-thread follow-ups. |

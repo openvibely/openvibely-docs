@@ -39,5 +39,5 @@ Replacing a linked pull request branch's history is not a routine update path. I
 | [Task Lifecycle](task-lifecycle.html) | Explains statuses and terminal outcomes. |
 | [Git Worktrees & Merge Safety](git-worktrees.html) | Explains isolated repository changes. |
 | [GitHub](github.html) | Explains repository access and pull request workflows. |
-| [GitHub Autonomous SDLC](github-autonomous-sdlc.html) | Routes authorized PR feedback into linked task threads. |
+| [GitHub Autonomous SDLC Skill](github-autonomous-sdlc.html) | Routes authorized PR feedback into linked task threads. |
 | [Alerts](alerts.html) | Failed or follow-up-needed work can point users back into review. |

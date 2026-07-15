@@ -19,6 +19,12 @@ Open `Channels`, choose Telegram, save a bot token, test the bot, and add author
 | Task Goals | Tasks created or managed through Telegram support Goals the same way web tasks do. Goal state is visible and managed in the web app. |
 | Early follow-ups | Replies sent before the first task run exists are preserved as follow-ups for that task instead of being dropped. |
 
+## Authorize Users
+
+Telegram inbound authorization is system-level across projects and deny-by-default. Add each approved numeric Telegram user ID in the channel settings before expecting inbound messages to run; an empty list does not make the bot public.
+
+Authorized Users determine who may instruct OpenVibely through Telegram. They do not determine where agents may send proactive Telegram messages; configure those project-scoped chats, topics, or direct recipients under `Outbound Message Targets`.
+
 ## Task Follow-Ups
 
 Telegram-created work still belongs to the normal OpenVibely task flow. If a user replies with clarification before the first execution has started, OpenVibely keeps that reply with the task so it can be applied as follow-up context when execution begins.

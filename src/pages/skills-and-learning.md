@@ -63,6 +63,10 @@ When importing, choose whether the skill should be global or project-scoped. Pro
 
 Standalone imports must not declare `agent.key`. Agent-owned skills belong to a specific agent and are managed through the agent skill surfaces and lifecycle curation, not the standalone package import flow.
 
+## Bundled Workflow Skills
+
+OpenVibely includes standalone skills for reusable workflows. The [GitHub Autonomous SDLC Skill](github-autonomous-sdlc.html) uses generic GitHub capabilities to create a visible, scheduled issue-to-pull-request workflow. It is a skill rather than a channel feature; configure GitHub under `Channels`, then run the skill from a project task or task-thread turn.
+
 ## Standalone Skills
 
 Standalone skills are shared reusable skills. They are used when a task does not have a specific assigned agent.

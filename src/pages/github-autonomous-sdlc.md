@@ -1,6 +1,6 @@
-# GitHub Autonomous SDLC
+# GitHub Autonomous SDLC Skill
 
-GitHub Autonomous SDLC uses visible scheduled tasks, generic GitHub runtime capabilities, implementation tasks, and linked pull requests to form a reviewable issue-to-PR loop. It is prompt-driven; OpenVibely does not run a hidden GitHub poller daemon.
+OpenVibely includes the standalone `openvibely_github_autonomous_sdlc_bootstrap` skill to set up a reviewable issue-to-pull-request workflow. The skill uses generic GitHub runtime capabilities to create visible scheduled tasks, implementation tasks, and linked pull requests; it is not a channel or a hidden GitHub poller daemon.
 
 ## Prerequisites
 
@@ -12,9 +12,9 @@ GitHub Autonomous SDLC uses visible scheduled tasks, generic GitHub runtime capa
 
 For PAT setups, assigned-issue discovery can use the PAT owner. For GitHub App or custom inbox setups, assign issues to one of the configured Authorized Users. An organization installation account is not an issue assignee.
 
-## Bootstrap The Loop
+## Run The Skill
 
-OpenVibely includes the `openvibely_github_autonomous_sdlc_bootstrap` skill. Run a visible project task or task-thread turn and ask it to set up the GitHub SDLC loop using the current project's GitHub configuration.
+Run a visible project task or task-thread turn and ask it to use the `openvibely_github_autonomous_sdlc_bootstrap` skill to set up the GitHub SDLC workflow using the current project's GitHub configuration.
 
 The bootstrap creates normal tasks and schedules that remain visible in `Tasks` and `Schedule`. Schedules drive recurring loop tasks; do not put persisted Task Goals on those recurring inbox or finder tasks.
 

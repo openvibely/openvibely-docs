@@ -19,6 +19,12 @@ Open `Channels`, choose Slack, then configure the connection using OAuth or manu
 | Task Goals | Tasks created or managed through Slack support Goals the same way web tasks do. Goal state is visible and managed in the web app. |
 | Early follow-ups | Replies sent before the first task run exists are preserved as follow-ups for that task instead of being dropped. |
 
+## Authorize Users
+
+Slack inbound authorization is system-level across projects and deny-by-default. Add each approved Slack user in the channel settings before expecting inbound messages to run.
+
+Authorized Users determine who may instruct OpenVibely through Slack. They do not determine where agents may send proactive Slack messages; configure those project-scoped channels, threads, or user DMs under `Outbound Message Targets`.
+
 ## Task Follow-Ups
 
 Slack-created work still belongs to the normal OpenVibely task flow. If a user replies with clarification before the first execution has started, OpenVibely keeps that reply with the task so it can be applied as follow-up context when execution begins.

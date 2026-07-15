@@ -67,7 +67,7 @@ Because these are visible schedules, users can inspect when maintenance is confi
 
 | Page | Why It Matters |
 |---|---|
-| [GitHub Autonomous SDLC](github-autonomous-sdlc.html) | Scheduled inbox and finder tasks form a visible GitHub loop. |
+| [GitHub Autonomous SDLC Skill](github-autonomous-sdlc.html) | Scheduled inbox and finder tasks form a visible GitHub loop. |
 | [Task Goals](task-goals.html) | Use goals on implementation work, not as the default recurrence engine. |
 | [Schedule](schedule.html) | The UI surface for managing scheduled task runs. |
 | [Worker Capacity & Dispatch](workers.html) | Scheduled runs wait for execution capacity when needed. |
