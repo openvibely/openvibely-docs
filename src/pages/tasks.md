@@ -34,7 +34,7 @@ The UI keeps the modal open and shows an inline error if the title conflicts wit
 
 ## Swarm Tasks
 
-Enable `Swarm mode` when one goal should be delegated across multiple task roles. A planner creates independent worker scopes, an optional reviewer checks the combined result, and an optional merger integrates approved work. Each child is a real task with its own thread, model assignment, worktree, diff, retry, and follow-up history.
+Enable `Swarm mode` when one request should be delegated across multiple task roles. A planner creates independent worker scopes, an optional reviewer checks the combined result, and an optional merger integrates approved work. Each child is a real task with its own thread, model assignment, worktree, diff, retry, and follow-up history.
 
 Set the maximum planned worker count and default isolation in the task dialog, then create the parent in Active or Backlog. Active starts planning; Backlog defers the planner until you run the task or move it to Active. The board groups child status under the parent while still linking to every child task.
 

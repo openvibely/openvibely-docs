@@ -52,7 +52,7 @@ Attachments should support the prompt. If a file contains important durable proj
 
 ## Examples
 
-| User Goal | Attachment Pattern |
+| Use Case | Attachment Pattern |
 |---|---|
 | "Plan how to implement this API from the spec." | Attach the spec in Chat `Plan`. |
 | "Fix this UI bug." | Attach a screenshot and describe the expected behavior. |

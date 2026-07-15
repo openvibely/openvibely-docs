@@ -35,7 +35,7 @@ Choose either a local repository path or a repository URL. Local paths are enabl
 
 | If You Know The Exact Work | If You Need To Explore First |
 |---|---|
-| Open `Tasks`, click `+ Add Task`, enter a title and prompt, choose a model or agent if needed, then create the task. | Open `Chat`, ask about the project or describe the goal, attach files if useful, then let the conversation guide task creation. |
+| Open `Tasks`, click `+ Add Task`, enter a title and prompt, choose a model or agent if needed, then create the task. | Open `Chat`, ask about the project or describe the request, attach files if useful, then let the conversation guide task creation. |
 
 ## 5. Run And Watch Progress
 

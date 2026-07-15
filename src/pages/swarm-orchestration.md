@@ -1,6 +1,6 @@
 # Swarm Orchestration
 
-Swarm mode turns one task into a coordinated parent with planner, worker, reviewer, and merger child tasks. Use it when a goal contains several independent scopes that can be delegated and then reviewed together.
+Swarm mode turns one task into a coordinated parent with planner, worker, reviewer, and merger child tasks. Use it when a request contains several independent scopes that can be delegated and then reviewed together.
 
 ## Create A Swarm
 
@@ -14,14 +14,14 @@ Open `Tasks`, click `+ Add Task`, and enable `Swarm mode`.
 | Merger enabled | Adds an integration phase after review. Enabled by default. |
 | Category | `Active` starts planning; `Backlog` defers planning until the parent is run or moved to Active. |
 
-Chat in `Orchestrate` mode can also create a swarm when you explicitly ask it to split one goal across coordinated workers.
+Chat in `Orchestrate` mode can also create a swarm when you explicitly ask it to split one request across coordinated workers.
 
 ## Roles And Order
 
 | Role | Responsibility |
 |---|---|
-| Parent | Holds the shared goal and displays overall progress. |
-| Planner | Breaks the goal into worker-owned scopes and creates the child tasks. |
+| Parent | Holds the shared request and displays overall progress. |
+| Planner | Breaks the request into worker-owned scopes and creates the child tasks. |
 | Worker | Executes one planned slice with its own task thread, model, output, and reviewable changes. |
 | Reviewer | Checks the combined worker result after all required workers finish. |
 | Merger | Integrates approved worker changes after review. |

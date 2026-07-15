@@ -47,7 +47,7 @@ Provider features differ. Tool availability should be read from the selected mod
 
 ## Examples
 
-| User Goal | Recommended Surface |
+| User Need | Recommended Surface |
 |---|---|
 | "Read this code and propose the safest migration plan." | Chat `Plan` |
 | "Create backend, frontend, and test tasks for this feature." | Chat `Orchestrate` |

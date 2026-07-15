@@ -6,7 +6,7 @@ Chat is your single control center for everything happening in a project. Descri
 
 The fundamental idea behind Chat is that you should never need more than one window open. Instead of keeping a terminal running, a separate AI session for research, another for writing code, and a third for tests, you stay on the Chat page and describe what you want done. OpenVibely creates the tasks, runs them, and reports back — all from that one conversation.
 
-This matters most when a goal has multiple parts. Say you want to add a new feature with backend changes, frontend wiring, and tests. Rather than creating each task manually, switching between them, and tracking what finished, you describe the goal once in Chat and ask it to break the work apart. Chat creates the task cards, starts the independent ones in parallel, and remains the place you return to ask what is done, what is blocked, and what should happen next. Each task keeps its own thread, diff review, and lifecycle — but the original goal and the coordination stay in the Chat window.
+This matters most when a request has multiple parts. Say you want to add a new feature with backend changes, frontend wiring, and tests. Rather than creating each task manually, switching between them, and tracking what finished, you describe the request once in Chat and ask it to break the work apart. Chat creates the task cards, starts the independent ones in parallel, and remains the place you return to ask what is done, what is blocked, and what should happen next. Each task keeps its own thread, diff review, and lifecycle — but the original request and the coordination stay in the Chat window.
 
 Chat embeds clickable task links inline as it creates work, so you can jump to a task detail, review the diff, send a follow-up, and come back to Chat without losing your place in the conversation.
 
@@ -66,7 +66,7 @@ A good default workflow is to start in `Plan` for vague or risky work, then swit
 
 ## Parallel Task Example
 
-When a goal has multiple independent parts, ask Chat to split them explicitly:
+When a request has multiple independent parts, ask Chat to split them explicitly:
 
 ```
 Plan the changes needed for OAuth login, then create separate tasks for backend routes, UI wiring, tests, and docs. Run the independent tasks in parallel where possible and keep this chat updated as they finish.
@@ -77,7 +77,7 @@ In `Orchestrate` mode, Chat creates multiple task cards and can execute them imm
 ## What Stays Centralized
 
 - The selected project context stays fixed for the whole conversation.
-- Chat history keeps the original goal, plan, and follow-up decisions together in one place.
+- Chat history keeps the original request, plan, and follow-up decisions together in one place.
 - Task links produced by Chat open the relevant task detail without leaving the project workflow.
 - Running chat turns can accept steering or queue follow-up prompts instead of forcing a new session.
 
@@ -101,7 +101,7 @@ If Chat is already responding, a new prompt can become queued input for the next
 
 ## When To Use Chat
 
-Use Chat when the task is not fully formed yet or when one goal needs coordinated parallel work. Good examples include asking what changed in a project, breaking a vague goal into tasks, comparing implementation options, asking OpenVibely to create follow-up work from a discussion, or managing several task threads from one central chat window.
+Use Chat when the task is not fully formed yet or when one request needs coordinated parallel work. Good examples include asking what changed in a project, breaking a broad request into tasks, comparing implementation options, asking OpenVibely to create follow-up work from a discussion, or managing several task threads from one central chat window.
 
 Use Tasks instead when you already know the exact unit of work and want board state, scheduling, run/cancel controls, worktree review, chaining, or pull request actions.
 
@@ -110,7 +110,7 @@ Use Tasks instead when you already know the exact unit of work and want board st
 1. Select the project in the sidebar.
 2. Open Chat.
 3. Pick `Plan` or `Orchestrate` from the chat input controls.
-4. Ask a question or describe the goal.
+4. Ask a question or describe the request.
 5. Attach files if they help explain the request.
 6. Use the response to continue planning, create tasks, or inspect existing project work.
 

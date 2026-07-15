@@ -2,11 +2,11 @@
 
 The only recursive self-improvement command center for software teams.
 
-OpenVibely turns one Chat into the control plane for your entire AI development workflow. Describe a goal once, then let it fan out into parallel task sessions, live agent execution, reviewable diffs, scheduled follow-ups, and durable project learning.
+OpenVibely turns one Chat into the control plane for your entire AI development workflow. Describe a request once, then let it fan out into parallel task sessions, live agent execution, reviewable diffs, scheduled follow-ups, and durable project learning.
 
 Agents do the work. You stays in command. Inspect any thread, review any diff, steer any task, and keep the whole plan moving from the original conversation.
 
-Goal loops drive unfinished work forward. Memory Curator preserves project context. Skill Curator turns completed tasks into sharper reusable workflows. Every run can make the next one better, while your team stays in control.
+Task Goal loops drive unfinished work forward. Memory Curator preserves project context. Skill Curator turns completed tasks into sharper reusable workflows. Every run can make the next one better, while your team stays in control.
 
 ## Start Fast
 
@@ -18,7 +18,7 @@ cd openvibely
 
 Open `http://localhost:3001`. The first useful path is UI-first: add a model, create or select a project, then use Chat or Tasks to start work.
 
-| Goal | Start Here |
+| What You Want To Do | Start Here |
 |---|---|
 | Understand the app | [Features Overview](features-overview.html) |
 | Run it locally | [Installation](installation.html) |
