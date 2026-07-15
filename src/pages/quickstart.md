@@ -16,7 +16,7 @@ Open `Models` from the sidebar and create a model configuration. For the shortes
 
 | Provider Path | Typical Setup |
 |---|---|
-| OpenAI | OAuth or API key auth for Codex models. Current fallback model: `gpt-5.6-sol`; its runtime default effort is `medium`. |
+| OpenAI | OAuth or API key auth for Codex models. Suggested starting model: `gpt-5.6-sol`; if its model config does not specify a reasoning effort, the runtime uses `medium`. |
 | Anthropic | OAuth or API key auth for Claude models. Useful as a secondary coding model. |
 | Ollama | Local model server, defaulting to `http://localhost:11434` when no base URL is set. |
 | OpenAI-compatible | Use a built-in preset or custom endpoint for OpenAI-style Chat Completions providers and gateways. Presets include OpenRouter, NVIDIA NIM, DeepInfra, Fireworks, Groq, Mistral, Cerebras, Together, Hugging Face Router, DeepSeek, Qwen / DashScope, Z.AI / GLM, Tencent TokenHub, LiteLLM, vLLM, LM Studio, SGLang, and more. |

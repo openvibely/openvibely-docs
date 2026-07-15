@@ -4,7 +4,7 @@ Model providers are configured through the Models UI and stored as `LLMConfig` r
 
 ## Recommended Setup
 
-Start with one provider and model that fits your team's quality, latency, and cost requirements, then add specialized configs only when needed. OpenVibely's Codex fallback model is `gpt-5.6-sol`; when no reasoning effort is configured for GPT-5.6 variants, the runtime default is `medium`.
+Start with one provider and model that fits your team's quality, latency, and cost requirements, then add specialized configs only when needed. For a straightforward Codex setup, choose `gpt-5.6-sol`. When a GPT-5.6 model config does not specify a reasoning effort, the runtime uses `medium`.
 
 Use higher reasoning effort for difficult implementation or review work when the additional latency is justified. Avoid assuming that a model name alone determines capability: runtime tools also depend on provider support, Chat mode, agent permissions, and configured integrations.
 
