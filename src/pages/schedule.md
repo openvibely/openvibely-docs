@@ -36,7 +36,6 @@ Use the task board for immediate work. Use Schedule when the timing matters.
 
 | Page | Why It Matters |
 |---|---|
-| [GitHub Autonomous SDLC Skill](github-autonomous-sdlc.html) | Uses visible schedules for recurring issue intake and feedback forwarding. |
 | [Tasks](tasks.html) | Scheduled work runs existing task definitions. |
 | [Scheduled Task Runs](scheduled-tasks.html) | Deeper automation guidance for recurring work. |
 | [Alerts](alerts.html) | Failed scheduled runs can create alerts. |

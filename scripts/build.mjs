@@ -39,7 +39,6 @@ const nav = [
       ['Agents Overview', 'agents.md', 'Reusable AI worker profiles'],
       ['Memory', 'memory.md', 'Autonomous project memory creation, recall, updates, and consolidation'],
       ['Skill Curation', 'skills-and-learning.md', 'OpenVibely curates reusable skills from completed work'],
-      ['GitHub Autonomous SDLC Skill', 'github-autonomous-sdlc.md', 'Bootstrap a visible scheduled issue-to-PR workflow'],
       ['Personalities', 'personalities.md', 'Reusable tone and behavior profiles'],
       ['Multi-Agent Workflows', 'workflows.md', 'Coordinate work across agents'],
     ],
