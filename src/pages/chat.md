@@ -17,7 +17,7 @@ Chat embeds clickable task links inline as it creates work, so you can jump to a
 - Execute tasks and report their status back into the conversation
 - Send follow-up instructions into individual task threads
 - Inspect task state, changes, agent output, and lifecycle events
-- Schedule work, manage alerts, and coordinate across the whole project
+- Schedule work, prepare confirmed Automation save plans, manage alerts, and coordinate across the whole project
 - Send proactive messages through saved Slack, Telegram, Discord, or Email outbound targets
 - Accept steering or queue new prompts while a response is already in progress
 
@@ -63,6 +63,12 @@ The chat input includes a mode selector with two options. OpenVibely defaults to
 | `Plan` | You want to think through an approach before anything is created or changed. | Keeps the conversation planning-oriented and limits action tools so the assistant can analyze, propose steps, and refine the plan first. |
 
 A good default workflow is to start in `Plan` for vague or risky work, then switch to `Orchestrate` when the next task is clear. Plan mode does not execute mutation markers or action text; Orchestrate-capable providers use runtime tool calls for real actions. When a `Plan` turn finishes, Chat surfaces a prompt to continue in `Orchestrate` mode so you can move from analysis to action without manually switching modes.
+
+## Create Automations From Chat
+
+Chat can preview a visual Automation graph from a description in either mode without persisting anything. In `Orchestrate` mode, ask Chat to prepare an Automation from a Template, description, or Blank starting point. It displays the exact save plan and waits for a later explicit confirmation in the same thread before creating the Automation or any runtime resources.
+
+After confirmation, Chat uses the same validation, resource, and safety boundaries as the visual builder. See [Automations](automations.html) for supported nodes, graph editing, live state, and human review boundaries.
 
 ## Parallel Task Example
 
@@ -118,6 +124,7 @@ Use Tasks instead when you already know the exact unit of work and want board st
 
 | Page | Why It Matters |
 |---|---|
+| [Automations](automations.html) | Chat can preview graphs and prepare a save plan that requires explicit confirmation. |
 | [Swarm Orchestration](swarm-orchestration.html) | Chat can create a coordinated parent with planner, worker, reviewer, and merger roles. |
 | [Runtime Capabilities](runtime-capabilities.html) | Shows which actions Orchestrate, tasks, and providers can receive. |
 | [Outbound Messaging](outbound-messaging.html) | Configures safe project-scoped destinations for proactive sends. |

@@ -26,6 +26,10 @@ Open `Schedule` from the Workspace section of the sidebar.
 | Weekly | Weekly cleanup, reporting, or backlog review. |
 | Monthly | Long-running maintenance cadence. |
 
+## Schedule Or Automation
+
+Use Schedule when one task needs to run once or repeat. Use [Automations](automations.html) when timed work must hand off to additional tasks, Native human approvals, supported GitHub actions, or explicit outcomes. A Schedule node in an Automation creates its own task and schedule when the graph is saved.
+
 ## How Schedule Relates To Tasks
 
 A schedule belongs to a task. The task defines the prompt, model, agent, attachments, repository context, and review behavior. The schedule only controls when and how often that task should run.
@@ -36,6 +40,7 @@ Use the task board for immediate work. Use Schedule when the timing matters.
 
 | Page | Why It Matters |
 |---|---|
+| [Automations](automations.html) | Connect scheduled work to tasks, approvals, GitHub actions, and outcomes. |
 | [Tasks](tasks.html) | Scheduled work runs existing task definitions. |
 | [Scheduled Task Runs](scheduled-tasks.html) | Deeper automation guidance for recurring work. |
 | [Alerts](alerts.html) | Failed scheduled runs can create alerts. |

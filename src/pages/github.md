@@ -16,6 +16,7 @@ Open `Channels`, choose GitHub, and follow the connection flow for your instance
 | Issue actions | Authorized Chat, task, and scheduled agents can read, create, comment on, label, and list issues. |
 | Assigned-issue discovery | Agents can list open issues assigned to the connected PAT owner or a configured GitHub Authorized User. |
 | Review feedback | Comments and reviews from GitHub Authorized Users can be forwarded into linked task threads for follow-up work. |
+| Automation handoffs | Visual Automation graphs can create issues, wait for human assignment, discover assigned issues, open or reuse pull requests, and observe human review state. |
 | Repository maintenance | Re-clone or resolve repository metadata when a project source changes. |
 
 ## Recommended Workflow
@@ -34,6 +35,12 @@ GitHub Authorized Users are not the same as Slack, Telegram, Discord, or Email i
 
 Authorization checks deny by default when the list is empty. API credentials establish repository access, but do not by themselves mark issue assignees or reviewers as trusted.
 
+## Automation Safety
+
+GitHub-backed Automations use the same repository authentication and authorization boundaries as other runtime actions. They can create issues and open or reuse linked pull requests, then observe assignment or review state. Assignment, pull request review, merge, release, and deployment remain human-controlled in GitHub.
+
+Topologies that discover assigned issues or observe trusted actors require the applicable GitHub Authorized Users configuration. See [Automations](automations.html) for the visual graph workflow.
+
 ## Pull Request Safety
 
 Routine publication opens or reuses the task's linked pull request and updates the persisted task, issue, and pull request relationship. Replacing pull request branch history is a separate destructive capability intended only for explicitly approved cleanup. It requires confirmation and the exact current remote head SHA as a force-with-lease guard; use normal publication for ordinary revisions.
@@ -46,6 +53,7 @@ Operators can preconfigure GitHub App settings with `GITHUB_APP_ID`, `GITHUB_APP
 
 | Page | Why It Matters |
 |---|---|
+| [Automations](automations.html) | Connect supported issue, assignment, inbox, pull request, and human review handoffs. |
 | [Review Workflows](review-workflows.html) | Review changes before publication and understand feedback continuation. |
 | [Runtime Capabilities](runtime-capabilities.html) | Explains GitHub issue and pull request actions available to agents. |
 | [Projects](projects.html) | GitHub repositories can become project sources. |

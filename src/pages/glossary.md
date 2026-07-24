@@ -3,7 +3,8 @@
 | Term | Meaning |
 |---|---|
 | Agent | Reusable execution profile with prompts, tools, skills, permissions, and optional lifecycle behavior |
-| Alert | Project-scoped notification such as task failure or follow-up needed |
+| Alert | Project-scoped notification such as task failure, follow-up needed, or a pending Native human decision |
+| Automation | Project-scoped visual graph that connects supported schedules, tasks, approvals, GitHub actions, and outcomes |
 | Channel | External integration such as GitHub, Slack, Telegram, Discord, Email, or webhooks |
 | Chat | Project-scoped conversational orchestration UI |
 | Memory | Project-local durable knowledge managed under `.openvibely/memories` in the selected repo |

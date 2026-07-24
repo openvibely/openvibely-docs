@@ -28,6 +28,7 @@ const nav = [
       ['Projects', 'projects.md', 'Create, switch, and configure workspaces'],
       ['Chat', 'chat.md', 'Plan and orchestrate from a project conversation'],
       ['Tasks', 'tasks.md', 'Run, monitor, and review AI coding work'],
+      ['Automations', 'automations.md', 'Connect supported capabilities in live visual graphs'],
       ['Schedule', 'schedule.md', 'Calendar-driven project work'],
       ['Alerts', 'alerts.md', 'Failures and follow-up notifications'],
     ],

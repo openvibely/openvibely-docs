@@ -10,6 +10,7 @@ OpenVibely is a web workbench for AI-assisted software work that gets more usefu
 | Projects | A workspace boundary that controls repository context, task lists, chat, schedules, workers, memory, and channels. | [Projects](projects.html) |
 | Chat | A project-aware conversation for exploration, attachments, `Plan` mode, and `Orchestrate` mode. Chat can centrally create, run, and coordinate multiple tasks or swarms from one window. | [Chat](chat.html), [Runtime Capabilities](runtime-capabilities.html) |
 | Tasks | A board for backlog, active, and completed work with run/cancel controls, streaming progress, threads, attachments, diffs, review, and multi-role swarm execution. | [Tasks](tasks.html), [Swarm Orchestration](swarm-orchestration.html), [Task Threads & Follow-Ups](task-threads-followups.html), [Task Diffs & Review](task-diffs-review.html) |
+| Automations | Project-scoped visual graphs that connect schedules, tasks, Agents, Native approvals, supported GitHub actions, and outcomes through explicit handoffs. | [Automations](automations.html) |
 | Scheduling | Time-based automation for one-time, recurring, and system maintenance runs. | [Schedule](schedule.html), [Scheduled Task Runs](scheduled-tasks.html) |
 | Alerts | Project-scoped failure, follow-up, and attention notices with unread state. | [Alerts](alerts.html) |
 | Models | UI-managed access to Anthropic, OpenAI, Ollama, OpenAI-compatible providers, and Mixture of Models virtual configs with defaults, auth options, tool policy, and capacity controls. | [Models](models.html), [Mixture of Models](mixture-of-models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Model Providers](model-providers.html), [Worker Capacity & Dispatch](workers.html) |
@@ -28,7 +29,7 @@ OpenVibely is a web workbench for AI-assisted software work that gets more usefu
 | Start work | Use Chat when the work needs discussion, or Tasks when you already know the unit of work. |
 | Monitor | Watch task status, streaming output, alerts, and board movement as workers execute. |
 | Review | Inspect task threads, attachments, changed files, review comments, worktree state, and pull request options before shipping. |
-| Automate | Use scheduled task runs, task chains, channel/webhook triggers, or structured workflows for repeatable work. |
+| Automate | Use visual Automation graphs for supported multi-step handoffs, or schedules when one task only needs time-based execution. |
 
 ## What Makes It Different
 
@@ -38,7 +39,7 @@ OpenVibely is a web workbench for AI-assisted software work that gets more usefu
 - It is review-first: AI work becomes visible task state, event streams, logs, diffs, comments, and GitHub-ready changes.
 - It keeps work continuous: task threads, follow-ups, queueing, and steering let users refine active work without losing context.
 - It learns from completed work: Memory Curator creates, updates, and consolidates durable project context, while Skill Curator improves the right scoped skill library afterward.
-- It is automation-ready: scheduled task runs, task chains, channel prompts, webhook triggers, and workflows are managed from the app instead of hidden in scripts.
+- It is automation-ready: visual Automation graphs connect schedules, tasks, approvals, supported GitHub actions, and outcomes, while task chains, channel prompts, and webhook triggers cover simpler repeatable work.
 - It is self-hosted: operators control configuration, authentication, model access, database, worker capacity, and channels.
 
 ## Recommended Reading
@@ -46,7 +47,7 @@ OpenVibely is a web workbench for AI-assisted software work that gets more usefu
 | If You Want To... | Read This |
 |---|---|
 | Try it quickly | [Installation](installation.html), then [Quickstart](quickstart.html) |
-| Understand the main UI | [Dashboard](dashboard.html), [Projects](projects.html), [Chat](chat.html), [Tasks](tasks.html), [Schedule](schedule.html), and [Alerts](alerts.html) |
+| Understand the main UI | [Dashboard](dashboard.html), [Projects](projects.html), [Chat](chat.html), [Tasks](tasks.html), [Automations](automations.html), [Schedule](schedule.html), and [Alerts](alerts.html) |
 | Understand work mechanics | [Task Threads & Follow-Ups](task-threads-followups.html), [Task Chaining & Branch Lineage](task-chaining.html), [Lifecycle Hooks](lifecycle-hooks.html), [Worker Capacity & Dispatch](workers.html), and [Scheduled Task Runs](scheduled-tasks.html) |
 | Configure AI behavior | [Models](models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Agents](agents.html), [Memory](memory.html), [Skill Curation](skills-and-learning.html), and [Personalities](personalities.html) |
 | Review generated code | [Task Diffs & Review](task-diffs-review.html), [Review Workflows](review-workflows.html), [Task Lifecycle](task-lifecycle.html), [Git Worktrees & Merge Safety](git-worktrees.html), and [GitHub](github.html) |

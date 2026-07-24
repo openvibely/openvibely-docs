@@ -9,6 +9,7 @@ This reference summarizes the major route groups registered by OpenVibely. Use r
 | Dashboard | `/`, `/dashboard`, `/dashboard-mockup`, `/analytics` |
 | Projects | `/projects`, `/projects/new`, `/projects/:id/edit` |
 | Tasks | `/tasks`, `/tasks/:taskId`, task executions, status, changes, thread, run, cancel, category, reorder, chain |
+| Automations | `/automations`, `/automations/new`, builder, live graph, pause, resume, external refresh, and delete actions |
 | Schedule | `/schedule`, `/tasks/:taskId/schedule`, `/schedules/:id`, `/schedules/:scheduleId/reschedule` |
 | Agents | `/agents`, `/agents/generate`, plugin state/marketplaces/install, lifecycle hooks, skills JSON, agent-owned skill routes |
 | Models | `/models`, `/models/ollama/available`, model OAuth routes |

@@ -20,6 +20,7 @@ OpenVibely uses runtime tool calls for action-capable providers. Legacy-looking 
 | Task management | Create a task, create a swarm, inspect work, and continue a task thread. |
 | Goals | Set, clear, pause, resume, and inspect a persisted Task Goal. |
 | Scheduling | Create, modify, or delete a visible task schedule. |
+| Automations | Preview a graph description in Plan or Orchestrate mode; prepare and explicitly confirm a save plan in Orchestrate mode on web and API Chat surfaces. |
 | Messaging | List saved outbound targets and send through Slack, Telegram, Discord, or Email. |
 | GitHub issues | Create, read, list, comment on, and label issues when GitHub is configured. |
 | GitHub review | Open or reuse a task pull request, forward authorized review feedback, and perform explicitly guarded branch replacement. |
@@ -30,6 +31,7 @@ The exact list is dynamic. A turn may omit a capability because the provider can
 ## Safety Boundaries
 
 - Plan mode is non-mutating even if the model describes an action marker.
+- Saving an Automation from Chat requires a displayed save plan and a later explicit confirmation in the same thread.
 - Outbound messages are limited by project targets and explicit-target policy.
 - GitHub issue intake is limited by repository credentials and configured Authorized Users.
 - Pull request publication is tied to an OpenVibely task worktree and persisted task/PR linkage.
@@ -53,6 +55,7 @@ If an action affects an external system or is destructive, prefer an explicit in
 | Page | Why It Matters |
 |---|---|
 | [Chat](chat.html) | Select Plan or Orchestrate mode. |
+| [Automations](automations.html) | Understand graph creation, confirmation, live state, and human review boundaries. |
 | [Agents](agents.html) | Configure reusable tool and permission policy. |
 | [Model Selection & Tool Policy](model-selection-tool-policy.html) | Understand provider and mode differences. |
 | [Outbound Messaging](outbound-messaging.html) | Configure safe send destinations. |
