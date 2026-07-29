@@ -33,7 +33,7 @@ test('client-side navigation keeps accessible focus and native-link fallbacks', 
 test('hosted OpenVibely actions and brand home link are available', () => {
   assert.match(
     html,
-    /<a class="brand-home" href="https:\/\/openvibely\.ai\/" aria-label="OpenVibely home"><img class="brand-mark" src="assets\/avatar\.png" alt=""><\/a>/,
+    /<a class="brand-home" href="https:\/\/openvibely\.ai\/" aria-label="OpenVibely home"><img class="brand-mark" src="assets\/avatar\.png" alt="" width="32" height="32" decoding="async" fetchpriority="high"><\/a>/,
     'top-left OpenVibely icon should link to the hosted home page'
   );
   assert.match(

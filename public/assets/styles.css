@@ -27,6 +27,26 @@ body {
 
 a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #aab1ff;
+  outline-offset: 3px;
+}
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.5rem;
+  background: white;
+  color: #111318;
+  font-weight: 800;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
 code {
   background: var(--b2);
   border: 1px solid var(--faint);
@@ -153,11 +173,32 @@ pre code { background: transparent; border: 0; padding: 0; }
 .nav-link.active small { color: rgba(255, 255, 255, 0.68); }
 .sidebar-footer {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   padding-top: 1rem;
   border-top: 1px solid var(--faint);
   font-size: 0.8rem;
 }
+.docs-search {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+.docs-search label {
+  color: rgba(217, 225, 238, 0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.docs-search input {
+  width: 100%;
+  border: 1px solid rgba(217, 225, 238, 0.2);
+  border-radius: 0.65rem;
+  background: var(--b2);
+  color: white;
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+}
+.docs-search input::placeholder { color: var(--muted); }
 
 .main { min-width: 0; flex: 1; }
 .topbar {
@@ -196,6 +237,30 @@ pre code { background: transparent; border: 0; padding: 0; }
 .content {
   max-width: 980px;
   padding: 2.25rem 3rem 6rem;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  color: rgba(217, 225, 238, 0.72);
+  font-size: 0.85rem;
+}
+.table-of-contents {
+  margin: 1.25rem 0 2rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--faint);
+  border-radius: 0.8rem;
+  background: rgba(25, 29, 36, 0.72);
+}
+.table-of-contents strong { color: white; }
+.table-of-contents ul {
+  columns: 2;
+  margin: 0.55rem 0 0;
+}
+.table-of-contents li {
+  break-inside: avoid;
+  margin: 0.2rem 0;
 }
 h1 {
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -322,8 +387,17 @@ tr:last-child td { border-bottom: 0; }
     -webkit-overflow-scrolling: touch;
   }
   .content { padding: 1.5rem 1.1rem 4rem; }
+  .table-of-contents ul { columns: 1; }
   h1 { font-size: clamp(1.85rem, 9vw, 2.55rem); }
   h2 { font-size: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (max-width: 520px) {

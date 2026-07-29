@@ -14,22 +14,36 @@ const contentTypes = new Map([
   ['.jpg', 'image/jpeg'],
   ['.jpeg', 'image/jpeg'],
   ['.svg', 'image/svg+xml'],
+  ['.xml', 'application/xml; charset=utf-8'],
   ['.txt', 'text/plain; charset=utf-8'],
   ['.ico', 'image/x-icon'],
 ]);
+
+const securityHeaders = {
+  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+  'Cross-Origin-Opener-Policy': 'same-origin',
+  'Permissions-Policy': 'camera=(), geolocation=(), microphone=()',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+};
 
 createServer((request, response) => {
   const filePath = resolveRequestPath(request.url || '/');
 
   if (!filePath) {
-    response.writeHead(404, { 'X-Content-Type-Options': 'nosniff' });
+    response.writeHead(404, securityHeaders);
     response.end('Not found');
     return;
   }
 
+  const extension = extname(filePath);
+  const cacheControl = extension === '.html' ? 'no-cache' : 'public, max-age=3600';
   response.writeHead(200, {
-    'Content-Type': contentTypes.get(extname(filePath)) || 'application/octet-stream',
-    'X-Content-Type-Options': 'nosniff',
+    ...securityHeaders,
+    'Cache-Control': cacheControl,
+    'Content-Type': contentTypes.get(extension) || 'application/octet-stream',
   });
   createReadStream(filePath).pipe(response);
 }).listen(port, '0.0.0.0', () => {

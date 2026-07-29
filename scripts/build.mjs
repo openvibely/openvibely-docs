@@ -1,4 +1,4 @@
-import { mkdir, readFile, rm, writeFile, copyFile, readdir } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile, copyFile, readdir, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const root = process.cwd();
@@ -6,6 +6,7 @@ const srcDir = join(root, 'src');
 const pagesDir = join(srcDir, 'pages');
 const publicDir = join(root, 'public');
 const distDir = join(root, 'dist');
+const siteUrl = 'https://docs.openvibely.ai';
 
 const nav = [
   {
@@ -232,6 +233,60 @@ function titleFromMarkdown(markdown) {
   return match ? match[1].trim() : 'OpenVibely Docs';
 }
 
+function seoTitle(title) {
+  const candidates = [
+    `${title} | OpenVibely Documentation`,
+    `${title} Guide | OpenVibely Documentation`,
+    `${title} | OpenVibely Docs`,
+    `${title} Guide | OpenVibely AI Coding Documentation`,
+    `${title} Guide | OpenVibely AI Docs`,
+    `${title} | OpenVibely AI Coding Platform Documentation`,
+    `${title} Documentation | OpenVibely AI Coding Platform`,
+  ];
+  return candidates.find(candidate => candidate.length >= 50 && candidate.length <= 60)
+    || candidates.reduce((best, candidate) => Math.abs(candidate.length - 55) < Math.abs(best.length - 55) ? candidate : best);
+}
+
+function seoDescription(title, summary) {
+  let description = `Learn how to use ${title} in OpenVibely. ${summary.replace(/[.!?]+$/, '')}. Get practical, UI-first guidance for secure, self-hosted AI coding workflows and teams.`;
+  if (description.length < 150) description += ' Explore setup tips, examples, and next steps.';
+  if (description.length > 160) {
+    const cutoff = description.lastIndexOf(' ', 159);
+    description = `${description.slice(0, cutoff)}.`;
+  }
+  if (description.length < 150) {
+    const suffixes = [' Learn more.', ' See more.', ' Details.', ' Guide.', ' Tips.'];
+    description = `${description.slice(0, -1)}${suffixes.find(suffix => description.length - 1 + suffix.length >= 150 && description.length - 1 + suffix.length <= 160) || ' Learn more.'}`;
+  }
+  if (description.length > 160) {
+    const cutoff = description.lastIndexOf(' ', 159);
+    description = `${description.slice(0, cutoff)}.`;
+  }
+  return description;
+}
+
+function canonicalUrl(file) {
+  return file === 'index.md' ? `${siteUrl}/` : `${siteUrl}/${slugFor(file)}`;
+}
+
+function pageDetails(file) {
+  for (const group of nav) {
+    const item = group.items.find(([, itemFile]) => itemFile === file);
+    if (item) return { group: group.section, label: item[0], summary: item[2] };
+  }
+  throw new Error(`Navigation details missing for ${file}`);
+}
+
+function tableOfContents(markdown) {
+  const headings = [...markdown.matchAll(/^##\s+(.+)$/gm)].map(match => {
+    const text = match[1].trim();
+    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    return `<li><a href="#${id}">${inlineMarkdown(text)}</a></li>`;
+  });
+  if (headings.length < 3) return '';
+  return `<nav class="table-of-contents" aria-label="On this page"><strong>On this page</strong><ul>${headings.join('')}</ul></nav>`;
+}
+
 function sidebar(activeFile) {
   return nav.map((group) => {
     const isOpen = group.items.some(([, file]) => file === activeFile);
@@ -251,6 +306,7 @@ function clientScript() {
       var backdrop = document.querySelector('.nav-backdrop');
       var mobileNav = window.matchMedia('(max-width: 900px)');
       var sections = Array.from(document.querySelectorAll('.nav-section'));
+      var search = document.querySelector('#docs-search');
 
       function setNavOpen(open) {
         document.body.classList.toggle('nav-open', open);
@@ -266,6 +322,20 @@ function clientScript() {
           });
         });
       });
+
+      if (search) {
+        search.addEventListener('input', function () {
+          var query = search.value.trim().toLowerCase();
+          sections.forEach(function (section) {
+            var links = Array.from(section.querySelectorAll('.nav-link'));
+            links.forEach(function (link) {
+              link.hidden = Boolean(query) && !link.textContent.toLowerCase().includes(query);
+            });
+            section.hidden = Boolean(query) && links.every(function (link) { return link.hidden; });
+            if (query && !section.hidden) section.open = true;
+          });
+        });
+      }
 
       if (toggle) {
         toggle.addEventListener('click', function () {
@@ -328,6 +398,20 @@ function clientScript() {
         });
       }
 
+      function syncSeo(nextDocument) {
+        ['meta[name="description"]', 'meta[name="robots"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:url"]'].forEach(function (selector) {
+          var current = document.querySelector(selector);
+          var next = nextDocument.querySelector(selector);
+          if (current && next) current.setAttribute('content', next.getAttribute('content'));
+        });
+        var currentCanonical = document.querySelector('link[rel="canonical"]');
+        var nextCanonical = nextDocument.querySelector('link[rel="canonical"]');
+        if (currentCanonical && nextCanonical) currentCanonical.setAttribute('href', nextCanonical.getAttribute('href'));
+        var currentStructuredData = document.querySelector('[data-seo="structured-data"]');
+        var nextStructuredData = nextDocument.querySelector('[data-seo="structured-data"]');
+        if (currentStructuredData && nextStructuredData) currentStructuredData.textContent = nextStructuredData.textContent;
+      }
+
       async function navigate(url, push, moveFocus, destinationState) {
         if (navigationController) navigationController.abort();
         navigationController = new AbortController();
@@ -346,6 +430,7 @@ function clientScript() {
 
           currentContent.replaceChildren(...Array.from(nextContent.childNodes));
           document.title = nextDocument.title;
+          syncSeo(nextDocument);
           updateActiveLink(url);
           setNavOpen(false);
           if (push) {
@@ -391,24 +476,64 @@ function clientScript() {
   </script>`;
 }
 
-function pageTemplate({ title, body, activeFile }) {
+function pageTemplate({ title, body, activeFile, modified }) {
+  const details = pageDetails(activeFile);
+  const pageTitle = seoTitle(title);
+  const description = seoDescription(title, details.summary);
+  const canonical = canonicalUrl(activeFile);
+  const structuredData = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'TechArticle',
+        headline: title,
+        description,
+        dateModified: modified,
+        inLanguage: 'en',
+        mainEntityOfPage: canonical,
+        author: { '@type': 'Organization', name: 'OpenVibely', url: 'https://openvibely.ai/' },
+        publisher: { '@type': 'Organization', name: 'OpenVibely', url: 'https://openvibely.ai/' },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'OpenVibely Docs', item: `${siteUrl}/` },
+          { '@type': 'ListItem', position: 2, name: title, item: canonical },
+        ],
+      },
+    ],
+  }).replace(/</g, '\\u003c');
+  const breadcrumbs = `<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>${escapeHtml(details.group)}</span><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(details.label)}</span></nav>`;
   return `<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(title)} - OpenVibely Docs</title>
-  <meta name="description" content="Documentation for the OpenVibely web app, a self-hosted UI for AI coding tasks, agents, scheduling, review, and integrations.">
+  <title>${escapeHtml(pageTitle)}</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#111318">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OpenVibely Docs">
+  <meta property="og:title" content="${escapeHtml(pageTitle)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${escapeHtml(canonical)}">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="${escapeHtml(canonical)}">
   <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json" data-seo="structured-data">${structuredData}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <aside id="docs-sidebar" class="sidebar" aria-label="Documentation navigation">
-    <div class="brand"><a class="brand-home" href="https://openvibely.ai/" aria-label="OpenVibely home"><img class="brand-mark" src="assets/avatar.png" alt=""></a><span>OpenVibely Docs</span></div>
+    <div class="brand"><a class="brand-home" href="https://openvibely.ai/" aria-label="OpenVibely home"><img class="brand-mark" src="assets/avatar.png" alt="" width="32" height="32" decoding="async" fetchpriority="high"></a><span>OpenVibely Docs</span></div>
+    <div class="docs-search"><label for="docs-search">Search documentation</label><input id="docs-search" type="search" placeholder="Search docs" autocomplete="off"></div>
     <nav>${sidebar(activeFile)}</nav>
-    <div class="sidebar-footer"><a href="llms.txt">llms.txt</a><a href="llms-full.txt">llms-full.txt</a></div>
+    <div class="sidebar-footer"><a href="llms.txt">llms.txt</a><a href="llms-full.txt">llms-full.txt</a><a href="sitemap.xml">sitemap</a></div>
   </aside>
   <div class="nav-backdrop" aria-hidden="true"></div>
-  <main class="main">
+  <main id="main-content" class="main">
     <div class="topbar">
       <button class="menu-toggle" type="button" aria-controls="docs-sidebar" aria-expanded="false">Menu</button>
       <nav class="top-links" aria-label="Primary links">
@@ -420,7 +545,7 @@ function pageTemplate({ title, body, activeFile }) {
         <a href="https://github.com/openvibely/openvibely">GitHub</a>
       </nav>
     </div>
-    <article class="content" tabindex="-1">${body}</article>
+    <article class="content" tabindex="-1">${breadcrumbs}${body}</article>
   </main>
   ${clientScript()}
 </body>
@@ -449,20 +574,29 @@ async function main() {
 
   const pageFiles = nav.flatMap(group => group.items.map(item => item[1]));
   const allMarkdown = [];
+  const sitemapEntries = [];
   for (const file of pageFiles) {
-    const source = await readFile(join(pagesDir, file), 'utf8');
+    const sourcePath = join(pagesDir, file);
+    const source = await readFile(sourcePath, 'utf8');
+    const sourceStats = await stat(sourcePath);
+    const modified = sourceStats.mtime.toISOString().slice(0, 10);
     const title = titleFromMarkdown(source);
-    const body = markdownToHtml(source);
-    await writeFile(join(distDir, slugFor(file)), pageTemplate({ title, body, activeFile: file }));
+    let body = markdownToHtml(source);
+    const contents = tableOfContents(source);
+    if (contents) body = body.replace(/<\/h1>\n/, `</h1>\n${contents}`);
+    await writeFile(join(distDir, slugFor(file)), pageTemplate({ title, body, activeFile: file, modified }));
+    sitemapEntries.push(`  <url><loc>${escapeHtml(canonicalUrl(file))}</loc><lastmod>${modified}</lastmod></url>`);
     allMarkdown.push(`# ${title}\n\nSource: /${slugFor(file)}\n\n${source.replace(/^#\s+.+$/m, '').trim()}\n`);
   }
 
   const shortIndex = nav.map(group => {
-    const links = group.items.map(([label, file, description]) => `- [${label}](https://docs.openvibely.local/${slugFor(file)}): ${description || ''}`).join('\n');
+    const links = group.items.map(([label, file, description]) => `- [${label}](${canonicalUrl(file)}): ${description || ''}`).join('\n');
     return `## ${group.section}\n${links}`;
   }).join('\n\n');
   await writeFile(join(distDir, 'llms.txt'), `# OpenVibely Documentation\n\n${shortIndex}\n`);
   await writeFile(join(distDir, 'llms-full.txt'), allMarkdown.join('\n\n---\n\n'));
+  await writeFile(join(distDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries.join('\n')}\n</urlset>\n`);
+  await writeFile(join(distDir, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`);
 }
 
 main().catch(error => {
