@@ -1,4 +1,5 @@
-import { mkdir, readFile, rm, writeFile, copyFile, readdir, stat } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile, copyFile, readdir } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 
 const root = process.cwd();
@@ -269,6 +270,19 @@ function canonicalUrl(file) {
   return file === 'index.md' ? `${siteUrl}/` : `${siteUrl}/${slugFor(file)}`;
 }
 
+function sourceModifiedDate(file) {
+  try {
+    const date = execFileSync('git', ['log', '-1', '--format=%cs', '--', join('src', 'pages', file)], {
+      cwd: root,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    return date || null;
+  } catch {
+    return null;
+  }
+}
+
 function pageDetails(file) {
   for (const group of nav) {
     const item = group.items.find(([, itemFile]) => itemFile === file);
@@ -308,15 +322,20 @@ function clientScript() {
       var sections = Array.from(document.querySelectorAll('.nav-section'));
       var search = document.querySelector('#docs-search');
 
-      function setNavOpen(open) {
+      function setNavOpen(open, restoreFocus) {
         document.body.classList.toggle('nav-open', open);
-        if (sidebar) sidebar.setAttribute('aria-hidden', mobileNav.matches && !open ? 'true' : 'false');
+        if (sidebar) {
+          sidebar.setAttribute('aria-hidden', mobileNav.matches && !open ? 'true' : 'false');
+          sidebar.toggleAttribute('inert', mobileNav.matches && !open);
+        }
         if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open && mobileNav.matches && search) search.focus();
+        if (restoreFocus && mobileNav.matches && toggle) toggle.focus();
       }
 
       sections.forEach(function (section) {
         section.addEventListener('toggle', function () {
-          if (!section.open) return;
+          if (!section.open || (search && search.value.trim())) return;
           sections.forEach(function (other) {
             if (other !== section) other.open = false;
           });
@@ -333,30 +352,31 @@ function clientScript() {
             });
             section.hidden = Boolean(query) && links.every(function (link) { return link.hidden; });
             if (query && !section.hidden) section.open = true;
+            if (!query) section.open = Boolean(section.querySelector('.nav-link.active'));
           });
         });
       }
 
       if (toggle) {
         toggle.addEventListener('click', function () {
-          setNavOpen(!document.body.classList.contains('nav-open'));
+          setNavOpen(!document.body.classList.contains('nav-open'), false);
         });
       }
       if (backdrop) {
         backdrop.addEventListener('click', function () {
-          setNavOpen(false);
+          setNavOpen(false, true);
         });
       }
       document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') setNavOpen(false);
+        if (event.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false, true);
       });
       document.querySelectorAll('.nav-link').forEach(function (link) {
         link.addEventListener('click', function () {
-          if (mobileNav.matches) setNavOpen(false);
+          if (mobileNav.matches) setNavOpen(false, false);
         });
       });
       mobileNav.addEventListener('change', function () {
-        setNavOpen(false);
+        setNavOpen(false, false);
       });
 
       if (sidebar) {
@@ -488,7 +508,7 @@ function pageTemplate({ title, body, activeFile, modified }) {
         '@type': 'TechArticle',
         headline: title,
         description,
-        dateModified: modified,
+        ...(modified ? { dateModified: modified } : {}),
         inLanguage: 'en',
         mainEntityOfPage: canonical,
         author: { '@type': 'Organization', name: 'OpenVibely', url: 'https://openvibely.ai/' },
@@ -578,14 +598,13 @@ async function main() {
   for (const file of pageFiles) {
     const sourcePath = join(pagesDir, file);
     const source = await readFile(sourcePath, 'utf8');
-    const sourceStats = await stat(sourcePath);
-    const modified = sourceStats.mtime.toISOString().slice(0, 10);
+    const modified = sourceModifiedDate(file);
     const title = titleFromMarkdown(source);
     let body = markdownToHtml(source);
     const contents = tableOfContents(source);
     if (contents) body = body.replace(/<\/h1>\n/, `</h1>\n${contents}`);
     await writeFile(join(distDir, slugFor(file)), pageTemplate({ title, body, activeFile: file, modified }));
-    sitemapEntries.push(`  <url><loc>${escapeHtml(canonicalUrl(file))}</loc><lastmod>${modified}</lastmod></url>`);
+    sitemapEntries.push(`  <url><loc>${escapeHtml(canonicalUrl(file))}</loc>${modified ? `<lastmod>${modified}</lastmod>` : ''}</url>`);
     allMarkdown.push(`# ${title}\n\nSource: /${slugFor(file)}\n\n${source.replace(/^#\s+.+$/m, '').trim()}\n`);
   }
 

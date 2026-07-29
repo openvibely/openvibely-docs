@@ -53,6 +53,19 @@ test('mobile header keeps every horizontally scrolling link reachable', () => {
   );
 });
 
+test('mobile sidebar is inert when closed and manages keyboard focus', () => {
+  assert.match(html, /sidebar\.toggleAttribute\('inert', mobileNav\.matches && !open\)/, 'closed mobile navigation remains keyboard focusable');
+  assert.match(html, /if \(open && mobileNav\.matches && search\) search\.focus\(\)/, 'opening mobile navigation does not move focus into it');
+  assert.match(html, /if \(restoreFocus && mobileNav\.matches && toggle\) toggle\.focus\(\)/, 'closing mobile navigation does not restore focus');
+  assert.match(html, /setNavOpen\(false, true\)/, 'dismissal controls do not request focus restoration');
+});
+
+test('search keeps every matching accordion section exposed', () => {
+  assert.match(html, /if \(!section\.open \|\| \(search && search\.value\.trim\(\)\)\) return;/, 'accordion still closes other sections during search');
+  assert.match(html, /if \(!query\)[\s\S]*?section\.open = Boolean\(section\.querySelector\('\.nav-link\.active'\)\)/, 'clearing search does not restore the active section');
+  assert.match(html, /if \(query && !section\.hidden\) section\.open = true;/, 'matching sections are not opened');
+});
+
 test('back navigation restores scroll only after delayed content replacement', async () => {
   const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
   assert.ok(script, 'generated client script is missing');
@@ -70,7 +83,8 @@ test('back navigation restores scroll only after delayed content replacement', a
   const sidebar = {
     scrollTop: 0,
     addEventListener() {},
-    setAttribute() {}
+    setAttribute() {},
+    toggleAttribute() {}
   };
   const location = {
     get href() { return currentUrl.href; },

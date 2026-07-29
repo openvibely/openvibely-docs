@@ -40,11 +40,18 @@ test('pages include crawlable breadcrumbs, structured data, and long-page naviga
   assert.match(quickstart, /<nav class="table-of-contents" aria-label="On this page">/);
 });
 
+test('sitemap and article schema use stable source history dates', () => {
+  const expected = execFileSync('git', ['log', '-1', '--format=%cs', '--', 'src/pages/quickstart.md'], { encoding: 'utf8' }).trim();
+  assert.ok(expected, 'quickstart source history date is missing');
+  assert.match(quickstart, new RegExp(`"dateModified":"${expected}"`));
+});
+
 test('sitemap and robots advertise every canonical documentation route', async () => {
   const sitemap = await readFile(new URL('../dist/sitemap.xml', import.meta.url), 'utf8');
   const robots = await readFile(new URL('../dist/robots.txt', import.meta.url), 'utf8');
+  const expected = execFileSync('git', ['log', '-1', '--format=%cs', '--', 'src/pages/quickstart.md'], { encoding: 'utf8' }).trim();
   assert.match(sitemap, /<loc>https:\/\/docs\.openvibely\.ai\/<\/loc>/);
-  assert.match(sitemap, /<loc>https:\/\/docs\.openvibely\.ai\/quickstart\.html<\/loc>/);
+  assert.match(sitemap, new RegExp(`<loc>https://docs\\.openvibely\\.ai/quickstart\\.html</loc><lastmod>${expected}</lastmod>`));
   assert.match(robots, /User-agent: \*\nAllow: \/\nSitemap: https:\/\/docs\.openvibely\.ai\/sitemap\.xml/);
 });
 
