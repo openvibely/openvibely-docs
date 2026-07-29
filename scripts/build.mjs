@@ -237,7 +237,7 @@ function sidebar(activeFile) {
     const isOpen = group.items.some(([, file]) => file === activeFile);
     const items = group.items.map(([label, file, description]) => {
       const active = file === activeFile ? ' active' : '';
-      return `<a class="nav-link${active}" href="${slugFor(file)}"><span>${escapeHtml(label)}</span></a>`;
+      return `<a class="nav-link${active}" href="${slugFor(file)}"${active ? ' aria-current="page"' : ''}><span>${escapeHtml(label)}</span></a>`;
     }).join('\n');
     return `<details class="nav-section"${isOpen ? ' open' : ''}><summary><span><strong>${escapeHtml(group.section)}</strong></span></summary><div class="nav-items">${items}</div></details>`;
   }).join('\n');
@@ -299,6 +299,73 @@ function clientScript() {
           sessionStorage.setItem('openvibely-docs-sidebar-scroll', String(sidebar.scrollTop));
         });
       }
+
+      var navigationController;
+
+      function updateActiveLink(url) {
+        document.querySelectorAll('.nav-link').forEach(function (link) {
+          var active = new URL(link.href, window.location.href).pathname === url.pathname;
+          link.classList.toggle('active', active);
+          if (active) {
+            link.setAttribute('aria-current', 'page');
+            var section = link.closest('.nav-section');
+            if (section) section.open = true;
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      async function navigate(url, push, moveFocus) {
+        if (navigationController) navigationController.abort();
+        navigationController = new AbortController();
+        try {
+          var response = await fetch(url.href, {
+            headers: { Accept: 'text/html' },
+            signal: navigationController.signal
+          });
+          if (!response.ok) throw new Error('Documentation page request failed');
+
+          var nextDocument = new DOMParser().parseFromString(await response.text(), 'text/html');
+          var nextContent = nextDocument.querySelector('.content');
+          var currentContent = document.querySelector('.content');
+          if (!nextContent || !currentContent) throw new Error('Documentation page content is missing');
+
+          currentContent.replaceChildren(...Array.from(nextContent.childNodes));
+          document.title = nextDocument.title;
+          updateActiveLink(url);
+          setNavOpen(false);
+          if (push) history.pushState({}, '', url.href);
+
+          if (url.hash) {
+            var target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+            if (target) target.scrollIntoView();
+          } else if (push) {
+            window.scrollTo(0, 0);
+          }
+          if (moveFocus) currentContent.focus({ preventScroll: true });
+        } catch (error) {
+          if (error.name !== 'AbortError') window.location.assign(url.href);
+        }
+      }
+
+      document.addEventListener('click', function (event) {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        var link = event.target.closest('a');
+        if (!link || link.target || link.hasAttribute('download')) return;
+
+        var url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin || !url.pathname.endsWith('.html')) return;
+        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+
+        event.preventDefault();
+        navigate(url, true, true);
+      });
+
+      window.addEventListener('popstate', function () {
+        navigate(new URL(window.location.href), false, false);
+      });
+
       setNavOpen(false);
     })();
   </script>`;
@@ -331,7 +398,7 @@ function pageTemplate({ title, body, activeFile }) {
         <a href="https://github.com/openvibely/openvibely">GitHub</a>
       </nav>
     </div>
-    <article class="content">${body}</article>
+    <article class="content" tabindex="-1">${body}</article>
   </main>
   ${clientScript()}
 </body>
