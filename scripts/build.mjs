@@ -301,6 +301,18 @@ function clientScript() {
       }
 
       var navigationController;
+      var scrollStateKey = 'openvibelyDocsScroll';
+
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+      function saveScrollPosition() {
+        var state = Object.assign({}, history.state || {});
+        state[scrollStateKey] = { x: window.scrollX, y: window.scrollY };
+        history.replaceState(state, '', window.location.href);
+      }
+
+      saveScrollPosition();
+      window.addEventListener('scroll', saveScrollPosition, { passive: true });
 
       function updateActiveLink(url) {
         document.querySelectorAll('.nav-link').forEach(function (link) {
@@ -316,9 +328,10 @@ function clientScript() {
         });
       }
 
-      async function navigate(url, push, moveFocus) {
+      async function navigate(url, push, moveFocus, destinationState) {
         if (navigationController) navigationController.abort();
         navigationController = new AbortController();
+        if (push) saveScrollPosition();
         try {
           var response = await fetch(url.href, {
             headers: { Accept: 'text/html' },
@@ -335,13 +348,20 @@ function clientScript() {
           document.title = nextDocument.title;
           updateActiveLink(url);
           setNavOpen(false);
-          if (push) history.pushState({}, '', url.href);
+          if (push) {
+            var nextState = {};
+            nextState[scrollStateKey] = { x: 0, y: 0 };
+            history.pushState(nextState, '', url.href);
+          }
 
           if (url.hash) {
             var target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
             if (target) target.scrollIntoView();
           } else if (push) {
             window.scrollTo(0, 0);
+          } else {
+            var savedPosition = destinationState && destinationState[scrollStateKey];
+            window.scrollTo(savedPosition ? savedPosition.x : 0, savedPosition ? savedPosition.y : 0);
           }
           if (moveFocus) currentContent.focus({ preventScroll: true });
         } catch (error) {
@@ -362,8 +382,8 @@ function clientScript() {
         navigate(url, true, true);
       });
 
-      window.addEventListener('popstate', function () {
-        navigate(new URL(window.location.href), false, false);
+      window.addEventListener('popstate', function (event) {
+        navigate(new URL(window.location.href), false, false, event.state);
       });
 
       setNavOpen(false);

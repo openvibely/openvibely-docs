@@ -18,10 +18,111 @@ test('documentation navigation preserves the shell and brand image', () => {
 test('client-side navigation preserves history and browser navigation', () => {
   assert.match(html, /history\.pushState/, 'navigations are not added to browser history');
   assert.match(html, /window\.addEventListener\('popstate'/, 'back and forward navigation is not handled');
+  assert.match(html, /history\.scrollRestoration = 'manual'/, 'native scroll restoration can race asynchronous content replacement');
+  assert.match(html, /state\[scrollStateKey\] = \{ x: window\.scrollX, y: window\.scrollY \}/, 'outgoing history entries do not retain their scroll position');
+  assert.match(html, /navigate\([^\n]+event\.state/, 'back and forward navigation does not receive the destination history state');
 });
 
 test('client-side navigation keeps accessible focus and native-link fallbacks', () => {
   assert.match(html, /class="content" tabindex="-1"/, 'content is not programmatically focusable');
   assert.match(html, /event\.defaultPrevented[^\n]+event\.button[^\n]+event\.metaKey/, 'modified and non-primary clicks are not preserved');
   assert.match(html, /window\.location\.assign\(url\.href\)/, 'failed client navigation has no native fallback');
+});
+
+test('back navigation restores scroll only after delayed content replacement', async () => {
+  const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(script, 'generated client script is missing');
+
+  const events = [];
+  const windowListeners = new Map();
+  const documentListeners = new Map();
+  let currentUrl = new URL('https://docs.example/quickstart.html');
+  let resolveFetch;
+  const delayedResponse = new Promise(resolve => { resolveFetch = resolve; });
+  const currentContent = {
+    replaceChildren() { events.push('replace'); },
+    focus() {}
+  };
+  const sidebar = {
+    scrollTop: 0,
+    addEventListener() {},
+    setAttribute() {}
+  };
+  const location = {
+    get href() { return currentUrl.href; },
+    get origin() { return currentUrl.origin; },
+    get pathname() { return currentUrl.pathname; },
+    get search() { return currentUrl.search; },
+    assign(url) { throw new Error(`unexpected native navigation to ${url}`); }
+  };
+  const history = {
+    state: {},
+    scrollRestoration: 'auto',
+    replaceState(state) { this.state = state; },
+    pushState(state, _unused, url) {
+      this.state = state;
+      currentUrl = new URL(url);
+    }
+  };
+  const window = {
+    location,
+    history,
+    scrollX: 0,
+    scrollY: 120,
+    matchMedia() { return { matches: false, addEventListener() {} }; },
+    addEventListener(type, listener) { windowListeners.set(type, listener); },
+    scrollTo(x, y) {
+      this.scrollX = x;
+      this.scrollY = y;
+      events.push(`scroll:${x},${y}`);
+    }
+  };
+  const document = {
+    title: 'Quickstart - OpenVibely Docs',
+    body: { classList: { toggle() {}, contains() { return false; } } },
+    querySelector(selector) {
+      if (selector === '.sidebar') return sidebar;
+      if (selector === '.content') return currentContent;
+      return null;
+    },
+    querySelectorAll() { return []; },
+    addEventListener(type, listener) { documentListeners.set(type, listener); },
+    getElementById() { return null; }
+  };
+  const sessionStorage = {
+    getItem() { return null; },
+    setItem() {}
+  };
+  class FakeDOMParser {
+    parseFromString() {
+      return {
+        title: 'Overview - OpenVibely Docs',
+        querySelector(selector) {
+          return selector === '.content' ? { childNodes: [{ page: 'overview' }] } : null;
+        }
+      };
+    }
+  }
+
+  Function(
+    'window', 'document', 'history', 'sessionStorage', 'fetch', 'DOMParser',
+    'AbortController', 'URL', script
+  )(
+    window, document, history, sessionStorage, () => delayedResponse, FakeDOMParser,
+    AbortController, URL
+  );
+
+  assert.equal(history.scrollRestoration, 'manual');
+  const destinationState = { openvibelyDocsScroll: { x: 0, y: 1400 } };
+  currentUrl = new URL('https://docs.example/index.html');
+  history.state = destinationState;
+  windowListeners.get('popstate')({ state: destinationState });
+
+  await Promise.resolve();
+  assert.deepEqual(events, [], 'scroll restoration ran before the destination was available');
+
+  resolveFetch({ ok: true, text: async () => '<html></html>' });
+  await new Promise(resolve => setImmediate(resolve));
+  assert.deepEqual(events, ['replace', 'scroll:0,1400']);
+  assert.equal(document.title, 'Overview - OpenVibely Docs');
 });
