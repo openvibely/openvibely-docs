@@ -6,6 +6,7 @@ import test from 'node:test';
 execFileSync(process.execPath, ['scripts/build.mjs'], { stdio: 'pipe' });
 
 const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
+const styles = await readFile(new URL('../public/assets/styles.css', import.meta.url), 'utf8');
 
 test('documentation navigation preserves the shell and brand image', () => {
   assert.match(html, /document\.addEventListener\('click'/, 'delegated link handling is missing');
@@ -39,6 +40,16 @@ test('hosted OpenVibely actions and brand home link are available', () => {
     html,
     /<a href="https:\/\/openvibely\.ai\/">Home<\/a>\s*<a href="https:\/\/openvibely\.ai\/login">Log in<\/a>\s*<a href="https:\/\/github\.com\/openvibely\/openvibely">GitHub<\/a>/,
     'hosted home and login actions should be grouped before the GitHub link'
+  );
+});
+
+test('mobile header keeps every horizontally scrolling link reachable', () => {
+  const mobileStyles = styles.match(/@media \(max-width: 900px\) \{([\s\S]*?)\n\}/)?.[1];
+  assert.ok(mobileStyles, 'mobile navigation styles are missing');
+  assert.match(
+    mobileStyles,
+    /\.top-links\s*\{[\s\S]*?overflow-x:\s*auto;[\s\S]*?justify-content:\s*flex-start;/,
+    'scrollable mobile links must start-align so leading links are not clipped'
   );
 });
 
