@@ -29,6 +29,11 @@ test('client-side navigation keeps accessible focus and native-link fallbacks', 
   assert.match(html, /window\.location\.assign\(url\.href\)/, 'failed client navigation has no native fallback');
 });
 
+test('hosted OpenVibely actions are available in the header', () => {
+  assert.match(html, /<a href="https:\/\/openvibely\.ai\/login">Log in<\/a>/, 'hosted login link is missing');
+  assert.match(html, /<a href="https:\/\/openvibely\.ai\/">Go to app<\/a>/, 'hosted app link is missing');
+});
+
 test('back navigation restores scroll only after delayed content replacement', async () => {
   const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
   assert.ok(script, 'generated client script is missing');

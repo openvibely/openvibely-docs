@@ -416,6 +416,8 @@ function pageTemplate({ title, body, activeFile }) {
         <a href="quickstart.html">Quickstart</a>
         <a href="features-overview.html">Features</a>
         <a href="https://github.com/openvibely/openvibely">GitHub</a>
+        <a href="https://openvibely.ai/login">Log in</a>
+        <a href="https://openvibely.ai/">Go to app</a>
       </nav>
     </div>
     <article class="content" tabindex="-1">${body}</article>
