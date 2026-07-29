@@ -29,11 +29,16 @@ test('client-side navigation keeps accessible focus and native-link fallbacks', 
   assert.match(html, /window\.location\.assign\(url\.href\)/, 'failed client navigation has no native fallback');
 });
 
-test('hosted OpenVibely actions are available before the repository link in the header', () => {
+test('hosted OpenVibely actions and brand home link are available', () => {
   assert.match(
     html,
-    /<a href="https:\/\/openvibely\.ai\/">Go to app<\/a>\s*<a href="https:\/\/openvibely\.ai\/login">Log in<\/a>\s*<a href="https:\/\/github\.com\/openvibely\/openvibely">GitHub<\/a>/,
-    'hosted app actions should be grouped before the GitHub link'
+    /<a class="brand-home" href="https:\/\/openvibely\.ai\/" aria-label="OpenVibely home"><img class="brand-mark" src="assets\/avatar\.png" alt=""><\/a>/,
+    'top-left OpenVibely icon should link to the hosted home page'
+  );
+  assert.match(
+    html,
+    /<a href="https:\/\/openvibely\.ai\/">Home<\/a>\s*<a href="https:\/\/openvibely\.ai\/login">Log in<\/a>\s*<a href="https:\/\/github\.com\/openvibely\/openvibely">GitHub<\/a>/,
+    'hosted home and login actions should be grouped before the GitHub link'
   );
 });
 

@@ -403,7 +403,7 @@ function pageTemplate({ title, body, activeFile }) {
 </head>
 <body>
   <aside id="docs-sidebar" class="sidebar" aria-label="Documentation navigation">
-    <div class="brand"><img class="brand-mark" src="assets/avatar.png" alt="OpenVibely"><span>OpenVibely Docs</span></div>
+    <div class="brand"><a class="brand-home" href="https://openvibely.ai/" aria-label="OpenVibely home"><img class="brand-mark" src="assets/avatar.png" alt=""></a><span>OpenVibely Docs</span></div>
     <nav>${sidebar(activeFile)}</nav>
     <div class="sidebar-footer"><a href="llms.txt">llms.txt</a><a href="llms-full.txt">llms-full.txt</a></div>
   </aside>
@@ -415,7 +415,7 @@ function pageTemplate({ title, body, activeFile }) {
         <a href="index.html">Overview</a>
         <a href="quickstart.html">Quickstart</a>
         <a href="features-overview.html">Features</a>
-        <a href="https://openvibely.ai/">Go to app</a>
+        <a href="https://openvibely.ai/">Home</a>
         <a href="https://openvibely.ai/login">Log in</a>
         <a href="https://github.com/openvibely/openvibely">GitHub</a>
       </nav>

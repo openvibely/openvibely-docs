@@ -65,6 +65,15 @@ pre code { background: transparent; border: 0; padding: 0; }
   letter-spacing: -0.02em;
   margin: 0.35rem 0 1.5rem;
 }
+.brand-home {
+  display: block;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+.brand-home:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
 .brand-mark {
   display: block;
   width: 2rem;
