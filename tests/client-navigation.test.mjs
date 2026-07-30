@@ -66,6 +66,14 @@ test('search keeps every matching accordion section exposed', () => {
   assert.match(html, /if \(query && !section\.hidden\) section\.open = true;/, 'matching sections are not opened');
 });
 
+test('search hides nonmatching grid navigation links', () => {
+  assert.match(
+    styles,
+    /\[hidden\]\s*\{\s*display:\s*none\s*!important;\s*\}/,
+    'author display styles can override hidden search results'
+  );
+});
+
 test('back navigation restores scroll only after delayed content replacement', async () => {
   const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
   assert.ok(script, 'generated client script is missing');
