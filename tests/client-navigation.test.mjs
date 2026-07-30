@@ -60,6 +60,16 @@ test('mobile sidebar is inert when closed and manages keyboard focus', () => {
   assert.match(html, /setNavOpen\(false, true\)/, 'dismissal controls do not request focus restoration');
 });
 
+test('search uses an accessible name without a visible label and highlights focus', () => {
+  assert.match(html, /<div class="docs-search"><input id="docs-search"[^>]+aria-label="Search documentation"[^>]*><\/div>/, 'search input does not have an accessible name');
+  assert.doesNotMatch(html, /<label for="docs-search">/, 'search label should not be visible above the input');
+  assert.match(
+    styles,
+    /\.docs-search input:focus-visible\s*\{[\s\S]*?border-color:\s*#aab1ff;/,
+    'search border does not change when the input receives keyboard focus'
+  );
+});
+
 test('search keeps every matching accordion section exposed', () => {
   assert.match(html, /if \(!section\.open \|\| \(search && search\.value\.trim\(\)\)\) return;/, 'accordion still closes other sections during search');
   assert.match(html, /if \(!query\)[\s\S]*?section\.open = Boolean\(section\.querySelector\('\.nav-link\.active'\)\)/, 'clearing search does not restore the active section');

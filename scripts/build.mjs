@@ -548,7 +548,7 @@ function pageTemplate({ title, body, activeFile, modified }) {
   <a class="skip-link" href="#main-content">Skip to content</a>
   <aside id="docs-sidebar" class="sidebar" aria-label="Documentation navigation">
     <div class="brand"><a class="brand-home" href="https://openvibely.ai/" aria-label="OpenVibely home"><img class="brand-mark" src="assets/avatar.png" alt="" width="32" height="32" decoding="async" fetchpriority="high"></a><span>OpenVibely Docs</span></div>
-    <div class="docs-search"><label for="docs-search">Search documentation</label><input id="docs-search" type="search" placeholder="Search docs" autocomplete="off"></div>
+    <div class="docs-search"><input id="docs-search" type="search" placeholder="Search docs" aria-label="Search documentation" autocomplete="off"></div>
     <nav>${sidebar(activeFile)}</nav>
     <div class="sidebar-footer"><a href="llms.txt">llms.txt</a><a href="llms-full.txt">llms-full.txt</a><a href="sitemap.xml">sitemap</a></div>
   </aside>

@@ -181,14 +181,7 @@ pre code { background: transparent; border: 0; padding: 0; }
   font-size: 0.8rem;
 }
 .docs-search {
-  display: grid;
-  gap: 0.35rem;
   margin-bottom: 1rem;
-}
-.docs-search label {
-  color: rgba(217, 225, 238, 0.82);
-  font-size: 0.78rem;
-  font-weight: 700;
 }
 .docs-search input {
   width: 100%;
@@ -198,6 +191,10 @@ pre code { background: transparent; border: 0; padding: 0; }
   color: white;
   font: inherit;
   padding: 0.55rem 0.7rem;
+}
+.docs-search input:focus-visible {
+  border-color: #aab1ff;
+  box-shadow: 0 0 0 3px rgba(170, 177, 255, 0.18);
 }
 .docs-search input::placeholder { color: var(--muted); }
 
