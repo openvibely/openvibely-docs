@@ -197,6 +197,7 @@ pre code { background: transparent; border: 0; padding: 0; }
   outline: none;
   box-shadow: none;
   background: var(--b2);
+  caret-color: var(--primary);
 }
 .docs-search input::placeholder { color: var(--muted); }
 

@@ -75,8 +75,8 @@ test('search uses an accessible name with compact borderless focus styling', () 
   );
   assert.match(
     styles,
-    /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*none;[\s\S]*?background:\s*var\(--b2\);/,
-    'search input should retain its resting fill without borders or rings when selected'
+    /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*none;[\s\S]*?background:\s*var\(--b2\);[\s\S]*?caret-color:\s*var\(--primary\);/,
+    'search input should retain its resting appearance and use only the text caret as a keyboard focus cue'
   );
   assert.doesNotMatch(
     styles,
