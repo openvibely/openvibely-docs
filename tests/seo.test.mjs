@@ -32,6 +32,30 @@ test('every page emits focused indexable metadata and a canonical URL', () => {
   assert.notEqual(metaContent(overview, 'description'), metaContent(quickstart, 'description'));
 });
 
+const completeDescriptionClosings = [
+  'Explore next steps.',
+  'Explore practical next steps.',
+  'Explore practical setup and next steps.',
+  'Get practical workflow guidance and next steps.',
+  'Get practical, UI-first workflow guidance and next steps.',
+  'Get practical, UI-first guidance for secure AI coding workflows.',
+  'Use practical guidance for secure, self-hosted AI coding workflows.',
+  'Get practical, UI-first guidance for secure AI coding workflows and teams.',
+  'Get practical, UI-first guidance for secure, self-hosted AI coding workflows.',
+  'Get practical, UI-first guidance for secure, self-hosted AI coding workflows and teams.',
+  'Use practical, UI-first guidance to build secure, self-hosted AI coding workflows for your team.',
+];
+
+test('every SEO description ends with a complete sentence', () => {
+  for (const [route, html] of pages) {
+    const description = metaContent(html, 'description') || '';
+    assert.ok(
+      completeDescriptionClosings.some(closing => description.endsWith(closing)),
+      `${route} description has an incomplete closing sentence: ${description}`
+    );
+  }
+});
+
 test('pages include crawlable breadcrumbs, structured data, and long-page navigation', () => {
   assert.match(quickstart, /<nav class="breadcrumbs" aria-label="Breadcrumb">/);
   assert.match(quickstart, /<script type="application\/ld\+json" data-seo="structured-data">/);

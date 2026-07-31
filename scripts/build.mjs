@@ -249,20 +249,24 @@ function seoTitle(title) {
 }
 
 function seoDescription(title, summary) {
-  let description = `Learn how to use ${title} in OpenVibely. ${summary.replace(/[.!?]+$/, '')}. Get practical, UI-first guidance for secure, self-hosted AI coding workflows and teams.`;
-  if (description.length < 150) description += ' Explore setup tips, examples, and next steps.';
-  if (description.length > 160) {
-    const cutoff = description.lastIndexOf(' ', 159);
-    description = `${description.slice(0, cutoff)}.`;
-  }
-  if (description.length < 150) {
-    const suffixes = [' Learn more.', ' See more.', ' Details.', ' Guide.', ' Tips.'];
-    description = `${description.slice(0, -1)}${suffixes.find(suffix => description.length - 1 + suffix.length >= 150 && description.length - 1 + suffix.length <= 160) || ' Learn more.'}`;
-  }
-  if (description.length > 160) {
-    const cutoff = description.lastIndexOf(' ', 159);
-    description = `${description.slice(0, cutoff)}.`;
-  }
+  const base = `Learn how to use ${title} in OpenVibely. ${summary.replace(/[.!?]+$/, '')}.`;
+  const closings = [
+    'Explore next steps.',
+    'Explore practical next steps.',
+    'Explore practical setup and next steps.',
+    'Get practical workflow guidance and next steps.',
+    'Get practical, UI-first workflow guidance and next steps.',
+    'Get practical, UI-first guidance for secure AI coding workflows.',
+    'Use practical guidance for secure, self-hosted AI coding workflows.',
+    'Get practical, UI-first guidance for secure AI coding workflows and teams.',
+    'Get practical, UI-first guidance for secure, self-hosted AI coding workflows.',
+    'Get practical, UI-first guidance for secure, self-hosted AI coding workflows and teams.',
+    'Use practical, UI-first guidance to build secure, self-hosted AI coding workflows for your team.',
+  ];
+  const description = closings
+    .map(closing => `${base} ${closing}`)
+    .find(candidate => candidate.length >= 150 && candidate.length <= 160);
+  if (!description) throw new Error(`SEO description length cannot be satisfied for ${title}`);
   return description;
 }
 
