@@ -60,13 +60,18 @@ test('mobile sidebar is inert when closed and manages keyboard focus', () => {
   assert.match(html, /setNavOpen\(false, true\)/, 'dismissal controls do not request focus restoration');
 });
 
-test('search uses an accessible name without a visible label and highlights focus', () => {
+test('search uses an accessible name with compact borderless focus styling', () => {
   assert.match(html, /<div class="docs-search"><input id="docs-search"[^>]+aria-label="Search documentation"[^>]*><\/div>/, 'search input does not have an accessible name');
   assert.doesNotMatch(html, /<label for="docs-search">/, 'search label should not be visible above the input');
   assert.match(
     styles,
-    /\.docs-search input:focus-visible\s*\{[\s\S]*?border-color:\s*#aab1ff;/,
-    'search border does not change when the input receives keyboard focus'
+    /\.docs-search input\s*\{[\s\S]*?border:\s*0;[\s\S]*?line-height:\s*1\.3;[\s\S]*?padding:\s*0\.35rem 0\.6rem;/,
+    'search input is not compact and borderless'
+  );
+  assert.match(
+    styles,
+    /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*none;[\s\S]*?background:\s*var\(--b3\);/,
+    'search focus styling still adds a border or ring'
   );
 });
 
