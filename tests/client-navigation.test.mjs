@@ -68,20 +68,20 @@ test('search uses an accessible name with compact borderless focus styling', () 
     /\.docs-search input\s*\{[\s\S]*?border:\s*0;[\s\S]*?line-height:\s*1\.3;[\s\S]*?padding:\s*0\.35rem 0\.6rem;/,
     'search input is not compact and borderless'
   );
-  assert.match(
+  assert.doesNotMatch(
     styles,
-    /--search-focus:\s*#5c6982;/,
-    'search focus fill does not provide sufficient visual contrast'
+    /--search-focus:/,
+    'search input should not define a selected-state fill color'
   );
   assert.match(
     styles,
-    /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*none;[\s\S]*?background:\s*var\(--search-focus\);/,
-    'search input focus should use only a borderless fill change'
+    /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*none;[\s\S]*?background:\s*var\(--b2\);/,
+    'search input should retain its resting fill without borders or rings when selected'
   );
-  assert.match(
+  assert.doesNotMatch(
     styles,
-    /\.docs-search input:focus-visible::placeholder\s*\{\s*color:\s*white;\s*\}/,
-    'focused search placeholder does not retain accessible text contrast'
+    /\.docs-search input:focus-visible::placeholder/,
+    'search placeholder should not change color when selected'
   );
 });
 

@@ -7,7 +7,6 @@
   --faint: rgba(217, 225, 238, 0.1);
   --primary: #7480ff;
   --primary-soft: rgba(116, 128, 255, 0.16);
-  --search-focus: #5c6982;
   --success: #36d399;
   --warning: #fbbd23;
   --error: #f87272;
@@ -197,10 +196,9 @@ pre code { background: transparent; border: 0; padding: 0; }
 .docs-search input:focus-visible {
   outline: none;
   box-shadow: none;
-  background: var(--search-focus);
+  background: var(--b2);
 }
 .docs-search input::placeholder { color: var(--muted); }
-.docs-search input:focus-visible::placeholder { color: white; }
 
 .main { min-width: 0; flex: 1; }
 .topbar {
