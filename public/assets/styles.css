@@ -200,6 +200,10 @@ pre code { background: transparent; border: 0; padding: 0; }
   caret-color: var(--primary);
 }
 .docs-search input::placeholder { color: var(--muted); }
+.docs-search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
 
 .main { min-width: 0; flex: 1; }
 .topbar {

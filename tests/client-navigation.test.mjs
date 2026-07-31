@@ -83,6 +83,11 @@ test('search uses an accessible name with compact borderless focus styling', () 
     /\.docs-search input:focus-visible::placeholder/,
     'search placeholder should not change color when selected'
   );
+  assert.match(
+    styles,
+    /\.docs-search input::-webkit-search-cancel-button\s*\{[\s\S]*?-webkit-appearance:\s*none;[\s\S]*?appearance:\s*none;/,
+    'native search clear button should be hidden'
+  );
 });
 
 test('search keeps every matching accordion section exposed', () => {
