@@ -70,8 +70,13 @@ test('search uses an accessible name with compact borderless focus styling', () 
   );
   assert.match(
     styles,
-    /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*inset 0 -3px 0 var\(--primary\);[\s\S]*?background:\s*var\(--b3\);/,
-    'search input does not provide a visible keyboard-only focus indicator'
+    /--search-focus:\s*#5c6982;/,
+    'search focus fill does not provide sufficient visual contrast'
+  );
+  assert.match(
+    styles,
+    /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*none;[\s\S]*?background:\s*var\(--search-focus\);/,
+    'search input focus should use only a borderless fill change'
   );
 });
 
