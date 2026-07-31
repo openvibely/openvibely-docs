@@ -78,6 +78,11 @@ test('search uses an accessible name with compact borderless focus styling', () 
     /\.docs-search input:focus-visible\s*\{[\s\S]*?outline:\s*none;[\s\S]*?box-shadow:\s*none;[\s\S]*?background:\s*var\(--search-focus\);/,
     'search input focus should use only a borderless fill change'
   );
+  assert.match(
+    styles,
+    /\.docs-search input:focus-visible::placeholder\s*\{\s*color:\s*white;\s*\}/,
+    'focused search placeholder does not retain accessible text contrast'
+  );
 });
 
 test('search keeps every matching accordion section exposed', () => {

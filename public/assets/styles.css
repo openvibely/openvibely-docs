@@ -200,6 +200,7 @@ pre code { background: transparent; border: 0; padding: 0; }
   background: var(--search-focus);
 }
 .docs-search input::placeholder { color: var(--muted); }
+.docs-search input:focus-visible::placeholder { color: white; }
 
 .main { min-width: 0; flex: 1; }
 .topbar {
