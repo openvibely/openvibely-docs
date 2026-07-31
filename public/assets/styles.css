@@ -195,7 +195,7 @@ pre code { background: transparent; border: 0; padding: 0; }
 }
 .docs-search input:focus-visible {
   outline: none;
-  box-shadow: none;
+  box-shadow: inset 0 -3px 0 var(--primary);
   background: var(--b3);
 }
 .docs-search input::placeholder { color: var(--muted); }
