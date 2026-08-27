@@ -14,11 +14,15 @@ curl -fsSL https://openvibely.ai/install.sh | bash
 
 To choose the app type in the command:
 
-```bash
-# Native desktop app
-curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop
+Desktop app:
 
-# Server binary with a browser UI
+```bash
+curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop
+```
+
+Server binary with a browser UI:
+
+```bash
 curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant binary
 ```
 
@@ -34,11 +38,15 @@ irm https://openvibely.ai/install.ps1 | iex
 
 To choose the app type in the command:
 
-```powershell
-# Native desktop app
-& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop
+Desktop app:
 
-# Server binary with a browser UI
+```powershell
+& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop
+```
+
+Server binary with a browser UI:
+
+```powershell
 & ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant binary
 ```
 

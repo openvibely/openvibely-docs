@@ -7,6 +7,7 @@ execFileSync(process.execPath, ['scripts/build.mjs'], { stdio: 'pipe' });
 
 const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
 const installation = await readFile(new URL('../dist/installation.html', import.meta.url), 'utf8');
+const deployment = await readFile(new URL('../dist/deployment.html', import.meta.url), 'utf8');
 const styles = await readFile(new URL('../public/assets/styles.css', import.meta.url), 'utf8');
 
 test('documentation navigation preserves the shell and brand image', () => {
@@ -58,6 +59,30 @@ test('install chooser detects the platform and exposes every supported option', 
   assert.match(installation, /initInstallChooser\(\);[\s\S]*?currentContent\.replaceChildren|currentContent\.replaceChildren[\s\S]*?initInstallChooser\(\);/, 'client navigation does not initialize the chooser');
   assert.match(html, /assets\/styles\.css\?v=[a-f0-9]{12}/, 'stylesheet URL is not content-versioned');
   assert.match(styles, /\.install-chooser-title/, 'install chooser presentation styles are missing');
+});
+
+test('installation code blocks provide copy controls', () => {
+  const article = installation.split('</article>', 1)[0];
+  const codeBlocks = article.match(/<div class="code-block"><pre>/g) || [];
+  const copyControls = article.match(/data-copy-code/g) || [];
+
+  assert.ok(codeBlocks.length > 0, 'installation page has no rendered code blocks');
+  assert.equal(copyControls.length, codeBlocks.length, 'every installation code block must have a copy control');
+  assert.doesNotMatch(
+    article,
+    /<code class="language-(?:bash|powershell)">[^<]*(?:desktop[^<]*binary|binary[^<]*desktop)[^<]*<\/code>/,
+    'desktop and server install variants must render as separate commands',
+  );
+});
+
+test('deployment commands explain launch behavior and provide copy controls', () => {
+  assert.match(deployment, /start the server in the current terminal/, 'server command purpose is not explained');
+  assert.match(deployment, /<code class="language-bash">openvibely<\/code>/, 'server launch command is missing');
+  assert.match(deployment, /<code class="language-bash">openvibely-desktop<\/code>/, 'Linux desktop launch command is missing');
+  assert.match(deployment, /<code class="language-powershell">openvibely-desktop<\/code>/, 'Windows desktop launch command is missing');
+  assert.match(deployment, /data-copy-code/, 'deployment commands do not provide copy controls');
+  assert.match(html, /navigator\.clipboard\.writeText\(code\.textContent\)/, 'code copy controls are not wired');
+  assert.match(styles, /\.code-copy/, 'code copy controls are not styled');
 });
 
 test('mobile header keeps every horizontally scrolling link reachable', () => {

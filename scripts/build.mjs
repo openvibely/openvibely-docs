@@ -181,7 +181,7 @@ function markdownToHtml(markdown) {
         codeLang = line.slice(3).trim();
         code = [];
       } else {
-        html += `<pre><code class="language-${escapeHtml(codeLang)}">${escapeHtml(code.join('\n'))}</code></pre>\n`;
+        html += `<div class="code-block"><pre><code class="language-${escapeHtml(codeLang)}">${escapeHtml(code.join('\n'))}</code></pre><button class="code-copy" type="button" data-copy-code aria-label="Copy code">Copy</button></div>\n`;
         inCode = false;
         codeLang = '';
         code = [];
@@ -600,6 +600,16 @@ function clientScript() {
 
       document.addEventListener('click', function (event) {
         if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        var copyButton = event.target.closest('[data-copy-code]');
+        if (copyButton) {
+          var code = copyButton.parentElement && copyButton.parentElement.querySelector('code');
+          if (!code || !navigator.clipboard) return;
+          navigator.clipboard.writeText(code.textContent).then(function () {
+            copyButton.textContent = 'Copied';
+            window.setTimeout(function () { copyButton.textContent = 'Copy'; }, 1500);
+          }).catch(function () {});
+          return;
+        }
         var link = event.target.closest('a');
         if (!link || link.target || link.hasAttribute('download')) return;
 

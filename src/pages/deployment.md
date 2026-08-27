@@ -4,11 +4,13 @@ OpenVibely uses one Go backend for server, desktop, and container deployments. C
 
 ## Server Binary
 
-The server binary provides the browser UI at `http://localhost:3001` by default.
+The server binary provides the browser UI at `http://localhost:3001` by default. Run the installed `openvibely` command to start the server in the current terminal:
 
 ```bash
 openvibely
 ```
+
+Keep that terminal open while using the server. Open `http://localhost:3001` in a browser, and press `Ctrl+C` in the terminal to stop OpenVibely.
 
 | Setting | Default |
 |---|---|
@@ -23,6 +25,20 @@ The macOS and Linux installer places the real executable under `~/.local/share/o
 ## Desktop App
 
 Desktop mode uses Wails and opens a native window. Its backend binds to an available local port automatically.
+
+On Linux, launch OpenVibely from the application menu or run:
+
+```bash
+openvibely-desktop
+```
+
+On Windows, launch OpenVibely from the Start menu or run this in PowerShell:
+
+```powershell
+openvibely-desktop
+```
+
+On macOS, open `OpenVibely` from `~/Applications` or through Spotlight.
 
 | System | Default Desktop Data Root |
 |---|---|

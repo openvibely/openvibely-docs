@@ -36,6 +36,7 @@ OpenVibely is organized around a selected project. The sidebar project selector 
 | Project selector | Choose the repository/workspace that tasks, chat, memory, workers, schedules, and integrations apply to. |
 | Chat | Ask questions, plan changes, attach context, and orchestrate work conversationally. |
 | Tasks | Use a board to create AI coding tasks, run them, inspect output, review changed files, and follow up. |
+| Automations | Build reusable visual workflows from schedules, tasks, agents, approvals, GitHub stages, and outcomes, then monitor their live state. |
 | Schedule | Put project work on a calendar so tasks run once or repeat. |
 | Insights | Use Grades, Pulse, Reflection, and Analytics to understand activity, health, history, and trends. |
 | System | Configure alerts, models, agents, workers, channels, and personality. |
@@ -51,7 +52,7 @@ OpenVibely is organized around a selected project. The sidebar project selector 
 | Memory curation | Autonomously create, recall, update, and consolidate durable project memory so repeated context does not have to be re-explained. |
 | Skill curation | OpenVibely learns from completed work and autonomously improves reusable standalone or agent-owned skills. |
 | Reviewable changes | Use Git worktrees and GitHub integration so AI output becomes visible diffs and pull requests rather than hidden edits. |
-| Automation | Schedule recurring work, chain dependent tasks, and run structured multi-agent workflows. |
+| Automation Graphs | Start from maintained templates or a custom graph, connect supported workflow nodes, run work manually or on a schedule, and keep human approval boundaries visible. |
 | External channels | Create, monitor, and report work through Slack, Telegram, Discord, Email, GitHub, outbound targets, and inbound webhooks. |
 
 ## How The Docs Are Organized
