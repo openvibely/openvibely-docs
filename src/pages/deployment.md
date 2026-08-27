@@ -26,15 +26,9 @@ The macOS and Linux installer places the real executable under `~/.local/share/o
 
 Desktop mode uses Wails and opens a native window. Its backend binds to an available local port automatically.
 
-On Linux, launch OpenVibely from the application menu or run:
+On Linux or Windows, launch OpenVibely from the application or Start menu. You can also run the same command from a terminal or PowerShell:
 
-```bash
-openvibely-desktop
-```
-
-On Windows, launch OpenVibely from the Start menu or run this in PowerShell:
-
-```powershell
+```text
 openvibely-desktop
 ```
 

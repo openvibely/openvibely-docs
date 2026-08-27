@@ -78,8 +78,8 @@ test('installation code blocks provide copy controls', () => {
 test('deployment commands explain launch behavior and provide copy controls', () => {
   assert.match(deployment, /start the server in the current terminal/, 'server command purpose is not explained');
   assert.match(deployment, /<code class="language-bash">openvibely<\/code>/, 'server launch command is missing');
-  assert.match(deployment, /<code class="language-bash">openvibely-desktop<\/code>/, 'Linux desktop launch command is missing');
-  assert.match(deployment, /<code class="language-powershell">openvibely-desktop<\/code>/, 'Windows desktop launch command is missing');
+  assert.match(deployment, /On Linux or Windows/, 'desktop launch platforms are not explained');
+  assert.equal((deployment.match(/<code class="language-text">openvibely-desktop<\/code>/g) || []).length, 1, 'desktop launch command must appear once');
   assert.match(deployment, /data-copy-code/, 'deployment commands do not provide copy controls');
   assert.match(html, /navigator\.clipboard\.writeText\(code\.textContent\)/, 'code copy controls are not wired');
   assert.match(styles, /\.code-copy/, 'code copy controls are not styled');
