@@ -28,7 +28,7 @@ test('every page emits focused indexable metadata and a canonical URL', () => {
     assert.match(html, /<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">/);
     assert.match(html, new RegExp(`<link rel="canonical" href="https://docs\\.openvibely\\.ai/${route === 'index.html' ? '' : route}">`));
   }
-  assert.equal(pages.length, 54);
+  assert.equal(pages.length, 55);
   assert.notEqual(metaContent(overview, 'description'), metaContent(quickstart, 'description'));
 });
 

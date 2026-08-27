@@ -1,14 +1,19 @@
 # Quickstart
 
-Use this UI-first flow to get from a fresh OpenVibely instance to a running AI coding task.
+Use this UI-first flow to get from an installed OpenVibely app to a running AI coding task.
 
 ## 1. Start OpenVibely
 
-```bash
-./start.sh
-```
+| Installation | Start It |
+|---|---|
+| macOS desktop | Open `OpenVibely` from `~/Applications` or Spotlight. |
+| Linux desktop | Open `OpenVibely` from the application menu or run `openvibely-desktop`. |
+| Windows desktop | Open `OpenVibely Desktop` from the Start Menu. |
+| macOS or Linux binary | Run `openvibely`, then open `http://localhost:3001`. Press `Ctrl+C` to stop it. |
+| Windows binary | Open `OpenVibely Server` from the Start Menu, then open `http://localhost:3001`. |
+| Source checkout | Run `./start.sh`, then open `http://localhost:3001`. |
 
-Open `http://localhost:3001` in your browser.
+See [Installation](installation.html) if OpenVibely is not installed yet.
 
 ## 2. Add A Model In The App
 
@@ -39,7 +44,7 @@ Choose either a local repository path or a repository URL. Local paths are enabl
 
 ## 5. Run And Watch Progress
 
-On the Tasks page, run the task and watch it move through queued/running/completed or failed states. The UI updates from live events, and Alerts can notify you when failures or follow-up events happen.
+On the Tasks page, run the task and watch it move through queued, running, completed, or failed states. The UI updates from live events, and Alerts can notify you when failures or follow-up events happen.
 
 ## 6. Review Before Shipping
 

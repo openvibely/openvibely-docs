@@ -6,6 +6,8 @@ Alerts surface project-scoped events that need attention. The sidebar badge show
 
 Open `Alerts` from the System section of the sidebar.
 
+System update status also appears on this page when a packaged desktop app or server binary finds an available release. The update notice itself can appear throughout the app. See [Updates](updates.html).
+
 | UI Element | Purpose |
 |---|---|
 | Unread badge | Shows when the selected project has alerts that have not been read. |
@@ -48,3 +50,4 @@ A repository-changing task also creates an alert when its isolated worktree cann
 | [Tasks](tasks.html) | Most alerts point back to task activity. |
 | [Worker Capacity & Dispatch](workers.html) | Capacity and timeouts can affect failures and delays. |
 | [Insights](insights.html) | Longer-term trends appear in insight surfaces. |
+| [Updates](updates.html) | Packaged app update status and approval appear on Alerts. |

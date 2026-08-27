@@ -1,14 +1,94 @@
 # Installation
 
-The fastest local setup is to clone the repository and run the startup script. The script is the recommended first path because it installs missing UI tooling, generates required assets, builds the server binary, starts OpenVibely, and tails the log.
+Install the released desktop app or server binary from `openvibely.ai`. The installer detects macOS, Linux, or Windows and selects the matching `amd64` or `arm64` download automatically.
 
-## Requirements
+[[install-chooser]]
 
-- Go `1.26.4+`.
-- Git for cloning and project worktree operations.
-- Provider credentials (OAuth or API key) depending on which model authentication method you use.
+## macOS And Linux
 
-## Fresh Clone
+Run the interactive installer and choose `desktop` or `binary` when prompted:
+
+```bash
+curl -fsSL https://openvibely.ai/install.sh | bash
+```
+
+To choose the app type in the command:
+
+```bash
+# Native desktop app
+curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop
+
+# Server binary with a browser UI
+curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant binary
+```
+
+Do not run the installer as root. It installs the app for the current user and requests elevated permission only when it needs to create a command in `/usr/local/bin`.
+
+## Windows
+
+Run the interactive PowerShell installer and choose `desktop` or `binary` when prompted:
+
+```powershell
+irm https://openvibely.ai/install.ps1 | iex
+```
+
+To choose the app type in the command:
+
+```powershell
+# Native desktop app
+& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop
+
+# Server binary with a browser UI
+& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant binary
+```
+
+Run the installer from a normal user PowerShell session, not an Administrator session.
+
+## What The Installer Detects
+
+You do not need to pass operating-system or architecture flags.
+
+| System | Detected Architectures | Available Variants |
+|---|---|---|
+| macOS | Intel (`amd64`) and Apple silicon (`arm64`) | Desktop and binary |
+| Linux | `amd64` and `arm64` | Desktop and binary |
+| Windows | `amd64` and `arm64` | Desktop and binary |
+
+The installer downloads the matching signed release metadata and artifact, verifies it, installs it, and creates the normal command or application launcher.
+
+## Installed Locations
+
+| System | Server Binary | Desktop App |
+|---|---|---|
+| macOS | `~/.local/share/openvibely/bin/openvibely`, launched as `openvibely` | `~/Applications/OpenVibely.app` |
+| Linux | `~/.local/share/openvibely/bin/openvibely`, launched as `openvibely` | `~/.local/share/openvibely/bin/openvibely-desktop`, launched as `openvibely-desktop` or from the application menu |
+| Windows | `%LOCALAPPDATA%\Programs\OpenVibely Server` | `%LOCALAPPDATA%\Programs\OpenVibely Desktop` and its Start Menu shortcut |
+
+The server binary runs in the current terminal after installation. Press `Ctrl+C` to stop it. Desktop installs launch the native app.
+
+## Install A Specific Version
+
+Use `--version` when testing or restoring an already published version:
+
+```bash
+curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop --version 0.5.0
+```
+
+```powershell
+& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop -Version 0.5.0
+```
+
+Use `--replace` on macOS or Linux, or `-Replace` on Windows, to approve replacement without an interactive confirmation.
+
+## Build From Source
+
+Use the source workflow when developing OpenVibely itself.
+
+Requirements:
+
+- Go `1.26.6+`.
+- Git.
+- Provider credentials for the models you configure.
 
 ```bash
 git clone https://github.com/openvibely/openvibely.git
@@ -16,35 +96,15 @@ cd openvibely
 ./start.sh
 ```
 
-If the script is not executable:
+The script generates required assets, builds `bin/openvibely`, starts the server, and tails `logs/openvibely.log`. Open `http://localhost:3001`.
 
-```bash
-chmod +x start.sh
-./start.sh
-```
-
-## What `./start.sh` Does
-
-- Loads `.env` if present.
-- Installs `templ` if missing.
-- Runs `templ generate`.
-- Builds `bin/openvibely`.
-- Starts the server.
-- Tails `logs/openvibely.log`.
-
-The default URL is `http://localhost:3001`.
-
-## Developer Workflow
-
-Use this only if you are working on the OpenVibely codebase itself:
+For the live developer workflow:
 
 ```bash
 make install-tools
 make dev
 ```
 
-`make install-tools` installs additional developer tools such as `air`, `swag`, and the optional `goose` CLI. Normal app startup does not require these.
-
 ## Next Step
 
-After startup, open the web app and configure at least one model from the `Models` screen. Then create a project from the sidebar and use `Chat` or `Tasks` to begin work. See [First-Time Setup](first-time-setup.html).
+Configure at least one model, create a project, and use Chat or Tasks to begin work. See [Quickstart](quickstart.html), [First-Time Setup](first-time-setup.html), and [Updates](updates.html).

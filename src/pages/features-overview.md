@@ -1,6 +1,6 @@
 # Features Overview
 
-OpenVibely is a web workbench for AI-assisted software work that gets more useful the more project work flows through it. The UI is the primary surface: it gives teams a place to configure models and agents, select a project, create work, monitor execution, review changes, automate recurring tasks, and let OpenVibely build durable project memory from completed work.
+OpenVibely is a native desktop app and browser-based workbench for AI-assisted software work that gets more useful the more project work flows through it. The UI is the primary surface: it gives teams a place to configure models and agents, select a project, create work, monitor execution, review changes, automate recurring tasks, and let OpenVibely build durable project memory from completed work.
 
 ## Product At A Glance
 
@@ -16,7 +16,7 @@ OpenVibely is a web workbench for AI-assisted software work that gets more usefu
 | Models | UI-managed access to Anthropic, OpenAI, Ollama, OpenAI-compatible providers, and Mixture of Models virtual configs with defaults, auth options, tool policy, and capacity controls. | [Models](models.html), [Mixture of Models](mixture-of-models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Model Providers](model-providers.html), [Worker Capacity & Dispatch](workers.html) |
 | Agents | Reusable AI worker profiles with prompts, skills, plugins, MCP servers, permissions, routing, and lifecycle hooks. | [Agents](agents.html), [Lifecycle Hooks](lifecycle-hooks.html), [Skill Curation](skills-and-learning.html) |
 | Memory | Memory Curator autonomously creates project memory from completed work, recalls relevant notes before future tasks, and consolidates memory over time. | [Memory](memory.html), [Lifecycle Hooks](lifecycle-hooks.html) |
-| Configuration | Runtime, auth, integration, deployment, and environment controls for self-hosted operation. | [Configuration](configuration.html), [Environment Variables](environment.html), [Deployment Modes](deployment.html) |
+| Configuration | Runtime, auth, integration, deployment, update, and environment controls for self-hosted operation. | [Configuration](configuration.html), [Environment Variables](environment.html), [Deployment Modes](deployment.html), [Updates](updates.html) |
 | Review workflows | Worktree-backed changes, task output, comments, merge decisions, cleanup, API-published pull requests, and authorized PR feedback. | [Review Workflows](review-workflows.html), [Git Worktrees & Merge Safety](git-worktrees.html), [GitHub](github.html) |
 | Channels | Slack, Telegram, Discord, Email, GitHub, webhook, and outbound-message entry points for creating, tracking, and reporting work outside the web UI. | [Channels Overview](channels.html), [Outbound Messaging](outbound-messaging.html), [Discord](discord.html), [Email](email.html), [Webhook Triggers](webhooks.html) |
 

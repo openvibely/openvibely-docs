@@ -96,6 +96,7 @@ const nav = [
     description: 'Deployment modes and access control',
     items: [
       ['Deployment Modes', 'deployment.md', 'Server, desktop, Docker, and VPS setups'],
+      ['Updates', 'updates.md', 'Desktop, binary, Docker, and source update paths'],
       ['Authentication', 'authentication.md', 'Local auth, OAuth, and access control'],
       ['Configuration', 'configuration.md', 'Runtime settings for operators'],
       ['Environment Variables', 'environment.md', 'Complete environment variable reference'],
@@ -305,6 +306,40 @@ function tableOfContents(markdown) {
   return `<nav class="table-of-contents" aria-label="On this page"><strong>On this page</strong><ul>${headings.join('')}</ul></nav>`;
 }
 
+function installChooser() {
+  return `<section class="install-chooser" data-install-chooser aria-labelledby="install-chooser-title">
+    <div class="install-chooser-heading">
+      <div>
+        <h2 id="install-chooser-title">Install OpenVibely</h2>
+        <p data-install-detection aria-live="polite">Detecting your system...</p>
+      </div>
+      <span class="install-architecture" data-install-architecture>Auto-detect</span>
+    </div>
+    <div class="install-options">
+      <fieldset>
+        <legend>Operating system</legend>
+        <div class="install-segments" data-install-os>
+          <button type="button" data-value="macos" aria-pressed="false">macOS</button>
+          <button type="button" data-value="linux" aria-pressed="false">Linux</button>
+          <button type="button" data-value="windows" aria-pressed="false">Windows</button>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>App type</legend>
+        <div class="install-segments" data-install-variant>
+          <button type="button" data-value="desktop" aria-pressed="true">Desktop</button>
+          <button type="button" data-value="binary" aria-pressed="false">Server</button>
+        </div>
+      </fieldset>
+    </div>
+    <div class="install-command">
+      <code data-install-command>curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop</code>
+      <button type="button" data-install-copy title="Copy install command">Copy</button>
+    </div>
+    <p class="install-note" data-install-note>The installer selects the matching amd64 or arm64 artifact.</p>
+  </section>`;
+}
+
 function sidebar(activeFile) {
   return nav.map((group) => {
     const isOpen = group.items.some(([, file]) => file === activeFile);
@@ -436,6 +471,82 @@ function clientScript() {
         if (currentStructuredData && nextStructuredData) currentStructuredData.textContent = nextStructuredData.textContent;
       }
 
+      function initInstallChooser() {
+        var chooser = document.querySelector('[data-install-chooser]');
+        if (!chooser || chooser.dataset.ready === 'true') return;
+        chooser.dataset.ready = 'true';
+
+        var userAgent = navigator.userAgent || '';
+        var platform = navigator.userAgentData && navigator.userAgentData.platform
+          ? navigator.userAgentData.platform
+          : (navigator.platform || userAgent);
+        var os = /win/i.test(platform) ? 'windows' : /mac/i.test(platform) ? 'macos' : /linux|x11/i.test(platform) ? 'linux' : 'macos';
+        var variant = 'desktop';
+        var architecture = /arm64|aarch64/i.test(userAgent) ? 'arm64' : /x86_64|x64|win64|amd64/i.test(userAgent) ? 'amd64' : '';
+        var detection = chooser.querySelector('[data-install-detection]');
+        var architectureBadge = chooser.querySelector('[data-install-architecture]');
+        var command = chooser.querySelector('[data-install-command]');
+        var note = chooser.querySelector('[data-install-note]');
+        var copy = chooser.querySelector('[data-install-copy]');
+
+        function osLabel(value) {
+          return value === 'windows' ? 'Windows' : value === 'linux' ? 'Linux' : 'macOS';
+        }
+
+        function installCommand() {
+          if (os === 'windows') {
+            return '& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant ' + variant;
+          }
+          return 'curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant ' + variant;
+        }
+
+        function render() {
+          chooser.querySelectorAll('[data-install-os] button').forEach(function (button) {
+            button.setAttribute('aria-pressed', button.dataset.value === os ? 'true' : 'false');
+          });
+          chooser.querySelectorAll('[data-install-variant] button').forEach(function (button) {
+            button.setAttribute('aria-pressed', button.dataset.value === variant ? 'true' : 'false');
+          });
+          command.textContent = installCommand();
+          architectureBadge.textContent = architecture || 'Auto-detect';
+          detection.textContent = architecture
+            ? 'Detected ' + osLabel(os) + ' / ' + architecture
+            : 'Detected ' + osLabel(os) + '; architecture will be detected during install';
+          note.textContent = os === 'windows'
+            ? 'Run in a normal PowerShell window. The installer selects the matching amd64 or arm64 artifact.'
+            : 'Run in a normal terminal. The installer selects the matching amd64 or arm64 artifact.';
+        }
+
+        chooser.querySelectorAll('[data-install-os] button').forEach(function (button) {
+          button.addEventListener('click', function () {
+            os = button.dataset.value;
+            architecture = '';
+            render();
+          });
+        });
+        chooser.querySelectorAll('[data-install-variant] button').forEach(function (button) {
+          button.addEventListener('click', function () {
+            variant = button.dataset.value;
+            render();
+          });
+        });
+        copy.addEventListener('click', function () {
+          navigator.clipboard.writeText(command.textContent).then(function () {
+            copy.textContent = 'Copied';
+            window.setTimeout(function () { copy.textContent = 'Copy'; }, 1500);
+          });
+        });
+
+        render();
+        if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+          navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness']).then(function (values) {
+            if (/arm/i.test(values.architecture || '')) architecture = 'arm64';
+            if (/x86/i.test(values.architecture || '') && values.bitness === '64') architecture = 'amd64';
+            render();
+          }).catch(function () {});
+        }
+      }
+
       async function navigate(url, push, moveFocus, destinationState) {
         if (navigationController) navigationController.abort();
         navigationController = new AbortController();
@@ -453,6 +564,7 @@ function clientScript() {
           if (!nextContent || !currentContent) throw new Error('Documentation page content is missing');
 
           currentContent.replaceChildren(...Array.from(nextContent.childNodes));
+          initInstallChooser();
           document.title = nextDocument.title;
           syncSeo(nextDocument);
           updateActiveLink(url);
@@ -496,6 +608,7 @@ function clientScript() {
       });
 
       setNavOpen(false);
+      initInstallChooser();
     })();
   </script>`;
 }
@@ -605,6 +718,7 @@ async function main() {
     const modified = sourceModifiedDate(file);
     const title = titleFromMarkdown(source);
     let body = markdownToHtml(source);
+    body = body.replace('<p>[[install-chooser]]</p>', installChooser());
     const contents = tableOfContents(source);
     if (contents) body = body.replace(/<\/h1>\n/, `</h1>\n${contents}`);
     await writeFile(join(distDir, slugFor(file)), pageTemplate({ title, body, activeFile: file, modified }));

@@ -4,10 +4,31 @@ This page collects common operational issues that follow from the source-verifie
 
 ## Server Does Not Start
 
-- Confirm Go `1.26.3+` is installed.
+- For source builds, confirm Go `1.26.6+` is installed.
 - If auth is enabled, confirm `AUTH_USERNAME`, `AUTH_PASSWORD`, and `AUTH_SESSION_SECRET` are all set.
 - Check `logs/openvibely.log` when using `./start.sh`.
 - Ensure the selected `PORT` is available.
+
+## Installed Command Is Not Found
+
+- Open a new terminal after installation so the shell reloads its command lookup and `PATH`.
+- On macOS or Linux, run `command -v openvibely` or `command -v openvibely-desktop`.
+- On Windows, reopen PowerShell and run `Get-Command openvibely` or use the Start Menu shortcut.
+- If an old command points to a deleted installation, remove that stale command or symlink and rerun the hosted installer.
+
+## An Update Is Not Offered
+
+- Confirm the running app is a released desktop or binary build. Source builds do not self-update.
+- Open `Alerts` and inspect the current version, release channel, and update state.
+- Confirm a newer release has been promoted to the app's configured channel.
+- Restart the app if it has not completed its periodic release check.
+
+## An Update Fails Or Rolls Back
+
+- Read the exact failure shown in `Alerts`; the updater restores the previous version when the replacement does not start or report healthy.
+- Rerun the hosted installer with the same `desktop` or `binary` variant to repair the application files. App data is stored separately and remains in place.
+- Do not normally delete `update-state.json`, `update-coordinator.json`, or `update-drain.json` by hand. The app and installer coordinate unfinished recovery.
+- See [Updates](updates.html) for the complete update and reinstall flow.
 
 ## OAuth Returns To Localhost On A VPS
 

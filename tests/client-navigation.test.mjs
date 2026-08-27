@@ -6,6 +6,7 @@ import test from 'node:test';
 execFileSync(process.execPath, ['scripts/build.mjs'], { stdio: 'pipe' });
 
 const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
+const installation = await readFile(new URL('../dist/installation.html', import.meta.url), 'utf8');
 const styles = await readFile(new URL('../public/assets/styles.css', import.meta.url), 'utf8');
 
 test('documentation navigation preserves the shell and brand image', () => {
@@ -41,6 +42,20 @@ test('hosted OpenVibely actions and brand home link are available', () => {
     /<a href="https:\/\/openvibely\.ai\/">Home<\/a>\s*<a href="https:\/\/openvibely\.ai\/login">Log in<\/a>\s*<a href="https:\/\/github\.com\/openvibely\/openvibely">GitHub<\/a>/,
     'hosted home and login actions should be grouped before the GitHub link'
   );
+});
+
+test('install chooser detects the platform and exposes every supported option', () => {
+  assert.match(installation, /data-install-chooser/, 'installation page is missing the install chooser');
+  assert.match(installation, /data-value="macos"/, 'macOS option is missing');
+  assert.match(installation, /data-value="linux"/, 'Linux option is missing');
+  assert.match(installation, /data-value="windows"/, 'Windows option is missing');
+  assert.match(installation, /data-value="desktop"/, 'desktop option is missing');
+  assert.match(installation, /data-value="binary"/, 'server option is missing');
+  assert.match(installation, /navigator\.userAgentData/, 'browser platform detection is missing');
+  assert.match(installation, /getHighEntropyValues\(\['architecture', 'bitness'\]\)/, 'browser architecture detection is missing');
+  assert.match(installation, /openvibely\.ai\/install\.sh/, 'macOS and Linux install command is missing');
+  assert.match(installation, /openvibely\.ai\/install\.ps1/, 'Windows install command is missing');
+  assert.match(installation, /initInstallChooser\(\);[\s\S]*?currentContent\.replaceChildren|currentContent\.replaceChildren[\s\S]*?initInstallChooser\(\);/, 'client navigation does not initialize the chooser');
 });
 
 test('mobile header keeps every horizontally scrolling link reachable', () => {

@@ -6,7 +6,7 @@ This reference summarizes the major route groups registered by OpenVibely. Use r
 
 | Area | Routes |
 |---|---|
-| Dashboard | `/`, `/dashboard`, `/dashboard-mockup`, `/analytics` |
+| Dashboard | `/`, `/analytics` |
 | Projects | `/projects`, `/projects/new`, `/projects/:id/edit` |
 | Tasks | `/tasks`, `/tasks/:taskId`, task executions, status, changes, thread, run, cancel, category, reorder, chain |
 | Automations | `/automations`, `/automations/new`, builder, live graph, pause, resume, external refresh, and delete actions |
@@ -19,8 +19,7 @@ This reference summarizes the major route groups registered by OpenVibely. Use r
 | Worktrees | `/tasks/:taskId/worktree`, merge, PR, resolve, abort, cleanup, settings |
 | Chat | `/chat`, `/chat/send`, chat attachments, clear history |
 | Alerts | `/alerts`, unread count, read/delete actions |
-| Workflows | `/workflows`, workflow steps, and executions |
-| Insights | `/insights`, `/upcoming`, `/history`, `/suggestions`, `/backlog` |
+| Insights | `/insights`, `/upcoming`, `/history` |
 | Events | `/events/live`, `/events/chat/:exec_id` |
 | Lifecycle APIs | `/api/tasks/:id/lifecycle-executions`, `/api/lifecycle-executions/:id/events` |
 

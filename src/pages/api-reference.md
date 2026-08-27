@@ -13,8 +13,6 @@ OpenVibely exposes a REST API and Swagger UI. The app registers Swagger at `/swa
 | Lifecycle | `/api/tasks/:id/lifecycle-executions`, `/api/lifecycle-executions/:id/events` |
 | Memory | Project memory setup, lifecycle recall/update, and scheduled consolidation are wired through Memory Curator and task lifecycle infrastructure. |
 | Agent skills | `/agents/:id/skills`, `/agents/:id/lifecycle-hooks` |
-| Workflows | `/api/workflows/*` |
-| Collisions | `/api/collisions/*` |
 
 ## Example Chat API Call
 

@@ -66,6 +66,119 @@ pre {
 }
 pre code { background: transparent; border: 0; padding: 0; }
 
+.install-chooser {
+  margin: 1.5rem 0 2rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(217, 225, 238, 0.16);
+  border-radius: 8px;
+  background: rgba(25, 29, 36, 0.84);
+}
+.install-chooser-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.install-chooser-heading h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.35rem;
+  letter-spacing: 0;
+}
+.install-chooser-heading p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.install-architecture {
+  flex: 0 0 auto;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(54, 211, 153, 0.35);
+  border-radius: 999px;
+  color: var(--success);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.install-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.install-options fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.install-options legend {
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.install-segments {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid rgba(217, 225, 238, 0.16);
+  border-radius: 7px;
+}
+.install-segments button,
+.install-command button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--bc);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+.install-segments button {
+  min-height: 2.25rem;
+  padding: 0.4rem 0.7rem;
+  border-right: 1px solid rgba(217, 225, 238, 0.12);
+  font-size: 0.82rem;
+}
+.install-segments button:last-child { border-right: 0; }
+.install-segments button:hover { background: var(--b3); }
+.install-segments button[aria-pressed="true"] {
+  background: var(--primary-soft);
+  color: white;
+}
+.install-command {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--faint);
+  border-radius: 7px;
+  background: #0b0d11;
+}
+.install-command code {
+  overflow-x: auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  white-space: nowrap;
+}
+.install-command button {
+  min-height: 2rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  color: var(--primary);
+}
+.install-command button:hover { background: var(--primary-soft); }
+.install-note {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .sidebar {
   position: sticky;
   top: 0;
@@ -411,4 +524,11 @@ tr:last-child td { border-bottom: 0; }
   .content { padding-inline: 1rem; }
   .card-grid { grid-template-columns: 1fr; }
   pre { margin-inline: -0.15rem; }
+  .install-chooser-heading { display: block; }
+  .install-architecture { display: inline-block; margin-top: 0.65rem; }
+  .install-options { display: grid; }
+  .install-segments { display: flex; }
+  .install-segments button { flex: 1; }
+  .install-command { grid-template-columns: minmax(0, 1fr); }
+  .install-command button { justify-self: start; }
 }

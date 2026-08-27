@@ -4,24 +4,22 @@ The only recursive self-improvement command center for software teams.
 
 OpenVibely turns one Chat into the control plane for your entire AI development workflow. Describe a request once, then let it fan out into parallel task sessions, live agent execution, reviewable diffs, scheduled follow-ups, and durable project learning.
 
-Agents do the work. You stays in command. Inspect any thread, review any diff, steer any task, and keep the whole plan moving from the original conversation.
+Agents do the work. You stay in command. Inspect any thread, review any diff, steer any task, and keep the whole plan moving from the original conversation.
 
 Task Goal loops drive unfinished work forward. Memory Curator preserves project context. Skill Curator turns completed tasks into sharper reusable workflows. Every run can make the next one better, while your team stays in control.
 
 ## Start Fast
 
-```bash
-git clone https://github.com/openvibely/openvibely.git
-cd openvibely
-./start.sh
-```
+[[install-chooser]]
 
-Open `http://localhost:3001`. The first useful path is UI-first: add a model, create or select a project, then use Chat or Tasks to start work.
+The installer verifies the release and selects the correct architecture-specific artifact. See [Installation](installation.html) for installed locations, pinned versions, and source builds.
+
+The first useful path is UI-first: add a model, create or select a project, then use Chat or Tasks to start work.
 
 | What You Want To Do | Start Here |
 |---|---|
 | Understand the app | [Features Overview](features-overview.html) |
-| Run it locally | [Installation](installation.html) |
+| Install the desktop app or server | [Installation](installation.html) |
 | Use the UI for the first task | [Quickstart](quickstart.html) |
 | Set up a durable instance | [First-Time Setup](first-time-setup.html) |
 
@@ -64,7 +62,7 @@ The docs start with a high-level user guide, then go deeper into the subfeatures
 | Capabilities | Task lifecycle, prompt queue and steering, task diffs, review workflows, worktrees, attachments, scheduled tasks, task chaining, and insights. |
 | Channels | Slack, Telegram, Discord, Email, GitHub, outbound messaging, and webhooks as alternate front doors and reporting paths for project work. |
 | Models | Model configs, provider setup, defaults, and worker capacity. |
-| Platforms | Deployment, authentication, configuration, and environment setup. |
+| Platforms | Deployment, updates, authentication, configuration, and environment setup. |
 | Gateway & Ops | API reference, routes, troubleshooting, glossary, and machine-readable docs. |
 
 ## Source Verification
