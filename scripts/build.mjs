@@ -1,5 +1,6 @@
 import { mkdir, readFile, rm, writeFile, copyFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 
 const root = process.cwd();
@@ -8,6 +9,10 @@ const pagesDir = join(srcDir, 'pages');
 const publicDir = join(root, 'public');
 const distDir = join(root, 'dist');
 const siteUrl = 'https://docs.openvibely.ai';
+const stylesVersion = createHash('sha256')
+  .update(await readFile(join(publicDir, 'assets', 'styles.css')))
+  .digest('hex')
+  .slice(0, 12);
 
 const nav = [
   {
@@ -307,13 +312,14 @@ function tableOfContents(markdown) {
 }
 
 function installChooser() {
-  return `<section class="install-chooser" data-install-chooser aria-labelledby="install-chooser-title">
+  return `<section class="install-chooser" data-install-chooser aria-label="Install OpenVibely">
     <div class="install-chooser-heading">
       <div>
-        <h2 id="install-chooser-title">Install OpenVibely</h2>
+        <span class="install-chooser-label">Recommended command</span>
+        <strong class="install-chooser-title" data-install-selection>Desktop app for your system</strong>
         <p data-install-detection aria-live="polite">Detecting your system...</p>
       </div>
-      <span class="install-architecture" data-install-architecture>Auto-detect</span>
+      <span class="install-architecture" data-install-architecture>Architecture: auto</span>
     </div>
     <div class="install-options">
       <fieldset>
@@ -484,6 +490,7 @@ function clientScript() {
         var variant = 'desktop';
         var architecture = /arm64|aarch64/i.test(userAgent) ? 'arm64' : /x86_64|x64|win64|amd64/i.test(userAgent) ? 'amd64' : '';
         var detection = chooser.querySelector('[data-install-detection]');
+        var selection = chooser.querySelector('[data-install-selection]');
         var architectureBadge = chooser.querySelector('[data-install-architecture]');
         var command = chooser.querySelector('[data-install-command]');
         var note = chooser.querySelector('[data-install-note]');
@@ -508,7 +515,8 @@ function clientScript() {
             button.setAttribute('aria-pressed', button.dataset.value === variant ? 'true' : 'false');
           });
           command.textContent = installCommand();
-          architectureBadge.textContent = architecture || 'Auto-detect';
+          selection.textContent = osLabel(os) + (variant === 'binary' ? ' server' : ' desktop app');
+          architectureBadge.textContent = 'Architecture: ' + (architecture || 'auto');
           detection.textContent = architecture
             ? 'Detected ' + osLabel(os) + ' / ' + architecture
             : 'Detected ' + osLabel(os) + '; architecture will be detected during install';
@@ -658,7 +666,7 @@ function pageTemplate({ title, body, activeFile, modified }) {
   <meta property="og:url" content="${escapeHtml(canonical)}">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="${escapeHtml(canonical)}">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css?v=${stylesVersion}">
   <script type="application/ld+json" data-seo="structured-data">${structuredData}</script>
 </head>
 <body>

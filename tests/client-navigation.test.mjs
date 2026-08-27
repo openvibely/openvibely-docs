@@ -56,6 +56,8 @@ test('install chooser detects the platform and exposes every supported option', 
   assert.match(installation, /openvibely\.ai\/install\.sh/, 'macOS and Linux install command is missing');
   assert.match(installation, /openvibely\.ai\/install\.ps1/, 'Windows install command is missing');
   assert.match(installation, /initInstallChooser\(\);[\s\S]*?currentContent\.replaceChildren|currentContent\.replaceChildren[\s\S]*?initInstallChooser\(\);/, 'client navigation does not initialize the chooser');
+  assert.match(html, /assets\/styles\.css\?v=[a-f0-9]{12}/, 'stylesheet URL is not content-versioned');
+  assert.match(styles, /\.install-chooser-title/, 'install chooser presentation styles are missing');
 });
 
 test('mobile header keeps every horizontally scrolling link reachable', () => {
