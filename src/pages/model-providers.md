@@ -81,6 +81,8 @@ The default effort is model-dependent. GPT-6 Astra, GPT-5.6, GPT-5.5, and GPT-5.
 | Claude Opus 4.7 | low · medium · high · xhigh · **max** |
 | Claude Fable 5.1 | low · medium · high · xhigh · **max** |
 | Claude Mythos 5.1 | low · medium · high · xhigh · **max** |
+| Claude Fable 5 | low · medium · high · xhigh · **max** |
+| Claude Mythos 5 | low · medium · high · xhigh · **max** |
 | Claude Opus 4.6 | low · medium · high · **max** |
 | Claude Sonnet 4.6 | low · medium · high · **max** |
 | Claude Sonnet 4.5 | *(no effort — reasoning not supported)* |
