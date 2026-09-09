@@ -30,11 +30,11 @@ When you open Workers you see three things:
 
 All limit changes are inline — no separate settings page needed.
 
-**Global limit:** Click the number in the Global row's Limit column, type the new value (1–10), click **Set**. This is the hard ceiling across everything.
+**Global limit:** Click the number in the Global row's Limit column, enter any non-negative whole number, and click **Set**. A blank value or `0` means **Unlimited**; every positive value is a finite ceiling, with no product-imposed maximum.
 
-**Project limit:** Click the number in a project row's Limit column, type the new value (0–10), click **Set**. Setting a project to `0` removes the project-specific cap — that project is then only bounded by the global limit.
+**Project limit:** Click the number in a project row's Limit column, enter any non-negative whole number, and click **Set**. A blank value or `0` removes the project-specific cap, so the project inherits the global pool. A positive limit is a separate project ceiling; when global capacity is finite, it must not exceed the global limit.
 
-The page preserves any limit field you're actively editing during live refreshes, so typing a new value won't get overwritten before you hit Set.
+The page preserves any limit field you're actively editing during live refreshes, so typing a new value won't get overwritten before you hit Set. If a later global limit is reduced below an existing project cap, Workers marks that project `Exceeds global`; running work is not cancelled, but lower the project cap before saving another finite project limit.
 
 ## How the Two Layers Work Together
 
@@ -53,6 +53,7 @@ Global and project limits stack as a dual-layer cap:
 | `Idle` | No tasks running in this scope |
 | `Active` | Tasks are running and slots remain available |
 | `At capacity` | All allowed slots for this scope are taken; new work queues |
+| `Exceeds global` | The saved project limit is higher than the current finite global limit and needs correction |
 
 A non-zero Queue with `At capacity` status means tasks are waiting. They'll be dispatched as soon as a slot frees.
 
@@ -69,6 +70,7 @@ For example, a swarm may plan six workers while the project limit is two. All si
 | Interactive Chat | Bypasses task worker limits entirely — Chat always responds |
 | Chained/blocked tasks | Wait for their dependency to unblock first, then need a slot |
 | Scheduled tasks | Enter the same queue as regular tasks; wait for a slot if needed |
+| Automation-created tasks | Queue when capacity is unavailable and dispatch later; capacity pressure is not an Automation failure |
 | Task follow-ups | Queue when capacity is full; dispatch when a slot frees |
 
 The Chat bypass is intentional. You can keep planning, creating tasks, and checking status in Chat while every worker slot is busy running tasks in the background.

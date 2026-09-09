@@ -14,7 +14,7 @@ This is a concise reference. See [Configuration](configuration.html) for explana
 | `OPENVIBELY_APP_DATA_DIR` | empty unless set |
 | `OPENVIBELY_ENABLE_LOCAL_REPO_PATH` | false server, true desktop when unset |
 | `OPENVIBELY_PLUGIN_ROOT` | app-local plugin root when unset |
-| `OPENVIBELY_CODEX_REASONING_EFFORT` | `high` fallback |
+| `OPENVIBELY_CODEX_REASONING_EFFORT` | Model-dependent default when no supported Codex effort is configured; `medium` for GPT-6 Astra and current GPT-5.x variants, `high` for most older variants. GPT-6 Astra does not support `none`. |
 
 ## Auth
 

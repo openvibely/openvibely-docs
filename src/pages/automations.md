@@ -25,6 +25,12 @@ Select `New Automation`, then choose a starting point.
 
 All three paths use the same graph builder and validation rules. A generated design is not active until you select `Save changes`.
 
+## Find, Duplicate, Or Delete Automations
+
+Use the Automation collection toolbar to search, filter by lifecycle, health, type, or adapter, and sort the portfolio. You can select saved Automations for confirmed bulk deletion; this removes Automation-owned trigger tasks and schedules, not independent implementation or outcome work.
+
+Choose `Duplicate` from a supported saved Automation's action menu to open an unsaved `Copy of <name>` draft. It has no active graph or created resources until you save it. Saving creates independently owned Automation resources, so later edits, runs, pauses, and deletion do not alter the original. The Vision Driver Automation cannot be duplicated.
+
 ## Build The Graph
 
 The builder has three synchronized views.
@@ -71,6 +77,8 @@ Open a saved Automation to see its live Graph, Details, or read-only YAML. Node 
 Schedule and Task nodes link to their exact project tasks when bound. The live view refreshes while it remains visible, and tracked GitHub pull request state is refreshed automatically when it becomes stale.
 
 Select `Run` from a live Automation, or `Run now` from its portfolio menu, to queue a manual run. This does not change the Automation's saved schedule cadence.
+
+When an Automation creates task work while global, project, or model capacity is full, the task remains queued and dispatches when capacity becomes available. Queue pressure is not an Automation failure; use Workers to understand or change the applicable limits.
 
 ## Disable, Enable, Or Delete
 

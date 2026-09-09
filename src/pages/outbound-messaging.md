@@ -1,6 +1,6 @@
 # Outbound Messaging
 
-Outbound Message Targets control where Chat and task agents may proactively send messages through Slack, Telegram, Discord, and Email. Targets are saved per project and use the credentials already configured for each channel.
+Outbound Message Targets control where Chat and task agents may proactively send messages through Slack, Telegram, Discord, Email, and X. Targets are saved per project and use the credentials already configured for each channel.
 
 ## Configure Targets
 
@@ -8,15 +8,17 @@ Open `Channels`, select the current project, and open `Outbound Message Targets`
 
 | Field | Meaning |
 |---|---|
-| Platform | Slack, Telegram, Discord, or Email. |
+| Platform | Slack, Telegram, Discord, Email, or X. |
 | Type | Channel or user DM where the platform supports both. |
 | Name | A friendly destination such as `ops`, addressable as `slack:#ops`. |
-| Target | Platform channel/chat/user ID or an email address. |
-| Thread/Topic | Optional Slack thread, Telegram topic, or Discord thread destination. |
+| Target | Platform channel/chat/user ID, an email address, or `me` for X. |
+| Thread/Topic | Optional Slack thread, Telegram topic, or Discord thread destination. X does not support thread IDs. |
 | Home | Marks the preferred destination for that platform in the project. |
 | Default subject | Optional subject used by an Email target. |
 
-Click `Test` on a saved target before relying on it for task completion or operational notifications.
+Select `Edit` on a saved target to revise it without creating a second target. You can use `Test` while editing to send the current draft, then save the target and policy changes together. Remove obsolete targets from the same dialog.
+
+For X, the only supported saved destination is the authenticated account, addressed as `x:me`; arbitrary users and direct messages are not supported.
 
 ## Inbound And Outbound Security
 
@@ -53,6 +55,7 @@ Direct formats are primarily useful when explicit unsaved targets are enabled or
 | Telegram | `telegram:-100123`, `telegram:123456789` |
 | Discord | `discord:channel:<channel_id>`, `discord:channel:<channel_id>:<thread_id>`, `discord:user:<user_id>` |
 | Email | `email:person@example.com` |
+| X | `x:me` |
 
 Prefer friendly saved names in routine prompts so raw platform IDs do not spread through task instructions.
 
@@ -70,3 +73,4 @@ Outbound sends affect external systems immediately. Review destination and messa
 | [Chat](chat.html) | Use Orchestrate mode to send messages. |
 | [Runtime Capabilities](runtime-capabilities.html) | Explains when action tools are available. |
 | [Projects](projects.html) | Targets and explicit-target policy belong to the selected project. |
+| [X](x.html) | Configure X mentions, replies, and the connected-account target. |

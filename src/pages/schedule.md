@@ -11,7 +11,7 @@ Open `Schedule` from the Workspace section of the sidebar.
 | Create a schedule | Picks a task and a time for it to run. |
 | Choose recurrence | Runs the task once or repeats it at an interval. |
 | Enable or disable | Controls whether future runs should happen. |
-| Reschedule | Changes when the task should run next. |
+| Reschedule | Changes when the task should run next. Select several schedules with Command-click on macOS or Ctrl-click on other systems, then drag one selected schedule to move all selected schedules together while preserving their relative time offsets. |
 | Delete schedule | Removes the future automation without deleting the underlying task. Deleting a scheduled task from task detail returns to Schedule. |
 
 ## Repeat Types
@@ -25,6 +25,10 @@ Open `Schedule` from the Workspace section of the sidebar.
 | Daily | Daily checks or recurring implementation tasks. |
 | Weekly | Weekly cleanup, reporting, or backlog review. |
 | Monthly | Long-running maintenance cadence. |
+
+## Move Several Schedules
+
+Use Command-click on macOS or Ctrl-click on other systems to select multiple schedule cards. Drag any selected card to a new time to move every selected schedule by the same offset, preserving their relative spacing. The action can reschedule disabled entries too; selecting them does not enable future dispatch.
 
 ## Schedule Or Automation
 

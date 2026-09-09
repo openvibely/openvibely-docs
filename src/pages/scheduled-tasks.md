@@ -13,6 +13,7 @@ Use schedules for work that should happen later or repeatedly without requiring 
 | Run at | The first or next intended run time. |
 | Next run | The computed upcoming execution time. |
 | Enabled state | Keeps the schedule record while allowing future runs to pause. |
+| Auto-merge | Lets an eligible repository-backed scheduled task merge to its target branch after completion when enabled in the schedule/task setup. |
 | System schedules | Visible maintenance tasks such as memory consolidation and skill library upkeep. |
 
 ## Supported Recurrence
@@ -26,6 +27,10 @@ OpenVibely supports one-time, second-based, minute-based, hourly, daily, weekly,
 | Daily/weekly/monthly | Repeat on calendar-aware cadence while preserving intended local time. |
 | Disable | Keep the schedule but stop future dispatch. |
 | Delete | Remove the schedule. |
+
+## Manage A Batch
+
+On the Schedule page, Command-click on macOS or Ctrl-click on other systems to select several schedules. Drag one selected card to move the full selection by the same offset while preserving each schedule's relative run time. Disabled schedules can be moved without being enabled.
 
 ## Dispatch Boundary
 

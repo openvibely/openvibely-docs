@@ -24,7 +24,11 @@ Project-scoped agents can be deleted from the UI, which removes their on-disk ag
 | Scope | When To Use It |
 |---|---|
 | Global | The agent should be reusable across projects. |
-| Project | The agent is specific to one repository or workspace. |
+| Project | The agent is specific to one repository or workspace. The selected project's Agent list shows global agents and its own project-scoped agents, but not project-scoped agents belonging to other projects. |
+
+## Find And Manage Agents
+
+Use the Agent collection toolbar to search, filter by enabled state, scope, or origin, and sort the list. Select agents for confirmed bulk deletion only when they are no longer needed; protected system agents remain unavailable for deletion.
 
 ## How Agents Fit Tasks
 

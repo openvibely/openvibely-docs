@@ -19,7 +19,9 @@ Use follow-ups when the task is still the right unit of work but needs clarifica
 
 A follow-up is useful after a task has produced enough context to continue from. Common triggers include asking the agent to address review comments, refine an implementation, explain a failure, add tests, resolve a small issue discovered during review, or continue a task that explicitly asked for more direction.
 
-Channel-created tasks can also receive follow-up context early. If a Slack, Telegram, Discord, or Email reply arrives before the first execution exists, OpenVibely keeps it with the task so the instruction is available when the task starts.
+Channel-created tasks can also receive follow-up context early. If a Slack, Telegram, Discord, Email, or X reply arrives before the first execution exists, OpenVibely keeps it with the task so the instruction is available when the task starts.
+
+Scheduled task threads use the same follow-up, queueing, cancellation, and steering controls. You can provide more direction before or between scheduled runs without creating a separate task.
 
 Follow-ups are different from Chat orchestration. Chat is the central place to coordinate many tasks. A task follow-up is scoped to one existing task thread.
 

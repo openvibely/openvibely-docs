@@ -8,6 +8,7 @@ execFileSync(process.execPath, ['scripts/build.mjs'], { stdio: 'pipe' });
 const overview = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
 const quickstart = await readFile(new URL('../dist/quickstart.html', import.meta.url), 'utf8');
 const pageFiles = (await readdir(new URL('../dist/', import.meta.url))).filter(file => file.endsWith('.html'));
+const sourcePageFiles = (await readdir(new URL('../src/pages/', import.meta.url))).filter(file => file.endsWith('.md'));
 const pages = await Promise.all(pageFiles.map(async file => [file, await readFile(new URL(`../dist/${file}`, import.meta.url), 'utf8')]));
 
 function decodeEntities(value) {
@@ -28,7 +29,7 @@ test('every page emits focused indexable metadata and a canonical URL', () => {
     assert.match(html, /<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">/);
     assert.match(html, new RegExp(`<link rel="canonical" href="https://docs\\.openvibely\\.ai/${route === 'index.html' ? '' : route}">`));
   }
-  assert.equal(pages.length, 55);
+  assert.equal(pages.length, sourcePageFiles.length);
   assert.notEqual(metaContent(overview, 'description'), metaContent(quickstart, 'description'));
 });
 

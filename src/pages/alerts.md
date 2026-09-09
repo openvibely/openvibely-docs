@@ -15,6 +15,8 @@ System update status also appears on this page when a packaged desktop app or se
 | Approve or reject | Records the human decision for a pending Native notification; a connected Automation can observe the result and continue through the matching handoff. |
 | Mark read | Clears attention from one alert. |
 | Mark all read | Clears all current unread alerts for the project. |
+| Search, filter, and sort | Finds alerts by text and narrows the list by state, severity, type, or source. |
+| Bulk actions | In selection mode, marks several alerts read or deletes selected alerts after confirmation. |
 | Delete | Removes alerts that are no longer useful. |
 
 ## Alert Types

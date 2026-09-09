@@ -79,11 +79,11 @@ The server binary runs in the current terminal after installation. Press `Ctrl+C
 Use `--version` when testing or restoring an already published version:
 
 ```bash
-curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop --version 0.5.0
+curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop --version 0.6.0
 ```
 
 ```powershell
-& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop -Version 0.5.0
+& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop -Version 0.6.0
 ```
 
 Use `--replace` on macOS or Linux, or `-Replace` on Windows, to approve replacement without an interactive confirmation.

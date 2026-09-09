@@ -49,6 +49,12 @@ Task follow-ups continue from the task's worktree when available. If the follow-
 
 This is why follow-ups are useful for review feedback: the task remains one unit of work, but new changes still become visible for review.
 
+## Merge Methods From A Task Card
+
+Eligible worktree-backed task cards provide `Local` actions for **Merge commit**, **Fast-forward only**, **Rebase**, and **Squash merge**. Pick the method required by the target repository; OpenVibely does not silently choose or rewrite history on your behalf.
+
+A stale branch should be rebased onto its merge target before the final review. If rebase or merge reports a conflict, resolve it and inspect the resulting diff before retrying. The `GitHub` card action can open a pull request for the task branch or open its existing linked pull request when GitHub is configured.
+
 ## Rebase Before Merge
 
 When the Changes tab offers `Rebase onto <target>`, use it to bring the task branch up to date with the merge target before final review. This is useful when the base branch has moved since the task started and you want to review or merge against current code.

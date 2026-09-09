@@ -4,7 +4,7 @@ Projects are the workspace boundary in the OpenVibely UI. The selected project c
 
 ## What Users Do
 
-Use the project selector in the sidebar to switch workspaces. Use the plus button to create a new project, and the settings button to edit the current project.
+Use the searchable project selector in the sidebar to switch workspaces. Use the plus button to create a new project, and the settings button to edit the current project. Search filters the selector by project name so larger workspaces do not require scrolling.
 
 | UI Action | Product Effect |
 |---|---|
@@ -32,7 +32,8 @@ Local path access is explicit because it lets the server read local filesystem p
 | Tasks | Board categories, task execution, review, and schedules belong to the project. |
 | Memory | Repository-local managed memory is stored under `.openvibely/memories` when memory is enabled. |
 | Skills | Project-scoped skills and agent-owned skills can override global behavior for this repository. |
-| Workers | Project worker limits prevent one workspace from consuming all execution capacity. |
+| Workers | A blank or `0` project limit inherits global capacity; a positive limit sets a project-specific cap. |
+| Agents | The selected project's Agent list includes global agents and its own project-scoped agents, not project-scoped agents from other projects. |
 | Channels | Channel-origin Chat maintains active project context. Outbound Message Targets and explicit-unsaved-target policy belong to the selected project, while inbound channel allowlists remain system-level. |
 | Insights | Grades, Pulse, Reflection, and Analytics summarize project activity. |
 

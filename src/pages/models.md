@@ -13,7 +13,7 @@ Open `Models` from the System section of the sidebar and create a model config.
 | Model identifier | Selects a discovered model or a manually entered model ID used for execution. |
 | Default model | Lets tasks run without choosing a model every time. |
 | Reasoning, tokens, temperature | Tunes model behavior where supported. |
-| Max workers | Limits how much concurrent task work this model can run. |
+| Max workers | Controls concurrent task work for this model. Leave blank or use `0` to inherit project/global capacity; any positive value sets a per-model cap with no product-imposed maximum. |
 | Worker timeout | Prevents stalled model executions from holding capacity forever. |
 | Auto-start tasks | Allows tasks created with the model to start immediately when configured. |
 | Tool policy | Changes by surface and mode, especially Chat `Plan` versus `Orchestrate`. |
@@ -35,6 +35,16 @@ A `test` provider exists in source code for tests and is not documented as a nor
 Choose an OpenAI-compatible preset when your provider or gateway already matches one of the supported setup patterns. OpenVibely ships presets for hosted gateways and providers such as OpenRouter, NVIDIA NIM, DeepInfra, Fireworks, Groq, Mistral, Cerebras, Together, Hugging Face Router, DeepSeek, Moonshot, DashScope/Qwen, Z.AI/GLM, StepFun, Tencent TokenHub, and several local runtimes including vLLM, LM Studio, SGLang, LiteLLM, Inferrs, and ds4. Presets fill in the expected endpoint details and, when the provider exposes a compatible model list, the Models screen can discover available models for you.
 
 Use a custom OpenAI-compatible endpoint for local gateways, self-hosted inference, or providers that are not listed as presets. In that case, provide the base URL, auth header behavior if required, and either discover models from the endpoint or enter the model ID manually. Public endpoints should use HTTPS; plain HTTP is intended for localhost or private network hosts. The full preset list lives in [Model Providers](model-providers.html).
+
+## Reasoning And Model Settings
+
+The Model dialog shows only settings supported by the selected provider and model. `gpt-6-astra` offers `low`, `medium`, `high`, `xhigh`, and `max` reasoning effort, uses `medium` when no effort is configured, and does not support `none` or configurable temperature. OpenVibely hides Temperature for Astra and ignores stale submitted temperature values.
+
+Current Claude models can expose `xhigh` where the provider supports it. Claude Fable 5.1 and Claude Mythos 5.1 are available in the Anthropic selector; consult [Model Providers](model-providers.html) for their supported effort levels and provider-specific constraints.
+
+## Manage Model Configurations
+
+Use the Models collection toolbar to search configurations, filter by provider, default status, authentication, or kind, and sort the results. Select configurations to delete several at once only after checking that no project, agent, or Mixture of Models still depends on them.
 
 ## Mixture Of Models
 

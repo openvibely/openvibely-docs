@@ -10,7 +10,7 @@ Use agents when the behavior is tied to a repeatable job, repository convention,
 
 ## How They Fit The UI
 
-The Personality screen lets users select, save, create, update, and delete custom personality settings. The selected personality should be treated as an app-level preference, not as a substitute for explicit task prompts or agent configuration.
+The Personality screen lets users select, save, create, update, and delete custom personality settings. Use its collection toolbar to search, filter by kind or active state, sort, and select custom personalities for confirmed bulk deletion. The selected personality should be treated as an app-level preference, not as a substitute for explicit task prompts or agent configuration.
 
 ## Related Pages
 

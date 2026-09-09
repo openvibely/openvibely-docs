@@ -8,7 +8,7 @@ This does not replace the task itself. Your task still runs normally with the se
 
 Open `Skills` from the sidebar. The Skills page lists all skills in scope for the selected project: standalone and agent-owned, global and project-scoped.
 
-Each skill card shows the skill name, key, scope, and current state badges. Use the per-card dropdown to create, edit, enable or disable, toggle always-use, or archive a skill. The search bar filters by name or key.
+Each skill card shows the skill name, key, scope, and current state badges. Use the per-card dropdown to create, edit, enable or disable, toggle always-use, or archive a skill. Use the collection toolbar to search, filter by state or scope, sort, and select skills for confirmed bulk deletion.
 
 To add a skill manually, click `+ Create Skill`. To import a pre-written standalone skill package, use `Import Skill Package`.
 

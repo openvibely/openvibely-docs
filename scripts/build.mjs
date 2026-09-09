@@ -82,6 +82,7 @@ const nav = [
       ['Telegram', 'telegram.md', 'Mobile bot control'],
       ['Discord', 'discord.md', 'Bot DMs, mentioned server messages, threads, and attachments'],
       ['Email', 'email.md', 'Authorized inbox intake and threaded SMTP replies'],
+      ['X', 'x.md', 'Mention-driven project work through X'],
       ['Webhook Triggers', 'webhooks.md', 'Create one project task from trusted external systems'],
     ],
   },

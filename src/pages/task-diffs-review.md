@@ -40,6 +40,12 @@ Review comments let users leave targeted feedback on generated changes. The revi
 
 Use review comments when the task is close but needs specific edits. Use a normal task follow-up when the feedback is broader and not tied to a line or file.
 
+## Finish From The Board
+
+For eligible task cards, use the `Local` menu to choose **Merge commit**, **Fast-forward only**, **Rebase**, or **Squash merge**. Select the method that matches the repository's history policy. A conflict or stale branch stops the action and keeps the task reviewable; resolve it, inspect the refreshed Changes tab, and retry only when the result is safe.
+
+The card's `GitHub` menu opens a pull request for the task branch when one is not linked, or opens the existing pull request. Publishing a pull request does not replace local diff review.
+
 ## Recommended Review Flow
 
 1. Open the task detail page.

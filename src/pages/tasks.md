@@ -64,6 +64,12 @@ When a project has a repository attached, task execution can produce worktree-ba
 | Review comments | Track comments attached to generated code. |
 | Worktree actions | Merge, clean up, resolve conflicts, or create a PR when supported. |
 
+## Task Card Worktree Actions
+
+Eligible worktree-backed task cards expose `Local` actions without requiring you to leave the board. Choose **Merge commit**, **Fast-forward only**, **Rebase**, or **Squash merge** according to the history your project needs. OpenVibely shows conflicts or stale-branch state rather than completing an unsafe operation; resolve the issue and review the updated diff before trying again.
+
+When GitHub is configured, the card's `GitHub` action can open a pull request for the task branch or take you to the already linked pull request. These actions remain review steps: verify the target branch, changed files, and task status before publishing or merging.
+
 ## Diff Review
 
 Open a task detail page and select `Changes` to inspect generated code. Worktree-backed tasks can show live branch and uncommitted diffs while work is still active, then fall back to preserved execution diffs after merge or cleanup. The diff viewer groups changes by file, supports large-file lazy loading, and lets reviewers attach comments before sending feedback back to the agent.
