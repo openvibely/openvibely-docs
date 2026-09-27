@@ -67,7 +67,7 @@ A good default workflow is to start in `Plan` for vague or risky work, then swit
 
 ## Clarification Questions
 
-When Chat needs a bounded decision before continuing, it can show one to three question cards directly in the conversation. Each card presents two or three described choices, identifies the recommended choice when one is available, and also accepts a custom answer. Use `Recommended and move forward` to accept the suggested path quickly, or move through the cards and submit your own selections together.
+When Chat needs a bounded decision before continuing, it can show one to three question cards directly in the conversation. Each card presents two or three described choices, identifies the recommended choice when one is available, and also accepts a custom answer. Use `Recommended and move forward` to accept the suggested path quickly, or move through the cards and submit your own selections together. Questions appear and resolve in the open conversation as Chat updates, without requiring a page refresh.
 
 Pending questions survive page refreshes and application restarts, so you can return to the same decision without losing the request. This interactive question flow is available in web Chat; task-thread follow-ups continue to use normal messages.
 

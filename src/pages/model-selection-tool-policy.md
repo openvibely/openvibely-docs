@@ -45,6 +45,12 @@ Plan mode is safest when the user wants an approach, comparison, or review befor
 
 Provider features differ. Tool availability should be read from the selected mode and configured provider rather than assumed from the model name alone. OpenAI-compatible presets provide endpoint and discovery defaults, but they do not guarantee identical provider-native tools across every backend.
 
+## GPT-6 Workflow Support
+
+First-party OpenAI configurations for GPT-6 Astra, Sol, and Luna use the Responses WebSocket path when available. This supports provider-native web search, asynchronous runtime tools, and steering a response while it is still running. Chat and task requests also send the reasoning effort configured for the selected GPT-6 model.
+
+If the WebSocket path becomes unavailable before a tool or steering action is committed, OpenVibely can fall back to the HTTP Responses path. Once steering may have been accepted, it avoids replaying the request through a fallback path so the same instruction or tool action is not applied twice.
+
 ## Examples
 
 | User Need | Recommended Surface |
