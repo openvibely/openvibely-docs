@@ -34,6 +34,7 @@ Worktree-backed execution gives each task a place to make changes, track branch/
 | Live and preserved diffs | Allows review before and after cleanup/merge paths. |
 | Dirty-worktree checks | Avoids unsafe automatic merge behavior when a worktree has uncommitted state. |
 | Conflict status | Makes merge conflicts visible instead of pretending the work shipped. |
+| Restricted conflict recovery | Lets eligible automatic merges attempt a bounded resolution inside the conflicted task worktree. |
 | Descendant checks | Protects parent branches while chained child tasks are still non-terminal. |
 | Follow-up merge reset | If a merged or conflicted task receives new follow-up changes, review can become pending again. |
 
@@ -54,6 +55,8 @@ This is why follow-ups are useful for review feedback: the task remains one unit
 Eligible worktree-backed task cards provide `Local` actions for **Merge commit**, **Fast-forward only**, **Rebase**, and **Squash merge**. Pick the method required by the target repository; OpenVibely does not silently choose or rewrite history on your behalf.
 
 A stale branch should be rebased onto its merge target before the final review. If rebase or merge reports a conflict, resolve it and inspect the resulting diff before retrying. The `GitHub` card action can open a pull request for the task branch or open its existing linked pull request when GitHub is configured.
+
+For an eligible automatic merge, OpenVibely may start a restricted recovery turn after validating the merge target and conflict state. That turn receives conflict-focused tools and may edit only allowed paths in the task worktree. If it cannot resolve the conflict safely, the task keeps its conflict status for manual review.
 
 ## Rebase Before Merge
 

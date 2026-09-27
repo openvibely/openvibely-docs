@@ -11,7 +11,7 @@ Open `Channels`, choose Telegram, save a bot token, test the bot, and add author
 | Capability | User Impact |
 |---|---|
 | Mobile control | Create or follow work from a Telegram chat. |
-| Authorized users | Restrict bot access to known numeric user IDs. Authorization is system-level across projects and deny-by-default. |
+| Authorized users | Restrict bot access to known numeric user IDs. Authorization is project-scoped and deny-by-default. |
 | Rich responses | Stream and deliver formatted Markdown while avoiding duplicate final messages, with MarkdownV2/plain-text fallback when needed. |
 | Attachments | Add photos, documents, and other supported Telegram uploads to shared Chat/task context; supported images can be sent to vision-capable models. |
 | Outbound targets | Save project-scoped chats, topics, or direct recipients for proactive agent messages. |
@@ -22,7 +22,7 @@ Open `Channels`, choose Telegram, save a bot token, test the bot, and add author
 
 ## Authorize Users
 
-Telegram inbound authorization is system-level across projects and deny-by-default. Add each approved numeric Telegram user ID in the channel settings before expecting inbound messages to run; an empty list does not make the bot public.
+Telegram inbound authorization is scoped to the selected project and deny-by-default. Add each approved numeric Telegram user ID in every project where that person should be able to submit work; an empty list does not make the bot public.
 
 Authorized Users determine who may instruct OpenVibely through Telegram. They do not determine where agents may send proactive Telegram messages; configure those project-scoped chats, topics, or direct recipients under `Outbound Message Targets`.
 

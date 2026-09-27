@@ -24,6 +24,8 @@ OpenVibely supports local path projects and repository URL projects.
 
 Local path access is explicit because it lets the server read local filesystem paths. Desktop mode enables local paths by default. Server mode requires `OPENVIBELY_ENABLE_LOCAL_REPO_PATH`.
 
+Project Settings reports the current repository-path health as `Healthy`, `Missing`, or `Unknown`. A missing path means OpenVibely cannot find the configured checkout; an unknown state means it cannot confirm the path from the current runtime. Correct or browse to an accessible repository path before expecting worktrees, diffs, or repository-backed memory to work.
+
 ## Project-Scoped Features
 
 | Feature | How The Project Matters |
@@ -34,7 +36,7 @@ Local path access is explicit because it lets the server read local filesystem p
 | Skills | Project-scoped skills and agent-owned skills can override global behavior for this repository. |
 | Workers | A blank or `0` project limit inherits global capacity; a positive limit sets a project-specific cap. |
 | Agents | The selected project's Agent list includes global agents and its own project-scoped agents, not project-scoped agents from other projects. |
-| Channels | Channel-origin Chat maintains active project context. Outbound Message Targets and explicit-unsaved-target policy belong to the selected project, while inbound channel allowlists remain system-level. |
+| Channels | Channel-origin Chat maintains active project context. Inbound allowlists, Outbound Message Targets, and explicit-unsaved-target policy belong to the selected project. |
 | Insights | Grades, Pulse, Reflection, and Analytics summarize project activity. |
 
 ## First Project Checklist

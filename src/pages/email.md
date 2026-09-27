@@ -18,7 +18,7 @@ Use `Test Connection` after saving the mailbox settings. A dedicated automation 
 
 ## Authorize Senders
 
-Email Authorized Senders are system-level across projects and deny-by-default. Add each sender address that may instruct OpenVibely. There is no pairing code or PIN flow.
+Email Authorized Senders are scoped to the selected project and deny-by-default. Add each sender address to every project it may instruct. There is no pairing code or PIN flow.
 
 Authorized Senders control inbound instructions. Project-scoped Outbound Message Targets separately control proactive recipients and default subjects.
 

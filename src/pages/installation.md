@@ -62,7 +62,7 @@ You do not need to pass operating-system or architecture flags.
 | Linux | `amd64` and `arm64` | Desktop and binary |
 | Windows | `amd64` and `arm64` | Desktop and binary |
 
-The installer downloads the matching signed release metadata and artifact, verifies it, installs it, and creates the normal command or application launcher.
+The installer downloads the matching signed release metadata and artifact, verifies it, installs it, and creates the normal command or application launcher. Normal installs omit a version and follow the release currently promoted to the `stable` channel, so promoting a release does not require changing these commands.
 
 ## Installed Locations
 
@@ -79,11 +79,13 @@ The server binary runs in the current terminal after installation. Press `Ctrl+C
 Use `--version` when testing or restoring an already published version:
 
 ```bash
-curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop --version 0.6.0
+OPENVIBELY_VERSION=X.Y.Z
+curl -fsSL https://openvibely.ai/install.sh | bash -s -- --variant desktop --version "$OPENVIBELY_VERSION"
 ```
 
 ```powershell
-& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop -Version 0.6.0
+$OpenVibelyVersion = 'X.Y.Z'
+& ([scriptblock]::Create((irm https://openvibely.ai/install.ps1))) -Variant desktop -Version $OpenVibelyVersion
 ```
 
 Use `--replace` on macOS or Linux, or `-Replace` on Windows, to approve replacement without an interactive confirmation.

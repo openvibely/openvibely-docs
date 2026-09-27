@@ -20,13 +20,13 @@ Open `Channels` from the System section of the app sidebar. Configure one channe
 
 ## Authorization Scope
 
-Slack, Telegram, Discord, and Email inbound allowlists are system-level across projects and deny access until an authorized user or sender is added. Telegram runtime authorization is also deny-by-default; do not treat an empty list as public access even if an older Channels UI build says otherwise.
+Slack, Telegram, Discord, and Email inbound allowlists are scoped to the selected project and deny access until an authorized user or sender is added. Adding the same identity to one project does not authorize it for another project. Telegram runtime authorization is also deny-by-default; an empty list does not make the bot public.
 
 X inbound access is also deny-by-default, but its authorization is different: add immutable numeric X user IDs to the selected project's `Authorized mention authors` list. Its per-project allowlist applies only to X mentions.
 
 GitHub also has an `Authorized Users` list, but it serves a different purpose: it defines trusted GitHub identities for runtime authorization, assigned-issue discovery, and pull request feedback. It does not control who may send Chat messages through another channel.
 
-Outbound Message Targets and the `Allow explicit unsaved targets` policy are project-scoped. Inbound authorization answers who may instruct OpenVibely; outbound policy answers where agents in the selected project may send. See [Outbound Messaging](outbound-messaging.html).
+Outbound Message Targets and the `Allow explicit unsaved targets` policy are also project-scoped. Inbound authorization answers who may instruct OpenVibely in the selected project; outbound policy answers where agents in that project may send. See [Outbound Messaging](outbound-messaging.html).
 
 ## Shared Concepts
 

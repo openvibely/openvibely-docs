@@ -44,6 +44,10 @@ Set the maximum planned worker count and default isolation in the task dialog, t
 
 Tasks move through statuses such as pending, queued, running, completed, failed, cancelled, and blocked. The page listens for live task events so board state can refresh while work is happening.
 
+Task cards use state icons so execution and review outcomes can be scanned without opening every task. In addition to normal lifecycle states, the icons distinguish achieved goals, merged work, merge failures, and merge conflicts. Hover an icon or focus it with assistive technology to read its state label.
+
+On task detail pages, open the task name in the breadcrumb to search and switch tasks without returning to the board. Running tasks are grouped first, followed by recent tasks or search matches. The current task remains available even when it would fall outside the normal result window, and an open selector refreshes as task state changes.
+
 While a thread response is active, the send control becomes `Stop response`. This stops the active model run and records cancellation in the thread. It is different from cancelling a queued follow-up before it starts or cancelling the entire task from the board/detail controls.
 
 Around normal execution, lifecycle hooks can recall memory, prepare useful skills, and learn from completed work. Follow-up messages continue from the existing task thread and respect worker capacity, so they may queue when project or model execution slots are full.

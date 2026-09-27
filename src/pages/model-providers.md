@@ -44,6 +44,8 @@ These presets are convenience defaults, not separate provider types. They all sa
 
 Hosted OAuth can use provider-specific client IDs, client secrets, authorization URLs, token URLs, and scopes. `APP_BASE_URL` controls public callback origins, and `OAUTH_REDIRECT_MODE` controls hosted vs localhost/manual behavior.
 
+OAuth provider accounts are saved as reusable connections that compatible model configurations can share. OpenVibely refreshes eligible credentials before expiry, persists the rotated credentials, isolates refresh cooldowns and usage by connection, and marks only the affected connection when reauthentication is required. Search on the Models page includes provider-account labels, making it easier to find every configuration linked to an account.
+
 ## Reasoning Effort
 
 When a model supports reasoning modes, the model config UI shows an **Effort** dropdown. Models without reasoning support do not show the dropdown.
@@ -55,9 +57,9 @@ When a model supports reasoning modes, the model config UI shows an **Effort** d
 | `gpt-6-astra` | low · medium · high · xhigh · **max** |
 | `gpt-6-sol` | none · low · medium · high · xhigh · **max** |
 | `gpt-6-luna` | none · low · medium · high · xhigh · **max** |
-| `gpt-5.6-sol` | low · medium · high · xhigh · **max** |
-| `gpt-5.6-terra` | low · medium · high · xhigh · **max** |
-| `gpt-5.6-luna` | low · medium · high · xhigh · **max** |
+| `gpt-5.6-sol` | none · low · medium · high · xhigh · **max** |
+| `gpt-5.6-terra` | none · low · medium · high · xhigh · **max** |
+| `gpt-5.6-luna` | none · low · medium · high · xhigh · **max** |
 | `gpt-5.5` | low · medium · high · **xhigh** |
 | `gpt-5.5-pro` | low · medium · high · **xhigh** |
 | `gpt-5.4` | low · medium · high · **xhigh** |
@@ -92,5 +94,7 @@ The default effort is model-dependent. GPT-6 Astra/Sol/Luna, GPT-5.6, GPT-5.5, a
 | Claude Haiku 4.5 | *(no effort — reasoning not supported)* |
 
 `max` is the Anthropic equivalent of `xhigh`.
+
+Claude Opus 5.5 uses a 128K default and maximum output-token allowance in the Anthropic runtime.
 
 If a configured effort level is not supported by the selected model, OpenVibely falls back to the nearest supported level automatically.

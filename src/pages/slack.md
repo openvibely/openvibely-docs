@@ -11,7 +11,7 @@ Open `Channels`, choose Slack, then configure the connection using OAuth or manu
 | Capability | User Impact |
 |---|---|
 | Team chat entry point | People can request project work without opening the web app first. |
-| Authorized users | Only approved Slack users can interact with OpenVibely. The allowlist is system-level across projects and deny-by-default. |
+| Authorized users | Only approved Slack users can interact with the selected project. The allowlist is project-scoped and deny-by-default. |
 | File and image ingestion | App mentions and explicitly mentioned channel file-share events can attach authenticated Slack files; supported images can reach a vision-capable model. |
 | Outbound targets | Project-scoped channel, thread, and user-DM targets allow proactive agent sends. |
 | Connection test | Operators can confirm the bot is reachable before inviting broad use. |
@@ -21,7 +21,7 @@ Open `Channels`, choose Slack, then configure the connection using OAuth or manu
 
 ## Authorize Users
 
-Slack inbound authorization is system-level across projects and deny-by-default. Add each approved Slack user in the channel settings before expecting inbound messages to run.
+Slack inbound authorization is scoped to the selected project and deny-by-default. Add each approved Slack user in every project where that person should be able to submit work.
 
 Authorized Users determine who may instruct OpenVibely through Slack. They do not determine where agents may send proactive Slack messages; configure those project-scoped channels, threads, or user DMs under `Outbound Message Targets`.
 

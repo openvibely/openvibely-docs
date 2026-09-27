@@ -11,6 +11,8 @@ Insights are the analysis and reflection surfaces in the OpenVibely sidebar. The
 | Reflection | Review historical task activity and generated reflections. |
 | Analytics | Outcomes, supporting task evidence, agent and model comparisons, learning signals, automations, and provider usage. |
 
+Pulse separates running work from waiting work, including pending and queued tasks. Use `Stop` on an eligible running task to cancel its active execution, or on an eligible waiting task to prevent it from starting. The confirmation text identifies which state is being stopped.
+
 ## Analytics
 
 Analytics is the quantitative view of whether project work is producing useful outcomes and where attention is needed. Select a time window and optional project filters; metric definitions keep completed runs, achieved goals, and merged work distinct.

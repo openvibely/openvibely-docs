@@ -11,7 +11,7 @@ Use schedules for work that should happen later or repeatedly without requiring 
 | Schedule page | Calendar/list surface for one-time and recurring work. |
 | Scheduled category | Tasks can be moved into scheduled work when timing is configured. |
 | Run at | The first or next intended run time. |
-| Next run | The computed upcoming execution time. |
+| Next run | The exact computed upcoming execution time shown on schedule cards and task details. |
 | Enabled state | Keeps the schedule record while allowing future runs to pause. |
 | Auto-merge | Lets an eligible repository-backed scheduled task merge to its target branch after completion when enabled in the schedule/task setup. |
 | System schedules | Visible maintenance tasks such as memory consolidation and skill library upkeep. |
@@ -27,6 +27,8 @@ OpenVibely supports one-time, second-based, minute-based, hourly, daily, weekly,
 | Daily/weekly/monthly | Repeat on calendar-aware cadence while preserving intended local time. |
 | Disable | Keep the schedule but stop future dispatch. |
 | Delete | Remove the schedule. |
+
+Open a schedule card's action menu to pause or resume it, run it immediately, edit its timing, or delete the schedule. `Run Now` is off-cadence: it queues work without replacing the stored next-run time. Recurring schedules continue advancing to their next occurrence while an earlier run is active.
 
 ## Manage A Batch
 

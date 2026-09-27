@@ -40,6 +40,9 @@ This page collects common operational issues that follow from the source-verifie
 
 - In server mode, set `OPENVIBELY_ENABLE_LOCAL_REPO_PATH=true`.
 - In desktop mode, local paths are enabled by default.
+- Open Project Settings and inspect `Repository path status`.
+- For `Missing`, correct the saved path or browse to an accessible checkout.
+- For `Unknown`, confirm the OpenVibely process can inspect the configured path from its current host or container.
 
 ## Memory Does Not Write
 
@@ -64,7 +67,7 @@ This page collects common operational issues that follow from the source-verifie
 
 ## A Channel Ignores Messages
 
-- Add the sender to the system-level Authorized Users or Senders list; Slack, Telegram, Discord, and Email are deny-by-default.
+- Add the sender to the selected project's Authorized Users or Authorized Senders list; Slack, Telegram, Discord, and Email are project-scoped and deny-by-default.
 - For Discord server channels and threads, mention the bot and verify Message Content Intent and channel permissions.
 - For Email, confirm the message is unread, not self-sent or automated, and IMAP polling is connected.
 - Verify the channel's active project when work appears in an unexpected workspace.

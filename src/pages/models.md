@@ -44,7 +44,11 @@ Current Claude models can expose `xhigh` where the provider supports it. Claude 
 
 ## Manage Model Configurations
 
-Use the Models collection toolbar to search configurations, filter by provider, default status, authentication, or kind, and sort the results. Select configurations to delete several at once only after checking that no project, agent, or Mixture of Models still depends on them.
+Use the Models collection toolbar to search configurations, including connected OAuth account labels, filter by provider, default status, authentication, or kind, and sort the results. Select configurations to delete several at once only after checking that no project, agent, or Mixture of Models still depends on them.
+
+OAuth credentials are stored as reusable provider connections. Multiple compatible model configurations can link to the same connection, so refreshed credentials and account identity stay consistent across those models. The model editor shows the selected provider account and lets you connect a new account or choose an existing compatible connection. Before disconnecting one, review the models listed as using it.
+
+OpenVibely refreshes eligible OAuth credentials before expiry and persists refreshed state so restarts do not revert to stale tokens. If a provider rejects refresh or requires renewed consent, the affected connection is marked for reauthentication instead of silently borrowing another account. Usage and cooldown state remain attributed to the exact provider connection.
 
 ## Mixture Of Models
 

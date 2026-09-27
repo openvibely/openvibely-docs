@@ -11,6 +11,7 @@ Open `Schedule` from the Workspace section of the sidebar.
 | Create a schedule | Picks a task and a time for it to run. |
 | Choose recurrence | Runs the task once or repeats it at an interval. |
 | Enable or disable | Controls whether future runs should happen. |
+| Open card actions | Use the schedule-card menu to pause or resume, run immediately, edit, or delete the schedule. |
 | Reschedule | Changes when the task should run next. Select several schedules with Command-click on macOS or Ctrl-click on other systems, then drag one selected schedule to move all selected schedules together while preserving their relative time offsets. |
 | Delete schedule | Removes the future automation without deleting the underlying task. Deleting a scheduled task from task detail returns to Schedule. |
 
@@ -37,6 +38,8 @@ Use Schedule when one task needs to run once or repeat. Use [Automations](automa
 ## How Schedule Relates To Tasks
 
 A schedule belongs to a task. The task defines the prompt, model, agent, attachments, repository context, and review behavior. The schedule only controls when and how often that task should run.
+
+Schedule cards and task details show the exact computed next-run time. Choosing `Run Now` creates an off-cadence run without cancelling or moving the next scheduled occurrence. For recurring schedules, OpenVibely advances the next occurrence even when an earlier run is still active, preventing a long task from freezing the cadence.
 
 Use the task board for immediate work. Use Schedule when the timing matters.
 

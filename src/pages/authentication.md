@@ -26,7 +26,7 @@ The sidebar calls `/auth/me` to show the authenticated user menu when auth is ac
 
 ## Channel Authorization
 
-App login and channel authorization are separate layers. Slack, Telegram, Discord, and Email Authorized Users or Senders are system-level across projects and deny inbound access until identities are added. GitHub Authorized Users define trusted issue inbox and pull request feedback identities.
+App login and channel authorization are separate layers. Slack, Telegram, Discord, and Email Authorized Users or Senders are scoped to the selected project and deny inbound access until identities are added. GitHub Authorized Users define trusted issue inbox and pull request feedback identities.
 
 Outbound Message Targets do not grant inbound access. They are project-scoped destinations for proactive agent sends, with a separate project policy for explicit unsaved targets.
 

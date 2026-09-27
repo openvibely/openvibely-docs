@@ -45,6 +45,10 @@ Topologies that discover assigned issues or observe trusted actors require the a
 
 Routine publication opens or reuses the task's linked pull request and updates the persisted task, issue, and pull request relationship. Replacing pull request branch history is a separate destructive capability intended only for explicitly approved cleanup. It requires confirmation and the exact current remote head SHA as a force-with-lease guard; use normal publication for ordinary revisions.
 
+Publication reconciles the persisted pull request with the current task branch, including after startup synchronization or a confirmed branch replacement. Reused pull requests keep their existing body unless OpenVibely has an explicit update to apply, and task branches preserve their ancestry instead of introducing unnecessary merge commits.
+
+When guarded automatic merging reaches a conflict, OpenVibely can resume a restricted conflict-recovery turn. The resolver is limited to the conflicted worktree and conflict-oriented tools and cannot broaden its file access. Unresolved conflicts remain visible on the task instead of being forced through. If GitHub rejects a completion policy, the failure is written into the task thread so review can continue from the actual external result.
+
 ## Configuration Notes
 
 Operators can preconfigure GitHub App settings with `GITHUB_APP_ID`, `GITHUB_APP_SLUG`, and `GITHUB_APP_PRIVATE_KEY`. Users should not need to understand environment values during normal project or task work.
