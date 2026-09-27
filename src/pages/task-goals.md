@@ -34,6 +34,8 @@ Open the task edit dialog from any task detail page. The dialog includes a Goal 
 
 To remove a goal, clear the objective text and save.
 
+If the task has worktree-backed changes, `Auto-merge to target branch when goal is achieved` can merge through the guarded worktree flow when the Goal Agent marks the goal achieved. This setting is independent from `Auto-merge to target branch on successful completion`, and both are off by default. Paused, blocked, cleared, and failed goals do not trigger goal-based merging.
+
 ## Goal Statuses
 
 | Status | Meaning |

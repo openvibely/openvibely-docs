@@ -20,6 +20,7 @@ Chat embeds clickable task links inline as it creates work, so you can jump to a
 - Schedule work, prepare confirmed Automation save plans, manage alerts, and coordinate across the whole project
 - Send proactive messages through saved Slack, Telegram, Discord, or Email outbound targets
 - Accept steering or queue new prompts while a response is already in progress
+- Answer structured clarification questions in place before Chat continues
 
 That is the core OpenVibely flow: stay on the Chat page while the orchestrator handles the parallel work. The Tasks page is the board and review surface, but Chat is where the work begins and where coordination stays.
 
@@ -63,6 +64,12 @@ The chat input includes a mode selector with two options. OpenVibely defaults to
 | `Plan` | You want to think through an approach before anything is created or changed. | Keeps the conversation planning-oriented and limits action tools so the assistant can analyze, propose steps, and refine the plan first. |
 
 A good default workflow is to start in `Plan` for vague or risky work, then switch to `Orchestrate` when the next task is clear. Plan mode does not execute mutation markers or action text; Orchestrate-capable providers use runtime tool calls for real actions. When a `Plan` turn finishes, Chat surfaces a prompt to continue in `Orchestrate` mode so you can move from analysis to action without manually switching modes.
+
+## Clarification Questions
+
+When Chat needs a bounded decision before continuing, it can show one to three question cards directly in the conversation. Each card presents two or three described choices, identifies the recommended choice when one is available, and also accepts a custom answer. Use `Recommended and move forward` to accept the suggested path quickly, or move through the cards and submit your own selections together.
+
+Pending questions survive page refreshes and application restarts, so you can return to the same decision without losing the request. This interactive question flow is available in web Chat; task-thread follow-ups continue to use normal messages.
 
 ## Create Automations From Chat
 

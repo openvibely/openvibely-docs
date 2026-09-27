@@ -9,11 +9,24 @@ Insights are the analysis and reflection surfaces in the OpenVibely sidebar. The
 | Grades | View proactive insights, health checks, knowledge signals, and idea grading. |
 | Pulse | See upcoming work and generated pulse summaries. |
 | Reflection | Review historical task activity and generated reflections. |
-| Analytics | Token usage, cost, model breakdowns, execution rates, duration trends, agent usage, frequent tasks, and failure trends. |
+| Analytics | Outcomes, supporting task evidence, agent and model comparisons, learning signals, automations, and provider usage. |
 
 ## Analytics
 
-Analytics is the quantitative view of how OpenVibely is being used. It includes:
+Analytics is the quantitative view of whether project work is producing useful outcomes and where attention is needed. Select a time window and optional project filters; metric definitions keep completed runs, achieved goals, and merged work distinct.
+
+**Overview and outcomes**
+
+- Outcome KPIs and trends connect tasks worked on, run success, goal achievement, first-run success, follow-up work, and merge completion.
+- The outcome funnel makes each eligible denominator explicit.
+- Improvement, attention, and actionable-exception cards surface slow, costly, repeatedly failing, or reworked tasks.
+- Supporting task evidence lets users inspect the tasks behind aggregate results.
+
+**Agents, models, automations, and learning**
+
+- Compare agents and model configurations by outcomes, reliability, follow-up rate, runtime, and effort.
+- Inspect Automation graph invocation and node behavior.
+- Connect skill selection and usage to task outcomes, productive agent/skill pairs, and skills that may need clearer guidance or cleanup.
 
 **Token usage and cost**
 
@@ -25,24 +38,11 @@ Analytics is the quantitative view of how OpenVibely is being used. It includes:
 
 OAuth-connected provider accounts (Anthropic, OpenAI) show a usage snapshot card so users can see which account is consuming capacity.
 
-**Performance**
-
-- Average Execution Time by Model so users can compare latency across providers and models.
-- Execution rate, duration trend, agent usage, frequent task, and failure trend charts for task-level health.
-
-**Skill Curation**
-
-- Skill activity charts show when skills are selected, loaded, viewed, created, and edited.
-- Top Skills highlights the reusable guidance seeing the most activity.
-- Follow-through compares selected skills with later usage so teams can see whether routing choices are becoming useful task context.
-- Top Agent/Skill Pairs shows which agents and skills are working together most often.
-- Least Active Enabled Skills helps identify enabled skills that may need cleanup, consolidation, or clearer descriptions.
-
 Analytics charts are rendered in the browser timezone so time-axis labels match local working hours. Long-range views can be used to inspect skill learning trends over time, not just short-term task usage.
 
 ## How Insights Fit The Workflow
 
-Use the task board for live execution. Use Insights when you want to step back and answer questions like whether tasks are succeeding, which agents or models are most active, what work is coming up, and what historical trends are emerging. Use Analytics specifically to understand provider spend, token consumption by model, and execution performance.
+Use the task board for live execution. Use Insights when you want to step back and ask whether tasks reach their goals, which agents, models, skills, or automations produce strong outcomes, what work is coming up, and what historical trends are emerging. Use Analytics to connect outcome and task evidence with provider spend, token consumption, execution performance, and learning.
 
 ## Related Pages
 

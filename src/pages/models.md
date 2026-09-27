@@ -38,9 +38,9 @@ Use a custom OpenAI-compatible endpoint for local gateways, self-hosted inferenc
 
 ## Reasoning And Model Settings
 
-The Model dialog shows only settings supported by the selected provider and model. `gpt-6-astra` offers `low`, `medium`, `high`, `xhigh`, and `max` reasoning effort, uses `medium` when no effort is configured, and does not support `none` or configurable temperature. OpenVibely hides Temperature for Astra and ignores stale submitted temperature values.
+The Model dialog shows only settings supported by the selected provider and model. `gpt-6-astra` offers `low`, `medium`, `high`, `xhigh`, and `max` reasoning effort, uses `medium` when no effort is configured, and does not support `none` or configurable temperature. `gpt-6-sol` and `gpt-6-luna` add `none` to those effort choices and also default to `medium`. OpenVibely hides Temperature for Astra and ignores stale submitted temperature values.
 
-Current Claude models can expose `xhigh` where the provider supports it. Claude Fable 5.1 and Claude Mythos 5.1 are available in the Anthropic selector; consult [Model Providers](model-providers.html) for their supported effort levels and provider-specific constraints.
+Current Claude models can expose `xhigh` where the provider supports it. Claude Opus 5.5, Fable 5.1, and Mythos 5.1 are available in the Anthropic selector; consult [Model Providers](model-providers.html) for their supported effort levels and provider-specific constraints.
 
 ## Manage Model Configurations
 

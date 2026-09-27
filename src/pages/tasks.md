@@ -27,7 +27,7 @@ Click `+ Add Task` and fill out the modal.
 | Category | Places the card in Backlog or Active. |
 | Priority | Helps order and triage work. |
 | Tag | Marks the task as a feature or bug when useful. |
-| Auto-merge | Allows completed work to merge to the target branch when configured. |
+| Auto-merge | Independently merges after successful completion, after an attached goal is achieved, or both. Both triggers are off by default. |
 | Attachments | Adds files as extra task context. |
 
 The UI keeps the modal open and shows an inline error if the title conflicts with an existing task in the project.
@@ -51,6 +51,12 @@ Around normal execution, lifecycle hooks can recall memory, prepare useful skill
 Use task detail views to inspect execution output, thread messages, attachments, changed files, review comments, lifecycle activity, and worktree state.
 
 When a task has an active goal, a Goal panel appears above the tab row showing the objective, status badge, agent reason, and last-checked timestamp. Goal settings live in the task edit dialog.
+
+## Auto-Merge Triggers
+
+Tasks expose two independent, default-off worktree merge triggers. `Auto-merge to target branch on successful completion` runs after a successful task turn. `Auto-merge to target branch when goal is achieved` waits until the stored Task Goal reaches `achieved`, including when the Goal Agent confirms it after lifecycle review. Enable either or both to match the workflow; paused, blocked, cleared, and failed goals do not trigger a goal-achieved merge.
+
+Both settings use the guarded worktree merge flow. Conflicts, stale branches, missing worktrees, and other unsafe states remain visible for manual recovery instead of being forced through.
 
 ## Reviewing Work
 
