@@ -45,6 +45,8 @@ You can always open the task and read the full prompt Chat wrote. If it missed s
 
 Open `Chat` from the Workspace section of the sidebar. Pick the project first, then use the chat input to ask questions, plan changes, attach files, or orchestrate work.
 
+Mermaid diagrams in responses render directly in Chat and task threads, making flows and relationships easier to inspect alongside the conversation. Image attachments open in a shared viewer with zoom and navigation controls.
+
 | UI Capability | What It Enables |
 |---|---|
 | Project-scoped messages | Keep conversation grounded in the selected project. |

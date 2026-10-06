@@ -2,6 +2,8 @@
 
 OpenVibely uses one Go backend for server, desktop, and container deployments. Choose the mode based on how users will open the app and who manages updates.
 
+The application bundles its interface styles, scripts, and diagram renderer, so loading the UI does not require access to third-party CDNs. Remote model providers and integrations still need their normal network connections.
+
 ## Server Binary
 
 The server binary provides the browser UI at `http://localhost:3001` by default. Run the installed `openvibely` command to start the server in the current terminal:
