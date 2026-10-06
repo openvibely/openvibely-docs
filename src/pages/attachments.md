@@ -16,7 +16,9 @@ Use attachments when the prompt needs something that is easier to provide as a f
 
 ## What The UI Shows
 
-Attachment components include file lists, empty states, image previews, download links, delete controls, and file-size formatting. The task creation modal supports multiple files with a max-size hint. Repeated drag-and-drop or file-picker additions accumulate instead of replacing earlier selections.
+Attachment components include file lists, image previews, download links, delete controls, and file-size formatting. The task workspace supports multiple files with a max-size hint. Repeated drag-and-drop or file-picker additions accumulate instead of replacing earlier selections.
+
+Open an image preview to browse related images in the shared viewer, zoom in or out, or download a file. Left and Right move between images, plus and minus change zoom, 0 resets zoom, and Escape closes the viewer. Sent task attachments remain available in the Details panel's `Files` view.
 
 Composer attachments survive live-stream reconnects. When Chat creates a task from attached files, OpenVibely converts the attachment set before auto-starting the task; only a successfully converted task is activated, avoiding a run with partial context.
 

@@ -18,6 +18,8 @@ Use schedules for work that should happen later or repeatedly without requiring 
 
 ## Supported Recurrence
 
+From a task's Details panel, open `Schedule` and configure timing in the schedule editor. You can also schedule a new task before sending its first message. Choose a future start time; changes unrelated to timing preserve the existing next run.
+
 OpenVibely supports one-time, second-based, minute-based, hourly, daily, weekly, and monthly schedules. Daily, weekly, and monthly scheduling preserve local time-of-day across daylight-saving transitions by computing through local time.
 
 | Choice | Meaning |

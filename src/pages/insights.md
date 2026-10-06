@@ -42,6 +42,8 @@ OAuth-connected provider accounts (Anthropic, OpenAI) show a usage snapshot card
 
 Analytics charts are rendered in the browser timezone so time-axis labels match local working hours. Long-range views can be used to inspect skill learning trends over time, not just short-term task usage.
 
+Expand a chart to inspect it in a larger modal preview with interactive tooltips. Close the preview or press Escape to return to the dashboard.
+
 ## How Insights Fit The Workflow
 
 Use the task board for live execution. Use Insights when you want to step back and ask whether tasks reach their goals, which agents, models, skills, or automations produce strong outcomes, what work is coming up, and what historical trends are emerging. Use Analytics to connect outcome and task evidence with provider spend, token consumption, execution performance, and learning.

@@ -4,7 +4,9 @@ Projects are the workspace boundary in the OpenVibely UI. The selected project c
 
 ## What Users Do
 
-Use the searchable project selector in the sidebar to switch workspaces. Use the plus button to create a new project, and the settings button to edit the current project. Search filters the selector by project name so larger workspaces do not require scrolling.
+Desktop and wide browser layouts show open projects as tabs. Use the plus button to search for a project or create one, drag tabs to reorder them, and use a tab's context menu to open project settings. Open tabs, their order, and the last page visited in each project are saved across restarts. Narrow layouts retain a project selector.
+
+Use Command/Ctrl+Shift+Left or Right to switch project tabs and Command/Ctrl+Shift+K to open the project menu.
 
 | UI Action | Product Effect |
 |---|---|
@@ -23,6 +25,8 @@ OpenVibely supports local path projects and repository URL projects.
 | Repository URL | You want OpenVibely to work from a remote Git source such as GitHub. |
 
 Local path access is explicit because it lets the server read local filesystem paths. Desktop mode enables local paths by default. Server mode requires `OPENVIBELY_ENABLE_LOCAL_REPO_PATH`.
+
+In the desktop app, browsing for a local repository opens the operating system's native folder picker.
 
 Project Settings reports the current repository-path health as `Healthy`, `Missing`, or `Unknown`. A missing path means OpenVibely cannot find the configured checkout; an unknown state means it cannot confirm the path from the current runtime. Correct or browse to an accessible repository path before expecting worktrees, diffs, or repository-backed memory to work.
 

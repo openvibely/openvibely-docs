@@ -16,7 +16,7 @@ Scheduled tasks are managed from the Schedule page. Chat tasks are internal to c
 
 ## Creating A Task
 
-Click `+ Add Task` and fill out the modal.
+Click `+ Add Task` to open a new task workspace. Write the request in the thread composer, add attachments, and configure task properties in the Details panel. Send the first message to create the task. Active tasks start execution; Backlog tasks are saved for later. You can configure a schedule before the first send.
 
 | Field | User Impact |
 |---|---|
@@ -30,13 +30,13 @@ Click `+ Add Task` and fill out the modal.
 | Auto-merge | Independently merges after successful completion, after an attached goal is achieved, or both. Both triggers are off by default. |
 | Attachments | Adds files as extra task context. |
 
-The UI keeps the modal open and shows an inline error if the title conflicts with an existing task in the project.
+Existing tasks open directly to their thread. Edit properties in the resizable Details panel, switch to `Changes` for code review, and use the panel's `Files`, `Schedule`, `Lifecycle`, and `Chaining` views for supporting work. The panel remembers whether it is open across tasks and projects.
 
 ## Swarm Tasks
 
 Enable `Swarm mode` when one request should be delegated across multiple task roles. A planner creates independent worker scopes, an optional reviewer checks the combined result, and an optional merger integrates approved work. Each child is a real task with its own thread, model assignment, worktree, diff, retry, and follow-up history.
 
-Set the maximum planned worker count and default isolation in the task dialog, then create the parent in Active or Backlog. Active starts planning; Backlog defers the planner until you run the task or move it to Active. The board groups child status under the parent while still linking to every child task.
+Set the maximum planned worker count and default isolation in the task workspace, then create the parent in Active or Backlog. Active starts planning; Backlog defers the planner until you run the task or move it to Active. The board groups child status under the parent while still linking to every child task. Uploaded attachments and follow-up requests remain available to the swarm's execution roles.
 
 `Max workers` limits planned slices, not actual concurrency. Global, project, and per-model limits on the Workers page still determine how many children execute at once. See [Swarm Orchestration](swarm-orchestration.html) for roles, isolation, reruns, review, and merge behavior.
 
@@ -54,7 +54,9 @@ Around normal execution, lifecycle hooks can recall memory, prepare useful skill
 
 Use task detail views to inspect execution output, thread messages, attachments, changed files, review comments, lifecycle activity, and worktree state.
 
-When a task has an active goal, a Goal panel appears above the tab row showing the objective, status badge, agent reason, and last-checked timestamp. Goal settings live in the task edit dialog.
+Inspect and edit the Task Goal from the Details panel. Its state distinguishes active, paused, achieved, blocked, cleared, and failed objectives.
+
+Use Command/Ctrl+K to open the breadcrumb selector, Command/Ctrl+Shift+Up or Down to step through tasks, Command/Ctrl+Shift+B to toggle Details, and Command/Ctrl+Shift+D to switch between the thread and Changes. These shortcuts work from the task composer when no foreground dialog is open.
 
 ## Auto-Merge Triggers
 
