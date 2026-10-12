@@ -30,6 +30,10 @@ Queued messages are useful when you want to preserve ordering. The active answer
 
 A queued input can be cancelled before it is applied. When the active turn can still be redirected, a queued input can also be converted into steering so the instruction targets the current response instead of waiting for the next turn.
 
+## Edit Pending Instructions
+
+In Chat or a task thread, choose `Edit` on a pending queued or steering message to correct it before delivery. While the editor is open, an editing hold prevents that message from being dispatched. Save to apply the revision, or cancel editing to keep the original. Instructions already delivered cannot be edited; send a follow-up instead.
+
 ## Steering
 
 Steering is for correcting or redirecting the active response before it finishes. The web UI tracks the active turn and requires the expected turn id so a stale browser tab cannot accidentally steer the wrong response.

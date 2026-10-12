@@ -55,6 +55,7 @@ When a model supports reasoning modes, the model config UI shows an **Effort** d
 | Model | Effort levels |
 |---|---|
 | `gpt-6-astra` | low · medium · high · xhigh · **max** |
+| `gpt-6.1-sol` | low · medium · high · xhigh · **max** |
 | `gpt-6-sol` | none · low · medium · high · xhigh · **max** |
 | `gpt-6-luna` | none · low · medium · high · xhigh · **max** |
 | `gpt-5.6-sol` | none · low · medium · high · xhigh · **max** |
@@ -64,22 +65,17 @@ When a model supports reasoning modes, the model config UI shows an **Effort** d
 | `gpt-5.5-pro` | low · medium · high · **xhigh** |
 | `gpt-5.4` | low · medium · high · **xhigh** |
 | `gpt-5.3-codex` | low · medium · high · **xhigh** |
-| `gpt-5.2-codex` | low · medium · high · **xhigh** |
-| `gpt-5.1-codex-max` | low · medium · high · **xhigh** |
 | `gpt-5.4-mini` | low · medium · high · **xhigh** |
-| `gpt-5.3-codex-spark` | low · medium · high · **xhigh** |
-| `gpt-5.1-codex` | low · medium · high |
-| `gpt-5.1-codex-mini` | low · medium · high |
-| `gpt-5-codex` | low · medium · high |
-| `gpt-5-codex-mini` | low · medium · high |
 
-The default effort is model-dependent. GPT-6 Astra/Sol/Luna, GPT-5.6, GPT-5.5, and GPT-5.4 variants default to `medium`; older variants generally default to `high`. GPT-6 Astra does not support `none` or configurable temperature, while GPT-6 Sol/Luna support `none`. The environment variable `OPENVIBELY_CODEX_REASONING_EFFORT` sets the configured-effort fallback when the model config does not specify one; unsupported values are normalized to a level the selected model accepts.
+The default effort is model-dependent. GPT-6 Astra/Sol/Luna, GPT-6.1 Sol, GPT-5.6, GPT-5.5, and GPT-5.4 variants default to `medium`; GPT-5.3 Codex defaults to `high`. GPT-6 Astra and GPT-6.1 Sol do not support `none` or configurable temperature, while GPT-6 Sol/Luna support `none`. The environment variable `OPENVIBELY_CODEX_REASONING_EFFORT` sets the configured-effort fallback when the model config does not specify one; unsupported values are normalized to a level the selected model accepts.
 
 **Anthropic (Claude) models**
 
 | Model | Effort levels |
 |---|---|
 | Claude Opus 5.5 | low · medium · high · xhigh · **max** |
+| Claude Sonnet 5.5 | low · medium · high · xhigh · **max** |
+| Claude Haiku 5.5 | low · medium · high · xhigh · **max** |
 | Claude Opus 5 | low · medium · high · xhigh · **max** |
 | Claude Sonnet 5 | low · medium · high · xhigh · **max** |
 | Claude Opus 4.8 | low · medium · high · xhigh · **max** |
@@ -93,7 +89,7 @@ The default effort is model-dependent. GPT-6 Astra/Sol/Luna, GPT-5.6, GPT-5.5, a
 | Claude Sonnet 4.5 | *(no effort — reasoning not supported)* |
 | Claude Haiku 4.5 | *(no effort — reasoning not supported)* |
 
-`max` is the Anthropic equivalent of `xhigh`.
+`xhigh` and `max` are distinct effort choices on models that support both. Claude Haiku 5.5 defaults to `medium` and supports API key or OAuth authentication; it does not support configurable temperature.
 
 Claude Opus 5.5 uses a 128K default and maximum output-token allowance in the Anthropic runtime.
 

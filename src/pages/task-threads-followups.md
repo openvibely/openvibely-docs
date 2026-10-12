@@ -59,6 +59,10 @@ When a follow-up is queued and the task thread shows a pending input row, a **St
 
 Use task-thread steering when you have already sent a follow-up but want to correct or narrow it before the worker picks it up. You can also cancel a queued follow-up before it is applied. If the turn has already started, the steer may be rejected and you should send a new follow-up instead.
 
+## Edit Pending Instructions
+
+Before delivery, use `Edit` on a pending queued message or steering instruction to revise it. The editor holds that message from dispatch while you edit. Save the changes or cancel editing to retain the original; already-delivered instructions require a new follow-up. See [Prompt Queue & Steering](prompt-queue-steering.html#edit-pending-instructions).
+
 ## Stop An Active Follow-Up
 
 While a follow-up response is running, the send control becomes `Stop response`. Stopping cancels the active model run and records a cancellation state in the thread. It does not cancel other queued follow-ups or the entire task; use the queued-row cancel action or task cancel control for those separate intents.

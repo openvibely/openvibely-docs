@@ -31,6 +31,12 @@ Open `Schedule` from the Workspace section of the sidebar.
 
 Use Command-click on macOS or Ctrl-click on other systems to select multiple schedule cards. Drag any selected card to a new time to move every selected schedule by the same offset, preserving their relative spacing. The action can reschedule disabled entries too; selecting them does not enable future dispatch.
 
+## Skip Runs Or Pause The Project
+
+Select calendar dates or hour ranges and choose `Skip` to exclude runs without deleting schedules. Use `Unskip` to restore them. Selections can span dates, and the calendar identifies partially skipped runs.
+
+Use the page actions to pause or resume scheduled dispatch for the current project. This leaves individual schedules' enabled states unchanged and does not cancel running work. See [Scheduled Task Runs](scheduled-tasks.html#skipping-runs-and-project-pauses).
+
 ## Schedule Or Automation
 
 Use Schedule when one task needs to run once or repeat. Use [Automations](automations.html) when timed work must hand off to additional tasks, Native human approvals, supported GitHub actions, or explicit outcomes. A Schedule node in an Automation creates its own task and schedule when the graph is saved.

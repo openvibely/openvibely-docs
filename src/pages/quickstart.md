@@ -30,9 +30,9 @@ Use the preset list when your provider appears there; OpenVibely can fill the ex
 
 Set a default model if you want new tasks to work without choosing a model every time. See [Model Providers](model-providers.html) for the full provider setup guide.
 
-## 3. Create A Project From The Sidebar
+## 3. Create A Project
 
-Use the project selector area in the sidebar to create a project. A project gives Chat, Tasks, Schedule, Workers, Alerts, Memory, Insights, and Channels their shared workspace.
+Open the plus menu beside the project tabs, or the project selector on a narrow layout, and choose `Create New Project`. A project gives Chat, Tasks, Schedule, Workers, Alerts, Memory, Insights, and Channels their shared workspace.
 
 Choose either a local repository path or a repository URL. Local paths are enabled by default in desktop mode, but server mode requires `OPENVIBELY_ENABLE_LOCAL_REPO_PATH`.
 
@@ -40,7 +40,7 @@ Choose either a local repository path or a repository URL. Local paths are enabl
 
 | If You Know The Exact Work | If You Need To Explore First |
 |---|---|
-| Open `Tasks`, click `+ Add Task`, enter a title and prompt, choose a model or agent if needed, then create the task. | Open `Chat`, ask about the project or describe the request, attach files if useful, then let the conversation guide task creation. |
+| Open `Tasks` and start a new task. Write the request in the composer, adjust properties in Details, and send the first message to create it. | Open `Chat`, ask about the project or describe the request, attach files if useful, then let the conversation guide task creation. |
 
 ## 5. Run And Watch Progress
 

@@ -22,7 +22,7 @@ Select cards or choose `Select all` in a column menu to run backlog tasks, stop 
 
 ## Creating A Task
 
-Click `+ Add Task` to open a new task workspace. Write the request in the thread composer, add attachments, and configure task properties in the Details panel. Send the first message to create the task. Active tasks start execution; Backlog tasks are saved for later. You can configure a schedule before the first send.
+Click the plus button (`Add Task`) to open a new task workspace. Write the request in the thread composer, add attachments, and configure task properties in the Details panel. Send the first message to create the task. Active tasks start execution; Backlog tasks are saved for later. You can configure a schedule before the first send.
 
 | Field | User Impact |
 |---|---|

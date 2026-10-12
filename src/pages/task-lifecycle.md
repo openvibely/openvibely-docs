@@ -27,9 +27,9 @@ route_task
 
 The main task still runs normally with its chosen execution profile. Lifecycle hook activity is supporting behavior, not a replacement for the task prompt.
 
-## Task Detail: Lifecycle Tab
+## Task Details: Lifecycle View
 
-The task detail page includes a **Lifecycle** tab that shows all lifecycle hook invocations for that task, newest first. Each entry displays the hook type, status badge (queued, running, completed, failed, skipped), and pills for what the hook involved:
+Open a task's Details panel and select **Lifecycle** to see lifecycle hook invocations for that task, newest first. Each entry displays the hook type, status badge (queued, running, completed, failed, skipped), and pills for what the hook involved:
 
 | Pill Type | What It Represents |
 |---|---|
@@ -42,10 +42,10 @@ Together these answer "what context and skills did OpenVibely have for this run?
 
 - Task card on the board.
 - Task detail status and execution history.
-- Lifecycle tab with hook events, skill pills, and recalled memory pills (see above).
+- Lifecycle view in the Details panel, with hook events, skill pills, and recalled memory pills (see above).
 - Thread view for follow-up messages.
 - Changes view for diffs and live file changes.
-- Schedule tab when recurring execution is configured.
+- Schedule view in the Details panel for one-time or recurring execution.
 - Chain configuration for delegated child work.
 - Worktree controls for merge, pull request, conflict resolution, abort, and cleanup.
 - Review comments and submitted review notes.

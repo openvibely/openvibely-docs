@@ -46,7 +46,9 @@ Current Claude models can expose `xhigh` where the provider supports it. Claude 
 
 The model editor groups settings into tabs and supports OAuth connection before saving a configuration. Compatible endpoints can supply model metadata through discovery; Ollama setup can discover installed models from its base URL.
 
-Context and output caps let you lower provider-reported limits. A zero cap leaves the reported limit unchanged. Set the compaction threshold to compact earlier, or leave it at zero for automatic behavior. Conversation composers also offer searchable model selection, saved favorites, and supported reasoning-effort overrides.
+In the Generation tab, `Context window (tokens)` sets the working context size and `Compact conversation at (tokens)` controls when history is compacted. The editor fills suggested positive values from the model's limits; verify the window against your server when discovery cannot report it.
+
+OpenAI-compatible and Ollama configurations also expose `Max output (tokens)`. Leave room for input; for context windows smaller than 32,768 tokens, the editor limits output to one quarter of the window. OpenAI and Anthropic adapters manage their output budgets without this control. Conversation composers offer searchable model selection, saved favorites, and supported reasoning-effort overrides.
 
 ## Manage Model Configurations
 

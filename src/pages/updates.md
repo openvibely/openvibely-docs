@@ -29,6 +29,8 @@ Open `Alerts` to see the current version, available version, release notes, upda
 
 The updater replaces application files only. App data stays in the platform data directory listed on [Deployment Modes](deployment.html).
 
+Browser tabs automatically reload after the restarted server reports a healthy new version, so the updated UI appears without a manual refresh. Native desktop windows load the new UI when the app restarts.
+
 Update targets are bound to their signed release metadata, artifact digest, platform, variant, and the current build's compatibility requirements. OpenVibely also revalidates cached downloads before installation and rejects substituted, incompatible, incorrectly cached, or unsigned targets.
 
 ## Reinstall After A Failed Update
@@ -50,14 +52,14 @@ Use `desktop` instead of `binary` for the desktop app. Do not manually delete up
 Pull and run the new image while reusing the existing `/data` volume:
 
 ```bash
-docker pull openvibely/openvibely:0.7.0
+docker pull openvibely/openvibely:0.9.0
 docker stop openvibely
 docker rm openvibely
 docker run -d \
   --name openvibely \
   -p 3001:3001 \
   -v openvibely_data:/data \
-  openvibely/openvibely:0.7.0
+  openvibely/openvibely:0.9.0
 ```
 
 For production, pin an immutable image digest rather than relying only on a mutable tag.

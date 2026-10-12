@@ -51,13 +51,13 @@ Desktop mode enables local repository paths by default. Use `OPENVIBELY_APP_DATA
 The Docker image contains the server app for both `linux/amd64` and `linux/arm64`. Docker selects the matching image automatically.
 
 ```bash
-docker pull openvibely/openvibely:0.7.0
+docker pull openvibely/openvibely:0.9.0
 
 docker run -d \
   --name openvibely \
   -p 3001:3001 \
   -v openvibely_data:/data \
-  openvibely/openvibely:0.7.0
+  openvibely/openvibely:0.9.0
 ```
 
 Open `http://localhost:3001`. Keep `/data` on a named volume or bind mount so the database, repositories, and uploads survive container replacement.
