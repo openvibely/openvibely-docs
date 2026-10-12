@@ -31,6 +31,18 @@ Use the Automation collection toolbar to search, filter by lifecycle, health, ty
 
 Choose `Duplicate` from a supported saved Automation's action menu to open an unsaved `Copy of <name>` draft. It has no active graph or created resources until you save it. Saving creates independently owned Automation resources, so later edits, runs, pauses, and deletion do not alter the original. The Vision Driver Automation cannot be duplicated.
 
+## Keyboard Navigation
+
+On an Automation preview or edit page, use Command on macOS or Ctrl on Windows/Linux:
+
+| Shortcut | Action |
+|---|---|
+| Command/Ctrl+K | Open or close the Automation breadcrumb selector. |
+| Command/Ctrl+Shift+Up / Down | Open the previous or next Automation in the breadcrumb list. |
+| Command/Ctrl+Shift+L | Return to the last Automation visited in this project and browser tab. |
+
+Previous/next navigation stops at the ends of the list and preserves preview or edit mode. These navigation shortcuts pause inside text fields and editors or while a dialog or menu is open. Switching away from unsaved builder changes asks for confirmation.
+
 ## Build The Graph
 
 The builder has three synchronized views.

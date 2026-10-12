@@ -18,7 +18,7 @@ Scheduled tasks are managed from the Schedule page. Chat tasks are internal to c
 
 Use board search to find work. Backlog and Completed column menus offer status and priority filters and sorting; Completed also filters merge outcomes. Clear filters to reveal hidden cards again.
 
-Select cards or choose `Select all` in a column menu to run backlog tasks, stop active work, merge eligible completed branches, create pull requests, or delete tasks. Review the selection and any destructive confirmation first. Active retains execution order rather than offering manual sorting.
+Command-click a card's body on macOS or Ctrl-click on Windows/Linux to select or deselect it without opening the task. Select multiple cards this way or choose `Select all` in a column menu to run backlog tasks, stop active work, merge eligible completed branches, create pull requests, or delete tasks. Review the selection and any destructive confirmation first. Active retains execution order rather than offering manual sorting.
 
 ## Creating A Task
 
