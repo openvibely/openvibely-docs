@@ -56,6 +56,14 @@ Mermaid diagrams in responses render directly in Chat and task threads, making f
 | Streaming responses | Watch answers arrive live instead of waiting for a full page refresh. |
 | Clear history | Reset the conversation for the selected project when needed. |
 
+## Models And Conversation Controls
+
+Search configured models in the composer picker, browse provider groups, and save favorites for quick access. Command/Ctrl+M opens or closes the picker. Supported models expose reasoning-effort overrides without requiring a separate model configuration.
+
+Chat and task threads allow editing pending queued messages and steering instructions before delivery. Opening the editor holds the message from dispatch until editing finishes. Already-delivered instructions cannot be edited.
+
+Drafts remain scoped to their project or task while navigating. Response activity shows context compaction progress, and Mermaid diagrams render when their complete blocks arrive during streaming.
+
 ## Plan And Orchestrate Modes
 
 The chat input includes a mode selector with two options. OpenVibely defaults to `Orchestrate` when no mode is selected, and the selected mode is remembered per project in the browser.

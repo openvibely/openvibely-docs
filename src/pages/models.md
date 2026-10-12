@@ -42,6 +42,12 @@ The Model dialog shows only settings supported by the selected provider and mode
 
 Current Claude models can expose `xhigh` where the provider supports it. Claude Opus 5.5, Fable 5.1, and Mythos 5.1 are available in the Anthropic selector; consult [Model Providers](model-providers.html) for their supported effort levels and provider-specific constraints.
 
+## Context Limits And Setup
+
+The model editor groups settings into tabs and supports OAuth connection before saving a configuration. Compatible endpoints can supply model metadata through discovery; Ollama setup can discover installed models from its base URL.
+
+Context and output caps let you lower provider-reported limits. A zero cap leaves the reported limit unchanged. Set the compaction threshold to compact earlier, or leave it at zero for automatic behavior. Conversation composers also offer searchable model selection, saved favorites, and supported reasoning-effort overrides.
+
 ## Manage Model Configurations
 
 Use the Models collection toolbar to search configurations, including connected OAuth account labels, filter by provider, default status, authentication, or kind, and sort the results. Select configurations to delete several at once only after checking that no project, agent, or Mixture of Models still depends on them.

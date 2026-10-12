@@ -36,6 +36,12 @@ Open a schedule card's action menu to pause or resume it, run it immediately, ed
 
 On the Schedule page, Command-click on macOS or Ctrl-click on other systems to select several schedules. Drag one selected card to move the full selection by the same offset while preserving each schedule's relative run time. Disabled schedules can be moved without being enabled.
 
+## Skipping Runs And Project Pauses
+
+Select calendar dates or hour ranges and choose `Skip` to exclude occurrences without deleting their schedules. Use `Unskip` to restore excluded ranges. Selections can span dates, and partially skipped runs remain identified in the calendar.
+
+Page actions can pause or resume scheduled dispatch for the current project. This does not cancel work already running. Individual schedules retain their own enabled state. The schedule editor provides a shared date/time picker for choosing future runs.
+
 ## Dispatch Boundary
 
 When a schedule reaches its next run time, the scheduled work enters normal task execution. It still respects worker capacity, project/model limits, task dependencies, and review requirements.

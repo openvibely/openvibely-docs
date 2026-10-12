@@ -14,6 +14,12 @@ Open `Tasks` from the Workspace section of the sidebar. The board shows project 
 
 Scheduled tasks are managed from the Schedule page. Chat tasks are internal to chat flows and are not normal board cards.
 
+## Search, Filters, And Batch Actions
+
+Use board search to find work. Backlog and Completed column menus offer status and priority filters and sorting; Completed also filters merge outcomes. Clear filters to reveal hidden cards again.
+
+Select cards or choose `Select all` in a column menu to run backlog tasks, stop active work, merge eligible completed branches, create pull requests, or delete tasks. Review the selection and any destructive confirmation first. Active retains execution order rather than offering manual sorting.
+
 ## Creating A Task
 
 Click `+ Add Task` to open a new task workspace. Write the request in the thread composer, add attachments, and configure task properties in the Details panel. Send the first message to create the task. Active tasks start execution; Backlog tasks are saved for later. You can configure a schedule before the first send.
