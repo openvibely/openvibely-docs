@@ -78,6 +78,10 @@ Because these are visible schedules, users can inspect when maintenance is confi
 - Use Alerts and Insights to monitor failures and trends over time.
 - Treat scheduled repository-changing work with the same review discipline as manual tasks.
 
+## Scheduled Conversations
+
+Conversation tasks can be scheduled as well as started manually. When a schedule fires, they follow normal worker admission and capacity limits.
+
 ## Related Pages
 
 | Page | Why It Matters |

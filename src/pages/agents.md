@@ -34,7 +34,7 @@ Use the Agent collection toolbar to search, filter by enabled state, scope, or o
 
 When creating a task, users can choose an agent or leave selection on auto-routing. An agent can also define model behavior, so task execution can inherit a consistent combination of instructions, tools, and provider settings.
 
-When a task is assigned to an agent, Skill Curator works within that agent’s own skill library. After the task completes, autonomous curation can improve only that assigned agent’s skills when the lesson is specific to the agent’s role.
+The main model selects skills from the assigned agent's library. If Skill Curator's optional after-complete learning hook is enabled, it can improve that assigned agent's skills subject to project write permissions. This hook is disabled by default.
 
 ## System Curators
 
@@ -42,11 +42,11 @@ OpenVibely includes protected system agents for learning work users should not h
 
 | System Agent | What It Does |
 |---|---|
-| `System: Memory Curator` | Autonomously creates and updates durable project memory from completed work, recalls relevant memory before tasks, and runs scheduled consolidation. |
+| `System: Memory Curator` | Runs scheduled consolidation. Main task models select and update memories themselves. |
 | `System: Goal Agent` | Evaluates active task goals after each task turn via the `evaluate_task_goal` lifecycle hook, queuing continuation follow-ups until the goal is achieved or blocked. |
-| `Skill Curator` | Routes reusable skills into tasks and improves standalone or agent-owned skill libraries from completed work. |
+| `Skill Curator` | Maintains skill libraries through scheduled work and optional after-complete learning. |
 
-`System: Memory Curator` is a protected on-disk system agent. Its skills live under `.openvibely/agents/memory_curator/` and can be reviewed there, but the agent is not user-editable or selectable as a primary task agent. It uses scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and keeps memory learning isolated from task worktrees.
+`System: Memory Curator` is a protected on-disk system agent. Its skills live under `.openvibely/agents/memory_curator/`. It is not selectable as a primary task agent. Scheduled consolidation uses scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and does not use a task worktree.
 
 ## Agent Detail Tabs
 

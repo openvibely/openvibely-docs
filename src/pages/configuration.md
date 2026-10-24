@@ -7,10 +7,11 @@ OpenVibely is configured primarily with environment variables. `start.sh` loads 
 | Variable | Default | Purpose |
 |---|---|---|
 | `PORT` | `3001` in server mode, `0` in desktop mode | HTTP port; desktop uses ephemeral by default |
-| `DATABASE_PATH` | `~/.openvibely/openvibely.db` (both modes) | SQLite database path |
+| `DATABASE_DRIVER` | `sqlite` | Persistence backend; SQLite is currently the only supported backend. Other values fail startup. |
+| `DATABASE_PATH` | App-data directory's `openvibely.db` | SQLite database path; server defaults to `~/.openvibely`, desktop uses its platform application-data directory |
 | `DATABASE_URL` | empty | Loaded but not used by server startup |
 | `ENVIRONMENT` | `development` | Runtime label |
-| `PROJECT_REPO_ROOT` | `~/.openvibely/repos` (both modes) | Managed clone root |
+| `PROJECT_REPO_ROOT` | App-data directory's `repos` | Managed clone root |
 | `OPENVIBELY_APP_DATA_DIR` | mode-specific | Overrides app-data root and changes DB/repo defaults |
 | `OPENVIBELY_ENABLE_LOCAL_REPO_PATH` | false in server, true in desktop | Enables local path project source mode |
 

@@ -6,7 +6,7 @@ OpenVibely turns one Chat into the control plane for your entire AI development 
 
 Agents do the work. You stay in command. Inspect any thread, review any diff, steer any task, and keep the whole plan moving from the original conversation.
 
-Goal loops drive unfinished work forward. Memory Curator preserves project context. Skill Curator turns completed tasks into sharper reusable workflows. Every run can make the next one better, while your team stays in control.
+Goal loops drive unfinished work forward. Main models use skills and preserve project memories with your permission. Scheduled maintenance and optional skill learning keep that knowledge useful for future work.
 
 Self-hosted, single binary, SQLite by default, and built for teams that want speed without giving up control, auditability, or ownership.
 

@@ -18,7 +18,11 @@ Use attachments when the prompt needs something that is easier to provide as a f
 
 Attachment components include file lists, image previews, download links, delete controls, and file-size formatting. The task workspace supports multiple files with a max-size hint. Repeated drag-and-drop or file-picker additions accumulate instead of replacing earlier selections.
 
-Open an image preview to browse related images in the shared viewer, zoom in or out, or download a file. Left and Right move between images, plus and minus change zoom, 0 resets zoom, and Escape closes the viewer. Sent task attachments remain available in the Details panel's `Files` view.
+Open a file to use the shared viewer. Previews support PDF, Word documents, spreadsheets, images/SVG, video/audio, text, JSON, HTML, and Markdown. The viewer supports fullscreen viewing and downloads; desktop downloads can use the native Save As dialog. In image views, Left and Right move between images, plus and minus change zoom, 0 resets zoom, and Escape closes the viewer. Sent task attachments remain available in the Details panel's `Files` view.
+
+Built-in document skills can create or edit Word documents, PDFs, spreadsheets, and presentations. If a required tool is missing, OpenVibely asks for installation approval. Generated files remain available for later download; not every downloadable format has an inline preview.
+
+Chat files are stored within the project, and task attachments remain associated with their task. Changes to attachment context are carried into follow-ups and steering; removing a file does not silently leave stale file context in a new turn.
 
 Composer attachments survive live-stream reconnects. When Chat creates a task from attached files, OpenVibely converts the attachment set before auto-starting the task; only a successfully converted task is activated, avoiding a run with partial context.
 
@@ -60,7 +64,7 @@ Attachments should support the prompt. If a file contains important durable proj
 | "Fix this UI bug." | Attach a screenshot and describe the expected behavior. |
 | "Continue the task using these failing test logs." | Attach logs to a task follow-up. |
 | "Create implementation tasks from this product brief." | Attach the brief in Chat `Orchestrate`. |
-| "Remember this architecture decision permanently." | Use the attachment as context, then rely on Memory Curator for durable memory if the completed work contains a lasting lesson. |
+| "Remember this architecture decision permanently." | Ask the main model to save the durable lesson to project memory, with memory writes enabled. |
 
 ## Related Pages
 

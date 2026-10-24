@@ -10,7 +10,7 @@ Typical task execution moves from `pending` to `queued` to `running`, then to a 
 
 ## Lifecycle Hooks
 
-Lifecycle hooks are system steps that run around normal task execution. They let OpenVibely recall relevant project memory, select useful skills, prepare context, create or update memory from completed work, and learn from finished work while preserving the user’s normal task flow.
+Lifecycle hooks are optional supporting steps around task execution. The main model selects skills and memories directly. Enabled hooks can prepare additional context, evaluate goals, and learn from completed work.
 
 ```text
 route_task
@@ -21,9 +21,9 @@ route_task
 
 | Hook | User Impact |
 |---|---|
-| `route_task` | Selects the most relevant standalone or agent-owned skills for the task. |
+| `route_task` | Optional custom routing; built-in Skill Curator routing has been removed. |
 | `before_run` | Adds hook-provided context before the main task starts, including relevant managed memory when enabled. |
-| `after_complete` | Observes the result and can create or update memory, or improve skills, so future tasks benefit. |
+| `after_complete` | Evaluates goals or runs enabled learning hooks. Skill Curator learning is disabled by default. |
 
 The main task still runs normally with its chosen execution profile. Lifecycle hook activity is supporting behavior, not a replacement for the task prompt.
 
@@ -69,7 +69,7 @@ Together these answer "what context and skills did OpenVibely have for this run?
 | [Tasks](tasks.html) | Main board and task detail workflows. |
 | [Lifecycle Hooks](lifecycle-hooks.html) | Deeper explanation of hook timing, boundaries, memory, and skill behavior. |
 | [Task Threads & Follow-Ups](task-threads-followups.html) | Follow-up execution continues one task thread. |
-| [Memory](memory.html) | How Memory Curator recalls, updates, and consolidates project knowledge. |
+| [Memory](memory.html) | How main models use memory and scheduled consolidation maintains it. |
 | [Skill Curation](skills-and-learning.html) | How lifecycle hooks let OpenVibely curate skills from completed work. |
 | [Git Worktrees & Merge Safety](git-worktrees.html) | Reviewable file changes after execution. |
 | [Worker Capacity & Dispatch](workers.html) | Capacity affects when queued work starts. |

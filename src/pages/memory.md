@@ -1,6 +1,6 @@
 # Memory
 
-Memory is how OpenVibely stops acting like a brand-new assistant on every task. `System: Memory Curator` is a protected on-disk system agent that autonomously turns completed work into durable project knowledge, recalls the right pieces before future runs, and consolidates the memory library so it stays focused instead of becoming a transcript dump.
+Memory preserves project knowledge across tasks. Main task models select relevant memories and update them during work, subject to project permissions. `System: Memory Curator` handles scheduled consolidation to keep the library focused.
 
 The result is a project-aware learning loop: you explain an architecture decision, preference, incident, workflow constraint, or correction once; OpenVibely can preserve it in managed memory; later tasks receive the relevant context automatically.
 
@@ -10,8 +10,8 @@ Memory is project-local and repository-backed. OpenVibely stores managed memory 
 
 | Capability | User Impact |
 |---|---|
-| Autonomous memory creation | After completed work, Memory Curator reviews the retained task transcript and creates or updates focused memory files only when there is durable project knowledge worth saving. |
-| Context-aware recall | Before task execution, Memory Curator selects relevant memory and returns a compact context block instead of dumping every remembered note into the prompt. |
+| Autonomous memory creation | The main model can save durable project facts when memory writes are enabled. |
+| Context-aware recall | The main model selects relevant memories from the project index during execution. |
 | Scheduled consolidation | `System: Memory Consolidation` periodically merges, splits, updates, or removes memory notes so the library remains accurate and useful. |
 | Repository-backed files | Managed memory is stored under `.openvibely/memories` in the project repository. |
 | Project scope | Each project has its own memory directory, so context does not bleed across unrelated repositories. |
@@ -19,15 +19,13 @@ Memory is project-local and repository-backed. OpenVibely stores managed memory 
 
 ## Memory Curator
 
-`System: Memory Curator` is a protected on-disk system agent. Its skills live under `.openvibely/agents/memory_curator/` in the project repository and can be reviewed there, but the agent itself is protected and not user-editable. Users do not select it as the primary worker for normal tasks. It runs around the task lifecycle with scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and does not get a runtime git worktree.
+`System: Memory Curator` is a protected on-disk system agent. Its skills live under `.openvibely/agents/memory_curator/`. Users do not select it as the primary worker for normal tasks. Its scheduled consolidation uses scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and does not get a runtime git worktree.
 
 | Memory Curator Skill | When It Runs | Purpose |
 |---|---|---|
-| `recall_memory` | `before_run` | Reads the project memory index and relevant topic files, then returns only the facts useful for the current task. |
-| `update_memory` | `after_complete` | Reviews completed task context and updates managed memory only when there is durable project knowledge worth saving. |
 | `consolidate_memory` | scheduled | Maintains the project memory library through the visible `System: Memory Consolidation` scheduled task. |
 
-This is autonomous memory management, not manual note taking. Work happens, useful facts become managed memory, later tasks receive the relevant parts automatically, and scheduled maintenance keeps the store clean over time.
+The previous built-in per-turn recall and update hooks have been removed. The main model handles those decisions directly; scheduled consolidation remains separate.
 
 ## What Gets Remembered
 
@@ -56,13 +54,13 @@ Memory appears in normal work as background help, not as a replacement for the u
 
 ## Agent Permissions
 
-Agents can be allowed to read or write project memory. The Memory Curator has protected scoped access to the managed memory directory so lifecycle hooks can recall, update, and consolidate project memory without exposing arbitrary repository writes.
+Project settings → **Skills & Memory** controls memory reads and writes separately. Both are enabled for new projects. Agent permissions also constrain access. Memory Curator's scheduled work uses scoped access to the managed memory directory.
 
 ## Recommended Use
 
 1. Enable memory for projects where persistent context will make future work better.
 2. Keep sensitive data out of task prompts and chat if it should not become durable context.
-3. Let Memory Curator create and maintain project knowledge while Skill Curation captures reusable task behavior.
+3. Ask the main model to preserve durable knowledge; use scheduled consolidation to maintain the library.
 4. Review `.openvibely/memories` when the project relies heavily on remembered context.
 
 ## Related Pages
@@ -70,7 +68,7 @@ Agents can be allowed to read or write project memory. The Memory Curator has pr
 | Page | Why It Matters |
 |---|---|
 | [Projects](projects.html) | Memory is scoped to a project repository. |
-| [Lifecycle Hooks](lifecycle-hooks.html) | Memory recall and updates run through lifecycle hooks around task execution. |
+| [Lifecycle Hooks](lifecycle-hooks.html) | Explains optional supporting hooks and scheduled maintenance. |
 | [Task Lifecycle](task-lifecycle.html) | Shows where memory fits in the broader task flow. |
 | [Agents](agents.html) | Agents can be configured with memory permissions. |
 | [Skill Curation](skills-and-learning.html) | Skills capture reusable task behavior while memory captures durable project knowledge. |

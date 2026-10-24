@@ -122,6 +122,12 @@ Chat reconnects live streams from the last received output offset and catches up
 
 If Chat is already responding, a new prompt can become queued input for the next turn. When the UI offers active-turn steering, a prompt can instead redirect the current response. This keeps the project conversation responsive without forcing users to open another thread just to add context or correct scope.
 
+## Long Conversations and Compaction
+
+Context compaction summarizes older context to leave room for continued work. Progress appears in response activity. Recovery checkpoints preserve compacted conversation state across restarts and provider changes, including tool exchanges, attachments, and steering. This conversation context is separate from project memory.
+
+Long threads render visible content incrementally, load older history as you scroll, and preserve your reading position during background updates. SVG and math render during streaming alongside Mermaid diagrams. Tool output has a copy control for the complete output, including text hidden by the preview.
+
 ## When To Use Chat
 
 Use Chat when the task is not fully formed yet or when one request needs coordinated parallel work. Good examples include asking what changed in a project, breaking a broad request into tasks, comparing implementation options, asking OpenVibely to create follow-up work from a discussion, or managing several task threads from one central chat window.

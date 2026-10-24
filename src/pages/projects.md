@@ -1,5 +1,11 @@
 # Projects
 
+## Skills and Memory Permissions
+
+In project settings, **Skills & Memory** controls skill and memory reads and writes separately. New projects allow skill reads and memory reads/writes, while skill writes are off. **Allow global skill writes** is separate and requires skill writes. Existing projects retain their previous permissions.
+
+If a managed GitHub project's repository is missing locally, use **Re-clone** in project settings to recover it. Local-path projects require an existing valid repository directory.
+
 Projects are the workspace boundary in the OpenVibely UI. The selected project controls what Chat, Tasks, Schedule, Workers, Alerts, Memory, Insights, Channels, and many settings operate on.
 
 ## What Users Do

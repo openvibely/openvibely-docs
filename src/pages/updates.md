@@ -17,6 +17,8 @@ OpenVibely periodically checks the configured release channel. When a newer auth
 
 Open `Alerts` to see the current version, available version, release notes, update state, active AI operations, and any failure message.
 
+After three failed automatic update checks, OpenVibely pauses checks for 24 hours before trying again.
+
 ## What Happens After Approval
 
 | Step | What Happens |

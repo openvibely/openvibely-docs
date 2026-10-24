@@ -15,7 +15,7 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Alerts | Project-scoped failure, follow-up, and attention notices with unread state. | [Alerts](alerts.html) |
 | Models | UI-managed access to Anthropic, OpenAI, Ollama, OpenAI-compatible providers, and Mixture of Models virtual configs with defaults, auth options, tool policy, and capacity controls. | [Models](models.html), [Mixture of Models](mixture-of-models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Model Providers](model-providers.html), [Worker Capacity & Dispatch](workers.html) |
 | Agents | Reusable AI worker profiles with prompts, skills, plugins, MCP servers, permissions, routing, and lifecycle hooks. | [Agents](agents.html), [Lifecycle Hooks](lifecycle-hooks.html), [Skill Curation](skills-and-learning.html) |
-| Memory | Memory Curator autonomously creates project memory from completed work, recalls relevant notes before future tasks, and consolidates memory over time. | [Memory](memory.html), [Lifecycle Hooks](lifecycle-hooks.html) |
+| Memory | Main models select and update project memory; Memory Curator consolidates it through scheduled maintenance. | [Memory](memory.html), [Lifecycle Hooks](lifecycle-hooks.html) |
 | Configuration | Runtime, auth, integration, deployment, update, and environment controls for self-hosted operation. | [Configuration](configuration.html), [Environment Variables](environment.html), [Deployment Modes](deployment.html), [Updates](updates.html) |
 | Review workflows | Worktree-backed changes, task output, comments, merge decisions, cleanup, API-published pull requests, and authorized PR feedback. | [Review Workflows](review-workflows.html), [Git Worktrees & Merge Safety](git-worktrees.html), [GitHub](github.html) |
 | Channels | Slack, Telegram, Discord, Email, GitHub, webhook, and outbound-message entry points for creating, tracking, and reporting work outside the web UI. | [Channels Overview](channels.html), [Outbound Messaging](outbound-messaging.html), [Discord](discord.html), [Email](email.html), [Webhook Triggers](webhooks.html) |
@@ -38,9 +38,15 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 - It is project-first: tasks, chat, memory, schedules, workers, models, agents, and channels are scoped around the selected project.
 - It is review-first: AI work becomes visible task state, event streams, logs, diffs, comments, and GitHub-ready changes.
 - It keeps work continuous: task threads, follow-ups, queueing, and steering let users refine active work without losing context.
-- It learns from completed work: Memory Curator creates, updates, and consolidates durable project context, while Skill Curator improves the right scoped skill library afterward.
+- It retains useful knowledge: main models read and write project memory with permission, while scheduled maintenance and optional skill learning keep reusable guidance useful.
 - It is automation-ready: visual Automation graphs connect schedules, tasks, approvals, supported GitHub actions, and outcomes, while task chains, channel prompts, and webhook triggers cover simpler repeatable work.
 - It is self-hosted: operators control configuration, authentication, model access, database, worker capacity, and channels.
+
+## Documents and Appearance
+
+Built-in document skills create and edit Word documents, PDFs, spreadsheets, and presentations. Files can be published into conversations for preview and download. See [Attachments](attachments.html) for supported previews and [Skill Curation](skills-and-learning.html) for dependency approval.
+
+Open **Themes** from the sidebar to choose an appearance, including curated community and VS Code palettes. Theme colors apply across chat, task boards, schedules, code, and review controls.
 
 ## Recommended Reading
 
