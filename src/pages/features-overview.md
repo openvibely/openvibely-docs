@@ -46,7 +46,7 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 
 Built-in document skills create and edit Word documents, PDFs, spreadsheets, and presentations. Files can be published into conversations for preview and download. See [Attachments](attachments.html) for supported previews and [Skill Curation](skills-and-learning.html) for dependency approval.
 
-Open **Themes** from the sidebar to choose an appearance, including curated community and VS Code palettes. Theme colors apply across chat, task boards, schedules, code, and review controls.
+Open **Appearance** from the sidebar to choose a theme, including curated community and VS Code palettes. Customize task-list layout, project tabs, default or layered surfaces, conversation width and bubbles, and board-column styling with visual previews. Theme colors apply across chat, task boards, schedules, code, and review controls.
 
 ## Recommended Reading
 
