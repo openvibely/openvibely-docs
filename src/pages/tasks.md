@@ -14,6 +14,14 @@ Open `Tasks` from the Workspace section of the sidebar. The board shows project 
 
 Scheduled tasks are managed from the Schedule page. Chat tasks are internal to chat flows and are not normal board cards.
 
+## Task Sidebar
+
+On wider windows, a task list sits beside the current page so you can switch tasks without returning to the board. It groups top-level tasks into Active, Completed, Backlog, and Scheduled, with status icons and search. Expand groups to see more tasks; searching temporarily expands groups with matches.
+
+Drag the divider to resize the list, or collapse it for more workspace. Width and collapsed state are remembered. The list follows saved task sorting and refreshes on task changes, including follow-ups and goal updates.
+
+Open **Appearance** for floating or unified task-list layouts, attached or detached project tabs, and visual previews. Board-column choices are Faint tint, Filled, Inset cards, and Tint + header strip.
+
 ## Search, Filters, And Batch Actions
 
 Use board search to find work. Backlog and Completed column menus offer status and priority filters and sorting; Completed also filters merge outcomes. Clear filters to reveal hidden cards again.

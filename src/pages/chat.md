@@ -122,6 +122,12 @@ Chat reconnects live streams from the last received output offset and catches up
 
 If Chat is already responding, a new prompt can become queued input for the next turn. When the UI offers active-turn steering, a prompt can instead redirect the current response. This keeps the project conversation responsive without forcing users to open another thread just to add context or correct scope.
 
+## Conversation Appearance
+
+Open **Appearance** to choose full-width or focused conversations, show or hide assistant bubbles, and adjust the bubble/composer color step. These settings apply to Chat and task threads. Default or layered surfaces work with your selected theme, and visual previews show the choices before you switch.
+
+On wider windows, use the searchable task sidebar to move between project tasks without returning to the board.
+
 ## Long Conversations and Compaction
 
 Context compaction summarizes older context to leave room for continued work. Progress appears in response activity. Recovery checkpoints preserve compacted conversation state across restarts and provider changes, including tool exchanges, attachments, and steering. This conversation context is separate from project memory.
