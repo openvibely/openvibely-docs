@@ -16,6 +16,8 @@ Each skill card shows the skill name, key, scope, and current state badges. Use 
 
 To add a skill manually, click `+ Create Skill`. To import a pre-written standalone skill package, use `Import Skill Package`.
 
+Bundled skills are maintained by OpenVibely. You can enable or disable them, but cannot edit, archive, or replace their packages through imports. Your enable/disable preference survives restarts. Skill Curator leaves bundled skills unchanged.
+
 ## Skill States
 
 | State | What It Means |
