@@ -8,7 +8,7 @@ OpenVibely works best when setup follows the product dependency order: model acc
 2. Create or import a project from the sidebar project controls.
 3. Optionally create reusable agents from `Agents`.
 4. Start work from `Chat` when you need to plan, or `Tasks` when the work is already clear.
-5. Tune `Workers` if tasks need stricter concurrency controls.
+5. Open **Settings → Workers** if tasks need stricter concurrency controls.
 6. Add channels, schedules, memory, and automation after the core loop works.
 
 ## Why Models Come First

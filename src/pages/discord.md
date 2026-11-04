@@ -20,7 +20,7 @@ Operators can seed the token with `DISCORD_BOT_TOKEN`; saved UI settings take ov
 
 ## Authorize Users
 
-Discord inbound authorization is scoped to the selected project and deny-by-default. Add each numeric user ID to every project where that person should be able to submit work.
+Discord inbound authorization is system-level and deny-by-default. Add each approved numeric user ID once under `Authorized Users`. Switching projects does not require authorizing the same user again.
 
 Enable Developer Mode in Discord, right-click a user, and choose `Copy User ID`. Use the long numeric ID, not a username or display handle.
 
@@ -53,7 +53,7 @@ Authorized Discord users and outbound DM targets are independent. A user may be 
 |---|---|
 | Connection test passes but bot is offline | Check the Gateway status, save corrected settings again, or restart OpenVibely. |
 | Bot is online but ignores a server message | Mention the bot and verify Message Content Intent and channel permissions. |
-| DM is rejected | Verify the sender's numeric ID is in Discord Authorized Users for the selected project. |
+| DM is rejected | Verify the sender's numeric ID is in the system-level Discord Authorized Users list. |
 | Attachments are missing | Verify Gateway access, Message Content Intent, file count, and file size. |
 | Gateway reports authentication failure | Reset the bot token, save it in Channels, and reconnect the Gateway. |
 

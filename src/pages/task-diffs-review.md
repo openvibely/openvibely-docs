@@ -9,6 +9,7 @@ Open a task detail page and select the `Changes` tab. That view is the user-faci
 | Surface | Use It For |
 |---|---|
 | Changes tab | Inspect file changes for the selected task. |
+| Sidebar file explorer | Browse changed files and jump to a file in the diff. |
 | File cards | Review each changed file with status, hunks, line numbers, and binary or rename metadata where available. |
 | Inline or split view | Change how textual diffs are displayed when loading a file. |
 | Review comments | Attach feedback to lines and submit the review back to the task. |
@@ -32,7 +33,9 @@ This is especially useful when a user sends a follow-up into a task thread and w
 
 Large diffs can be expensive to render all at once. The diff viewer parses unified git diff output into file cards, recognizes added, deleted, modified, renamed, copied, and binary changes, and supports per-file lazy loading.
 
-Small files can load automatically. Large files can be loaded on demand, and very large diffs may be limited to keep the UI responsive.
+Use the sidebar file explorer to jump to a changed file. Diff content loads as needed, and offscreen content is unloaded to keep large reviews responsive and reduce memory use. Oversized files may show a placeholder instead of their full diff.
+
+Sticky headers keep the current file controls visible. Switching diff layouts and receiving live updates preserve your reading position; review drafts and comments remain available as file content loads or refreshes.
 
 ## Review Comments
 

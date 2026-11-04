@@ -56,6 +56,7 @@ When a model supports reasoning modes, the model config UI shows an **Effort** d
 |---|---|
 | `gpt-6-astra` | low · medium · high · xhigh · **max** |
 | `gpt-6.1-sol` | low · medium · high · xhigh · **max** |
+| `gpt-6.1-terra` | none · low · medium · high · xhigh · **max** |
 | `gpt-6-sol` | none · low · medium · high · xhigh · **max** |
 | `gpt-6-luna` | none · low · medium · high · xhigh · **max** |
 | `gpt-5.6-sol` | none · low · medium · high · xhigh · **max** |
@@ -67,7 +68,7 @@ When a model supports reasoning modes, the model config UI shows an **Effort** d
 | `gpt-5.3-codex` | low · medium · high · **xhigh** |
 | `gpt-5.4-mini` | low · medium · high · **xhigh** |
 
-The default effort is model-dependent. GPT-6 Astra/Sol/Luna, GPT-6.1 Sol, GPT-5.6, GPT-5.5, and GPT-5.4 variants default to `medium`; GPT-5.3 Codex defaults to `high`. GPT-6 Astra and GPT-6.1 Sol do not support `none` or configurable temperature, while GPT-6 Sol/Luna support `none`. The environment variable `OPENVIBELY_CODEX_REASONING_EFFORT` sets the configured-effort fallback when the model config does not specify one; unsupported values are normalized to a level the selected model accepts.
+The default effort is model-dependent. GPT-6.1 Sol and Terra default to `low`. GPT-6 Astra/Sol/Luna, GPT-5.6, GPT-5.5, and GPT-5.4 variants default to `medium`; GPT-5.3 Codex defaults to `high`. GPT-6 Astra and GPT-6.1 Sol do not support `none` or configurable temperature, while GPT-6 Sol/Luna and GPT-6.1 Terra support `none`. The environment variable `OPENVIBELY_CODEX_REASONING_EFFORT` sets the configured-effort fallback when the model config does not specify one; unsupported values are normalized to a level the selected model accepts.
 
 **Anthropic (Claude) models**
 

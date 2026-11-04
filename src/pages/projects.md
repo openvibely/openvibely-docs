@@ -46,7 +46,7 @@ Project Settings reports the current repository-path health as `Healthy`, `Missi
 | Skills | Project-scoped skills and agent-owned skills can override global behavior for this repository. |
 | Workers | A blank or `0` project limit inherits global capacity; a positive limit sets a project-specific cap. |
 | Agents | The selected project's Agent list includes global agents and its own project-scoped agents, not project-scoped agents from other projects. |
-| Channels | Channel-origin Chat maintains active project context. Inbound allowlists, Outbound Message Targets, and explicit-unsaved-target policy belong to the selected project. |
+| Channels | Channel-origin Chat maintains active project context. Slack, Telegram, Discord, and Email inbound allowlists are system-level. Outbound Message Targets and explicit-unsaved-target policy belong to the selected project; X mention authorization is also project-scoped. |
 | Insights | Grades, Pulse, Reflection, and Analytics summarize project activity. |
 
 ## First Project Checklist

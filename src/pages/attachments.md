@@ -20,6 +20,8 @@ Attachment components include file lists, image previews, download links, delete
 
 Open a file to use the shared viewer. Previews support PDF, Word documents, spreadsheets, images/SVG, video/audio, text, JSON, HTML, and Markdown. The viewer supports fullscreen viewing and downloads; desktop downloads can use the native Save As dialog. In image views, Left and Right move between images, plus and minus change zoom, 0 resets zoom, and Escape closes the viewer. Sent task attachments remain available in the Details panel's `Files` view.
 
+Links to conversation attachments inside HTML previews open the shared file viewer. The image gallery includes images and SVGs elsewhere in the conversation, including items outside the currently visible thread. Use the gallery navigation to move between them.
+
 Built-in document skills can create or edit Word documents, PDFs, spreadsheets, and presentations. If a required tool is missing, OpenVibely asks for installation approval. Generated files remain available for later download; not every downloadable format has an inline preview.
 
 Chat files are stored within the project, and task attachments remain associated with their task. Changes to attachment context are carried into follow-ups and steering; removing a file does not silently leave stale file context in a new turn.

@@ -15,6 +15,8 @@ Released desktop apps and server binaries can update themselves from the OpenVib
 
 OpenVibely periodically checks the configured release channel. When a newer authorized release is available, an update notice appears throughout the app; you do not need to remain on the Alerts page.
 
+The Alerts icon also indicates when an update is available.
+
 Open `Alerts` to see the current version, available version, release notes, update state, active AI operations, and any failure message.
 
 After three failed automatic update checks, OpenVibely pauses checks for 24 hours before trying again.
@@ -28,6 +30,8 @@ After three failed automatic update checks, OpenVibely pauses checks for 24 hour
 | Replace | A recovery helper replaces the installed app or executable. |
 | Restart | The new version starts and reports healthy. |
 | Complete or roll back | The update is marked complete. If startup or health validation fails, the helper restores the previous version. |
+
+Once an update has been downloaded, verified, and approved, installation can continue even if the release service becomes unavailable.
 
 The updater replaces application files only. App data stays in the platform data directory listed on [Deployment Modes](deployment.html).
 
@@ -54,14 +58,14 @@ Use `desktop` instead of `binary` for the desktop app. Do not manually delete up
 Pull and run the new image while reusing the existing `/data` volume:
 
 ```bash
-docker pull openvibely/openvibely:0.9.0
+docker pull openvibely/openvibely:0.12.0
 docker stop openvibely
 docker rm openvibely
 docker run -d \
   --name openvibely \
   -p 3001:3001 \
   -v openvibely_data:/data \
-  openvibely/openvibely:0.9.0
+  openvibely/openvibely:0.12.0
 ```
 
 For production, pin an immutable image digest rather than relying only on a mutable tag.

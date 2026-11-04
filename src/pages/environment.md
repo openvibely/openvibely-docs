@@ -14,7 +14,7 @@ This is a concise reference. See [Configuration](configuration.html) for explana
 | `OPENVIBELY_APP_DATA_DIR` | empty unless set |
 | `OPENVIBELY_ENABLE_LOCAL_REPO_PATH` | false server, true desktop when unset |
 | `OPENVIBELY_PLUGIN_ROOT` | app-local plugin root when unset |
-| `OPENVIBELY_CODEX_REASONING_EFFORT` | Model-dependent default when no supported Codex effort is configured; `medium` for GPT-6 Astra/Sol/Luna and current GPT-5.x variants, `high` for most older variants. GPT-6 Astra does not support `none`; GPT-6 Sol/Luna do. |
+| `OPENVIBELY_CODEX_REASONING_EFFORT` | Model-dependent fallback when no supported Codex effort is configured. GPT-6.1 Sol/Terra default to `low`; see [Model Providers](model-providers.html) for supported effort levels and defaults. |
 
 ## Auth
 
@@ -25,6 +25,9 @@ This is a concise reference. See [Configuration](configuration.html) for explana
 | `AUTH_PASSWORD` | empty |
 | `AUTH_SESSION_SECRET` | empty |
 | `AUTH_SESSION_TTL` | `24h` |
+| `AUTH_TRUSTED_PROXIES` | empty; forwarded client addresses are ignored |
+
+`AUTH_USERNAME` and `AUTH_PASSWORD` seed the local owner once, rather than resetting its credentials at each startup. See [Authentication](authentication.html) for organization accounts and trusted proxy configuration.
 
 ## OAuth And Providers
 

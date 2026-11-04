@@ -20,10 +20,11 @@ OpenVibely is configured primarily with environment variables. `start.sh` loads 
 | Variable | Purpose |
 |---|---|
 | `AUTH_ENABLED` | Explicit built-in login toggle |
-| `AUTH_USERNAME` | Login username |
-| `AUTH_PASSWORD` | Login password |
+| `AUTH_USERNAME` | Initial owner username |
+| `AUTH_PASSWORD` | Initial owner password; changing it later does not reset the account |
 | `AUTH_SESSION_SECRET` | HMAC secret for `ov_session` cookie |
 | `AUTH_SESSION_TTL` | Session lifetime, default `24h` |
+| `AUTH_TRUSTED_PROXIES` | Proxy IPs/CIDRs trusted for authentication rate limiting; empty by default |
 
 If `AUTH_ENABLED` is unset, auth is inferred enabled when both username and password are present. If auth is enabled, username, password, and session secret are required.
 

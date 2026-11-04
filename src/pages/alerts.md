@@ -6,7 +6,7 @@ Alerts surface project-scoped events that need attention. The sidebar badge show
 
 Open `Alerts` from the System section of the sidebar.
 
-System update status also appears on this page when a packaged desktop app or server binary finds an available release. The update notice itself can appear throughout the app. See [Updates](updates.html).
+System update status also appears on this page when a packaged desktop app or server binary finds an available release. The update notice itself can appear throughout the app, and the Alerts icon indicates update availability. See [Updates](updates.html).
 
 | UI Element | Purpose |
 |---|---|
@@ -18,6 +18,12 @@ System update status also appears on this page when a packaged desktop app or se
 | Search, filter, and sort | Finds alerts by text and narrows the list by state, severity, type, or source. |
 | Bulk actions | In selection mode, marks several alerts read or deletes selected alerts after confirmation. |
 | Delete | Removes alerts that are no longer useful. |
+
+## Account Usage Alerts
+
+OpenVibely automatically monitors supported provider accounts and creates usage-limit alerts. Alerts identify the account and plan where available, so you can see which connection needs attention. Repeated alerts for the same limit window are deduplicated.
+
+Open Analytics to inspect live account limits and available usage resets. See [Insights](insights.html) for account usage controls.
 
 ## Alert Types
 
