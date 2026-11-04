@@ -20,7 +20,7 @@ On wider windows, a task list sits beside the current page so you can switch tas
 
 Drag the divider to resize the list, or collapse it for more workspace. Width and collapsed state are remembered. The list follows saved task sorting and refreshes on task changes, including follow-ups and goal updates.
 
-Open **Appearance** for floating or unified task-list layouts, attached or detached project tabs, and visual previews. Board-column choices are Faint tint, Filled, Inset cards, and Tint + header strip.
+Open **Settings → Appearance** for floating or unified task-list layouts, attached or detached project tabs, and visual previews. Board-column choices are Faint tint, Filled, Inset cards, and Tint + header strip.
 
 ## Search, Filters, And Batch Actions
 
@@ -99,6 +99,13 @@ When GitHub is configured, the card's `GitHub` action can open a pull request fo
 ## Diff Review
 
 Open a task detail page and select `Changes` to inspect generated code. Worktree-backed tasks can show live branch and uncommitted diffs while work is still active, then fall back to preserved execution diffs after merge or cleanup. The diff viewer groups changes by file, supports large-file lazy loading, and lets reviewers attach comments before sending feedback back to the agent.
+
+## Sidebar Task Actions
+
+Right-click a sidebar task for its actions, including deletion. Drag tasks to reorder them where supported or move them between categories. Use **Show more** to browse a category; browsing and scroll positions are remembered per project tab.
+
+Moving a scheduled task to Backlog or Completed cancels its scheduled work. Moving a swarm parent to either category also stops its queued or running children.
+
 
 ## Related Pages
 

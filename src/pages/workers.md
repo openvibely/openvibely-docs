@@ -86,6 +86,11 @@ The Chat bypass is intentional. You can keep planning, creating tasks, and check
 | One project shouldn't block others | Set a cap on that project so it can't consume all global slots |
 | Local Ollama or self-hosted model is slow | Lower the model pool limit for that model config |
 
+## Settings Navigation
+
+Open **Settings → Workers** to monitor running tasks and queues and change worker limits.
+
+
 ## Related Pages
 
 | Page | Why It Matters |

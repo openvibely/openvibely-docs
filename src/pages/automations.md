@@ -120,6 +120,11 @@ Chat can preview an Automation description in either chat mode. In `Orchestrate`
 
 Chat displays the exact save effects and waits for a later explicit confirmation in the same thread. Before confirmation, it creates no active Automation or runtime resources. After confirmation, it validates and saves through the same resource and safety boundaries as the web builder.
 
+## Project Selection and Node Inspector
+
+From **All projects**, start an automation draft and choose its destination project in the builder. Changing the selection retains the draft and filters agent choices to the destination. Select a graph node to open its resizable inspector; use Details, Schedule where available, and Connections to inspect or edit it. The toolbar toggle collapses or reopens the panel. Save applies the draft.
+
+
 ## Related Pages
 
 | Page | Why It Matters |

@@ -38,7 +38,7 @@ Analytics is the quantitative view of whether project work is producing useful o
 
 **Provider accounts**
 
-OAuth-connected provider accounts (Anthropic, OpenAI) show a usage snapshot card so users can see which account is consuming capacity.
+OAuth-connected provider accounts (Anthropic, OpenAI) show a live usage card so users can see which account is consuming capacity.
 
 Analytics charts are rendered in the browser timezone so time-axis labels match local working hours. Long-range views can be used to inspect skill learning trends over time, not just short-term task usage.
 
@@ -47,6 +47,13 @@ Expand a chart to inspect it in a larger modal preview with interactive tooltips
 ## How Insights Fit The Workflow
 
 Use the task board for live execution. Use Insights when you want to step back and ask whether tasks reach their goals, which agents, models, skills, or automations produce strong outcomes, what work is coming up, and what historical trends are emerging. Use Analytics to connect outcome and task evidence with provider spend, token consumption, execution performance, and learning.
+
+## Live Provider Usage
+
+Open **Analytics** from the sidebar to see current OpenAI and Anthropic account limits, account identities, and plans. Usage cards request live provider data; a failed refresh does not display stale limits as current. Background monitoring creates deduplicated usage-limit alerts across projects.
+
+Where your provider account offers usage-reset credits or grants, the usage controls let you view and redeem them. Availability and the reset result are determined by the provider.
+
 
 ## Related Pages
 

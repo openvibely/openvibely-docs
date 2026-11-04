@@ -70,6 +70,11 @@ See [Mixture of Models](mixture-of-models.html) for execution order, defaults, c
 
 Set an app-level default model if most work should use the same provider. Set a project default when a repository should prefer a different model. Pick a task model only when the task needs a one-off override.
 
+## Fast Mode
+
+For supported OpenAI and Claude models, the model controls offer **Fast mode**. It requests faster service with higher cost or plan usage. Model, reasoning-effort, and Fast mode selections persist for the relevant Chat or task context.
+
+
 ## Related Pages
 
 | Page | Why It Matters |

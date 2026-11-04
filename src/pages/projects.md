@@ -57,3 +57,9 @@ Project Settings reports the current repository-path health as `Healthy`, `Missi
 - Let project-scoped memory and skills capture repository conventions as work completes.
 - Set a worker limit if the project should not consume unlimited execution slots.
 - Add channels only after the project is stable enough for team use.
+
+## All Projects
+
+Select **All projects** to work across projects from one workspace. Tasks, automations, Analytics, and Insights combine project records and show their ownership. Filter to a project when you need a narrower view. The All projects tab can be reordered or closed like other project tabs.
+
+All projects has its own saved Chat conversation. Select a destination project when creating project-owned work; tasks and automations keep their own project context. A conversation opened within a specific project stays scoped to that project.

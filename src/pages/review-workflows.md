@@ -31,6 +31,11 @@ Task worktree branches can be published through the GitHub API, and publication 
 
 Replacing a linked pull request branch's history is not a routine update path. It requires explicit confirmation and the exact current remote head SHA as a force-with-lease guard. Use it only for intentionally approved history cleanup.
 
+## Changes Explorer
+
+Open a task's **Changes** view and choose a file from the sidebar explorer. File contents load as needed, while sticky headers and saved scroll positions help you review large changes. Add review comments beside the diff; live updates preserve comment drafts and unchanged content. Oversized files show a placeholder instead of loading the entire diff.
+
+
 ## Related Pages
 
 | Page | Why It Matters |

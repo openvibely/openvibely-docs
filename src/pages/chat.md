@@ -124,7 +124,7 @@ If Chat is already responding, a new prompt can become queued input for the next
 
 ## Conversation Appearance
 
-Open **Appearance** to choose full-width or focused conversations, show or hide assistant bubbles, and adjust the bubble/composer color step. These settings apply to Chat and task threads. Default or layered surfaces work with your selected theme, and visual previews show the choices before you switch.
+Open **Settings → Appearance** to choose full-width or focused conversations, show or hide assistant bubbles, and adjust the bubble/composer color step. These settings apply to Chat and task threads. Default or layered surfaces work with your selected theme, and visual previews show the choices before you switch.
 
 On wider windows, use the searchable task sidebar to move between project tasks without returning to the board.
 
@@ -148,6 +148,19 @@ Use Tasks instead when you already know the exact unit of work and want board st
 4. Ask a question or describe the request.
 5. Attach files if they help explain the request.
 6. Use the response to continue planning, create tasks, or inspect existing project work.
+
+## Compact Output and Navigation
+
+Open **Settings → Appearance → Chat** to choose compact or full tool output. Compact output groups consecutive tool activity into expandable rows and is the default; existing saved choices are preserved. Expand activity to inspect tool details.
+
+Open **Settings → Shortcuts** for keyboard controls. Settings also contains the appearance controls and worker limits previously reached from separate navigation entries.
+
+## Image Generation and Editing
+
+In an OpenAI conversation with tools and file publication enabled, ask for an image or changes to an existing image. Generated PNGs appear as downloadable chat artifacts. You can request transparent backgrounds and use recent conversation images or local PNG, JPEG, and WebP references, up to five at a time.
+
+Your OpenAI API key or OAuth account must support image generation. This feature is unavailable in Plan mode or when file publication is disabled.
+
 
 ## Related Pages
 
