@@ -44,6 +44,8 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 
 ## Choose The Right Way To Coordinate Work
 
+See [Multi-Agent Workflows](workflows.html) for practical examples and where to configure each option.
+
 | Need | Feature |
 |---|---|
 | Continue one task until a defined result is achieved | [Task Goals](task-goals.html) |
@@ -51,6 +53,7 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Divide one request across parallel workers and review roles | [Swarms](swarm-orchestration.html) |
 | Run one task at a particular time or interval | [Schedule](schedule.html) |
 | Reuse a graph of tasks, triggers, approvals, and outcomes | [Automations](automations.html) |
+| Get advice from several models for one visible response | [Mixture of Models](mixture-of-models.html) |
 
 ## What Makes It Different
 
