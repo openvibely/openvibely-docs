@@ -409,7 +409,6 @@ pre code { background: transparent; border: 0; padding: 0; }
 .mobile-contents { border: 1px solid var(--faint); border-radius: 10px; padding: .8rem 1rem; margin: 1.5rem 0 2rem; }
 .mobile-contents summary { cursor: pointer; font-weight: 600; }
 .table-of-contents { font-size: .8rem; }
-.table-of-contents strong { display: block; color: var(--bc); margin-bottom: 1rem; }
 .table-of-contents ul { list-style: none; margin: 0; padding: 0; position: relative; }
 .table-of-contents li { margin: 0; padding: 0; }
 .table-of-contents a { display: block; padding: .4rem .75rem; color: var(--muted); line-height: 1.5; border-radius: 4px; transition: color .18s, background .18s; }
@@ -417,7 +416,6 @@ pre code { background: transparent; border: 0; padding: 0; }
 .table-of-contents .toc-level-3 a { padding-left: 1.5rem; font-size: .75rem; }
 .table-of-contents a[data-visible] { color: #adb6ce; background: rgba(116,128,255,.04); }
 .table-of-contents a[aria-current] { color: #c4c9ff; background: rgba(116,128,255,.1); }
-.mobile-contents .table-of-contents strong { display: none; }
 .mobile-contents .table-of-contents { margin-top: .75rem; }
 .page-outline { display: none; }
 .toc-indicator { position: absolute; left: -1px; top: 0; width: 2px; border-radius: 2px; background: #a0a8ff; pointer-events: none; transition: transform .2s ease, height .2s ease; }

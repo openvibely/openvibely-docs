@@ -318,7 +318,7 @@ function tableOfContents(html) {
     const text = label.replace(/<[^>]*>/g, '');
     return `<li class="toc-level-${level}"><a href="#${id}">${text}</a></li>`;
   });
-  return `<nav class="table-of-contents" aria-label="On this page"><strong>On this page</strong><ul>${items.join('')}</ul></nav>`;
+  return `<nav class="table-of-contents" aria-label="On this page"><ul>${items.join('')}</ul></nav>`;
 }
 
 function installChooser() {
