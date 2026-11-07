@@ -19,7 +19,7 @@ When auth resolves enabled, startup requires `AUTH_USERNAME`, `AUTH_PASSWORD`, a
 
 Open **Settings → Organization** to invite members or admins and manage existing members. Invitation links expire after seven days and can be revoked. Owners manage roles and membership; admins can invite and remove ordinary members. The last owner cannot be removed or demoted.
 
-Members have their own interface preferences, and conversation messages show who sent them. All members currently share access to all projects and global application operations; roles restrict organization management, not project access. Hosted SSO currently supports the workspace owner only.
+Members have their own interface preferences, and conversation messages show who sent them. All members can access projects, but project permissions distinguish Viewer, Editor, Maintainer, and owner capabilities. Project owners and organization admins/owners manage sharing and ownership. Private projects are not currently available. See [Sharing And Ownership](projects.html#sharing-and-ownership). Hosted SSO currently supports the workspace owner only.
 
 ## Session Settings
 

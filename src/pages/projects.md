@@ -68,3 +68,19 @@ Select **All projects** to work across projects from one workspace. The left tas
 The Tasks page, Automations, Analytics, and Insights also support combined project views. Filter to a project when you need a narrower view. The All projects tab can be reordered or closed like other project tabs, then reopened from the plus menu.
 
 All projects has its own saved Chat conversation. Select a destination project when creating project-owned work; tasks and automations keep their own project context. A conversation opened within a specific project stays scoped to that project.
+
+## Sharing And Ownership
+
+Open an individual project tab's context menu, open project settings, and find **Sharing and ownership**. Organization membership is managed separately in **Settings → Organization**.
+
+All organization members can access projects; private projects are not currently available. Project access controls determine what a member can do:
+
+| Control | Purpose |
+|---|---|
+| Organization access | Set the project's baseline access to Viewer or Editor. |
+| Additional member grants | Grant an individual Viewer, Editor, or Maintainer access. Removing a grant leaves the organization baseline in effect. |
+| Maintainer | Allows management of project settings. |
+| Owner and organization admins/owners | Can change sharing and membership, transfer ownership, or delete the project. |
+| Recent access and execution audit | Inspect recorded actors, actions, and times. |
+
+Ownership can be transferred to another active organization member. See [Authentication](authentication.html) for inviting members and signing in.

@@ -14,25 +14,15 @@ When a task has an active goal, the built-in `System: Goal Agent` runs an `after
 
 Goal continuation is injected as a normal queued follow-up, so it respects worker capacity, lifecycle hooks, worktree state, and all other existing task behaviors.
 
-## Goal Panel
+## Goal Controls
 
-When a goal is set, a Goal panel appears on the task detail page above the tab row.
-
-| Panel Field | What It Shows |
-|---|---|
-| Objective | The stored goal text. |
-| Status badge | Current goal status: `active`, `paused`, `achieved`, `blocked`, `cleared`, or `failed`. |
-| Reason | The agent's evidence summary when the goal was last evaluated. |
-| Last checked | Timestamp of the most recent evaluation. |
+Open the task's right-hand panel and select **Details**. Its **Goal** row shows the current goal state. Click **+** to set an objective or **Edit** to inspect and change the stored goal.
 
 ## Setting And Editing A Goal
 
-Open the task edit dialog from any task detail page. The dialog includes a Goal section with:
+In the Goal editor, describe a clear completion condition and choose **Save**. Existing goals expose state-dependent **Pause**, **Resume**, and **Clear goal** actions. Pause keeps the objective stored while suspending automatic continuation; Resume allows continuation again when available.
 
-- **Objective text** — describe the end state in plain language.
-- **Active / Paused toggle** — pause evaluation without deleting the goal. A paused goal stays stored but the Goal Agent skips evaluation turns until it is made active again.
-
-To remove a goal, clear the objective text and save.
+To remove a goal, choose **Clear goal**, or clear the objective text and save. See [The Right-Hand Task Panel](task-threads-followups.html#the-right-hand-task-panel) for opening and navigating Details.
 
 If the task has worktree-backed changes, `Auto-merge to target branch when goal is achieved` can merge through the guarded worktree flow when the Goal Agent marks the goal achieved. This setting is independent from `Auto-merge to target branch on successful completion`, and both are off by default. Paused, blocked, cleared, and failed goals do not trigger goal-based merging.
 

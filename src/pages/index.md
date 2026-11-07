@@ -57,6 +57,9 @@ OpenVibely lets you work in an individual project tab or manage work across proj
 | Skill curation | OpenVibely learns from completed work and autonomously improves reusable standalone or agent-owned skills. |
 | Reviewable changes | Use Git worktrees and GitHub integration so AI output becomes visible diffs and pull requests rather than hidden edits. |
 | Automation Graphs | Start from maintained templates or a custom graph, connect supported workflow nodes, run work manually or on a schedule, and keep human approval boundaries visible. |
+| Documents and images | Create or revise documents with Paperworks skills, generate images in supported conversations, and download published outputs. See [Documents With Paperworks](documents.html). |
+| Goal-driven continuation | Give a task a completion condition and let it continue across turns, with pause and resume controls. See [Task Goals](task-goals.html). |
+| Team access | Invite members and manage project access levels and ownership. See [Projects](projects.html#sharing-and-ownership). |
 | External channels | Create, monitor, and report work through Slack, Telegram, Discord, Email, GitHub, outbound targets, and inbound webhooks. |
 
 ## How The Docs Are Organized
