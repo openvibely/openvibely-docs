@@ -4,7 +4,25 @@ Projects define the repository and context for work. Use the tabs across the top
 
 ## Skills and Memory Permissions
 
-In project settings, **Skills & Memory** controls skill and memory reads and writes separately. New projects allow skill reads and memory reads/writes, while skill writes are off. **Allow global skill writes** is separate and requires skill writes. Existing projects retain their previous permissions.
+Right-click the project tab, choose **Project Settings**, and open **Skills & Memory**. The table has separate **Read** and **Write** switches for **Skills** and **Memories**, plus **Allow global skill writes**. Change the switches and save the project settings. Managing these settings requires Maintainer access or higher.
+
+| Control | What It Permits | New Project Default |
+|---|---|---|
+| Skills → Read | Chat and tasks can read skill instructions to guide their work. | On |
+| Skills → Write | Permitted tasks, task-thread follow-ups, and maintenance can create or update skills within their allowed scope. | Off |
+| Memories → Read | Chat and tasks can read saved project knowledge. | On |
+| Memories → Write | Permitted tasks, task-thread follow-ups, and maintenance can save or update durable project knowledge. | On |
+| Allow global skill writes | Allows skill changes shared across projects. Requires **Skills → Write**. | Off |
+
+Turning off **Skills → Write** also clears and disables **Allow global skill writes**. Existing projects retain their previous permissions rather than being reset to new-project defaults.
+
+Ordinary Chat can read permitted skills and memories but cannot write them through these managed knowledge controls, even when Write is enabled. To save a lesson or improve a skill, use a task or task-thread follow-up with the corresponding write permission. Agent permissions and the write scope of the selected tools still apply.
+
+Read and Write are independent. Turning reading off does not erase information already loaded into a conversation. These controls govern reading and maintaining the skill/memory libraries; using a document skill to create an output does not itself require permission to rewrite that skill.
+
+For example, leave skill reads on and skill writes off to use existing skills without letting tasks revise them. Leave memory reads on and writes off when tasks should consult saved knowledge without updating it. Enable global skill writes only when the intended skill change should affect other projects too.
+
+See [Memory](memory.html) and [Skill Curation](skills-and-learning.html) for how knowledge is used and maintained.
 
 If a managed GitHub project's repository is missing locally, use **Re-clone** in project settings to recover it. Local-path projects require an existing valid repository directory.
 

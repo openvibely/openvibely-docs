@@ -91,7 +91,7 @@ Attachments should support the prompt. If a file contains important durable proj
 | "Fix this UI bug." | Attach a screenshot and describe the expected behavior. |
 | "Continue the task using these failing test logs." | Attach logs to a task follow-up. |
 | "Create implementation tasks from this product brief." | Attach the brief in Chat `Orchestrate`. |
-| "Remember this architecture decision permanently." | Ask the main model to save the durable lesson to project memory, with memory writes enabled. |
+| "Remember this architecture decision permanently." | Ask in a task or task-thread follow-up to save the durable lesson to project memory, with memory writes enabled. |
 
 ## Related Pages
 

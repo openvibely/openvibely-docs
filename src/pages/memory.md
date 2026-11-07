@@ -54,7 +54,7 @@ Memory appears in normal work as background help, not as a replacement for the u
 
 ## Agent Permissions
 
-Project settings → **Skills & Memory** controls memory reads and writes separately. Both are enabled for new projects. Agent permissions also constrain access. Memory Curator's scheduled work uses scoped access to the managed memory directory.
+Project settings → **Skills & Memory** controls memory reads and writes separately. Both are enabled for new projects. Ordinary Chat can read permitted memories but cannot write them; writes are for permitted tasks, task-thread follow-ups, and maintenance. Turning reads off does not erase knowledge already loaded into a conversation. See [Skills and Memory Permissions](projects.html#skills-and-memory-permissions) for every switch and default. Agent permissions also constrain access. Memory Curator's scheduled work uses scoped access to the managed memory directory.
 
 ## Recommended Use
 

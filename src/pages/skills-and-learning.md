@@ -2,7 +2,7 @@
 
 The main model selects relevant skills from the available indexes while working. Skills provide reusable instructions for tasks, including built-in support for creating and editing Word documents, PDFs, spreadsheets, and presentations.
 
-Project settings → **Skills & Memory** controls skill reads and writes independently. New projects allow skill reads but disable skill writes. Global skill writes require a separate switch and enabled skill writes. Existing projects retain their previous permissions.
+Project settings → **Skills & Memory** controls skill reads and writes independently. New projects allow skill reads but disable skill writes. Global skill writes require a separate switch and enabled skill writes. Existing projects retain their previous permissions. Ordinary Chat can read skills but cannot rewrite them; permitted tasks, task-thread follow-ups, and maintenance can write when allowed. Disabling reads does not remove instructions already loaded into a conversation. See [Skills and Memory Permissions](projects.html#skills-and-memory-permissions) for the complete control table and examples.
 
 ## Document Skills
 
