@@ -446,6 +446,7 @@ function clientScript() {
       }
 
       var navigationController;
+      var renderedPage = window.location.pathname + window.location.search;
       var scrollStateKey = 'openvibelyDocsScroll';
 
       if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -582,6 +583,7 @@ function clientScript() {
           if (!nextContent || !currentContent) throw new Error('Documentation page content is missing');
 
           currentContent.replaceChildren(...Array.from(nextContent.childNodes));
+          renderedPage = url.pathname + url.search;
           document.dispatchEvent(new Event('docs:content-changed'));
           initInstallChooser();
           document.title = nextDocument.title;
@@ -626,14 +628,33 @@ function clientScript() {
 
         var url = new URL(link.href, window.location.href);
         if (url.origin !== window.location.origin || !url.pathname.endsWith('.html')) return;
-        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+        if (url.pathname + url.search === renderedPage && url.hash) {
+          var target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+          if (!target) return;
+          event.preventDefault();
+          if (navigationController) navigationController.abort();
+          saveScrollPosition();
+          if (url.href !== window.location.href) history.pushState({}, '', url.href);
+          target.scrollIntoView();
+          return;
+        }
 
         event.preventDefault();
         navigate(url, true, true);
       });
 
       window.addEventListener('popstate', function (event) {
-        navigate(new URL(window.location.href), false, false, event.state);
+        var url = new URL(window.location.href);
+        if (url.pathname + url.search === renderedPage) {
+          if (navigationController) navigationController.abort();
+          var saved = event.state && event.state[scrollStateKey];
+          var target = url.hash && document.getElementById(decodeURIComponent(url.hash.slice(1)));
+          if (saved) window.scrollTo({ left: saved.x, top: saved.y, behavior: 'instant' });
+          else if (target) target.scrollIntoView({ behavior: 'instant' });
+          else window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+          return;
+        }
+        navigate(url, false, false, event.state);
       });
 
       setNavOpen(false);

@@ -155,6 +155,7 @@ test('back navigation restores scroll only after delayed content replacement', a
   const documentListeners = new Map();
   let currentUrl = new URL('https://docs.example/quickstart.html');
   let resolveFetch;
+  let fetchCount = 0;
   const delayedResponse = new Promise(resolve => { resolveFetch = resolve; });
   const currentContent = {
     replaceChildren() { events.push('replace'); },
@@ -206,7 +207,7 @@ test('back navigation restores scroll only after delayed content replacement', a
     querySelectorAll() { return []; },
     addEventListener(type, listener) { documentListeners.set(type, listener); },
     dispatchEvent(event) { documentListeners.get(event.type)?.(event); return true; },
-    getElementById() { return null; }
+    getElementById(id) { return id === 'section' ? { scrollIntoView() { events.push('section'); } } : null; }
   };
   const sessionStorage = {
     getItem() { return null; },
@@ -227,11 +228,20 @@ test('back navigation restores scroll only after delayed content replacement', a
     'window', 'document', 'history', 'sessionStorage', 'fetch', 'DOMParser',
     'AbortController', 'URL', script
   )(
-    window, document, history, sessionStorage, () => delayedResponse, FakeDOMParser,
+    window, document, history, sessionStorage, () => { fetchCount++; return delayedResponse; }, FakeDOMParser,
     AbortController, URL
   );
 
   assert.equal(history.scrollRestoration, 'manual');
+  const sectionLink = { href: 'https://docs.example/quickstart.html#section', hasAttribute() { return false; } };
+  const click = { button: 0, target: { closest(selector) { return selector === 'a' ? sectionLink : null; } }, preventDefault() {} };
+  documentListeners.get('click')(click);
+  documentListeners.get('click')(click);
+  assert.equal(fetchCount, 0, 'section clicks must not reload the article or indicator');
+  assert.deepEqual(events, ['section', 'section'], 'repeated section clicks should still scroll');
+  windowListeners.get('popstate')({ state: {} });
+  assert.equal(fetchCount, 0, 'same-page history must not reload the article');
+  events.length = 0;
   const destinationState = { openvibelyDocsScroll: { x: 0, y: 1400 } };
   currentUrl = new URL('https://docs.example/index.html');
   history.state = destinationState;

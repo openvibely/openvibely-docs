@@ -20,6 +20,8 @@
       })).filter(entry => entry.heading);
       indicator = document.createElement('li');
       indicator.className = 'toc-indicator';
+      indicator.style.opacity = '0';
+      indicator.style.transition = 'none';
       indicator.setAttribute('aria-hidden', 'true');
       rail.querySelector('ul').append(indicator);
     }
@@ -72,11 +74,16 @@
         else link.removeAttribute('aria-current');
       }
     }
-    indicator.hidden = !visible.length;
+    indicator.style.opacity = visible.length ? '1' : '0';
     if (visible.length && desktop.matches) {
       const first = visible[0].link.parentElement, last = visible.at(-1).link.parentElement;
       indicator.style.transform = `translateY(${first.offsetTop + 5}px)`;
       indicator.style.height = `${Math.max(4, last.offsetTop + last.offsetHeight - first.offsetTop - 10)}px`;
+      if (indicator.style.transition === 'none') {
+        // Establish the first position without animating from an unplaced marker.
+        indicator.getBoundingClientRect();
+        indicator.style.removeProperty('transition');
+      }
     }
   }
 
