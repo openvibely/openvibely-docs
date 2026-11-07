@@ -2,6 +2,34 @@
 
 Models tell OpenVibely how to run AI work. Users configure them from the Models screen, then pick them as project defaults, task-specific choices, or agent defaults.
 
+## Bring Your Own Model Access
+
+OpenVibely connects to your model provider or inference server. You can bring an API key, connect a supported Anthropic or OpenAI subscription account through OAuth, or use local/self-hosted inference.
+
+| Access Path | How To Set It Up |
+|---|---|
+| Provider API key | Choose Anthropic, OpenAI, or an OpenAI-compatible provider in **Settings → Models**, select API-key authentication where offered, and enter your credentials. Usage is charged to your provider account. |
+| Anthropic subscription sign-in | Choose Anthropic and OAuth, then connect your Claude account using the built-in sign-in flow. The app implements subscription OAuth access; availability and usage limits depend on the connected account. |
+| OpenAI subscription sign-in | Choose OpenAI and OAuth, then connect your ChatGPT account using the built-in sign-in flow. The app uses the connected account's supported model access and limits. |
+| Local Ollama | Run Ollama with an installed model, choose Ollama, and set the base URL reachable from OpenVibely. The default is `http://localhost:11434`. |
+| Other local or self-hosted inference | Choose an OpenAI-compatible preset such as LM Studio, Local vLLM, or SGLang, or supply a custom compatible endpoint and model ID. |
+
+API-key billing and subscription access are separate authentication paths. Connecting an account does not guarantee every model or feature is available on its plan. Choose the auth method that matches the access you intend to use.
+
+### Local Inference Setup
+
+Start your inference server and load or install a model before configuring it in OpenVibely. Enter its base URL, discover models where supported or enter the model ID manually, then save the configuration and select it in Chat or a task. Configure authentication if your endpoint requires it.
+
+The endpoint must be reachable from the machine or container running OpenVibely. For a remote server or Docker installation, `localhost` refers to that runtime, not automatically to your laptop. Set context and output limits to match your inference server. Coding and orchestration capabilities depend on the selected model's tool support and quality.
+
+Local inference sends model requests to your configured local endpoint. Enabled external tools and integrations can still make network requests; selecting a local model does not make every workflow offline.
+
+## Built-In Agent Runtime
+
+OpenVibely includes its own provider clients, agent execution, tool handling, and orchestration. It talks directly to configured provider APIs or inference endpoints. You do not need to install Claude Code, Codex CLI, or another coding-agent binary to run its built-in agents. An OpenAI/Codex model name identifies model access, not a requirement to run the Codex CLI.
+
+The model service is still required: either a hosted provider or a running local inference server. Repository workflows use Git and the project's build/test tools; optional skills and integrations may require their own tools or services. See [Runtime Dependencies](installation.html#runtime-dependencies).
+
 ## What Users Do In Models
 
 Open **Settings → Models** and create a model config.

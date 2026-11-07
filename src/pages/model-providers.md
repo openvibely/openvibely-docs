@@ -2,6 +2,8 @@
 
 Model providers are configured through the Models UI and stored as `LLMConfig` records.
 
+For API-key versus subscription sign-in, local inference setup, and the built-in agent runtime, see [Bring Your Own Model Access](models.html#bring-your-own-model-access).
+
 ## Recommended Setup
 
 Start with one provider and model that fits your team's quality, latency, and cost requirements, then add specialized configs only when needed. For a straightforward Codex setup, choose `gpt-5.6-sol`. When a GPT-5.6 model config does not specify a reasoning effort, the runtime uses `medium`.

@@ -4,6 +4,19 @@ Install the released desktop app or server binary from `openvibely.ai`. The inst
 
 [[install-chooser]]
 
+## Runtime Dependencies
+
+The released app includes OpenVibely's own agent runtime and provider clients. No separate Claude Code, Codex CLI, or other coding-agent executable is required. You also do not need the source-build toolchain just to run a released app.
+
+Configure model access after installation: bring provider API keys, use supported Anthropic/OpenAI subscription OAuth sign-in, or connect a local inference server. See [Bring Your Own Model Access](models.html#bring-your-own-model-access).
+
+Dependencies depend on the work you ask the app to do:
+
+- **Model inference:** a reachable hosted provider or a separately running server such as Ollama, LM Studio, or vLLM. OpenVibely does not bundle model weights or replace the inference server.
+- **Repository work:** Git and the languages, package managers, and test tools required by your project.
+- **Optional capabilities:** document rendering/conversion tools, MCP servers, and integration services when those features require them. Skills can request approval to install missing dependencies.
+
+
 ## macOS And Linux
 
 Run the interactive installer and choose `desktop` or `binary` when prompted:

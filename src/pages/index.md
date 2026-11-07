@@ -10,6 +10,8 @@ Goal loops drive unfinished work forward. Main models use skills and preserve pr
 
 Self-hosted, single binary, SQLite by default, and built for teams that want speed without giving up control, auditability, or ownership.
 
+Bring your own API keys, connect supported Anthropic or OpenAI subscription accounts, or run models locally through Ollama, LM Studio, vLLM, and other compatible endpoints. OpenVibely includes its own agent runtime—no separate coding-agent CLI is required. [Choose your model access](models.html#bring-your-own-model-access).
+
 ## Start Fast
 
 Choose the native desktop app or a server with a browser UI. The recommended command is selected for your system.
