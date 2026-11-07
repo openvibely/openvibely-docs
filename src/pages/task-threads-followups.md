@@ -41,6 +41,14 @@ When creating a task in **All projects**, Details also provides the destination 
 
 **Changes** is a separate main-area view for reviewing generated code, not one of the five right-panel tabs. Opening Changes turns the left task list into a changed-file explorer; the right panel remains available for task controls. Choose **Back** in the file explorer to return to the thread. See [Task Diffs & Review](task-diffs-review.html).
 
+## Create And Review Visual Outputs
+
+A task thread can produce SVG diagrams and interactive HTML files as well as code and documents. Ask for an SVG drawing, or ask the AI to create and publish a self-contained HTML file for a mockup, calculator, or other interactive explanation.
+
+SVG responses offer **Download SVG** and **SVG source**; clicking the drawing opens the gallery. Published HTML files show an inline preview with **Expand**, and the file viewer offers **Preview**, **Source**, and download controls. Review the output, then send a follow-up to revise it in the same task.
+
+See [File Gallery And Previews](attachments.html#file-gallery-and-previews) for viewer controls and [Create SVGs And HTML Previews](attachments.html#create-svgs-and-html-previews) for example requests.
+
 ## When A Follow-Up Triggers
 
 A follow-up is useful after a task has produced enough context to continue from. Common triggers include asking the agent to address review comments, refine an implementation, explain a failure, add tests, resolve a small issue discovered during review, or continue a task that explicitly asked for more direction.

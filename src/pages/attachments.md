@@ -30,6 +30,31 @@ Composer attachments survive live-stream reconnects. When Chat creates a task fr
 
 For Chat API-style flows, attachment URLs can be returned so clients can reference the uploaded files associated with the accepted message.
 
+## File Gallery And Previews
+
+Click an attachment, a published file link, or an image in a Chat conversation or task thread to open the shared file viewer. This is where you inspect and download conversation files without leaving the thread.
+
+For images and SVGs, the gallery collects images from the conversation, including older messages outside the currently visible portion of the thread. Use the side arrows or Left/Right keys to browse them. Zoom with the plus/minus controls, drag to pan a zoomed image, and use **Fit image** or **0** to reset the view. Download the image from the toolbar; close the viewer with its close button or Escape.
+
+Other file types open the appropriate preview in the same viewer. HTML has **Preview** and **Source** controls and a **Download original** link. Formats without a preview can still be downloaded. The right-hand task panel's **Files** tab holds task attachments; generated outputs are also available from their links in the conversation.
+
+## Create SVGs And HTML Previews
+
+You can ask the AI to create visual outputs directly in a task thread or Chat, then refine them through follow-ups.
+
+| Request | What To Expect |
+|---|---|
+| “Draw our request flow as an SVG diagram, with labeled services and arrows.” | An SVG drawing rendered in the conversation. Click it to open the image gallery, choose **Download SVG** to save it, or expand **SVG source** to inspect the markup. |
+| “Create a self-contained HTML cost calculator with editable inputs and publish it here so I can try it.” | A downloadable HTML file with an interactive preview in the conversation. Use **Expand** for a larger view and **Preview** / **Source** in the file viewer to inspect the result. |
+| “Make the SVG labels larger and change the arrows to blue.” | A revised drawing in the same thread. |
+| “Add a monthly/yearly switch to the HTML calculator and publish the updated file.” | A revised HTML output to preview and download. |
+
+SVG previews appear when the response includes valid SVG in an SVG code block; incomplete or invalid SVG remains readable as source. You can also ask for a named `.svg` file to download. For HTML, ask the AI to create and publish an `.html` file: a code sample alone is not a published interactive preview.
+
+HTML previews run in an isolated frame that supports scripts, so they are useful for interactive mockups, calculators, and visual explanations. Previewing a file does not deploy a website. Links to conversation attachments inside the preview open the shared file viewer.
+
+After inspecting an output, send a follow-up describing the changes and identifying the version or filename you mean. Download the version you want to keep or share.
+
 ## How Attachments Become Context
 
 | File Type | Typical Handling |

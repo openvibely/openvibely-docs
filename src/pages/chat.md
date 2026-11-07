@@ -181,3 +181,5 @@ Your OpenAI API key or OAuth account must support image generation. This feature
 | [Attachments As Context](attachments.html) | Files can be attached to chat and task context. |
 | [Model Selection & Tool Policy](model-selection-tool-policy.html) | Plan and Orchestrate expose different tool boundaries. |
 | [Agents](agents.html) | Agents define reusable behavior for execution and orchestration. |
+
+For SVG drawings, interactive HTML outputs, gallery controls, and revision examples, see [Create SVGs And HTML Previews](attachments.html#create-svgs-and-html-previews).

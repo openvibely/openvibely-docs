@@ -15,7 +15,7 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Swarms | Delegate one request across planner, worker, reviewer, and merger roles with inspectable child tasks. | [Swarm Orchestration](swarm-orchestration.html) |
 | Follow-ups and steering | Continue a task, queue another instruction, edit pending input, or steer an active turn where supported. | [Task Threads & Follow-Ups](task-threads-followups.html), [Prompt Queue & Steering](prompt-queue-steering.html) |
 | Documents | Use Paperworks skills to read, create, and edit Word files, spreadsheets, presentations, and PDFs. | [Documents With Paperworks](documents.html) |
-| Images and file outputs | Generate or edit images in supported OpenAI conversations, and preview or download published files. | [Image Generation and Editing](chat.html#image-generation-and-editing), [Attachments](attachments.html) |
+| Images and file outputs | Generate or edit images in supported OpenAI conversations, create SVG drawings and interactive HTML previews, and browse or download conversation files. | [Image Generation and Editing](chat.html#image-generation-and-editing), [Attachments](attachments.html) |
 | Insights | Grades covers health and insights; Pulse shows current and upcoming work; Reflection covers past activity. | [Insights](insights.html) |
 | Team access | Invite organization members and manage project access levels, additional member grants, ownership, and audit history. | [Authentication](authentication.html), [Project Sharing](projects.html#sharing-and-ownership) |
 | Automations | Project-scoped visual graphs that connect schedules, tasks, Agents, Native approvals, supported GitHub actions, and outcomes through explicit handoffs. | [Automations](automations.html) |
