@@ -48,15 +48,30 @@ OpenVibely includes protected system agents for learning work users should not h
 
 `System: Memory Curator` is a protected on-disk system agent. Its skills live under `.openvibely/agents/memory_curator/`. It is not selectable as a primary task agent. Scheduled consolidation uses scoped memory tools rooted at `.openvibely/memories`, skips normal repository-editing tools, and does not use a task worktree.
 
-## Agent Detail Tabs
+## Agent Editor Tabs
 
-The agent detail page has three tabs: **Details**, **Skills**, and **Lifecycle Hooks**.
+Open **Settings → Agents**, then create or edit an agent. The editor has six tabs:
 
-**Details** covers identity, instructions, tools, routing, and permissions — the core agent configuration.
+| Tab | Use It For |
+|---|---|
+| **Agent Details** | Set the agent's name, description, instructions, and core behavior; generate an agent from a description when useful. |
+| **Plugins** | Search available plugins by name and choose plugins for this agent. |
+| **Marketplace** | Manage plugin sources, add a GitHub repository, URL, or local path, or restore default sources. |
+| **Skills** | Manage this agent's indexed skills and inspect the Router Preview. Save a new agent before previewing its routed skills. |
+| **Lifecycle Hooks** | Configure supporting hooks, their assigned skills, run policy, and permissions. |
+| **Advanced** | Manage the stable agent key and global or project scope. In All projects, project-scoped agents require a destination project. |
 
-**Skills** shows skills owned by this agent. From this tab you can create a new skill, edit an existing one, change skill state (enable, disable, always-use, archive), or preview which skills the router would currently select for a hypothetical task. System agents show a protected banner instead of edit controls.
+### Plugins And Marketplace
 
-**Lifecycle Hooks** lists the hooks configured for this agent. Each row shows the hook type (`route_task`, `before_run`, `after_complete`), the assigned skill, run policy, and tool-scope permissions. The tool-scope section controls what that hook's skill is allowed to do: read or write skills, read or write repository files, use shell or tools, and similar. An explainer callout on the tab summarizes what tool-scope means for that hook type.
+Plugins extend an agent through available integration packages. Open **Marketplace** to manage the sources that populate the catalog, then use **Plugins** to find and select packages for the agent. Save the agent with its selected plugins. Adding a marketplace source and selecting a plugin are separate steps.
+
+An agent's plugin selection and MCP server configuration are part of its execution profile. Their availability still depends on the runtime and provider; selecting an agent does not guarantee every external tool will be available in every conversation. See [Runtime Capabilities](runtime-capabilities.html).
+
+### Skills And Lifecycle Controls
+
+**Skills** shows the skills owned by this agent. Create or edit a skill, change its state, or inspect the Router Preview. Protected system agents show read-only notices instead of ordinary edit controls.
+
+**Lifecycle Hooks** configures supporting activity such as routing, preparation, and post-completion learning. Hook permissions control access to agents, skills, repository files, and shell or external tools. These are separate from the main task's request. See [Lifecycle Hooks](lifecycle-hooks.html) and [Skill Curation](skills-and-learning.html).
 
 ## Skills And Lifecycle Hooks
 

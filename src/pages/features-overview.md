@@ -23,6 +23,9 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Alerts | Failure and follow-up notices, human approval decisions, provider usage alerts, and update availability. | [Alerts](alerts.html) |
 | Models | UI-managed access to Anthropic, OpenAI, Ollama, OpenAI-compatible providers, and Mixture of Models virtual configs with defaults, auth options, tool policy, and capacity controls. | [Models](models.html), [Mixture of Models](mixture-of-models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Model Providers](model-providers.html), [Worker Capacity & Dispatch](workers.html) |
 | Agents | Reusable AI worker profiles with prompts, skills, plugins, MCP servers, permissions, routing, and lifecycle hooks. | [Agents](agents.html), [Lifecycle Hooks](lifecycle-hooks.html), [Skill Curation](skills-and-learning.html) |
+| Plugins and marketplaces | Extend agents with selected integration packages and manage the sources used to discover them. | [Agent Editor Tabs](agents.html#agent-editor-tabs), [Runtime Capabilities](runtime-capabilities.html) |
+| Skills and learning | Use bundled or imported skills, manage their availability, and optionally enable learning from completed work. | [Skill Curation](skills-and-learning.html), [Lifecycle Hooks](lifecycle-hooks.html) |
+| Worker capacity | Control concurrent execution globally, per project, and per model; understand why tasks queue while Chat remains responsive. | [Worker Capacity & Dispatch](workers.html) |
 | Memory | Main models select and update project memory; Memory Curator consolidates it through scheduled maintenance. | [Memory](memory.html), [Lifecycle Hooks](lifecycle-hooks.html) |
 | Configuration | Runtime, auth, integration, deployment, update, and environment controls for self-hosted operation. | [Configuration](configuration.html), [Environment Variables](environment.html), [Deployment Modes](deployment.html), [Updates](updates.html) |
 | Review workflows | Worktree-backed changes, task output, comments, merge decisions, cleanup, API-published pull requests, and authorized PR feedback. | [Review Workflows](review-workflows.html), [Git Worktrees & Merge Safety](git-worktrees.html), [GitHub](github.html) |
@@ -38,6 +41,16 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Monitor | Watch status in the left task list while reading a thread; open the board when you want columns or batch actions. |
 | Review | Inspect task threads, attachments, changed files, review comments, worktree state, and pull request options before shipping. |
 | Automate | Use visual Automation graphs for supported multi-step handoffs, or schedules when one task only needs time-based execution. |
+
+## Choose The Right Way To Coordinate Work
+
+| Need | Feature |
+|---|---|
+| Continue one task until a defined result is achieved | [Task Goals](task-goals.html) |
+| Hand off from one task to a dependent child | [Task Chaining](task-chaining.html) |
+| Divide one request across parallel workers and review roles | [Swarms](swarm-orchestration.html) |
+| Run one task at a particular time or interval | [Schedule](schedule.html) |
+| Reuse a graph of tasks, triggers, approvals, and outcomes | [Automations](automations.html) |
 
 ## What Makes It Different
 
