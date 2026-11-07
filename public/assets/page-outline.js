@@ -4,6 +4,7 @@
   if (!article || !rail) return;
   let entries = [], indicator, queued = false, needsMeasure = true;
   let lastRevealed;
+  let railKeyboardNavigation = false;
   const desktop = matchMedia('(min-width: 1280px)');
 
   function rebuild() {
@@ -13,6 +14,7 @@
     document.querySelector('.doc-layout').classList.toggle('has-toc', Boolean(source));
     entries = [];
     lastRevealed = null;
+    railKeyboardNavigation = false;
     if (source) {
       rail.append(source.cloneNode(true));
       const links = [...rail.querySelectorAll('a')];
@@ -85,7 +87,7 @@
       // Reveal on section changes so users can still browse the rail manually.
       if (current && current !== lastRevealed) {
         lastRevealed = current;
-        if (!rail.contains(document.activeElement)) {
+        if (!(railKeyboardNavigation && rail.contains(document.activeElement))) {
           const bounds = rail.getBoundingClientRect();
           const active = current.link.getBoundingClientRect();
           if (active.top < bounds.top + 8) rail.scrollTop += active.top - bounds.top - 8;
@@ -104,6 +106,18 @@
     needsMeasure ||= measureAgain;
     if (!queued) { queued = true; requestAnimationFrame(update); }
   }
+  document.addEventListener('keydown', () => { railKeyboardNavigation = true; }, true);
+  document.addEventListener('pointerdown', () => {
+    railKeyboardNavigation = false;
+    lastRevealed = null;
+    schedule();
+  }, true);
+  rail.addEventListener('focusout', event => {
+    if (!rail.contains(event.relatedTarget)) {
+      lastRevealed = null;
+      schedule();
+    }
+  });
   addEventListener('scroll', () => schedule(), { passive: true });
   addEventListener('resize', () => { lastRevealed = null; schedule(true); });
   addEventListener('hashchange', () => schedule(true));
