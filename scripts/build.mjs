@@ -604,14 +604,14 @@ function clientScript() {
             history.pushState(nextState, '', url.href);
           }
 
-          if (url.hash) {
+          var savedPosition = destinationState && destinationState[scrollStateKey];
+          if (!push && savedPosition) {
+            window.scrollTo({ left: savedPosition.x, top: savedPosition.y, behavior: 'instant' });
+          } else if (url.hash) {
             var target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
             if (target) target.scrollIntoView();
-          } else if (push) {
-            window.scrollTo(0, 0);
           } else {
-            var savedPosition = destinationState && destinationState[scrollStateKey];
-            window.scrollTo(savedPosition ? savedPosition.x : 0, savedPosition ? savedPosition.y : 0);
+            window.scrollTo(0, 0);
           }
           if (moveFocus) currentContent.focus({ preventScroll: true });
         } catch (error) {

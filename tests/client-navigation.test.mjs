@@ -196,6 +196,11 @@ test('back navigation restores scroll only after delayed content replacement', a
     matchMedia() { return { matches: false, addEventListener() {} }; },
     addEventListener(type, listener) { windowListeners.set(type, listener); },
     scrollTo(x, y) {
+      if (typeof x === 'object') {
+        assert.equal(x.behavior, 'instant');
+        y = x.top;
+        x = x.left;
+      }
       this.scrollX = x;
       this.scrollY = y;
       events.push(`scroll:${x},${y}`);
@@ -261,7 +266,7 @@ test('back navigation restores scroll only after delayed content replacement', a
   assert.equal(fetchCount, 0, 'same-page history must not reload the article');
   events.length = 0;
   const destinationState = { openvibelyDocsScroll: { x: 0, y: 1400 } };
-  currentUrl = new URL('https://docs.example/index.html');
+  currentUrl = new URL('https://docs.example/index.html#section');
   history.state = destinationState;
   windowListeners.get('popstate')({ state: destinationState });
 
