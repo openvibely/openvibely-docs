@@ -4,7 +4,7 @@ Models tell OpenVibely how to run AI work. Users configure them from the Models 
 
 ## Bring Your Own Model Access
 
-OpenVibely connects to your model provider or inference server. You can bring an API key, connect a supported Anthropic or OpenAI subscription account through OAuth, or use local/self-hosted inference.
+OpenVibely connects to hosted model providers, gateways, and local or self-hosted inference servers. Bring API keys for providers such as Anthropic, OpenAI, DeepSeek, Mistral, Groq, Cerebras, and Together; use gateways such as OpenRouter or NVIDIA NIM; connect supported Anthropic/OpenAI subscription accounts through OAuth; or run local inference. Built-in presets simplify setup, and custom OpenAI-compatible endpoints support additional providers and gateways. See the [provider catalog](model-providers.html#built-in-presets) for the full preset list.
 
 | Access Path | How To Set It Up |
 |---|---|

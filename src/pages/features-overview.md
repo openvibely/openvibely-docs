@@ -2,7 +2,7 @@
 
 OpenVibely is a native desktop app and browser-based workbench for AI-assisted software work that gets more useful the more project work flows through it. The UI is the primary surface: it gives teams a place to configure models and agents, select a project, create work, monitor execution, review changes, automate recurring tasks, and let OpenVibely build durable project memory from completed work.
 
-OpenVibely is **bring your own model access**: use API keys, supported Anthropic or OpenAI subscription sign-in, or local inference through Ollama and OpenAI-compatible servers such as LM Studio and vLLM. Its built-in agent runtime connects directly to those endpoints; no external coding-agent CLI is required. See [Models](models.html#bring-your-own-model-access) for setup and [Runtime Dependencies](installation.html#runtime-dependencies) for tools needed by particular workflows.
+OpenVibely is **bring your own model access** across hosted providers, gateways, and local inference. Use API keys with Anthropic, OpenAI, DeepSeek, Mistral, Groq, and other providers; connect through OpenRouter, NVIDIA NIM, or a custom OpenAI-compatible gateway; sign in with supported Anthropic/OpenAI subscription accounts; or use local servers such as Ollama, LM Studio, and vLLM. Its built-in agent runtime connects directly to those endpoints; no external coding-agent CLI is required. See [Models](models.html#bring-your-own-model-access), the [provider catalog](model-providers.html#built-in-presets), and [Runtime Dependencies](installation.html#runtime-dependencies).
 
 ## Product At A Glance
 
