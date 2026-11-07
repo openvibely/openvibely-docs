@@ -4,7 +4,7 @@ Alerts surface project-scoped events that need attention. The sidebar badge show
 
 ## What Users See
 
-Open `Alerts` from the System section of the sidebar.
+Open `Alerts` from the Workspace section of the sidebar.
 
 System update status also appears on this page when a packaged desktop app or server binary finds an available release. The update notice itself can appear throughout the app, and the Alerts icon indicates update availability. See [Updates](updates.html).
 

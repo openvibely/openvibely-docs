@@ -6,8 +6,9 @@ This reference summarizes the major route groups registered by OpenVibely. Use r
 
 | Area | Routes |
 |---|---|
-| Dashboard | `/`, `/analytics` |
-| Projects | `/projects`, `/projects/new`, `/projects/:id/edit` |
+| Entry point | `/` redirects to `/chat`, preserving an explicit `project_id`. |
+| Analytics | `/analytics` |
+| Project dialogs | `/projects/new`, `/projects/:id/edit`; `/projects` returns a JSON project list. |
 | Tasks | `/tasks`, `/tasks/:taskId`, task executions, status, changes, thread, run, cancel, category, reorder, chain |
 | Automations | `/automations`, `/automations/new`, builder, live graph, pause, resume, external refresh, and delete actions |
 | Schedule | `/schedule`, `/tasks/:taskId/schedule`, `/schedules/:id`, `/schedules/:scheduleId/reschedule` |

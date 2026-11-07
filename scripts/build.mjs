@@ -31,13 +31,14 @@ const nav = [
     section: 'Workspace',
     description: 'Daily project work in the UI',
     items: [
-      ['Dashboard', 'dashboard.md', 'Project health and entry point into tasks'],
+      ['Workspace Overview', 'dashboard.md', 'Find your way around project work and settings'],
       ['Projects', 'projects.md', 'Create, switch, and configure workspaces'],
       ['Chat', 'chat.md', 'Plan and orchestrate from a project conversation'],
       ['Tasks', 'tasks.md', 'Run, monitor, and review AI coding work'],
       ['Automations', 'automations.md', 'Connect supported capabilities in live visual graphs'],
       ['Schedule', 'schedule.md', 'Calendar-driven project work'],
       ['Alerts', 'alerts.md', 'Failures and follow-up notifications'],
+      ['Analytics', 'analytics.md', 'Task outcomes, model performance, and provider usage'],
     ],
   },
   {
@@ -68,7 +69,7 @@ const nav = [
       ['Git Worktrees & Merge Safety', 'git-worktrees.md', 'Isolated changes, branch safety, conflicts, and cleanup'],
       ['Attachments As Context', 'attachments.md', 'Files attached to chat, tasks, queues, and follow-ups'],
       ['Scheduled Task Runs', 'scheduled-tasks.md', 'Recurring, one-off, and system maintenance runs'],
-      ['Insights', 'insights.md', 'Grades, Pulse, Reflection, and Analytics'],
+      ['Insights', 'insights.md', 'Grades, Pulse, and Reflection'],
     ],
   },
   {

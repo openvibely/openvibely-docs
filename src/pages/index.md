@@ -29,17 +29,19 @@ The first useful path is UI-first: add a model, create or select a project, then
 
 ## The App Mental Model
 
-OpenVibely is organized around a selected project. The sidebar project selector changes the context for the main product surfaces.
+OpenVibely is organized around a selected project. Project tabs on wide layouts, or the project selector on narrow layouts, change the context for the main product surfaces.
 
 | App Area | What Users Do There |
 |---|---|
-| Project selector | Choose the repository/workspace that tasks, chat, memory, workers, schedules, and integrations apply to. |
+| Project tabs / selector | Choose the repository/workspace that tasks, chat, memory, workers, schedules, and integrations apply to. |
 | Chat | Ask questions, plan changes, attach context, and orchestrate work conversationally. |
 | Tasks | Use a board to create AI coding tasks, run them, inspect output, review changed files, and follow up. |
 | Automations | Build reusable visual workflows from schedules, tasks, agents, approvals, GitHub stages, and outcomes, then monitor their live state. |
 | Schedule | Put project work on a calendar so tasks run once or repeat. |
-| Insights | Use Grades, Pulse, Reflection, and Analytics to understand activity, health, history, and trends. |
-| System | Configure alerts, models, agents, workers, channels, and personality. |
+| Alerts | Review notifications, failures, approval requests, and update availability. |
+| Analytics | Inspect outcomes, performance, token usage, costs, and provider limits. |
+| Insights | Use Grades, Pulse, and Reflection to understand health, upcoming work, and history. |
+| Settings | Configure appearance, models, agents, workers, channels, and other preferences. |
 
 ## What OpenVibely Provides
 
@@ -62,7 +64,7 @@ The docs start with a high-level user guide, then go deeper into the subfeatures
 | Section | Use It For |
 |---|---|
 | Get Started | Product overview, feature hub, install, UI quickstart, first setup, and learning paths. |
-| Workspace | Daily project screens: Dashboard, Projects, Chat, Orchestrate from Chat, Tasks, Schedule, and Alerts. |
+| Workspace | Workspace orientation, Projects, Chat, Tasks, Automations, Schedule, Alerts, and Analytics. |
 | Agents | Reusable worker profiles, Memory, Skill Curation, Personalities, and Multi-Agent Workflows. |
 | Capabilities | Task lifecycle, prompt queue and steering, task diffs, review workflows, worktrees, attachments, scheduled tasks, task chaining, and insights. |
 | Channels | Slack, Telegram, Discord, Email, GitHub, outbound messaging, and webhooks as alternate front doors and reporting paths for project work. |
@@ -72,4 +74,4 @@ The docs start with a high-level user guide, then go deeper into the subfeatures
 
 ## Source Verification
 
-The docs were checked against OpenVibely source code, including domain models, configuration loading, UI rendering, source-wired product surfaces, and existing guides. The product navigation follows the actual app sidebar: Workspace, Insights, and System.
+The docs were checked against OpenVibely source code, including domain models, configuration loading, UI rendering, source-wired product surfaces, and existing guides. The app sidebar groups daily work under Workspace and Grades, Pulse, and Reflection under Insights, with Settings at the bottom. Documentation groups also include conceptual guides such as Projects; they are not all app menu entries.

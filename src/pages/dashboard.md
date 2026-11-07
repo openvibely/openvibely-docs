@@ -1,26 +1,28 @@
-# Dashboard
+# Workspace Overview
 
-The Dashboard is the project landing surface. It summarizes the selected project and gives users a fast path into the task board.
+Workspace is the app sidebar section for everyday project work. Opening the app root takes you to Chat. There is no separate Dashboard page in the current navigation.
 
-## What Users See
+Older versions of this guide described a Dashboard with project task counts and category cards. Use Tasks for the board, Pulse for upcoming work, and Analytics for outcomes and usage. This guide keeps its existing URL so saved documentation links still work.
 
-When a project is selected, the Dashboard shows task counts by category and a primary action to view tasks. If no projects exist yet, the UI prompts the user to create one.
+## Workspace Pages
 
-| UI Element | Purpose |
+Choose a project using the project tabs or, on narrow layouts, the project selector. The Workspace section contains these pages in order:
+
+| Page | Use It For |
 |---|---|
-| Project name | Confirms which workspace the dashboard is summarizing. |
-| Category cards | Show counts for OpenVibely task categories and link into filtered task views. |
-| View Tasks button | Opens the Tasks page for the selected project. |
-| Empty state | Tells first-time users to create a project before work can begin. |
+| [Chat](chat.html) | Ask questions, plan changes, and orchestrate tasks from a conversation. |
+| [Tasks](tasks.html) | Create, run, monitor, and review work in Active, Backlog, and Completed. |
+| [Automations](automations.html) | Build and monitor reusable graphs connecting tasks, schedules, approvals, and outcomes. |
+| [Schedule](schedule.html) | Manage one-time and recurring task runs on a calendar. |
+| [Alerts](alerts.html) | Review notifications, failures, human approval requests, and available updates. |
+| [Analytics](analytics.html) | Inspect task outcomes, agent and model performance, token usage, costs, and provider limits. |
 
-## When To Use It
+## Projects And Settings
 
-Use Dashboard when you want a quick project-level snapshot before jumping into tasks. For deeper activity views, use the Insights section: Grades, Pulse, Reflection, and Analytics.
+[Projects](projects.html) explains the context shared by these pages; it is not a separate Workspace sidebar link. On wide layouts, use the plus button beside the project tabs to find or create a project, and a tab's context menu to open project settings. All projects provides a combined view where supported; new project-owned work still needs a destination project.
 
-## Related Pages
+Open **Settings** at the bottom of the sidebar for configuration such as Appearance, Models, Agents, Channels, and Workers.
 
-| Page | Why It Matters |
-|---|---|
-| [Projects](projects.html) | Dashboard depends on the selected project. |
-| [Tasks](tasks.html) | Category cards lead into the task board. |
-| [Insights](insights.html) | More detailed health, history, and analytics views live there. |
+## Insights
+
+The separate **Insights** sidebar section contains **Grades**, **Pulse**, and **Reflection**. Use these for project health, upcoming work, and historical activity. See [Insights](insights.html) for details.

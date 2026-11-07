@@ -16,7 +16,7 @@ Channels let people create, monitor, and respond to OpenVibely work from the too
 
 ## How To Set Them Up
 
-Open `Channels` from the System section of the app sidebar. Configure one channel at a time, test the connection when the UI offers a test action, add authorized identities, and select the project where incoming work should continue.
+Open **Settings → Channels**. Configure one channel at a time, test the connection when the UI offers a test action, add authorized identities, and select the project where incoming work should continue.
 
 ## Authorization Scope
 

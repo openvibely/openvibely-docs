@@ -6,7 +6,8 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 
 | Area | What Users Experience | Where To Learn More |
 |---|---|---|
-| Dashboard | A selected-project landing page with task counts, category entry points, and an empty state for first-time setup. | [Dashboard](dashboard.html) |
+| Workspace | Chat is the landing page; project tabs and sidebar links connect everyday work. | [Workspace Overview](dashboard.html) |
+| Analytics | Task outcomes, performance comparisons, token usage, costs, and provider limits. | [Analytics](analytics.html) |
 | Projects | A workspace boundary that controls repository context, task lists, chat, schedules, workers, memory, and channels. | [Projects](projects.html) |
 | Chat | A project-aware conversation for exploration, attachments, `Plan` mode, and `Orchestrate` mode. Chat can centrally create, run, and coordinate multiple tasks or swarms from one window. | [Chat](chat.html), [Runtime Capabilities](runtime-capabilities.html) |
 | Tasks | A board for backlog, active, and completed work with run/cancel controls, streaming progress, threads, attachments, diffs, review, and multi-role swarm execution. | [Tasks](tasks.html), [Swarm Orchestration](swarm-orchestration.html), [Task Threads & Follow-Ups](task-threads-followups.html), [Task Diffs & Review](task-diffs-review.html) |
@@ -25,7 +26,7 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Step | What Happens In The UI |
 |---|---|
 | Configure | Add at least one model, optionally create agents, and set worker limits if needed. |
-| Select a project | Use the sidebar project selector so every page knows which repository/workspace you are working in. |
+| Select a project | Use project tabs or the project selector to choose the repository/workspace for your work. |
 | Start work | Use Chat when the work needs discussion, or Tasks when you already know the unit of work. |
 | Monitor | Watch task status, streaming output, alerts, and board movement as workers execute. |
 | Review | Inspect task threads, attachments, changed files, review comments, worktree state, and pull request options before shipping. |
@@ -53,7 +54,7 @@ Open **Settings → Appearance** to choose a theme, including curated community 
 | If You Want To... | Read This |
 |---|---|
 | Try it quickly | [Installation](installation.html), then [Quickstart](quickstart.html) |
-| Understand the main UI | [Dashboard](dashboard.html), [Projects](projects.html), [Chat](chat.html), [Tasks](tasks.html), [Automations](automations.html), [Schedule](schedule.html), and [Alerts](alerts.html) |
+| Understand the main UI | [Workspace Overview](dashboard.html), [Projects](projects.html), [Chat](chat.html), [Tasks](tasks.html), [Automations](automations.html), [Schedule](schedule.html), and [Alerts](alerts.html) |
 | Understand work mechanics | [Task Threads & Follow-Ups](task-threads-followups.html), [Task Chaining & Branch Lineage](task-chaining.html), [Lifecycle Hooks](lifecycle-hooks.html), [Worker Capacity & Dispatch](workers.html), and [Scheduled Task Runs](scheduled-tasks.html) |
 | Configure AI behavior | [Models](models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Agents](agents.html), [Memory](memory.html), [Skill Curation](skills-and-learning.html), and [Personalities](personalities.html) |
 | Review generated code | [Task Diffs & Review](task-diffs-review.html), [Review Workflows](review-workflows.html), [Task Lifecycle](task-lifecycle.html), [Git Worktrees & Merge Safety](git-worktrees.html), and [GitHub](github.html) |

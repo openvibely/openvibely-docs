@@ -4,7 +4,7 @@ Models tell OpenVibely how to run AI work. Users configure them from the Models 
 
 ## What Users Do In Models
 
-Open `Models` from the System section of the sidebar and create a model config.
+Open **Settings → Models** and create a model config.
 
 | UI Concept | Product Effect |
 |---|---|

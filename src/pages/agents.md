@@ -4,7 +4,7 @@ Agents are reusable AI worker profiles. In the UI, they let users capture how a 
 
 ## What Users Do In Agents
 
-Open `Agents` from the System section of the sidebar. Create an agent manually, generate one from a prompt, edit an existing profile, attach skills or plugins, and choose whether tasks should use that agent explicitly or let routing select one. Enabled state and advanced settings persist with the agent definition.
+Open **Settings → Agents**. Create an agent manually, generate one from a prompt, edit an existing profile, attach skills or plugins, and choose whether tasks should use that agent explicitly or let routing select one. Enabled state and advanced settings persist with the agent definition.
 
 Project-scoped agents can be deleted from the UI, which removes their on-disk agent directory and index entry. Protected system agents cannot be deleted or edited as normal user agents.
 
