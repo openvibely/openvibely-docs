@@ -107,10 +107,14 @@
     if (!queued) { queued = true; requestAnimationFrame(update); }
   }
   document.addEventListener('keydown', () => { railKeyboardNavigation = true; }, true);
-  document.addEventListener('pointerdown', () => {
+  document.addEventListener('pointerdown', event => {
     railKeyboardNavigation = false;
-    lastRevealed = null;
-    schedule();
+    // Keep manually browsed links stationary until their click completes.
+    // A resulting article scroll will reveal the newly active section.
+    if (!rail.contains(event.target)) {
+      lastRevealed = null;
+      schedule();
+    }
   }, true);
   rail.addEventListener('focusout', event => {
     if (!rail.contains(event.relatedTarget)) {
