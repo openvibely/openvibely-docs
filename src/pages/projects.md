@@ -23,6 +23,28 @@ Use Command/Ctrl+Shift+Left or Right to switch project tabs and Command/Ctrl+Shi
 | Edit project settings | Changes repository details, defaults, and project-level controls. |
 | Switch project while editing | The app warns if modals with unsaved changes are open. |
 
+## Pin Projects As Tabs
+
+Think of the visible project tabs as pinned shortcuts for fast access, not the full project catalog. Keep the projects you use often open, and close others without deleting their work.
+
+### Add Or Reopen An Existing Project
+
+1. Click the **+** beside the project tabs to open the project menu.
+2. Search for the project and select it. The app opens it as a tab, or switches to its existing tab if it is already open.
+3. Select **All projects** from the same menu when you want the combined workspace.
+
+This is the project-tab plus, separate from **+ New task** above the task list.
+
+### Create A Project From The Tab Menu
+
+Open the project-tab **+** menu and choose **Create New Project**. Enter the project name and repository source, configure any defaults you need, and submit the project form. The new project becomes available in the workspace. See [Repository Sources](#repository-sources) for local paths and repository URLs.
+
+### Reorder And Close Tabs
+
+Drag a project tab left or right to change its position. Click its **×** to close it. Closing the selected tab switches to a neighboring tab; the last remaining tab cannot be closed. All projects can also be reordered or closed when another tab remains.
+
+Closing a tab only removes that shortcut. It does not delete the project or cancel its tasks or schedules. Use the **+** menu to reopen it later. Open tabs, their order, and each project's last visited page are saved across restarts.
+
 ## Repository Sources
 
 OpenVibely supports local path projects and repository URL projects.

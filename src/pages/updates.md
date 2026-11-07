@@ -21,11 +21,25 @@ Open `Alerts` to see the current version, available version, release notes, upda
 
 After three failed automatic update checks, OpenVibely pauses checks for 24 hours before trying again.
 
-## What Happens After Approval
+## Accept Or Dismiss An Update
+
+For supported desktop apps and server binaries:
+
+1. Open **Alerts** from the app rail when the update indicator appears.
+2. Review the **OpenVibely update** card: current and available versions, release notes, update state, and active work.
+3. Once the replacement is downloaded and verified, click **Update OpenVibely** to accept installation. Only organization admins and owners can manage updates.
+4. Watch the card for progress while the app waits for active work, installs the update, and restarts. Browser tabs reload after the new server is healthy.
+
+The app-wide **Update available** notice is also actionable: clicking its body accepts the update for a user allowed to manage updates, then opens Alerts. For other users, it opens Alerts without approving installation. To inspect release details before accepting, open Alerts from the rail directly.
+
+Click the notice's **×** to dismiss that notification without accepting the update. The update can still be reached through Alerts. When **Cancel** is offered on the update card, it is available in the ready or waiting-for-idle stages; it is not a general undo after installation starts.
+
+## Update Stages
+
 
 | Step | What Happens |
 |---|---|
-| Download | OpenVibely downloads the replacement and verifies it against signed release metadata before asking for approval. |
+| Before approval: download and verify | OpenVibely downloads the replacement and verifies it against signed release metadata before asking for approval. |
 | Drain | After approval, it waits for active AI operations to finish. |
 | Replace | A recovery helper replaces the installed app or executable. |
 | Restart | The new version starts and reports healthy. |

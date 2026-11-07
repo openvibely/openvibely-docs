@@ -6,7 +6,7 @@ Alerts surface project-scoped events that need attention. The Alerts badge in th
 
 Open `Alerts` from the app rail.
 
-System update status also appears on this page when a packaged desktop app or server binary finds an available release. The update notice itself can appear throughout the app, and the Alerts icon indicates update availability. See [Updates](updates.html).
+System update status also appears on this page when a packaged desktop app or server binary finds an available release. The update notice itself can appear throughout the app, and the Alerts icon indicates update availability. Open the update card to review the release and use **Update OpenVibely** to accept it when authorized. See [Updates](updates.html#accept-or-dismiss-an-update) for approval, dismissal, and restart behavior.
 
 | UI Element | Purpose |
 |---|---|

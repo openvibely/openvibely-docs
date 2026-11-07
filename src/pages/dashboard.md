@@ -21,7 +21,7 @@ The app rail and task list have different jobs: the rail selects a page; the tas
 
 Select a project tab to focus on its repository and work. Select **All projects** to manage work across projects from one place. The combined task list labels each task with its owning project, and search can match task titles or project names. Opening a task from that list keeps the All projects workspace selected while the task continues to use its own project's context.
 
-Use the plus menu beside the tabs to find or create a project or reopen All projects. Drag tabs to reorder them; closing a tab removes it from the open workspace without deleting the project. Open tabs, their order, and each project's last visited page are remembered. See [Projects](projects.html) for project settings and scope.
+Visible project tabs act as pinned shortcuts for fast access. Use the plus menu beside the tabs to find and open an existing project, choose **Create New Project**, or reopen All projects. Drag tabs to reorder them; closing a tab removes it from the open workspace without deleting the project. Open tabs, their order, and each project's last visited page are remembered. See [Projects](projects.html) for project settings and scope.
 
 ## Work From The Vertical Task List
 
