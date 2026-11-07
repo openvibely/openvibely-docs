@@ -706,7 +706,6 @@ function pageTemplate({ title, body, activeFile, modified, contents }) {
       },
     ],
   }).replace(/</g, '\\u003c');
-  const breadcrumbs = `<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>${escapeHtml(details.group)}</span><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(details.label)}</span></nav>`;
   return `<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -749,7 +748,7 @@ function pageTemplate({ title, body, activeFile, modified, contents }) {
       </nav>
     </div>
     <div class="doc-layout${contents ? ' has-toc' : ''}">
-      <article class="content" tabindex="-1">${breadcrumbs}${body}</article>
+      <article class="content" tabindex="-1">${body}</article>
       <aside class="page-outline" aria-label="Page sections"${contents ? '' : ' hidden'}>${contents}</aside>
     </div>
   </main>

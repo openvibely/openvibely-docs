@@ -57,8 +57,8 @@ test('every SEO description ends with a complete sentence', () => {
   }
 });
 
-test('pages include crawlable breadcrumbs, structured data, and long-page navigation', () => {
-  assert.match(quickstart, /<nav class="breadcrumbs" aria-label="Breadcrumb">/);
+test('pages retain structured data and long-page navigation without visible breadcrumbs', () => {
+  assert.doesNotMatch(quickstart, /<nav class="breadcrumbs"/);
   assert.match(quickstart, /<script type="application\/ld\+json" data-seo="structured-data">/);
   assert.match(quickstart, /"@type":"TechArticle"/);
   assert.match(quickstart, /"@type":"BreadcrumbList"/);
