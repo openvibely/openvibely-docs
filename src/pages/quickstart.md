@@ -42,7 +42,7 @@ Once you have several projects, select **All projects** to manage their work tog
 
 | If You Know The Exact Work | If You Need To Explore First |
 |---|---|
-| Use **Add Task** (the plus button) to start a new task. Write the request in the composer, adjust properties in Details, and send the first message to create it. | Open `Chat`, ask about the project or describe the request, attach files if useful, then let the conversation guide task creation. |
+| Click **+ New task** above the left task list, beside search, to start a new task. In All projects, choose its owning Project in Details. Write the request in the composer, adjust properties in Details, and send the first message to create it. | Open `Chat`, ask about the project or describe the request, attach files if useful, then let the conversation guide task creation. |
 
 ## 5. Run And Watch Progress
 

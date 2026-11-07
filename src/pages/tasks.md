@@ -35,7 +35,15 @@ Command-click a card's body on macOS or Ctrl-click on Windows/Linux to select or
 
 ## Creating A Task
 
-Click the plus button (`Add Task`) to open a new task workspace. Write the request in the thread composer, add attachments, and configure task properties in the Details panel. Send the first message to create the task. Active tasks start execution; Backlog tasks are saved for later. You can configure a schedule before the first send.
+You can create a task directly from the left task list:
+
+1. Click **+ New task** above the list, next to the search button. This is separate from the plus beside the project tabs, which opens the project menu.
+2. In the new task workspace, write the request in the composer and add attachments as needed. You can enter a title at the top.
+3. Open **Details** with the panel button at the upper right to configure category, priority, Agent, and other properties. Choose a model in the composer when you need to override the default.
+4. If you are in **All projects**, select the owning **Project** in Details. Sending without a destination opens the project picker; All projects itself does not own tasks.
+5. Send the first message to create the task. **Active** starts execution; **Backlog** saves the task for later. You can configure a schedule before the first send.
+
+The new task appears in the task list for its project and in All projects. You can keep working from its thread and switch tasks directly from the list. The Tasks board also provides an **Add Task** button that opens the same creation workspace.
 
 | Field | User Impact |
 |---|---|

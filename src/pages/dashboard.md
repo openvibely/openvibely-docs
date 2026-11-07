@@ -31,18 +31,34 @@ You can use this list as your everyday task-management surface. Open the **Tasks
 
 Resize or collapse the task list to make room for the main work area. **Settings → Appearance** offers task-list and project-tab layout choices. See [Tasks](tasks.html) for actions, scheduling behavior, and review controls.
 
-## Workspace Pages
+## Create A Task From The Left Task List
 
-The Workspace destinations in the app rail are:
+1. Select an individual project tab or **All projects**.
+2. Click the **+** labeled **New task** at the top of the left task list, next to the magnifying-glass search button. This opens a new task in the main work area without visiting the Tasks board.
+3. Write your request in the composer and add any attachments. Open the **Details** panel using the panel button at the upper right to adjust the task's properties.
+4. In All projects, choose the owning **Project** in Details. If you send without choosing one, the app opens the project picker.
+5. Choose **Active** to start work or **Backlog** to save it for later, then send the first message to create the task. You can also configure a schedule before sending.
 
-| Page | Use It For |
-|---|---|
-| [Chat](chat.html) | Ask questions, plan changes, and orchestrate tasks from a conversation. |
-| [Tasks](tasks.html) | Create, run, monitor, and review work in Active, Backlog, and Completed. |
-| [Automations](automations.html) | Build and monitor reusable graphs connecting tasks, schedules, approvals, and outcomes. |
-| [Schedule](schedule.html) | Manage one-time and recurring task runs on a calendar. |
-| [Alerts](alerts.html) | Review notifications, failures, human approval requests, and available updates. |
-| [Analytics](analytics.html) | Inspect task outcomes, agent and model performance, token usage, costs, and provider limits. |
+The **New task** plus above the task list creates work. The separate plus beside the **project tabs** opens the project menu. The magnifying glass searches tasks, and the panel toggle above the list collapses or expands it. See [Creating A Task](tasks.html#creating-a-task) for task properties.
+
+## What Is In The Left Rail?
+
+The narrow strip at the far left is the app rail. These are its destinations in top-to-bottom order; hover an icon to read its label. Project-scoped pages follow the selected project tab or All projects view where supported.
+
+| Icon | Destination | Use It For |
+|---|---|---|
+| Speech bubble | [Chat](chat.html) | Ask questions, plan changes, and orchestrate work from a conversation. |
+| Clipboard | [Tasks](tasks.html) | Open the side-by-side task board with filters and batch actions. |
+| Lightning bolt | [Automations](automations.html) | Build and monitor graphs connecting tasks, schedules, approvals, and outcomes. |
+| Calendar | [Schedule](schedule.html) | Manage one-time and recurring task runs. |
+| Bell | [Alerts](alerts.html) | Review notifications, failures, human approval requests, and available updates. |
+| Bar chart | [Analytics](analytics.html) | Inspect outcomes, performance, token usage, costs, and provider limits. |
+| Document with chart | [Grades](insights.html) | Inspect project health, proactive insights, and idea grading. |
+| Checklist | [Pulse](insights.html) | See running, waiting, and upcoming work and pulse summaries. |
+| History arrow / clock | [Reflection](insights.html) | Review historical activity and generated reflections. |
+| Gear, pinned at the bottom | Settings | Configure Appearance, Models, Agents, Channels, Workers, and other preferences. |
+
+Workspace and Insights are navigation group names; in the compact rail, use the icons and their labels to find those destinations. The task rows and category headings sit in the separate task list beside the rail.
 
 ## Projects And Settings
 
