@@ -83,7 +83,7 @@ Open the **Settings** gear at the bottom of the app rail. Its left navigation co
 | Destination | Use It For |
 |---|---|
 | Appearance → Themes, Layout, Chat | Customize colors, task-list and project-tab layout, and conversation appearance. |
-| Shortcuts | Search keyboard shortcuts and filter them by category. |
+| Shortcuts | Search keyboard shortcuts and filter them by category. See [Keyboard Shortcuts](keyboard-shortcuts.html) for the reference. |
 | [Models](models.html) | Configure model access and defaults. |
 | [Agents](agents.html) | Configure reusable execution profiles. |
 | [Skills](skills-and-learning.html) | Browse and manage skills in scope. |

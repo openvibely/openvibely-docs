@@ -157,7 +157,7 @@ Create a task when you already know the exact unit of work. Open it from the tas
 
 Open **Settings → Appearance → Chat** to choose compact or full tool output. Compact output groups consecutive tool activity into expandable rows and is the default; existing saved choices are preserved. Expand activity to inspect tool details.
 
-Open **Settings → Shortcuts** for keyboard controls. Settings also contains the appearance controls and worker limits previously reached from separate navigation entries.
+Open **Settings → Shortcuts** for keyboard controls, or see [Keyboard Shortcuts](keyboard-shortcuts.html) for the full reference and focus requirements. Settings also contains the appearance controls and worker limits previously reached from separate navigation entries.
 
 ## Image Generation and Editing
 

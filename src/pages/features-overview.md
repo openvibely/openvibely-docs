@@ -68,7 +68,7 @@ See [Multi-Agent Workflows](workflows.html) for practical examples and where to 
 
 ## Composer And Workspace Controls
 
-The [composer model menu](models.html#composer-model-menu) offers provider groups, search, favorites, and supported Reasoning effort and Fast mode controls. The [right-hand task panel](task-threads-followups.html#the-right-hand-task-panel) keeps Details, Schedule, Chaining, Files, and Lifecycle beside the conversation. Open **Settings → Shortcuts** for searchable keyboard controls.
+The [composer model menu](models.html#composer-model-menu) offers provider groups, search, favorites, and supported Reasoning effort and Fast mode controls. The [right-hand task panel](task-threads-followups.html#the-right-hand-task-panel) keeps Details, Schedule, Chaining, Files, and Lifecycle beside the conversation. Open **Settings → Shortcuts** for searchable keyboard controls, or read the [Keyboard Shortcuts](keyboard-shortcuts.html) reference.
 
 ## Documents And Appearance
 
