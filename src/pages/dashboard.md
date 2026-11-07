@@ -70,7 +70,7 @@ The panel beside the rail adapts to what you are doing:
 | A task's **Changes** view | Changed-file explorer for navigating the diff. | Choose **Back** in the explorer to return to the task thread and task list. |
 | **Settings** | Settings navigation instead of task rows. | Choose **Back** in the settings navigation to return to your workspace. |
 
-The task list has not been deleted when the panel changes. Its previous collapsed state is restored when you leave these views. The task's **Details** panel is separate: it opens on the right for properties and supporting controls.
+The task list has not been deleted when the panel changes. Its previous collapsed state is restored when you leave these views. The task's [right-hand panel](task-threads-followups.html#the-right-hand-task-panel) is separate: it contains Details, Schedule, Chaining, Files, and Lifecycle tabs. Open it with the panel button at the upper right of the task header.
 
 ## Projects And Settings
 

@@ -59,7 +59,7 @@ The new task appears in the task list for its project and in All projects. You c
 | Auto-merge | Independently merges after successful completion, after an attached goal is achieved, or both. Both triggers are off by default. |
 | Attachments | Adds files as extra task context. |
 
-Existing tasks open directly to their thread. Edit properties in the resizable Details panel, switch to `Changes` for code review, and use the panel's `Files`, `Schedule`, `Lifecycle`, and `Chaining` views for supporting work. The panel remembers whether it is open across tasks and projects.
+Existing tasks open directly to their thread. Edit properties in the resizable Details panel, switch to `Changes` for code review, and use the panel's `Files`, `Schedule`, `Lifecycle`, and `Chaining` views for supporting work. The panel remembers whether it is open across tasks and projects. See [The Right-Hand Task Panel](task-threads-followups.html#the-right-hand-task-panel) for all five tabs, resizing, and how the panel works alongside Changes.
 
 ## Swarm Tasks
 

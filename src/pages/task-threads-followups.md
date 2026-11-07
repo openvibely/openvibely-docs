@@ -15,6 +15,28 @@ Use follow-ups when the task is still the right unit of work but needs clarifica
 | Changes update | New follow-up changes can refresh diffs and review state. |
 | Alerts | Failed follow-ups or tasks needing more input can create attention notices. |
 
+## The Right-Hand Task Panel
+
+Open a task from the left task list or board. Click the panel button at the upper right of the task header (**Open details panel**), or press **Command/Ctrl+Shift+B**, to open or close its right-hand panel. This keeps supporting controls beside the task conversation.
+
+Drag the panel divider to resize it. Its width and open/closed preference are remembered, and each task remembers its selected panel tab. On smaller windows, the panel can overlay the work area instead of sitting beside it.
+
+The tabs appear in this order:
+
+| Tab | What You Can Do |
+|---|---|
+| **Details** | Edit Model, Agent, Category, Priority, and Tag. Inspect execution status and timing, the task prompt, [Task Goal](task-goals.html), auto-merge settings, and worktree information when available. Swarm tasks also show their swarm context. |
+| **Schedule** | Configure or manage this task's timed runs. See [Scheduled Task Runs](scheduled-tasks.html). |
+| **Chaining** | Configure how this task hands work to a child task. See [Task Chaining & Branch Lineage](task-chaining.html). |
+| **Files** | View the task's attachments. These are context files, not the generated code diff. See [Attachments](attachments.html). |
+| **Lifecycle** | Inspect supporting lifecycle activity and refresh its status. See [Lifecycle Hooks](lifecycle-hooks.html). |
+
+In **Details**, select a property to edit it. Available actions depend on the task's state and whether it has a worktree. The panel may therefore show more information after execution begins than it does for a new task.
+
+When creating a task in **All projects**, Details also provides the destination **Project** picker. Choose an owning project before creating the task. Lifecycle activity becomes available after the task exists.
+
+**Changes** is a separate main-area view for reviewing generated code, not one of the five right-panel tabs. Opening Changes turns the left task list into a changed-file explorer; the right panel remains available for task controls. Choose **Back** in the file explorer to return to the thread. See [Task Diffs & Review](task-diffs-review.html).
+
 ## When A Follow-Up Triggers
 
 A follow-up is useful after a task has produced enough context to continue from. Common triggers include asking the agent to address review comments, refine an implementation, explain a failure, add tests, resolve a small issue discovered during review, or continue a task that explicitly asked for more direction.
