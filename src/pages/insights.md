@@ -1,8 +1,8 @@
 # Insights
 
-Insights are the analysis and reflection surfaces in the OpenVibely sidebar. They help users understand project activity after tasks, schedules, agents, and channels have started producing work.
+Insights are the analysis and reflection surfaces in the OpenVibely app rail. They help users understand project activity after tasks, schedules, agents, and channels have started producing work.
 
-## Sidebar Pages
+## Rail Destinations
 
 | UI Label | What Users Use It For |
 |---|---|
@@ -14,7 +14,7 @@ Pulse separates running work from waiting work, including pending and queued tas
 
 ## Analytics
 
-[Analytics](analytics.html) is in the **Workspace** sidebar section. Open it for outcome metrics, task evidence, agent and model comparisons, token usage, cost, and live provider limits.
+[Analytics](analytics.html) is a Workspace destination in the app rail. Open it for outcome metrics, task evidence, agent and model comparisons, token usage, cost, and live provider limits.
 
 ## How Insights Fit The Workflow
 

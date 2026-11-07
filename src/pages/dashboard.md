@@ -60,11 +60,37 @@ The narrow strip at the far left is the app rail. These are its destinations in 
 
 Workspace and Insights are navigation group names; in the compact rail, use the icons and their labels to find those destinations. The task rows and category headings sit in the separate task list beside the rail.
 
+## When The Left Panel Changes
+
+The panel beside the rail adapts to what you are doing:
+
+| Current View | Left Panel | Return To Work |
+|---|---|---|
+| Chat or a task thread | Task list grouped by category. | Select another task or use the rail. |
+| A task's **Changes** view | Changed-file explorer for navigating the diff. | Choose **Back** in the explorer to return to the task thread and task list. |
+| **Settings** | Settings navigation instead of task rows. | Choose **Back** in the settings navigation to return to your workspace. |
+
+The task list has not been deleted when the panel changes. Its previous collapsed state is restored when you leave these views. The task's **Details** panel is separate: it opens on the right for properties and supporting controls.
+
 ## Projects And Settings
 
 [Projects](projects.html) explains the context shared by these pages; it is not a separate app-rail destination. On wide layouts, use the plus button beside the project tabs to find or create a project, and a tab's context menu to open project settings. All projects provides a combined view where supported; new project-owned work still needs a destination project.
 
-Open **Settings** at the bottom of the app rail for configuration such as Appearance, Models, Agents, Channels, and Workers.
+Open the **Settings** gear at the bottom of the app rail. Its left navigation contains:
+
+| Destination | Use It For |
+|---|---|
+| Appearance → Themes, Layout, Chat | Customize colors, task-list and project-tab layout, and conversation appearance. |
+| Shortcuts | Search keyboard shortcuts and filter them by category. |
+| [Models](models.html) | Configure model access and defaults. |
+| [Agents](agents.html) | Configure reusable execution profiles. |
+| [Skills](skills-and-learning.html) | Browse and manage skills in scope. |
+| [Channels](channels.html) | Configure external integrations and messaging. |
+| [Personality](personalities.html) | Choose interaction style and behavior preferences. |
+| Organization | Open organization controls. |
+| [Workers](workers.html) | Set execution capacity. |
+
+Project settings are reached from an individual project tab's context menu. All projects is a combined view, so it does not have its own repository settings.
 
 ## Insights
 

@@ -35,7 +35,7 @@ Expand a chart to inspect it in a larger modal preview with interactive tooltips
 
 ## Live Provider Usage
 
-Open **Analytics** from the sidebar to see current OpenAI and Anthropic account limits, account identities, and plans. Usage cards request live provider data; a failed refresh does not display stale limits as current. Background monitoring creates deduplicated usage-limit alerts across projects.
+Open **Analytics** from the app rail to see current OpenAI and Anthropic account limits, account identities, and plans. Usage cards request live provider data; a failed refresh does not display stale limits as current. Background monitoring creates deduplicated usage-limit alerts across projects.
 
 Where your provider account offers usage-reset credits or grants, the usage controls let you view and redeem them. Availability and the reset result are determined by the provider.
 

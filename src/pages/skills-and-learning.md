@@ -10,7 +10,7 @@ When a selected skill requires a missing tool, OpenVibely asks for approval befo
 
 ## The Skills Page
 
-Open `Skills` from the sidebar. The Skills page lists all skills in scope for the selected project: standalone and agent-owned, global and project-scoped.
+Open **Settings → Skills**. The Skills page lists all skills in scope for the selected project: standalone and agent-owned, global and project-scoped.
 
 Each skill card shows the skill name, key, scope, and current state badges. Use the per-card dropdown to create, edit, enable or disable, toggle always-use, or archive a skill. Use the collection toolbar to search, filter by state or scope, sort, and select skills for confirmed bulk deletion.
 

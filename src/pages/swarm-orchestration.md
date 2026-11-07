@@ -4,7 +4,7 @@ Swarm mode turns one task into a coordinated parent with planner, worker, review
 
 ## Create A Swarm
 
-Open `Tasks`, click the plus button (`Add Task`), and enable `Swarm mode`.
+Click **+ New task** above the left task list, or **Add Task** on the Tasks board, and enable `Swarm mode`. In All projects, choose the owning Project in Details before creating the swarm.
 
 | Control | Behavior |
 |---|---|

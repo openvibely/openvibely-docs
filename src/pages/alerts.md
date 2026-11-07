@@ -1,6 +1,6 @@
 # Alerts
 
-Alerts surface project-scoped events that need attention. The sidebar badge shows unread alerts, and live app events can update the badge while users are working.
+Alerts surface project-scoped events that need attention. The Alerts badge in the app rail shows unread alerts, and live app events can update the badge while users are working.
 
 ## What Users See
 

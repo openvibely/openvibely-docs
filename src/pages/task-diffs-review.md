@@ -4,7 +4,7 @@ Task diffs are how OpenVibely makes generated code reviewable. A task can produc
 
 ## Where To Find Diffs
 
-Open a task detail page and select the `Changes` tab. That view is the user-facing diff surface for generated work.
+Open a task detail page and select the `Changes` tab. That view is the user-facing diff surface for generated work. On wide layouts, the left task list becomes a changed-file explorer. Choose **Back** in that explorer to return to the task thread and restore the task list.
 
 | Surface | Use It For |
 |---|---|

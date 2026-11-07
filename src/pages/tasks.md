@@ -19,6 +19,8 @@ Select an individual project tab to focus the list on that project. In **All pro
 
 Drag the divider to resize the list, or collapse it for more space. Width and collapsed state are remembered. The list follows saved task sorting and refreshes as tasks, follow-ups, and goals change. It groups top-level tasks; open a swarm parent to inspect its children.
 
+The left panel becomes settings navigation while Settings is open, and a changed-file explorer when reviewing Changes. Use its **Back** control to return to the workspace or task thread. The right-hand Details panel is separate from this left navigation.
+
 Open **Settings → Appearance** for floating or unified task-list layouts, attached or detached project tabs, and visual previews. Board-column choices are Faint tint, Filled, Inset cards, and Tint + header strip.
 
 ## The Task Board

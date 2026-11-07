@@ -7,7 +7,7 @@ Choose the path that matches what you want to accomplish in the OpenVibely web a
 - Install with `./start.sh`.
 - Open the web UI and add an Anthropic, OpenAI, or Ollama model.
 - Create a local path project from the plus menu beside the project tabs.
-- Use Chat to explore the repository or Add Task to create a clear unit of work. Manage tasks from the left task list; choose All projects to combine work across projects.
+- Use Chat to explore the repository or **+ New task** above the left task list to create a clear unit of work. Manage tasks from the left task list; choose All projects to combine work across projects.
 - Review generated changes before merging.
 
 ## Team Or Server Operator

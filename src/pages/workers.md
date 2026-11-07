@@ -1,6 +1,6 @@
 # Workers
 
-The Workers page is where you control how many AI tasks can run at the same time — globally, per project, and per model. Open it from **System → Workers** in the sidebar.
+The Workers page is where you control how many AI tasks can run at the same time — globally, per project, and per model. Open it from **Settings → Workers**.
 
 This is the lever between "tasks pile up in a queue" and "tasks run fast but overwhelm your machine or provider rate limits." Getting the limits right lets Chat stay responsive as the orchestrator while as many tasks as your setup can handle run in parallel behind it.
 
