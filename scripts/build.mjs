@@ -635,6 +635,14 @@ function clientScript() {
           if (navigationController) navigationController.abort();
           saveScrollPosition();
           if (url.href !== window.location.href) history.pushState({}, '', url.href);
+          if (event.detail === 0) {
+            var temporaryTabIndex = !target.hasAttribute('tabindex');
+            if (temporaryTabIndex) target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+            if (temporaryTabIndex) target.addEventListener('blur', function () {
+              target.removeAttribute('tabindex');
+            }, { once: true });
+          }
           target.scrollIntoView();
           return;
         }

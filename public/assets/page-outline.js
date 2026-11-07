@@ -3,6 +3,7 @@
   const rail = document.querySelector('.page-outline');
   if (!article || !rail) return;
   let entries = [], indicator, queued = false, needsMeasure = true;
+  let lastRevealed;
   const desktop = matchMedia('(min-width: 1280px)');
 
   function rebuild() {
@@ -11,6 +12,7 @@
     rail.hidden = !source;
     document.querySelector('.doc-layout').classList.toggle('has-toc', Boolean(source));
     entries = [];
+    lastRevealed = null;
     if (source) {
       rail.append(source.cloneNode(true));
       const links = [...rail.querySelectorAll('a')];
@@ -79,6 +81,17 @@
       const first = visible[0].link.parentElement, last = visible.at(-1).link.parentElement;
       indicator.style.transform = `translateY(${first.offsetTop + 5}px)`;
       indicator.style.height = `${Math.max(4, last.offsetTop + last.offsetHeight - first.offsetTop - 10)}px`;
+      // Scroll only this panel, without moving the article or taking focus.
+      // Reveal on section changes so users can still browse the rail manually.
+      if (current && current !== lastRevealed) {
+        lastRevealed = current;
+        if (!rail.contains(document.activeElement)) {
+          const bounds = rail.getBoundingClientRect();
+          const active = current.link.getBoundingClientRect();
+          if (active.top < bounds.top + 8) rail.scrollTop += active.top - bounds.top - 8;
+          else if (active.bottom > bounds.bottom - 8) rail.scrollTop += active.bottom - bounds.bottom + 8;
+        }
+      }
       if (indicator.style.transition === 'none') {
         // Establish the first position without animating from an unplaced marker.
         indicator.getBoundingClientRect();
@@ -92,7 +105,7 @@
     if (!queued) { queued = true; requestAnimationFrame(update); }
   }
   addEventListener('scroll', () => schedule(), { passive: true });
-  addEventListener('resize', () => schedule(true));
+  addEventListener('resize', () => { lastRevealed = null; schedule(true); });
   addEventListener('hashchange', () => schedule(true));
   article.addEventListener('load', () => schedule(true), true);
   article.addEventListener('toggle', () => schedule(true), true);
