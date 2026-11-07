@@ -451,14 +451,22 @@ function clientScript() {
 
       if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
+      var scrollSaveTimer;
       function saveScrollPosition() {
+        window.clearTimeout(scrollSaveTimer);
         var state = Object.assign({}, history.state || {});
         state[scrollStateKey] = { x: window.scrollX, y: window.scrollY };
         history.replaceState(state, '', window.location.href);
       }
 
       saveScrollPosition();
-      window.addEventListener('scroll', saveScrollPosition, { passive: true });
+      // History writes on every animation frame can trigger browser navigation
+      // throttling, dropping later pushState calls while the article changes.
+      // Navigation still saves immediately; scrolling saves once it settles.
+      window.addEventListener('scroll', function () {
+        window.clearTimeout(scrollSaveTimer);
+        scrollSaveTimer = window.setTimeout(saveScrollPosition, 200);
+      }, { passive: true });
 
       function updateActiveLink(url) {
         document.querySelectorAll('.nav-link').forEach(function (link) {

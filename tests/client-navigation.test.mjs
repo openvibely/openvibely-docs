@@ -156,6 +156,9 @@ test('back navigation restores scroll only after delayed content replacement', a
   let currentUrl = new URL('https://docs.example/quickstart.html');
   let resolveFetch;
   let fetchCount = 0;
+  let historyWrites = 0;
+  let timerId = 0;
+  const timers = new Map();
   const delayedResponse = new Promise(resolve => { resolveFetch = resolve; });
   const currentContent = {
     replaceChildren() { events.push('replace'); },
@@ -177,7 +180,7 @@ test('back navigation restores scroll only after delayed content replacement', a
   const history = {
     state: {},
     scrollRestoration: 'auto',
-    replaceState(state) { this.state = state; },
+    replaceState(state) { historyWrites++; this.state = state; },
     pushState(state, _unused, url) {
       this.state = state;
       currentUrl = new URL(url);
@@ -188,6 +191,8 @@ test('back navigation restores scroll only after delayed content replacement', a
     history,
     scrollX: 0,
     scrollY: 120,
+    setTimeout(callback) { timers.set(++timerId, callback); return timerId; },
+    clearTimeout(id) { timers.delete(id); },
     matchMedia() { return { matches: false, addEventListener() {} }; },
     addEventListener(type, listener) { windowListeners.set(type, listener); },
     scrollTo(x, y) {
@@ -233,9 +238,22 @@ test('back navigation restores scroll only after delayed content replacement', a
   );
 
   assert.equal(history.scrollRestoration, 'manual');
+  const initialWrites = historyWrites;
+  for (let i = 0; i < 500; i++) {
+    window.scrollY = i;
+    windowListeners.get('scroll')();
+  }
+  assert.equal(historyWrites, initialWrites, 'animated scrolling must not flood browser history');
+  assert.equal(timers.size, 1);
+  [...timers.values()][0]();
+  assert.equal(historyWrites, initialWrites + 1);
+  assert.equal(history.state.openvibelyDocsScroll.y, 499);
+  windowListeners.get('scroll')();
   const sectionLink = { href: 'https://docs.example/quickstart.html#section', hasAttribute() { return false; } };
   const click = { button: 0, detail: 0, target: { closest(selector) { return selector === 'a' ? sectionLink : null; } }, preventDefault() {} };
   documentListeners.get('click')(click);
+  assert.equal(timers.size, 0, 'navigation must flush the pending scroll save');
+  assert.equal(history.state.openvibelyDocsScroll, undefined, 'destination must not inherit the old scroll position');
   documentListeners.get('click')(click);
   assert.equal(fetchCount, 0, 'section clicks must not reload the article or indicator');
   assert.deepEqual(events, ['focus-section', 'section', 'focus-section', 'section'], 'repeated section clicks should still scroll');
