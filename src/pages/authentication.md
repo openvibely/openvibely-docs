@@ -21,6 +21,36 @@ Open **Settings → Organization** to invite members or admins and manage existi
 
 Members have their own interface preferences, and Chat/task messages, queued inputs, and steering messages show their authors. Joining the organization does not grant access to existing projects. Project owners and organization admins/owners grant Viewer, Editor, or Maintainer roles through **Project Settings → Sharing**. See [Sharing And Ownership](projects.html#sharing-and-ownership) for role capabilities and the invitation-to-project-access workflow. Hosted SSO currently supports the workspace owner only.
 
+### Organization Roles
+
+Organization roles and project roles are separate. **Member** does not mean project Editor, and a project Maintainer is not an organization Admin.
+
+| Organization Role | Organization Controls | Project Access |
+|---|---|---|
+| Member | View organization information and membership. | Only owned projects and projects explicitly shared with them. |
+| Admin | Rename the organization, invite ordinary members, remove ordinary members, and revoke invitations they created. Cannot change member roles or manage owners/admins as members. | Access all projects and manage their sharing and ownership. |
+| Owner | Admin capabilities plus invite admins, change organization roles, remove admins/owners subject to the last-owner rule, and revoke any invitation. | Access all projects and manage their sharing and ownership. |
+
+Under **General**, admins and owners can edit **Organization name** and click **Save name**. Under **Members**, owners select a role and click **Save role**; authorized admins/owners use **Remove** to remove membership. To hand over organization ownership, promote another member to **Owner** first. The last owner cannot be demoted or removed. This is separate from transferring an individual project's ownership.
+
+### Invite And Join
+
+Local authentication must be enabled before inviting people. With authentication off, anyone who can reach the app acts as the local owner. Hosted SSO does not currently provide this multi-member invitation flow.
+
+1. Open **Settings → Organization → Invitations**.
+2. Choose **Member**, or **Admin** if you are an owner, then click **Create invite link**. Owner invitations are not offered; promote a joined member separately.
+3. Copy and share the displayed link. It is **shown only once**, works **once**, and expires after **seven days**. Anyone holding the link can use it to join.
+4. The recipient opens the link and creates an account, chooses **Use an existing account**, or joins as their already signed-in account. New usernames use 3–64 letters, numbers, dots, dashes, or underscores; new passwords require at least 12 characters.
+5. After joining, grant ordinary members access to the appropriate projects through **Project Settings → Sharing**. An invited Admin already has access to all projects.
+
+The invitation list shows **Pending**, **Accepted**, **Revoked**, or **Expired**. Use **Revoke** on an unused, unexpired invitation to invalidate it. Owners can revoke any invitation; admins can revoke their own. If you lose the original link, create a new invitation and revoke the unused one.
+
+### Remove Members And Restore Access
+
+Removing someone revokes their sessions and removes their explicit project grants. Rejoining does not restore those grants; assign them again as needed. Removing an invitation's creator, or demoting that creator to ordinary Member, also revokes their outstanding invitations.
+
+Removing membership does not transfer projects they own. Review project ownership and use **Transfer ownership** when responsibility should move to another teammate. Removing access does not itself cancel already-admitted work; see [When Access Changes](projects.html#when-access-changes).
+
 ## Personal And Shared Conversations
 
 - **All projects Chat** is personal to each signed-in user. History, queued messages, active runs, provider context, and model/reasoning/Fast mode preferences are kept separately. Organization admin status does not grant access to another user's new personal conversation through the app.

@@ -13,7 +13,7 @@ Click the **gear at the bottom of the app rail** to open Settings. The left task
 | Skills | Browse and manage reusable instructions, including bundled document skills and optional learning behavior. | [Skill Curation](skills-and-learning.html) |
 | Channels | Connect external services, authorize inbound users, and configure outbound destinations. | [Channels](channels.html) |
 | Personality | Select an interaction style or create and manage custom personalities. | [Personalities](personalities.html) |
-| Organization | Invite people, manage organization roles and membership, and revoke invitations. Joining does not automatically grant project access. | [Authentication](authentication.html#organization-members) |
+| Organization | Rename the organization, create invitation links, manage organization roles and membership, and revoke invitations. Ordinary members need explicit project access; admins/owners can access all projects. | [Authentication](authentication.html#organization-members) |
 | Workers | Configure execution capacity and understand global, project, and model limits. | [Worker Capacity & Dispatch](workers.html) |
 
 Available actions depend on your organization and project permissions. Opening Settings does not grant permission to administer shared resources. Appearance preferences belong to the signed-in user; model connections and other shared configuration have their own scope and permissions.

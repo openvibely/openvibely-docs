@@ -130,7 +130,7 @@ Joining the organization does **not** grant access to its projects. A project is
 
 ### Give A Teammate Access
 
-1. Invite them through **Settings → Organization** and have them join.
+1. [Create an invitation](authentication.html#invite-and-join) through **Settings → Organization** and have them join as a Member. Organization admins/owners already have access to all projects.
 2. Open the project's **Project Settings → Sharing** tab as its owner or an organization admin/owner.
 3. Select the member and a **Project role**, then click **Save member**. Use the same controls to change a member's role.
 4. Repeat for each project they should access. Organization membership alone does not provide a Viewer or Editor baseline.
