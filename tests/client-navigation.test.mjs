@@ -205,6 +205,7 @@ test('back navigation restores scroll only after delayed content replacement', a
     },
     querySelectorAll() { return []; },
     addEventListener(type, listener) { documentListeners.set(type, listener); },
+    dispatchEvent(event) { documentListeners.get(event.type)?.(event); return true; },
     getElementById() { return null; }
   };
   const sessionStorage = {
@@ -243,4 +244,17 @@ test('back navigation restores scroll only after delayed content replacement', a
   await new Promise(resolve => setImmediate(resolve));
   assert.deepEqual(events, ['replace', 'scroll:0,1400']);
   assert.equal(document.title, 'Overview - OpenVibely Docs');
+});
+
+
+test('page outlines use real heading anchors and include nested sections', async () => {
+  const projects = await readFile(new URL('../dist/projects.html', import.meta.url), 'utf8');
+  const article = projects.match(/<article[^>]*>([\s\S]*?)<\/article>/)[1];
+  const rail = projects.match(/<aside class="page-outline"[^>]*>([\s\S]*?)<\/aside>/)[1];
+  const anchors = [...rail.matchAll(/href="#([^"]+)"/g)].map(match => match[1]);
+  const headings = [...article.matchAll(/<h[23] id="([^"]+)"/g)].map(match => match[1]);
+  assert.deepEqual(anchors, headings);
+  assert.match(article, /<details class="mobile-contents"><summary>On this page<\/summary>/);
+  assert.match(rail, /class="toc-level-3"/);
+  assert.match(projects, /assets\/page-outline\.js\?v=[a-f0-9]{12}/);
 });

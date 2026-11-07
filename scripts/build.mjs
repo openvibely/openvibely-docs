@@ -14,6 +14,10 @@ const stylesVersion = createHash('sha256')
   .digest('hex')
   .slice(0, 12);
 
+const outlineVersion = createHash('sha256')
+  .update(await readFile(join(publicDir, 'assets', 'page-outline.js')))
+  .digest('hex').slice(0, 12);
+
 const nav = [
   {
     section: 'Get Started',
@@ -306,14 +310,15 @@ function pageDetails(file) {
   throw new Error(`Navigation details missing for ${file}`);
 }
 
-function tableOfContents(markdown) {
-  const headings = [...markdown.matchAll(/^##\s+(.+)$/gm)].map(match => {
-    const text = match[1].trim();
-    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-    return `<li><a href="#${id}">${inlineMarkdown(text)}</a></li>`;
+function tableOfContents(html) {
+  // Use rendered headings so fenced examples cannot become phantom sections.
+  const headings = [...html.matchAll(/<h([23]) id="([^"]+)">([\s\S]*?)<\/h\1>/g)];
+  if (headings.filter(match => match[1] === '2').length < 3) return '';
+  const items = headings.map(([, level, id, label]) => {
+    const text = label.replace(/<[^>]*>/g, '');
+    return `<li class="toc-level-${level}"><a href="#${id}">${text}</a></li>`;
   });
-  if (headings.length < 3) return '';
-  return `<nav class="table-of-contents" aria-label="On this page"><strong>On this page</strong><ul>${headings.join('')}</ul></nav>`;
+  return `<nav class="table-of-contents" aria-label="On this page"><strong>On this page</strong><ul>${items.join('')}</ul></nav>`;
 }
 
 function installChooser() {
@@ -577,6 +582,7 @@ function clientScript() {
           if (!nextContent || !currentContent) throw new Error('Documentation page content is missing');
 
           currentContent.replaceChildren(...Array.from(nextContent.childNodes));
+          document.dispatchEvent(new Event('docs:content-changed'));
           initInstallChooser();
           document.title = nextDocument.title;
           syncSeo(nextDocument);
@@ -636,7 +642,7 @@ function clientScript() {
   </script>`;
 }
 
-function pageTemplate({ title, body, activeFile, modified }) {
+function pageTemplate({ title, body, activeFile, modified, contents }) {
   const details = pageDetails(activeFile);
   const pageTitle = seoTitle(title);
   const description = seoDescription(title, details.summary);
@@ -705,8 +711,12 @@ function pageTemplate({ title, body, activeFile, modified }) {
         <a href="https://github.com/openvibely/openvibely">GitHub</a>
       </nav>
     </div>
-    <article class="content" tabindex="-1">${breadcrumbs}${body}</article>
+    <div class="doc-layout${contents ? ' has-toc' : ''}">
+      <article class="content" tabindex="-1">${breadcrumbs}${body}</article>
+      <aside class="page-outline" aria-label="Page sections"${contents ? '' : ' hidden'}>${contents}</aside>
+    </div>
   </main>
+  <script src="assets/page-outline.js?v=${outlineVersion}" defer></script>
   ${clientScript()}
 </body>
 </html>`;
@@ -742,9 +752,9 @@ async function main() {
     const title = titleFromMarkdown(source);
     let body = markdownToHtml(source);
     body = body.replace('<p>[[install-chooser]]</p>', installChooser());
-    const contents = tableOfContents(source);
-    if (contents) body = body.replace(/<\/h1>\n/, `</h1>\n${contents}`);
-    await writeFile(join(distDir, slugFor(file)), pageTemplate({ title, body, activeFile: file, modified }));
+    const contents = tableOfContents(body);
+    if (contents) body = body.replace(/<\/h1>\n/, `</h1>\n<details class="mobile-contents"><summary>On this page</summary>${contents}</details>`);
+    await writeFile(join(distDir, slugFor(file)), pageTemplate({ title, body, activeFile: file, modified, contents }));
     sitemapEntries.push(`  <url><loc>${escapeHtml(canonicalUrl(file))}</loc>${modified ? `<lastmod>${modified}</lastmod>` : ''}</url>`);
     allMarkdown.push(`# ${title}\n\nSource: /${slugFor(file)}\n\n${source.replace(/^#\s+.+$/m, '').trim()}\n`);
   }
