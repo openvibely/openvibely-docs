@@ -1,6 +1,6 @@
 # Analytics
 
-Open **Analytics** from the **Workspace** section of the sidebar to inspect project outcomes, performance, and usage.
+Open **Analytics** from the app rail to inspect project outcomes, performance, and usage.
 
 ## Outcomes And Usage
 

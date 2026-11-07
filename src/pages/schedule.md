@@ -4,7 +4,7 @@ The Schedule page manages one-time and recurring task execution for the selected
 
 ## What Users Do
 
-Open `Schedule` from the Workspace section of the sidebar.
+Open `Schedule` from the app rail.
 
 | UI Action | Product Effect |
 |---|---|

@@ -2,7 +2,7 @@
 
 Automations turn supported OpenVibely capabilities into project-scoped visual graphs with explicit handoffs. Use them when work needs multiple steps, human decisions, or GitHub state to remain visible in one place.
 
-Open `Automations` from the Workspace section of the sidebar. The portfolio shows each saved Automation's lifecycle and health state; select one to open its live graph.
+Open `Automations` from the app rail. The portfolio shows each saved Automation's lifecycle and health state; select one to open its live graph.
 
 ## Automations Versus Schedules
 

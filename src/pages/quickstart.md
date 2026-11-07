@@ -17,7 +17,7 @@ See [Installation](installation.html) if OpenVibely is not installed yet.
 
 ## 2. Add A Model In The App
 
-Open `Models` from the sidebar and create a model configuration. For the shortest Codex path, add `gpt-5.6-sol` with `medium` reasoning effort and set it as the default model.
+Open **Settings → Models** and create a model configuration. For the shortest Codex path, add `gpt-5.6-sol` with `medium` reasoning effort and set it as the default model.
 
 | Provider Path | Typical Setup |
 |---|---|
@@ -36,15 +36,19 @@ Open the plus menu beside the project tabs, or the project selector on a narrow 
 
 Choose either a local repository path or a repository URL. Local paths are enabled by default in desktop mode, but server mode requires `OPENVIBELY_ENABLE_LOCAL_REPO_PATH`.
 
+Once you have several projects, select **All projects** to manage their work together. Individual tabs keep each project's workspace available. The far-left app rail switches pages; the task list beside it manages work in Active, Completed, Backlog, and Scheduled groups. See [Workspace Overview](dashboard.html).
+
 ## 4. Start From Chat Or Tasks
 
 | If You Know The Exact Work | If You Need To Explore First |
 |---|---|
-| Open `Tasks` and start a new task. Write the request in the composer, adjust properties in Details, and send the first message to create it. | Open `Chat`, ask about the project or describe the request, attach files if useful, then let the conversation guide task creation. |
+| Use **Add Task** (the plus button) to start a new task. Write the request in the composer, adjust properties in Details, and send the first message to create it. | Open `Chat`, ask about the project or describe the request, attach files if useful, then let the conversation guide task creation. |
 
 ## 5. Run And Watch Progress
 
-On the Tasks page, run the task and watch it move through queued, running, completed, or failed states. The UI updates from live events, and Alerts can notify you when failures or follow-up events happen.
+Creating an Active task starts execution; Backlog saves it for later. Watch status in the left task list while the thread stays open. Select other tasks, right-click for available actions, or drag tasks between categories as work progresses. The list works as a vertical Kanban, including across projects when All projects is selected.
+
+Open **Tasks** from the app rail when you prefer side-by-side columns, filters, or batch actions. Live events update task state, and Alerts can notify you about failures or follow-up events.
 
 ## 6. Review Before Shipping
 
@@ -54,7 +58,7 @@ Open the task detail view to inspect the prompt, thread, execution output, attac
 
 | Want To... | Read Next |
 |---|---|
-| Understand the main surfaces | [Projects](projects.html), [Chat](chat.html), and [Tasks](tasks.html) |
+| Understand the main surfaces | [Workspace Overview](dashboard.html), [Projects](projects.html), [Chat](chat.html), and [Tasks](tasks.html) |
 | Configure reusable AI behavior | [Agents](agents.html) and [Models](models.html) |
 | Automate recurring work | [Schedule](schedule.html) and [Scheduled Task Runs](scheduled-tasks.html) |
 | Review code safely | [Git Worktrees & Merge Safety](git-worktrees.html) and [Task Lifecycle](task-lifecycle.html) |

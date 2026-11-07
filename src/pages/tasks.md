@@ -1,26 +1,31 @@
 # Tasks
 
-Tasks are the main execution surface in OpenVibely. The Tasks page is a project board where users create AI coding work, run it, monitor progress, review output, and decide what happens to generated changes.
+Tasks are units of AI coding work that you can run, monitor, review, and continue through a thread. Manage them from the left task list beside your current work or from the Tasks page. Both views use the same tasks and project scope.
+
+## Task List: Vertical Kanban
+
+On wider windows, the task list sits between the app rail and the main work area. Use it as a vertical Kanban to manage work while keeping a task thread or Chat open. You do not need to visit the Tasks page to switch tasks or use their available actions.
+
+| Group | What It Contains |
+|---|---|
+| Active | Current work, including scheduled executions that are queued or running. |
+| Completed | Finished work available for review and follow-up. |
+| Backlog | Work saved for later. |
+| Scheduled | Tasks with scheduled runs; admitted executions temporarily appear in Active. |
+
+Select a row to open its thread. Expand or collapse groups, use **Show more** to browse additional tasks, and search for work; search temporarily expands matching groups. Rows show status icons, and right-click opens the task's available actions. Drag tasks to reorder them where supported or move them between categories. See [Sidebar Task Actions](#sidebar-task-actions) for scheduling and swarm effects.
+
+Select an individual project tab to focus the list on that project. In **All projects**, the list combines work and shows project names beside tasks. Search also matches those names. Opening a task preserves the combined workspace, while actions still apply to that task's owning project.
+
+Drag the divider to resize the list, or collapse it for more space. Width and collapsed state are remembered. The list follows saved task sorting and refreshes as tasks, follow-ups, and goals change. It groups top-level tasks; open a swarm parent to inspect its children.
+
+Open **Settings → Appearance** for floating or unified task-list layouts, attached or detached project tabs, and visual previews. Board-column choices are Faint tint, Filled, Inset cards, and Tint + header strip.
 
 ## The Task Board
 
-Open `Tasks` from the Workspace section of the sidebar. The board shows project work in user-facing categories.
+Open **Tasks** from the app rail when you want Backlog, Active, and Completed displayed as side-by-side columns, with board search, filters, and batch actions. The board follows the selected project or All projects tab.
 
-| Board Area | What It Means |
-|---|---|
-| Backlog | Planned work that is not currently active. |
-| Active | Work the project is currently focused on. |
-| Completed | Work that has finished and can be reviewed historically. |
-
-Scheduled tasks are managed from the Schedule page. Chat tasks are internal to chat flows and are not normal board cards.
-
-## Task Sidebar
-
-On wider windows, a task list sits beside the current page so you can switch tasks without returning to the board. It groups top-level tasks into Active, Completed, Backlog, and Scheduled, with status icons and search. Expand groups to see more tasks; searching temporarily expands groups with matches.
-
-Drag the divider to resize the list, or collapse it for more workspace. Width and collapsed state are remembered. The list follows saved task sorting and refreshes on task changes, including follow-ups and goal updates.
-
-Open **Settings → Appearance** for floating or unified task-list layouts, attached or detached project tabs, and visual previews. Board-column choices are Faint tint, Filled, Inset cards, and Tint + header strip.
+Scheduled tasks are managed from Schedule and are also accessible from the task list. Chat conversations are not normal board cards.
 
 ## Search, Filters, And Batch Actions
 

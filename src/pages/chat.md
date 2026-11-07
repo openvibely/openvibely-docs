@@ -22,7 +22,7 @@ Chat embeds clickable task links inline as it creates work, so you can jump to a
 - Accept steering or queue new prompts while a response is already in progress
 - Answer structured clarification questions in place before Chat continues
 
-That is the core OpenVibely flow: stay on the Chat page while the orchestrator handles the parallel work. The Tasks page is the board and review surface, but Chat is where the work begins and where coordination stays.
+That is the core OpenVibely flow: stay on the Chat page while the orchestrator handles the parallel work. Use the left task list to inspect individual tasks as work progresses; the Tasks page provides a board view when useful. Return to Chat to continue coordination.
 
 ## How Chat Writes Task Prompts
 
@@ -43,7 +43,7 @@ You can always open the task and read the full prompt Chat wrote. If it missed s
 
 ## What Users Do
 
-Open `Chat` from the Workspace section of the sidebar. Pick the project first, then use the chat input to ask questions, plan changes, attach files, or orchestrate work.
+Open `Chat` from the app rail. Pick the project first, then use the chat input to ask questions, plan changes, attach files, or orchestrate work.
 
 Mermaid diagrams in responses render directly in Chat and task threads, making flows and relationships easier to inspect alongside the conversation. Image attachments open in a shared viewer with zoom and navigation controls.
 
@@ -126,7 +126,7 @@ If Chat is already responding, a new prompt can become queued input for the next
 
 Open **Settings → Appearance** to choose full-width or focused conversations, show or hide assistant bubbles, and adjust the bubble/composer color step. These settings apply to Chat and task threads. Default or layered surfaces work with your selected theme, and visual previews show the choices before you switch.
 
-On wider windows, use the searchable task sidebar to move between project tasks without returning to the board.
+On wider windows, the left task list works as a vertical Kanban beside Chat: open tasks, use row action menus, and move work between categories without visiting the Tasks board. Select All projects to manage combined work with project labels on task rows.
 
 ## Long Conversations and Compaction
 
@@ -138,11 +138,11 @@ Long threads render visible content incrementally, load older history as you scr
 
 Use Chat when the task is not fully formed yet or when one request needs coordinated parallel work. Good examples include asking what changed in a project, breaking a broad request into tasks, comparing implementation options, asking OpenVibely to create follow-up work from a discussion, or managing several task threads from one central chat window.
 
-Use Tasks instead when you already know the exact unit of work and want board state, scheduling, run/cancel controls, worktree review, chaining, or pull request actions.
+Create a task when you already know the exact unit of work. Open it from the task list for its thread, scheduling, review, and other controls. Use the Tasks page when you want board columns, filters, or batch actions.
 
 ## Typical Flow
 
-1. Select the project in the sidebar.
+1. Select a project tab, or All projects for a combined conversation and workspace.
 2. Open Chat.
 3. Pick `Plan` or `Orchestrate` from the chat input controls.
 4. Ask a question or describe the request.

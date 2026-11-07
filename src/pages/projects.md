@@ -1,5 +1,7 @@
 # Projects
 
+Projects define the repository and context for work. Use the tabs across the top to switch between individual project workspaces, or select **All projects** to manage work across projects from one place.
+
 ## Skills and Memory Permissions
 
 In project settings, **Skills & Memory** controls skill and memory reads and writes separately. New projects allow skill reads and memory reads/writes, while skill writes are off. **Allow global skill writes** is separate and requires skill writes. Existing projects retain their previous permissions.
@@ -10,7 +12,7 @@ Projects are the workspace boundary in the OpenVibely UI. The selected project c
 
 ## What Users Do
 
-Desktop and wide browser layouts show open projects as tabs. Use the plus button to search for a project or create one, drag tabs to reorder them, and use a tab's context menu to open project settings. Open tabs, their order, and the last page visited in each project are saved across restarts. Narrow layouts retain a project selector.
+Desktop and wide browser layouts show open projects as tabs. Use the plus button to search for a project or create one, drag tabs to reorder them, and use a tab's context menu to open project settings. Closing a tab does not delete the project; reopen it from the plus menu. Open tabs, their order, and the last page visited in each project are saved across restarts. Narrow layouts retain a project selector.
 
 Use Command/Ctrl+Shift+Left or Right to switch project tabs and Command/Ctrl+Shift+K to open the project menu.
 
@@ -61,6 +63,8 @@ Project Settings reports the current repository-path health as `Healthy`, `Missi
 
 ## All Projects
 
-Select **All projects** to work across projects from one workspace. Tasks, automations, Analytics, and Insights combine project records and show their ownership. Filter to a project when you need a narrower view. The All projects tab can be reordered or closed like other project tabs.
+Select **All projects** to work across projects from one workspace. The left task list combines tasks into Active, Completed, Backlog, and Scheduled groups and shows the owning project beside each task. Search matches task titles and project names. Open tasks, use their action menus, and move work between categories from this combined list. Opening a task keeps All projects selected while execution and changes stay tied to the task's own project.
+
+The Tasks page, Automations, Analytics, and Insights also support combined project views. Filter to a project when you need a narrower view. The All projects tab can be reordered or closed like other project tabs, then reopened from the plus menu.
 
 All projects has its own saved Chat conversation. Select a destination project when creating project-owned work; tasks and automations keep their own project context. A conversation opened within a specific project stays scoped to that project.

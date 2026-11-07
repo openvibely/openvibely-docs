@@ -29,13 +29,15 @@ The first useful path is UI-first: add a model, create or select a project, then
 
 ## The App Mental Model
 
-OpenVibely is organized around a selected project. Project tabs on wide layouts, or the project selector on narrow layouts, change the context for the main product surfaces.
+OpenVibely lets you work in an individual project tab or manage work across projects from the All projects tab. On wide layouts, the app rail selects pages, the left task list provides a vertical Kanban, and the main area holds your conversation, task thread, or selected page. Narrow layouts use a project selector.
 
 | App Area | What Users Do There |
 |---|---|
-| Project tabs / selector | Choose the repository/workspace that tasks, chat, memory, workers, schedules, and integrations apply to. |
+| Project tabs / selector | Focus on one project or choose All projects to manage combined work. |
+| App rail | Use the far-left icons to switch pages or open Settings. |
+| Left task list | Manage Active, Completed, Backlog, and Scheduled work as a vertical Kanban beside the current page. |
 | Chat | Ask questions, plan changes, attach context, and orchestrate work conversationally. |
-| Tasks | Use a board to create AI coding tasks, run them, inspect output, review changed files, and follow up. |
+| Tasks page | Use side-by-side board columns, filters, and batch actions when you want a broader task view. |
 | Automations | Build reusable visual workflows from schedules, tasks, agents, approvals, GitHub stages, and outcomes, then monitor their live state. |
 | Schedule | Put project work on a calendar so tasks run once or repeat. |
 | Alerts | Review notifications, failures, approval requests, and update availability. |
@@ -49,7 +51,7 @@ OpenVibely is organized around a selected project. Project tabs on wide layouts,
 |---|---|
 | Project workspaces | Keep repository context, model defaults, worker limits, schedules, memory, and integrations tied to a real codebase. |
 | Chat-first planning | Start from a conversation when the work is unclear, then turn the plan into executable tasks. |
-| Task board execution | Queue coding work, stream progress, inspect logs and threads, review changed files, and decide what ships. |
+| Task execution | Manage work from the vertical task list or board, inspect threads, review changed files, and decide what ships. |
 | Reusable agents | Capture system prompts, tools, skills, plugins, permissions, routing hints, and lifecycle behavior as reusable worker profiles. |
 | Memory curation | Autonomously create, recall, update, and consolidate durable project memory so repeated context does not have to be re-explained. |
 | Skill curation | OpenVibely learns from completed work and autonomously improves reusable standalone or agent-owned skills. |
@@ -74,4 +76,4 @@ The docs start with a high-level user guide, then go deeper into the subfeatures
 
 ## Source Verification
 
-The docs were checked against OpenVibely source code, including domain models, configuration loading, UI rendering, source-wired product surfaces, and existing guides. The app sidebar groups daily work under Workspace and Grades, Pulse, and Reflection under Insights, with Settings at the bottom. Documentation groups also include conceptual guides such as Projects; they are not all app menu entries.
+The docs were checked against OpenVibely source code, including domain models, configuration loading, UI rendering, source-wired product surfaces, and existing guides. The app rail provides daily-work and Insights destinations, with Settings at the bottom; project tabs and the separate task list organize the working context. Documentation groups also include conceptual guides such as Projects; they are not all app menu entries.

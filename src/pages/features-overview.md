@@ -6,11 +6,11 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 
 | Area | What Users Experience | Where To Learn More |
 |---|---|---|
-| Workspace | Chat is the landing page; project tabs and sidebar links connect everyday work. | [Workspace Overview](dashboard.html) |
+| Workspace | Project tabs, an app rail, and a vertical task list surround the current conversation or page. | [Workspace Overview](dashboard.html) |
 | Analytics | Task outcomes, performance comparisons, token usage, costs, and provider limits. | [Analytics](analytics.html) |
-| Projects | A workspace boundary that controls repository context, task lists, chat, schedules, workers, memory, and channels. | [Projects](projects.html) |
+| Projects | Individual project tabs focus repository work; All projects combines work for management from one place. | [Projects](projects.html) |
 | Chat | A project-aware conversation for exploration, attachments, `Plan` mode, and `Orchestrate` mode. Chat can centrally create, run, and coordinate multiple tasks or swarms from one window. | [Chat](chat.html), [Runtime Capabilities](runtime-capabilities.html) |
-| Tasks | A board for backlog, active, and completed work with run/cancel controls, streaming progress, threads, attachments, diffs, review, and multi-role swarm execution. | [Tasks](tasks.html), [Swarm Orchestration](swarm-orchestration.html), [Task Threads & Follow-Ups](task-threads-followups.html), [Task Diffs & Review](task-diffs-review.html) |
+| Tasks | A vertical task list for everyday management, plus a board with columns, filters, and batch actions. Task threads provide execution, follow-ups, diffs, review, and swarm details. | [Tasks](tasks.html), [Swarm Orchestration](swarm-orchestration.html), [Task Threads & Follow-Ups](task-threads-followups.html), [Task Diffs & Review](task-diffs-review.html) |
 | Automations | Project-scoped visual graphs that connect schedules, tasks, Agents, Native approvals, supported GitHub actions, and outcomes through explicit handoffs. | [Automations](automations.html) |
 | Scheduling | Time-based automation for one-time, recurring, and system maintenance runs. | [Schedule](schedule.html), [Scheduled Task Runs](scheduled-tasks.html) |
 | Alerts | Project-scoped failure, follow-up, and attention notices with unread state. | [Alerts](alerts.html) |
@@ -26,15 +26,15 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Step | What Happens In The UI |
 |---|---|
 | Configure | Add at least one model, optionally create agents, and set worker limits if needed. |
-| Select a project | Use project tabs or the project selector to choose the repository/workspace for your work. |
-| Start work | Use Chat when the work needs discussion, or Tasks when you already know the unit of work. |
-| Monitor | Watch task status, streaming output, alerts, and board movement as workers execute. |
+| Select a project | Choose a project tab for focused work or All projects for combined management; narrow layouts use a project selector. |
+| Start work | Use Chat when the work needs discussion, or create a task when you already know the unit of work. |
+| Monitor | Watch status in the left task list while reading a thread; open the board when you want columns or batch actions. |
 | Review | Inspect task threads, attachments, changed files, review comments, worktree state, and pull request options before shipping. |
 | Automate | Use visual Automation graphs for supported multi-step handoffs, or schedules when one task only needs time-based execution. |
 
 ## What Makes It Different
 
-- It is UI-first: the app is built around project selection, sidebar navigation, modals, task boards, calendars, chat, alerts, and review screens.
+- It is UI-first: the app is built around project tabs, an app rail, a vertical task list, task boards, calendars, chat, alerts, and review screens.
 - It is chat-orchestrated: one project Chat page can plan work, create multiple parallel tasks, steer or queue follow-up prompts, and keep coordination centralized.
 - It is project-first: tasks, chat, memory, schedules, workers, models, agents, and channels are scoped around the selected project.
 - It is review-first: AI work becomes visible task state, event streams, logs, diffs, comments, and GitHub-ready changes.

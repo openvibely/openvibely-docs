@@ -4,12 +4,16 @@ OpenVibely works best when setup follows the product dependency order: model acc
 
 ## Setup Order
 
-1. Add at least one model from the `Models` screen.
-2. Create or import a project from the sidebar project controls.
-3. Optionally create reusable agents from `Agents`.
-4. Start work from `Chat` when you need to plan, or `Tasks` when the work is already clear.
+1. Add at least one model from **Settings → Models**.
+2. Create or import a project from the plus menu beside the project tabs (or the project selector on narrow layouts).
+3. Optionally create reusable agents from **Settings → Agents**.
+4. Open Chat from the app rail to plan, or use Add Task for clear work. Manage tasks from the left task list or the Tasks board.
 5. Open **Settings → Workers** if tasks need stricter concurrency controls.
 6. Add channels, schedules, memory, and automation after the core loop works.
+
+## Get Oriented
+
+Project tabs choose the working scope: one project or **All projects**. The far-left app rail switches pages. The task list beside it is a vertical Kanban for opening tasks, using their action menus, and moving work between categories while keeping the main work area available. The Tasks page offers a board view with filters and batch actions. See [Workspace Overview](dashboard.html) for the full layout.
 
 ## Why Models Come First
 
