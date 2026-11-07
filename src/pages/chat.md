@@ -134,6 +134,8 @@ If Chat is already responding, a new prompt can become queued input for the next
 
 ## Conversation Appearance
 
+See [Settings → Appearance: Chat](settings.html#appearance-chat) for the complete control reference.
+
 Open **Settings → Appearance** to choose full-width or focused conversations, show or hide assistant bubbles, and adjust the bubble/composer color step. These settings apply to Chat and task threads. Default or layered surfaces work with your selected theme, and visual previews show the choices before you switch.
 
 On wider windows, the left task list works as a vertical Kanban beside Chat: open tasks, use row action menus, and move work between categories without visiting the Tasks board. Select All projects to manage combined work with project labels on task rows.

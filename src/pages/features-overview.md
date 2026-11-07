@@ -76,7 +76,7 @@ The [composer model menu](models.html#composer-model-menu) offers provider group
 
 Built-in **openvibely-paperworks** document skills let the AI read, create, and edit Word documents, PDFs, spreadsheets, and presentations from prompts and attachments. See [Documents With Paperworks](documents.html) for supported operations, example requests, and follow-up revisions. Files can be published into conversations for preview and download. See [Attachments](attachments.html) for supported previews and [Skill Curation](skills-and-learning.html) for dependency approval.
 
-Open **Settings → Appearance** to choose a theme, including curated community and VS Code palettes. Customize task-list layout, project tabs, default or layered surfaces, conversation width and bubbles, and board-column styling with visual previews. Theme colors apply across chat, task boards, schedules, code, and review controls.
+See [Settings](settings.html) for every destination and appearance control. Open **Settings → Appearance** to choose a theme, including curated community and VS Code palettes. Customize task-list layout, project tabs, default or layered surfaces, conversation width and bubbles, and board-column styling with visual previews. Theme colors apply across chat, task boards, schedules, code, and review controls.
 
 ## Recommended Reading
 

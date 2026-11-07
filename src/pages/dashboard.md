@@ -84,14 +84,14 @@ Open the **Settings** gear at the bottom of the app rail. Its left navigation co
 
 | Destination | Use It For |
 |---|---|
-| Appearance → Themes, Layout, Chat | Customize colors, task-list and project-tab layout, and conversation appearance. |
+| [Appearance → Themes, Layout, Chat](settings.html) | Customize colors, task-list and project-tab layout, and conversation appearance. |
 | Shortcuts | Search keyboard shortcuts and filter them by category. See [Keyboard Shortcuts](keyboard-shortcuts.html) for the reference. |
 | [Models](models.html) | Configure model access and defaults. |
 | [Agents](agents.html) | Configure reusable execution profiles. |
 | [Skills](skills-and-learning.html) | Browse and manage skills in scope. |
 | [Channels](channels.html) | Configure external integrations and messaging. |
 | [Personality](personalities.html) | Choose interaction style and behavior preferences. |
-| Organization | Open organization controls. |
+| [Organization](authentication.html#organization-members) | Invite members and manage organization roles and invitations. Grant project access separately in Project Settings → Sharing. |
 | [Workers](workers.html) | Set execution capacity. |
 
 Right-click an individual project tab and choose **Project Settings** to configure that project. All projects is a combined view, so it does not have its own repository settings.

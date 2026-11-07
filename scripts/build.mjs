@@ -33,6 +33,7 @@ const nav = [
     items: [
       ['Workspace Overview', 'dashboard.md', 'Find your way around project work and settings'],
       ['Keyboard Shortcuts', 'keyboard-shortcuts.md', 'Keyboard controls and their focus requirements'],
+      ['Settings', 'settings.md', 'Appearance controls and every Settings destination'],
       ['Projects', 'projects.md', 'Create, switch, and configure workspaces'],
       ['Chat', 'chat.md', 'Plan and orchestrate from a project conversation'],
       ['Tasks', 'tasks.md', 'Run, monitor, and review AI coding work'],
