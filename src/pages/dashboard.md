@@ -76,7 +76,7 @@ The task list has not been deleted when the panel changes. Its previous collapse
 
 ## Projects And Settings
 
-[Projects](projects.html) explains the context shared by these pages; it is not a separate app-rail destination. On wide layouts, use the plus button beside the project tabs to find or create a project, and a tab's context menu to open project settings. All projects provides a combined view where supported; new project-owned work still needs a destination project.
+[Projects](projects.html) explains the context shared by these pages; it is not a separate app-rail destination. On wide layouts, use the plus button beside the project tabs to find or create a project, and right-click an individual project tab to choose **Project Settings**. All projects provides a combined view where supported; new project-owned work still needs a destination project.
 
 Open the **Settings** gear at the bottom of the app rail. Its left navigation contains:
 
@@ -92,7 +92,7 @@ Open the **Settings** gear at the bottom of the app rail. Its left navigation co
 | Organization | Open organization controls. |
 | [Workers](workers.html) | Set execution capacity. |
 
-Project settings are reached from an individual project tab's context menu. All projects is a combined view, so it does not have its own repository settings.
+Right-click an individual project tab and choose **Project Settings** to configure that project. All projects is a combined view, so it does not have its own repository settings.
 
 ## Insights
 

@@ -12,7 +12,7 @@ Projects are the workspace boundary in the OpenVibely UI. The selected project c
 
 ## What Users Do
 
-Desktop and wide browser layouts show open projects as tabs. Use the plus button to search for a project or create one, drag tabs to reorder them, and use a tab's context menu to open project settings. Closing a tab does not delete the project; reopen it from the plus menu. Open tabs, their order, and the last page visited in each project are saved across restarts. Narrow layouts retain a project selector.
+Desktop and wide browser layouts show open projects as tabs. Use the plus button to search for a project or create one, drag tabs to reorder them, and right-click a project tab and choose **Project Settings**. Closing a tab does not delete the project; reopen it from the plus menu. Open tabs, their order, and the last page visited in each project are saved across restarts. Narrow layouts retain a project selector.
 
 Use Command/Ctrl+Shift+Left or Right to switch project tabs and Command/Ctrl+Shift+K to open the project menu.
 
@@ -44,6 +44,12 @@ Open the project-tab **+** menu and choose **Create New Project**. Enter the pro
 Drag a project tab left or right to change its position. Click its **×** to close it. Closing the selected tab switches to a neighboring tab; the last remaining tab cannot be closed. All projects can also be reordered or closed when another tab remains.
 
 Closing a tab only removes that shortcut. It does not delete the project or cancel its tasks or schedules. Use the **+** menu to reopen it later. Open tabs, their order, and each project's last visited page are saved across restarts.
+
+### Open Project Settings From A Tab
+
+Right-click an individual project tab and choose **Project Settings**. This opens settings for the tab you clicked, even if another project tab is currently selected. With a tab focused, **Shift+F10** or the keyboard context-menu key opens the same menu.
+
+Use Project Settings for repository details, defaults, worker limits, Skills & Memory permissions, and sharing controls, subject to your access level. The **All projects** tab has no Project Settings menu because it is a combined view rather than a separate project.
 
 ## Repository Sources
 
@@ -93,7 +99,7 @@ All projects has its own saved Chat conversation. Select a destination project w
 
 ## Sharing And Ownership
 
-Open an individual project tab's context menu, open project settings, and find **Sharing and ownership**. Organization membership is managed separately in **Settings → Organization**.
+Right-click an individual project tab, choose **Project Settings**, and find **Sharing and ownership**. Organization membership is managed separately in **Settings → Organization**.
 
 All organization members can access projects; private projects are not currently available. Project access controls determine what a member can do:
 
