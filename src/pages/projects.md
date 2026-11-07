@@ -91,24 +91,40 @@ Project Settings reports the current repository-path health as `Healthy`, `Missi
 
 ## All Projects
 
-Select **All projects** to work across projects from one workspace. The left task list combines tasks into Active, Completed, Backlog, and Scheduled groups and shows the owning project beside each task. Search matches task titles and project names. Open tasks, use their action menus, and move work between categories from this combined list. Opening a task keeps All projects selected while execution and changes stay tied to the task's own project.
+Select **All projects** to work across the projects you have access to from one workspace. The left task list combines tasks into Active, Completed, Backlog, and Scheduled groups and shows the owning project beside each task. Search matches task titles and project names. Open tasks, use their action menus, and move work between categories from this combined list. Opening a task keeps All projects selected while execution and changes stay tied to the task's own project.
 
 The Tasks page, Automations, Analytics, and Insights also support combined project views. Filter to a project when you need a narrower view. The All projects tab can be reordered or closed like other project tabs, then reopened from the plus menu.
 
-All projects has its own saved Chat conversation. Select a destination project when creating project-owned work; tasks and automations keep their own project context. A conversation opened within a specific project stays scoped to that project.
+All projects has a personal saved Chat conversation for each signed-in user, including separate pending messages, active runs, provider context, and model preferences. Other members do not share this conversation. Older shared All projects history from before this change remains accessible only to organization admins/owners. Select a destination project when creating project-owned work; tasks and automations keep their own project context. A conversation opened within a specific project stays scoped to that project.
 
 ## Sharing And Ownership
 
-Right-click an individual project tab, choose **Project Settings**, and find **Sharing and ownership**. Organization membership is managed separately in **Settings → Organization**.
+Right-click an individual project tab, choose **Project Settings**, and open the **Sharing** tab. Organization membership is managed separately in **Settings → Organization**.
 
-All organization members can access projects; private projects are not currently available. Project access controls determine what a member can do:
+Joining the organization does **not** grant access to its projects. A project is accessible to its owner, organization admins/owners, and members explicitly granted a project role. Project selectors and All projects views show only projects you can access.
 
-| Control | Purpose |
+| Role | What It Allows |
 |---|---|
-| Organization access | Set the project's baseline access to Viewer or Editor. |
-| Additional member grants | Grant an individual Viewer, Editor, or Maintainer access. Removing a grant leaves the organization baseline in effect. |
-| Maintainer | Allows management of project settings. |
-| Owner and organization admins/owners | Can change sharing and membership, transfer ownership, or delete the project. |
-| Recent access and execution audit | Inspect recorded actors, actions, and times. |
+| Viewer | Read project work. |
+| Editor | Read, create, and run project work. |
+| Maintainer | Editor capabilities plus project settings and access to the project audit. Cannot change member grants or ownership. |
+| Project owner or organization admin/owner | Manage project access, transfer ownership, and delete the project, in addition to managing its work. |
 
-Ownership can be transferred to another active organization member. See [Authentication](authentication.html) for inviting members and signing in.
+### Give A Teammate Access
+
+1. Invite them through **Settings → Organization** and have them join.
+2. Open the project's **Project Settings → Sharing** tab as its owner or an organization admin/owner.
+3. Select the member and a **Project role**, then click **Save member**. Use the same controls to change a member's role.
+4. Repeat for each project they should access. Organization membership alone does not provide a Viewer or Editor baseline.
+
+**Remove access** removes that member's explicit grant. They lose access unless they are the project owner or an organization admin/owner. To hand over a project, select another active member and choose **Transfer ownership**; another active organization member must exist first.
+
+Expand **Recent access and execution audit** to inspect recorded actors, actions, and times. This is a project-level audit; an organization-wide audit view is not currently available.
+
+### When Access Changes
+
+Removing access stops affected live subscriptions and prevents new work from being started or admitted under that user's revoked permissions. It does not itself cancel a run that was already admitted. Removing an organization member also revokes their sessions and removes their individual project grants.
+
+Project roles enforce application access; they do not sandbox agent processes or isolate repository files and secrets on the host. A separate private-project mode is not currently available.
+
+See [Authentication](authentication.html) for invitations, organization roles, and signing in.

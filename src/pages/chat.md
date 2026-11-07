@@ -2,6 +2,12 @@
 
 Chat is your single control center for everything happening in a project. Describe what you want — a bug fix, a new feature, a refactor across multiple files — and Chat creates the tasks, runs them in parallel, and reports back. No terminal, no separate AI windows, no manual task wiring. One conversation drives the whole project.
 
+## Who Shares A Conversation
+
+Chat within a project is shared with authorized project members. **All projects Chat** is personal to the signed-in user: its history, pending messages, active runs, and model preferences are separate from other users. All projects can coordinate only projects you have access to; creating a task still requires choosing an owning project with the necessary permissions.
+
+Older shared All projects history remains admin/owner-only after upgrade. See [Personal And Shared Conversations](authentication.html#personal-and-shared-conversations).
+
 ## Chat As Your Single Control Center
 
 The fundamental idea behind Chat is that you should never need more than one window open. Instead of keeping a terminal running, a separate AI session for research, another for writing code, and a third for tests, you stay on the Chat page and describe what you want done. OpenVibely creates the tasks, runs them, and reports back — all from that one conversation.

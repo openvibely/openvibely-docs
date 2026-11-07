@@ -23,6 +23,8 @@ Select a project tab to focus on its repository and work. Select **All projects*
 
 Visible project tabs act as pinned shortcuts for fast access. Use the plus menu beside the tabs to find and open an existing project, choose **Create New Project**, or reopen All projects. Drag tabs to reorder them; closing a tab removes it from the open workspace without deleting the project. Open tabs, their order, and each project's last visited page are remembered. See [Projects](projects.html) for project settings and scope.
 
+In a team installation, project tabs and combined views include only projects you can access. Joining the organization does not automatically grant project access. All projects Chat is personal to you; project Chat is shared with authorized project members. See [Sharing And Ownership](projects.html#sharing-and-ownership).
+
 ## Work From The Vertical Task List
 
 The task list works as a vertical Kanban alongside your current work. Click a category heading to expand or collapse its zone, then select a task to open its thread. **Show more** makes that category's list independently scrollable; **Show less** restores its compact preview. Expansion and browsing choices are remembered per project scope.

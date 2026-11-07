@@ -19,7 +19,15 @@ When auth resolves enabled, startup requires `AUTH_USERNAME`, `AUTH_PASSWORD`, a
 
 Open **Settings → Organization** to invite members or admins and manage existing members. Invitation links expire after seven days and can be revoked. Owners manage roles and membership; admins can invite and remove ordinary members. The last owner cannot be removed or demoted.
 
-Members have their own interface preferences, and conversation messages show who sent them. All members can access projects, but project permissions distinguish Viewer, Editor, Maintainer, and owner capabilities. Project owners and organization admins/owners manage sharing and ownership. Private projects are not currently available. See [Sharing And Ownership](projects.html#sharing-and-ownership). Hosted SSO currently supports the workspace owner only.
+Members have their own interface preferences, and Chat/task messages, queued inputs, and steering messages show their authors. Joining the organization does not grant access to existing projects. Project owners and organization admins/owners grant Viewer, Editor, or Maintainer roles through **Project Settings → Sharing**. See [Sharing And Ownership](projects.html#sharing-and-ownership) for role capabilities and the invitation-to-project-access workflow. Hosted SSO currently supports the workspace owner only.
+
+## Personal And Shared Conversations
+
+- **All projects Chat** is personal to each signed-in user. History, queued messages, active runs, provider context, and model/reasoning/Fast mode preferences are kept separately. Organization admin status does not grant access to another user's new personal conversation through the app.
+- **Project Chat and task threads** are shared with members who have access to that project; their role determines which actions they can perform.
+- **Older shared All projects history** remains available only to organization admins/owners after upgrade. The author of an old message is not automatically made the owner of that shared history.
+
+These are application access rules, not process or filesystem isolation. Private-project sandboxing, organization-wide audit browsing, named conversation lists, and participant-level conversation sharing are not currently available.
 
 ## Session Settings
 
@@ -43,6 +51,8 @@ See [Configuration](configuration.html) for authentication setup and [Environmen
 ## Channel Authorization
 
 App login and channel authorization are separate layers. Slack, Telegram, Discord, and Email Authorized Users or Senders are system-level allowlists and deny inbound access until identities are added. GitHub Authorized Users define trusted issue inbox and pull request feedback identities.
+
+With authentication enabled, Telegram, Slack, and Discord senders must also map to an OpenVibely user with the required project permissions. Email sender mappings can be configured, but authenticated email execution remains blocked until verified sender identity is supported.
 
 Outbound Message Targets do not grant inbound access. They are project-scoped destinations for proactive agent sends, with a separate project policy for explicit unsaved targets.
 

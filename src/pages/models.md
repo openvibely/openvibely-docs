@@ -113,6 +113,6 @@ Unsupported controls are hidden. You do not need duplicate model configurations 
 
 ### Where Choices Are Saved
 
-Chat model choices and overrides are saved for the project conversation. Existing task threads save their own model settings. Effort and Fast mode overrides are tracked per model, so switching models can restore the corresponding saved choices. These conversation controls do not rewrite the shared model configuration in Settings.
+Chat model choices and overrides are saved for the project conversation. In All projects Chat, the model, reasoning effort, and Fast mode preferences are saved separately for each user. Existing task threads save their own model settings. Effort and Fast mode overrides are tracked per model, so switching models can restore the corresponding saved choices. These conversation controls do not rewrite the shared model configuration in Settings.
 
 If settings or favorites cannot be loaded or saved, the picker displays an error. Follow its retry instruction rather than assuming the choice was saved.

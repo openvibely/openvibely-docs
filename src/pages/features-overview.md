@@ -17,7 +17,7 @@ OpenVibely is a native desktop app and browser-based workbench for AI-assisted s
 | Documents | Use Paperworks skills to read, create, and edit Word files, spreadsheets, presentations, and PDFs. | [Documents With Paperworks](documents.html) |
 | Images and file outputs | Generate or edit images in supported OpenAI conversations, create SVG drawings and interactive HTML previews, and browse or download conversation files. | [Image Generation and Editing](chat.html#image-generation-and-editing), [Attachments](attachments.html) |
 | Insights | Grades covers health and insights; Pulse shows current and upcoming work; Reflection covers past activity. | [Insights](insights.html) |
-| Team access | Invite organization members and manage project access levels, additional member grants, ownership, and audit history. | [Authentication](authentication.html), [Project Sharing](projects.html#sharing-and-ownership) |
+| Team access | Invite organization members and grant explicit project roles, transfer ownership, and inspect project audit history. All projects Chat is personal; project conversations are shared with authorized members. | [Authentication](authentication.html), [Project Sharing](projects.html#sharing-and-ownership) |
 | Automations | Project-scoped visual graphs that connect schedules, tasks, Agents, Native approvals, supported GitHub actions, and outcomes through explicit handoffs. | [Automations](automations.html) |
 | Scheduling | Time-based automation for one-time, recurring, and system maintenance runs. | [Schedule](schedule.html), [Scheduled Task Runs](scheduled-tasks.html) |
 | Alerts | Failure and follow-up notices, human approval decisions, provider usage alerts, and update availability. | [Alerts](alerts.html) |

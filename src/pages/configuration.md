@@ -58,7 +58,7 @@ Email IMAP/SMTP settings, channel Authorized Users/Senders, Outbound Message Tar
 
 Open **Settings → Organization** to manage the installation's organization, members, roles, and invitation links. Local authentication must be enabled to invite members. Invitations can grant member or admin access, expire after seven days, and can be revoked. Personal interface preferences follow each signed-in user, and conversation messages retain their sender identity.
 
-All members currently share access to all projects and global application operations. Roles restrict organization administration; they do not provide project-level isolation. Hosted SSO currently supports the workspace owner only, not multi-member invitations.
+Joining the organization grants no project access. Owners and organization admins/owners assign explicit Viewer, Editor, or Maintainer roles in **Project Settings → Sharing**. See [Project Sharing](projects.html#sharing-and-ownership) for setup and role capabilities. Project permissions control application access, not process/filesystem isolation. Hosted SSO currently supports the workspace owner only, not multi-member invitations.
 
 On upgrade, existing authenticated sessions must sign in again. Local `AUTH_USERNAME` and `AUTH_PASSWORD` initialize the owner account once; changing them later does not change its stored credentials. Password-change/reset UI is not yet available. Authentication cannot be disabled after adding other members.
 

@@ -20,7 +20,7 @@ Open **Settings → Channels**. Configure one channel at a time, test the connec
 
 ## Authorization Scope
 
-Slack, Telegram, Discord, and Email inbound allowlists are system-level and deny access until an authorized user or sender is added. Authorize each identity once for its channel; switching projects does not require adding it again. The active project determines where incoming work runs, not whether the sender is authorized. An empty allowlist does not make a channel public.
+Slack, Telegram, Discord, and Email inbound allowlists are system-level and deny access until an authorized user or sender is added. Authorize each identity once for its channel; switching projects does not require adding it again. The active project determines where incoming work runs. With authentication enabled, Telegram, Slack, and Discord senders must map to an OpenVibely user whose current project permissions allow the requested action; an allowlist entry alone does not grant project access. Email mappings are configurable, but authenticated email execution remains blocked pending verified sender identity. An empty allowlist does not make a channel public.
 
 X inbound access is also deny-by-default, but its authorization is different: add immutable numeric X user IDs to the selected project's `Authorized mention authors` list. Its per-project allowlist applies only to X mentions.
 
