@@ -4,6 +4,10 @@ The main model selects relevant skills from the available indexes while working.
 
 Project settings → **Skills & Memory** controls skill reads and writes independently. New projects allow skill reads but disable skill writes. Global skill writes require a separate switch and enabled skill writes. Existing projects retain their previous permissions.
 
+## Document Skills
+
+The bundled **openvibely-paperworks** skills cover Word DOCX, spreadsheets, PPTX presentations, and PDFs. Users can ask the AI to create new files or inspect and edit attached documents, then download the results and request revisions. See [Documents With Paperworks](documents.html) for the user workflow, supported operations, and format limits.
+
 ## Dependency Approval
 
 When a selected skill requires a missing tool, OpenVibely asks for approval before installing it. Installation progress appears in the conversation. After the dependency is installed successfully, the pending skill request resumes. Approving an installation does not grant permission to change skills.

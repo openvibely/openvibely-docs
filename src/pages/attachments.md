@@ -22,7 +22,7 @@ Open a file to use the shared viewer. Previews support PDF, Word documents, spre
 
 Links to conversation attachments inside HTML previews open the shared file viewer. The image gallery includes images and SVGs elsewhere in the conversation, including items outside the currently visible thread. Use the gallery navigation to move between them.
 
-Built-in document skills can create or edit Word documents, PDFs, spreadsheets, and presentations. If a required tool is missing, OpenVibely asks for installation approval. Generated files remain available for later download; not every downloadable format has an inline preview.
+Built-in **openvibely-paperworks** skills can read, create, or edit Word documents, PDFs, spreadsheets, and presentations. See [Documents With Paperworks](documents.html) for a walkthrough and example requests. If a required tool is missing, OpenVibely asks for installation approval. Generated files remain available for later download; not every downloadable format has an inline preview.
 
 Chat files are stored within the project, and task attachments remain associated with their task. Changes to attachment context are carried into follow-ups and steering; removing a file does not silently leave stale file context in a new turn.
 

@@ -56,6 +56,10 @@ Mermaid diagrams in responses render directly in Chat and task threads, making f
 | Streaming responses | Watch answers arrive live instead of waiting for a full page refresh. |
 | Clear history | Reset the conversation for the selected project when needed. |
 
+## Work With Documents
+
+Attach a document or describe a new one, then ask the AI to read, create, or edit it. The built-in Paperworks skills support Word files, spreadsheets, presentations, and PDFs, with published outputs for download and follow-up revisions. Use Orchestrate for file creation or edits. See [Documents With Paperworks](documents.html) for examples and setup.
+
 ## Models And Conversation Controls
 
 Click the model name at the bottom of the composer, or press **Command/Ctrl+M**, to open the model menu. Browse provider submenus, search configured models, or star favorites for quick access. Supported models expose a **Reasoning effort** slider and **Fast mode** toggle, each with **Use default** to reset its override. See [Composer Model Menu](models.html#composer-model-menu) for selection, keyboard controls, and saved settings.

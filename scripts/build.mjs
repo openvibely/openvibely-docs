@@ -68,6 +68,7 @@ const nav = [
       ['Review Workflows', 'review-workflows.md', 'Inspect, comment on, merge, or publish generated changes'],
       ['Git Worktrees & Merge Safety', 'git-worktrees.md', 'Isolated changes, branch safety, conflicts, and cleanup'],
       ['Attachments As Context', 'attachments.md', 'Files attached to chat, tasks, queues, and follow-ups'],
+      ['Documents With Paperworks', 'documents.md', 'Create and edit Word files, spreadsheets, presentations, and PDFs'],
       ['Scheduled Task Runs', 'scheduled-tasks.md', 'Recurring, one-off, and system maintenance runs'],
       ['Insights', 'insights.md', 'Grades, Pulse, and Reflection'],
     ],
