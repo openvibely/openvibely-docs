@@ -25,7 +25,9 @@ Use the plus menu beside the tabs to find or create a project or reopen All proj
 
 ## Work From The Vertical Task List
 
-The task list works as a vertical Kanban alongside your current work. Expand a category, select a task to open its thread, and switch directly to another task when needed. Use search and **Show more** to find work, right-click a row for its available actions, or drag a task between categories. Available moves and actions depend on the task's state.
+The task list works as a vertical Kanban alongside your current work. Click a category heading to expand or collapse its zone, then select a task to open its thread. **Show more** makes that category's list independently scrollable; **Show less** restores its compact preview. Expansion and browsing choices are remembered per project scope.
+
+Use search to reveal matching tasks across zones, or right-click a row for its actions. Drag a task into another zone or onto the floating **Move to** menu to change category; hover near a scrolling zone's edge during a drag to browse farther. Press **Escape** to cancel a drag. Available moves depend on task state, and Scheduled requires an existing schedule. See [Task List: Vertical Kanban](tasks.html#task-list-vertical-kanban) and [Sidebar Task Actions](tasks.html#sidebar-task-actions) for scrolling, search, and move behavior.
 
 You can use this list as your everyday task-management surface. Open the **Tasks** page from the rail when you want columns side by side, board filters, or batch selection. Both views operate on the same tasks; switching views does not create a separate queue.
 

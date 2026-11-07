@@ -13,7 +13,25 @@ On wider windows, the task list sits between the app rail and the main work area
 | Backlog | Work saved for later. |
 | Scheduled | Tasks with scheduled runs; admitted executions temporarily appear in Active. |
 
-Select a row to open its thread. Expand or collapse groups, use **Show more** to browse additional tasks, and search for work; search temporarily expands matching groups. Rows show status icons, and right-click opens the task's available actions. Drag tasks to reorder them where supported or move them between categories. See [Sidebar Task Actions](#sidebar-task-actions) for scheduling and swarm effects.
+These are vertically stacked category zones rather than the board's side-by-side columns. Empty categories are omitted. Select a task row to open its thread; hover over a row for its title, prompt preview, state, and last-update age.
+
+### Expand And Collapse Zones
+
+Click a category heading or its chevron to expand or collapse that zone. The heading shows the task count. Initially, **Active** and **Completed** are expanded, while **Backlog** and **Scheduled** are collapsed. Your choices are saved separately for each project scope, including All projects.
+
+Expanded zones normally show a preview of their tasks. The number of visible rows adjusts to the available panel height and the other open zones, so it is not a fixed number of tasks.
+
+### Show More And Scroll Within A Zone
+
+When a zone has more tasks than fit in its preview, click **Show more** underneath it. That zone becomes a scrollable list within its existing area: use the mouse wheel or trackpad over its rows, or drag its scrollbar, to browse the remaining tasks. Scrolling belongs to that category, so you can browse a long Completed list while keeping the other category headings accessible.
+
+Click **Show less** to return to the compact preview. Entering or leaving Show more starts that zone at the top. The browse choice is saved per project scope; scroll positions are retained during live refreshes and project switching in the current app session.
+
+### Search And Row Actions
+
+Use the magnifying glass above the list to search task titles. In All projects, search also matches project names. Search reveals matching tasks beyond the normal preview, opens matching zones, and hides zones without matches. Clearing search restores your saved expansion choices.
+
+Right-click a task for its available actions. With a row focused, **Shift+F10** also opens the action menu. See [Sidebar Task Actions](#sidebar-task-actions) for category moves and their effects.
 
 Select an individual project tab to focus the list on that project. In **All projects**, the list combines work and shows project names beside tasks. Search also matches those names. Opening a task preserves the combined workspace, while actions still apply to that task's owning project.
 
@@ -117,9 +135,25 @@ Open a task detail page and select `Changes` to inspect generated code. Worktree
 
 ## Sidebar Task Actions
 
-Right-click a sidebar task for its actions, including deletion. Drag tasks to reorder them where supported or move them between categories. Use **Show more** to browse a category; browsing and scroll positions are remembered per project tab.
+Right-click a task row to use its available actions, including deletion. The list uses the same task-action menus as board cards, with actions depending on task state.
 
-Moving a scheduled task to Backlog or Completed cancels its scheduled work. Moving a swarm parent to either category also stops its queued or running children.
+### Drag And Drop In The Task List
+
+1. Press and drag a task row with the primary mouse button. Drag one task at a time; task-list dragging is not the board's multi-card selection workflow.
+2. Drop into another category zone, including its heading, to move the task there. A floating **Move to** menu also appears with **Active**, **Backlog**, **Completed**, and **Scheduled** targets, so you can reach a category even when it has no visible zone.
+3. To change relative order within a category, drop before or after another row where supported. The displayed order still follows the category's sorting and execution rules.
+4. While browsing a long zone with Show more, hold the dragged row near its top or bottom edge to scroll. Outside a browsing zone, dragging near the task-list edges scrolls the overall list.
+5. Release to apply the move, or press **Escape** to cancel. Dropping outside a valid target leaves the task unchanged. If the app rejects a move, it shows an error and refreshes the list.
+
+Task-row dragging supports mouse or pen pointers, not touch dragging. The same task and project permissions apply in All projects; moving a row between categories does not change its owning project.
+
+### Category Moves Affect Work
+
+Moving into **Active** can activate task execution and requires a configured model. Moving into **Scheduled** requires an existing schedule; a drag does not create one. Open the task's right-hand **Schedule** tab to configure timing first.
+
+Moving a scheduled task to **Backlog** or **Completed** cancels its scheduled work. Moving a swarm parent to either category also stops its queued or running children. These moves change the task lifecycle, not just where a row appears.
+
+A scheduled execution temporarily shown in Active still retains its Scheduled category. Reordering it within that displayed group does not remove its schedule.
 
 
 ## Related Pages
