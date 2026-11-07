@@ -15,6 +15,10 @@ Use follow-ups when the task is still the right unit of work but needs clarifica
 | Changes update | New follow-up changes can refresh diffs and review state. |
 | Alerts | Failed follow-ups or tasks needing more input can create attention notices. |
 
+## Choose A Model In The Composer
+
+Click the model name at the bottom of the task composer or press **Command/Ctrl+M**. The menu offers provider submenus, search, favorites, and model-supported Reasoning effort and Fast mode controls. Existing tasks save their own conversation model settings. See [Composer Model Menu](models.html#composer-model-menu) for the full guide.
+
 ## The Right-Hand Task Panel
 
 Open a task from the left task list or board. Click the panel button at the upper right of the task header (**Open details panel**), or press **Command/Ctrl+Shift+B**, to open or close its right-hand panel. This keeps supporting controls beside the task conversation.

@@ -85,3 +85,34 @@ For supported OpenAI and Claude models, the model controls offer **Fast mode**. 
 | [Model Selection & Tool Policy](model-selection-tool-policy.html) | Explains Plan/Orchestrate tool boundaries and provider-native tools. |
 | [Worker Capacity & Dispatch](workers.html) | Model configs participate in capacity control. |
 | [Model Providers](model-providers.html) | Provider-specific setup details live there. |
+
+## Composer Model Menu
+
+In Chat or a task thread, click the model name at the bottom of the composer to open **Models**. **Command/Ctrl+M** opens or closes the same menu. The menu selects from your configured models; add or edit configurations in **Settings → Models**.
+
+### Find And Select A Model
+
+- **Provider groups:** Hover over or click a provider to open its model submenu. OpenAI-compatible configurations use their provider preset names where available.
+- **Search models:** Search by configuration name, provider, model ID, or the model's displayed details. Results appear directly in the menu across provider groups.
+- **Favorites:** Click a model's star to add or remove it from **Favorites** in the main menu. Favorites are saved, so frequently used models are easier to reach next time.
+- **Auto/default choices:** These appear when offered by the current composer. They follow the app's selection rules rather than selecting a named configuration explicitly. See [Model Selection & Tool Policy](model-selection-tool-policy.html).
+
+Click a model row to select it. The composer displays the selected model. You can also navigate rows with Up/Down, open a focused provider with Right, return from its submenu with Left, and activate a focused model with Enter.
+
+### Reasoning Effort And Fast Mode
+
+The menu shows controls supported by the selected model:
+
+| Control | What It Does |
+|---|---|
+| **Reasoning effort** | A slider chooses among that model's supported effort levels. Available levels vary by model. |
+| **Fast mode** | Requests the provider's priority service option for supported models. Availability depends on the model; it is separate from reasoning effort. |
+| **Use default** | Clears the override for that control and returns to the model's configured/default behavior. |
+
+Unsupported controls are hidden. You do not need duplicate model configurations just to change effort or Fast mode for a conversation.
+
+### Where Choices Are Saved
+
+Chat model choices and overrides are saved for the project conversation. Existing task threads save their own model settings. Effort and Fast mode overrides are tracked per model, so switching models can restore the corresponding saved choices. These conversation controls do not rewrite the shared model configuration in Settings.
+
+If settings or favorites cannot be loaded or saved, the picker displays an error. Follow its retry instruction rather than assuming the choice was saved.

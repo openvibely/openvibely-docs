@@ -58,7 +58,7 @@ Mermaid diagrams in responses render directly in Chat and task threads, making f
 
 ## Models And Conversation Controls
 
-Search configured models in the composer picker, browse provider groups, and save favorites for quick access. Command/Ctrl+M opens or closes the picker. Supported models expose reasoning-effort overrides without requiring a separate model configuration.
+Click the model name at the bottom of the composer, or press **Command/Ctrl+M**, to open the model menu. Browse provider submenus, search configured models, or star favorites for quick access. Supported models expose a **Reasoning effort** slider and **Fast mode** toggle, each with **Use default** to reset its override. See [Composer Model Menu](models.html#composer-model-menu) for selection, keyboard controls, and saved settings.
 
 Chat and task threads allow editing pending queued messages and steering instructions before delivery. Opening the editor holds the message from dispatch until editing finishes. Already-delivered instructions cannot be edited.
 
