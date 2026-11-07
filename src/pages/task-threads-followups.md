@@ -19,6 +19,14 @@ Use follow-ups when the task is still the right unit of work but needs clarifica
 
 Click the model name at the bottom of the task composer or press **Command/Ctrl+M**. The menu offers provider submenus, search, favorites, and model-supported Reasoning effort and Fast mode controls. Existing tasks save their own conversation model settings. See [Composer Model Menu](models.html#composer-model-menu) for the full guide.
 
+## Review Changes From The Composer
+
+When a task has changed files, a compact change summary appears at the top of the thread composer. It shows the number of changed files, lines added (`+`), lines removed (`−`), and review-comment count when present. Zero addition/deletion counts are hidden; the entire summary is hidden when there are no changed files.
+
+Click either the file/count summary or **Review changes** to open the task's **Changes** diff view. **Command/Ctrl+Shift+D** is the keyboard shortcut. This opens the review surface; it does not merge or accept the changes.
+
+In Changes, select files in the left changed-file explorer to inspect their diffs. Choose **Back** in that explorer to return to the thread and continue with a follow-up. See [Task Diffs & Review](task-diffs-review.html) for review and merge workflows.
+
 ## The Right-Hand Task Panel
 
 Open a task from the left task list or board. Click the panel button at the upper right of the task header (**Open details panel**), or press **Command/Ctrl+Shift+B**, to open or close its right-hand panel. This keeps supporting controls beside the task conversation.
@@ -115,5 +123,5 @@ While a follow-up response is running, the send control becomes `Stop response`.
 | [Tasks](tasks.html) | The task detail screen contains the thread and follow-up controls. |
 | [Prompt Queue & Steering](prompt-queue-steering.html) | Explains queued prompts and active-turn steering in Chat. |
 | [Worker Capacity & Dispatch](workers.html) | Follow-ups wait for task execution capacity. |
-| [Task Diffs & Review](task-diffs-review.html) | Follow-up changes can update the Changes tab. |
+| [Task Diffs & Review](task-diffs-review.html) | Open the composer’s change summary to review diffs and follow-up changes. |
 | [Git Worktrees & Merge Safety](git-worktrees.html) | Repository-backed follow-ups continue in isolated task worktrees. |

@@ -4,11 +4,11 @@ Task diffs are how OpenVibely makes generated code reviewable. A task can produc
 
 ## Where To Find Diffs
 
-Open a task detail page and select the `Changes` tab. That view is the user-facing diff surface for generated work. On wide layouts, the left task list becomes a changed-file explorer. Choose **Back** in that explorer to return to the task thread and restore the task list.
+In a task thread, click the change summary at the top of the composer or its **Review changes** button to open the task’s **Changes** view. You can also press **Command/Ctrl+Shift+D**. This is the diff surface for generated work. On wide layouts, the left task list becomes a changed-file explorer. Choose **Back** in that explorer to return to the task thread and restore the task list.
 
 | Surface | Use It For |
 |---|---|
-| Changes tab | Inspect file changes for the selected task. |
+| Composer change summary / Review changes | Open Changes to inspect file changes for the selected task. |
 | Sidebar file explorer | Browse changed files and jump to a file in the diff. |
 | File cards | Review each changed file with status, hunks, line numbers, and binary or rename metadata where available. |
 | Inline or split view | Change how textual diffs are displayed when loading a file. |
@@ -52,7 +52,7 @@ The card's `GitHub` menu opens a pull request for the task branch when one is no
 ## Recommended Review Flow
 
 1. Open the task detail page.
-2. Select `Changes`.
+2. Click the composer’s change summary or **Review changes** to open **Changes**.
 3. Scan changed files and load large file cards only when needed.
 4. Add line comments for specific corrections.
 5. Submit the review if the agent should revise the work.
