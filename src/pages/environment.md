@@ -53,3 +53,7 @@ This is a concise reference. See [Configuration](configuration.html) for explana
 - `GIT_SSL_CAINFO`
 - `SSL_CERT_FILE`
 - `GIT_SSL_NO_VERIFY`
+
+## Browser Startup
+
+The server opens its local Chat page when ready. Set `OPENVIBELY_NO_BROWSER=true` for remote or headless services, or to opt out locally. Docker images and update relaunches disable automatic browser opening; desktop startup is unchanged.

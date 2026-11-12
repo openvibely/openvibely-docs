@@ -51,3 +51,7 @@ Compact tool output is a display preference: expand a group to inspect its conte
 Use the gear for the destinations above. For repository details, project defaults, project worker limits, Skills & Memory permissions, or project sharing, **right-click an individual project tab → Project Settings**. All projects has no project-settings modal of its own.
 
 See [Projects](projects.html), [Skills and Memory Permissions](projects.html#skills-and-memory-permissions), and [Sharing And Ownership](projects.html#sharing-and-ownership) for those controls. Deployment environment variables are documented separately in [Configuration](configuration.html).
+
+## Custom Pages
+
+Open **Custom pages** to describe a page for an agent to build, install an existing package, or manage published pages. See [Custom Pages](custom-pages.html).

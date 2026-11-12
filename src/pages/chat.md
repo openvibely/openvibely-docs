@@ -174,6 +174,12 @@ In an OpenAI conversation with tools and file publication enabled, ask for an im
 Your OpenAI API key or OAuth account must support image generation. This feature is unavailable in Plan mode or when file publication is disabled.
 
 
+## Large Pasted Text
+
+Large pasted text appears as a card in the Chat or task composer. Open the card to inspect or edit it, or choose **Show in composer** to return it to the text field. This keeps long logs, code, and specifications manageable before sending.
+
+For a conversation alongside a project dashboard or tool, see [Custom Pages](custom-pages.html).
+
 ## Related Pages
 
 | Page | Why It Matters |

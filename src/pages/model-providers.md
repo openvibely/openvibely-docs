@@ -83,6 +83,8 @@ The default effort is model-dependent. GPT-6.1 Sol and Terra default to `low`. G
 | Claude Sonnet 5 | low · medium · high · xhigh · **max** |
 | Claude Opus 4.8 | low · medium · high · xhigh · **max** |
 | Claude Opus 4.7 | low · medium · high · xhigh · **max** |
+| Claude Fable 5.2 | low · medium · high · xhigh · **max** |
+| Claude Mythos 5.2 | low · medium · high · xhigh · **max** |
 | Claude Fable 5.1 | low · medium · high · xhigh · **max** |
 | Claude Mythos 5.1 | low · medium · high · xhigh · **max** |
 | Claude Fable 5 | low · medium · high · xhigh · **max** |

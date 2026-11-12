@@ -36,6 +36,12 @@ Replacing a linked pull request branch's history is not a routine update path. I
 Open a task's **Changes** view and choose a file from the sidebar explorer. File contents load as needed, while sticky headers and saved scroll positions help you review large changes. Add review comments beside the diff; live updates preserve comment drafts and unchanged content. Oversized files show a placeholder instead of loading the entire diff.
 
 
+## Choose Merge And Pull Request Targets
+
+The Changes split buttons let you choose a local merge method and target branch, or a pull request repository and branch. The composer also provides access to Changes actions. Settings remain available while a task runs, but publication waits until it is eligible. OpenVibely rechecks the selected targets before acting.
+
+When direct pushes are unavailable, supported personal-token workflows can publish through a personal fork. See [GitHub](github.html#pull-requests-through-forks).
+
 ## Related Pages
 
 | Page | Why It Matters |

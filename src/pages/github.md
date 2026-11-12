@@ -53,6 +53,16 @@ When guarded automatic merging reaches a conflict, OpenVibely can resume a restr
 
 Operators can preconfigure GitHub App settings with `GITHUB_APP_ID`, `GITHUB_APP_SLUG`, and `GITHUB_APP_PRIVATE_KEY`. Users should not need to understand environment values during normal project or task work.
 
+## Personal GitHub Identity
+
+Signed-in users can save their own GitHub token, **Commit author**, and **Commit email** in the GitHub channel settings. **Look up GitHub identity** fills identity details from GitHub. Personal credentials are kept separate from other users' credentials.
+
+## Pull Requests Through Forks
+
+Use the Changes action controls to select the repository and target branch for a pull request. When direct pushes are unavailable, eligible personal-token workflows can publish through a personal fork. Fork publication preserves local commit history and links the pull request to the task. Open pull requests have a distinct task-status icon.
+
+See [Review Workflows](review-workflows.html) for merge and pull request controls.
+
 ## Related Pages
 
 | Page | Why It Matters |

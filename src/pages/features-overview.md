@@ -90,3 +90,7 @@ See [Settings](settings.html) for every destination and appearance control. Open
 | Configure AI behavior | [Models](models.html), [Model Selection & Tool Policy](model-selection-tool-policy.html), [Agents](agents.html), [Memory](memory.html), [Skill Curation](skills-and-learning.html), and [Personalities](personalities.html) |
 | Review generated code | [Task Diffs & Review](task-diffs-review.html), [Review Workflows](review-workflows.html), [Task Lifecycle](task-lifecycle.html), [Git Worktrees & Merge Safety](git-worktrees.html), and [GitHub](github.html) |
 | Run for a team | [Deployment Modes](deployment.html), [Authentication](authentication.html), [Configuration](configuration.html), [Worker Capacity & Dispatch](workers.html), and [Channels Overview](channels.html) |
+
+## Build Your Own Pages
+
+Create dashboards and tools for a project with [Custom Pages](custom-pages.html). Describe what you need, let a task build it, and use its saved side chat to ask questions or request edits.

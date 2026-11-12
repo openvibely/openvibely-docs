@@ -72,14 +72,14 @@ Use `desktop` instead of `binary` for the desktop app. Do not manually delete up
 Pull and run the new image while reusing the existing `/data` volume:
 
 ```bash
-docker pull openvibely/openvibely:0.12.0
+docker pull openvibely/openvibely:0.13.0
 docker stop openvibely
 docker rm openvibely
 docker run -d \
   --name openvibely \
   -p 3001:3001 \
   -v openvibely_data:/data \
-  openvibely/openvibely:0.12.0
+  openvibely/openvibely:0.13.0
 ```
 
 For production, pin an immutable image digest rather than relying only on a mutable tag.

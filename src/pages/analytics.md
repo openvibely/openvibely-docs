@@ -40,6 +40,10 @@ Open **Analytics** from the app rail to see current OpenAI and Anthropic account
 Where your provider account offers usage-reset credits or grants, the usage controls let you view and redeem them. Availability and the reset result are determined by the provider.
 
 
+## Account Usage Permissions
+
+Provider usage and reset controls follow account ownership. Use only the accounts your signed-in user is authorized to inspect or reset; access to a project does not grant ownership of another user's provider account.
+
 ## Related Pages
 
 | Page | Why It Matters |
