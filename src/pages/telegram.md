@@ -24,6 +24,8 @@ Open `Channels`, choose Telegram, save a bot token, test the bot, and add author
 
 Telegram inbound authorization is system-level and deny-by-default. Add each approved numeric Telegram user ID once under `Authorized Users`. Switching projects does not require authorizing the same user again; an empty list does not make the bot public.
 
+With authentication enabled, map each authorized Telegram sender to an OpenVibely user who has access to the active project. The mapped user’s current project role must permit the requested action; the channel allowlist alone does not grant project access. See [Project Sharing](projects.html#sharing-and-ownership).
+
 Authorized Users determine who may instruct OpenVibely through Telegram. They do not determine where agents may send proactive Telegram messages; configure those project-scoped chats, topics, or direct recipients under `Outbound Message Targets`.
 
 ## Task Follow-Ups

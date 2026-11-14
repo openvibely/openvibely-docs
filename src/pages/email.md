@@ -1,6 +1,6 @@
 # Email
 
-Email lets OpenVibely poll a dedicated inbox through IMAP and send threaded replies through SMTP. Messages from authorized senders enter the same project Chat and task workflows as other channels.
+Email lets OpenVibely poll a dedicated inbox through IMAP and send threaded replies through SMTP. When app authentication is disabled, messages from authorized senders enter the same project Chat and task workflows as other channels. With authentication enabled, inbound Email execution is blocked pending verified sender identity.
 
 ## Configure Email
 
@@ -20,11 +20,13 @@ Use `Test Connection` after saving the mailbox settings. A dedicated automation 
 
 Email Authorized Senders are system-level and deny-by-default. Add each approved sender address once; switching projects does not require adding the sender again. There is no pairing code or PIN flow.
 
+With authentication enabled, adding an authorized sender or mapping it to an OpenVibely user does not enable inbound execution. Verified sender identity is not yet supported. This restriction applies to inbound instructions, not outbound SMTP messages.
+
 Authorized Senders control inbound instructions. Project-scoped Outbound Message Targets separately control proactive recipients and default subjects.
 
 ## Message And Thread Behavior
 
-OpenVibely polls unread messages, ignores messages sent by the configured mailbox itself, and skips common automated or list messages. An authorized message becomes an Email-origin Chat turn in the active project.
+OpenVibely polls unread messages, ignores messages sent by the configured mailbox itself, and skips common automated or list messages. When app authentication is disabled, an authorized message becomes an Email-origin Chat turn in the active project.
 
 Replies preserve `In-Reply-To` and `References` headers and keep a single `Re:` subject prefix. Completion and failure replies are plain-text UTF-8 messages. Disable completion/failure replies when Email should be intake-only.
 
@@ -43,7 +45,7 @@ Save recipient addresses under `Channels` -> `Outbound Message Targets`. Each ta
 | Symptom | Check |
 |---|---|
 | Connection fails | Verify IMAP/SMTP hosts, ports, TLS requirements, and the provider's app-password policy. |
-| Message is ignored | Confirm it is unread, not self-sent or automated, and the sender is authorized. |
+| Message is ignored | Inbound execution is blocked when app authentication is enabled. Otherwise, confirm the message is unread, not self-sent or automated, and the sender is authorized. |
 | Reply is not sent | Enable completion/failure replies and verify SMTP authentication. |
 | Attachment is missing | Check `Skip attachments`, the ten-file limit, and the 20 MB per-file limit. |
 | Work appears in the wrong project | Switch the Email channel's active project before sending the next instruction. |

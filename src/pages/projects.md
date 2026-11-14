@@ -132,10 +132,12 @@ Joining the organization does **not** grant access to its projects. A project is
 
 1. [Create an invitation](authentication.html#invite-and-join) through **Settings → Organization** and have them join as a Member. Organization admins/owners already have access to all projects.
 2. Open the project's **Project Settings → Sharing** tab as its owner or an organization admin/owner.
-3. Select the member and a **Project role**, then click **Save member**. Use the same controls to change a member's role.
-4. Repeat for each project they should access. Organization membership alone does not provide a Viewer or Editor baseline.
+3. Select the member and a role, then click **Add member**.
+4. Click **Save** to apply the changes. Repeat for each project they should access. Organization membership alone does not provide a Viewer or Editor baseline.
 
-**Remove access** removes that member's explicit grant. They lose access unless they are the project owner or an organization admin/owner. To hand over a project, select another active member and choose **Transfer ownership**; another active organization member must exist first.
+Additions, role changes, and **Remove** actions are staged until you click **Save**. **Cancel** discards unsaved changes. Removing a member's explicit grant takes away their access unless they are the project owner or an organization admin/owner.
+
+To hand over a project, save or discard pending membership changes, open **Transfer ownership…**, select another active organization member, and click **Review transfer**. Confirm the transfer when prompted.
 
 Expand **Recent access and execution audit** to inspect recorded actors, actions, and times. This is a project-level audit; an organization-wide audit view is not currently available.
 

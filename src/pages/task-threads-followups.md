@@ -23,7 +23,7 @@ Click the model name at the bottom of the task composer or press **Command/Ctrl+
 
 When a task has changed files, a compact change summary appears at the top of the thread composer. It shows the number of changed files, lines added (`+`), lines removed (`−`), and review-comment count when present. Zero addition/deletion counts are hidden; the entire summary is hidden when there are no changed files.
 
-Click either the file/count summary or **Review changes** to open the task's **Changes** diff view. **Command/Ctrl+Shift+D** is the keyboard shortcut. This opens the review surface; it does not merge or accept the changes.
+Click the file/count summary to open the task's **Changes** diff view. **Command/Ctrl+Shift+D** is the keyboard shortcut. This opens the review surface; it does not merge or accept the changes. The adjacent action control provides merge and pull request actions, with a dropdown for available methods and destinations.
 
 In Changes, select files in the left changed-file explorer to inspect their diffs. Choose **Back** in that explorer to return to the thread and continue with a follow-up. See [Task Diffs & Review](task-diffs-review.html) for review and merge workflows.
 

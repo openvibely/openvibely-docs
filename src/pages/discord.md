@@ -24,6 +24,8 @@ Discord inbound authorization is system-level and deny-by-default. Add each appr
 
 Enable Developer Mode in Discord, right-click a user, and choose `Copy User ID`. Use the long numeric ID, not a username or display handle.
 
+With authentication enabled, map each authorized Discord sender to an OpenVibely user who has access to the active project. The mapped user’s current project role must permit the requested action; the channel allowlist alone does not grant project access. See [Project Sharing](projects.html#sharing-and-ownership).
+
 Authorized Users determine who may instruct OpenVibely. They do not determine where agents may send proactive Discord messages; configure those destinations as project-scoped Outbound Message Targets.
 
 ## Message Behavior

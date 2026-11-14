@@ -23,6 +23,8 @@ Open `Channels`, choose Slack, then configure the connection using OAuth or manu
 
 Slack inbound authorization is system-level and deny-by-default. Add each approved Slack user once under `Authorized Users`. Switching projects does not require authorizing the same user again.
 
+With authentication enabled, map each authorized Slack sender to an OpenVibely user who has access to the active project. The mapped user’s current project role must permit the requested action; the channel allowlist alone does not grant project access. See [Project Sharing](projects.html#sharing-and-ownership).
+
 Authorized Users determine who may instruct OpenVibely through Slack. They do not determine where agents may send proactive Slack messages; configure those project-scoped channels, threads, or user DMs under `Outbound Message Targets`.
 
 ## Task Follow-Ups
