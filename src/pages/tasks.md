@@ -73,11 +73,17 @@ The new task appears in the task list for its project and in All projects. You c
 | Agent | Uses a reusable execution profile, or lets the router select automatically. |
 | Category | Places the card in Backlog or Active. |
 | Priority | Helps order and triage work. |
-| Tag | Marks the task as a feature or bug when useful. |
+| Tag | Organizes work with a built-in or custom project tag. |
 | Auto-merge | Independently merges after successful completion, after an attached goal is achieved, or both. Both triggers are off by default. |
 | Attachments | Adds files as extra task context. |
 
-Existing tasks open directly to their thread. Edit properties in the resizable Details panel, switch to `Changes` for code review, and use the panel's `Files`, `Schedule`, `Lifecycle`, and `Chaining` views for supporting work. The panel remembers whether it is open across tasks and projects. See [The Right-Hand Task Panel](task-threads-followups.html#the-right-hand-task-panel) for all five tabs, resizing, and how the panel works alongside Changes.
+Existing tasks open directly to their thread. Edit properties in the resizable Details panel, switch to `Changes` for code review, and use the panel's `Files`, `Schedule`, `Lifecycle`, and `Chaining` views for supporting work. Each task remembers whether its panel is open and which tab was selected. See [The Right-Hand Task Panel](task-threads-followups.html#the-right-hand-task-panel) for its tabs, optional Computer view, resizing, and how the panel works alongside Changes.
+
+## Custom Tags
+
+Open **Tag** in task Details to search built-in and existing project tags or add a new name. Matching ignores case while retaining your capitalization. Remove a tag with its badge's remove control. Tags are also supported through Chat, the API, and tag filters.
+
+For browser and desktop work, see [Task Computers](task-threads-followups.html#using-a-task-computer).
 
 ## Swarm Tasks
 

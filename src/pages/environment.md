@@ -57,3 +57,18 @@ This is a concise reference. See [Configuration](configuration.html) for explana
 ## Browser Startup
 
 The server opens its local Chat page when ready. Set `OPENVIBELY_NO_BROWSER=true` for remote or headless services, or to opt out locally. Docker images and update relaunches disable automatic browser opening; desktop startup is unchanged.
+
+## Project Computers
+
+Project and task opt-in are saved settings, not environment variables. Local computer use requires a working `docker` CLI and daemon accessible to the OpenVibely process.
+
+| Variable | Purpose | Default behavior |
+|---|---|---|
+| `OPENVIBELY_COMPUTER_IMAGE` | Prebuilt computer-runtime image reference; prefer an immutable tag or digest. | Unset: use `openvibely-computer:<source-hash>` and build from embedded sources if missing locally. Set: skip the embedded build and run that image. Reusing a mutable tag does not guarantee an update is detected. |
+| `OPENVIBELY_COMPUTER_CONTROL_URL` | Endpoint for an externally supplied hosted computer control service. | Unset: local Docker provisioner unless hosted instance mode is selected. Setting it selects the hosted client, not local Docker. |
+| `OPENVIBELY_HOSTED_INSTANCE_ID` | Hosted instance marker used when choosing the computer provisioner. | A nonempty value selects the hosted client, which requires a working control URL. |
+| `OPENVIBELY_HOSTED_AGENT_TOKEN` | Authentication token for the hosted computer control service. | Supplied by the hosted deployment; not required for local Docker use. |
+
+The hosted client is an integration hook; this repository does not provide its external control-plane server. Setting a URL alone does not provision that service. Container-internal variables such as `OPENVIBELY_COMPUTER_TOKEN` and task user IDs are managed by the provisioner/runtime, not user configuration.
+
+See [project setup](project-setup-user-guide.md#project-computers) for engine requirements and [task controls](tasks-user-guide.md#using-a-task-computer) for tool targets and persistence.

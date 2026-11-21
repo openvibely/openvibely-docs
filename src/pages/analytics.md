@@ -40,6 +40,12 @@ Open **Analytics** from the app rail to see current OpenAI and Anthropic account
 Where your provider account offers usage-reset credits or grants, the usage controls let you view and redeem them. Availability and the reset result are determined by the provider.
 
 
+## Sidebar Usage Meters
+
+Provider-account usage is also available directly in the app rail. Hover over or click a meter to see allowances, reset countdowns, and refresh controls without leaving your work. Usage updates are shared with Analytics.
+
+Choose **Settings → Appearance → Account usage meters** for Letters + rings, Logos + rings, Logo fill, or Logos + bars. Meters depend on provider usage data and account access; they are not spending limits or automatic scheduling controls.
+
 ## Account Usage Permissions
 
 Provider usage and reset controls follow account ownership. Use only the accounts your signed-in user is authorized to inspect or reset; access to a project does not grant ownership of another user's provider account.

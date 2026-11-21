@@ -33,6 +33,14 @@ Open **Settings → Appearance → Themes**, search the theme catalog, and selec
 
 Use the visual previews to compare options. These change presentation; closing tabs, moving tasks, and changing task categories are separate workspace actions.
 
+## Account Usage Meters
+
+In Appearance, choose Letters + rings, Logos + rings, Logo fill, or Logos + bars to display provider allowances in the app rail. See [Sidebar Usage Meters](analytics.html#sidebar-usage-meters).
+
+## Project Computer
+
+Open **Settings → Project Computer** and select a project to enable computer use and configure resources, time zone, idle shutdown, and preview quality. See [Project Computers](projects.html#project-computers).
+
 ## Appearance: Chat
 
 These controls apply to Chat and task threads.

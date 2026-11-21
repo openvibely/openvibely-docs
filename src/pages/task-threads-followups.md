@@ -31,13 +31,14 @@ In Changes, select files in the left changed-file explorer to inspect their diff
 
 Open a task from the left task list or board. Click the panel button at the upper right of the task header (**Open details panel**), or press **Command/Ctrl+Shift+B**, to open or close its right-hand panel. This keeps supporting controls beside the task conversation.
 
-Drag the panel divider to resize it. Its width and open/closed preference are remembered, and each task remembers its selected panel tab. On smaller windows, the panel can overlay the work area instead of sitting beside it.
+Drag the panel divider to resize it. Its width is remembered; each task remembers its open/closed state and selected panel tab. New tasks start with the panel closed. On smaller windows, the panel can overlay the work area instead of sitting beside it.
 
-The tabs appear in this order:
+The panel provides these tabs, with **Computer** available when project computer use is enabled:
 
 | Tab | What You Can Do |
 |---|---|
 | **Details** | Edit Model, Agent, Category, Priority, and Tag. Inspect execution status and timing, the task prompt, [Task Goal](task-goals.html), auto-merge settings, and worktree information when available. Swarm tasks also show their swarm context. |
+| **Computer** | Enable the task computer, view its desktop, and choose the tool destination. See [Task Computers](#using-a-task-computer). |
 | **Schedule** | Configure or manage this task's timed runs. See [Scheduled Task Runs](scheduled-tasks.html). |
 | **Chaining** | Configure how this task hands work to a child task. See [Task Chaining & Branch Lineage](task-chaining.html). |
 | **Files** | View the task's attachments. These are context files, not the generated code diff. See [Attachments](attachments.html). |
@@ -47,7 +48,29 @@ In **Details**, select a property to edit it. Available actions depend on the ta
 
 When creating a task in **All projects**, Details also provides the destination **Project** picker. Choose an owning project before creating the task. Lifecycle activity becomes available after the task exists.
 
-**Changes** is a separate main-area view for reviewing generated code, not one of the five right-panel tabs. Opening Changes turns the left task list into a changed-file explorer; the right panel remains available for task controls. Choose **Back** in the file explorer to return to the thread. See [Task Diffs & Review](task-diffs-review.html).
+**Changes** is a separate main-area view for reviewing generated code, not a right-panel tab. Opening Changes turns the left task list into a changed-file explorer; the right panel remains available for task controls. Choose **Back** in the file explorer to return to the thread. See [Task Diffs & Review](task-diffs-review.html).
+
+## Using A Task Computer
+
+After [enabling the project computer](projects.html#project-computers), open the task's **Computer** tab and turn on **Use computer for this task**. For a new task, the choice takes effect when you send its first message.
+
+The preview shows the task's live desktop. Expand it to interact with the same desktop as the agent; human input does not cancel the task. Agents can keep using the computer with the preview closed. Private login handoffs restrict agent access until completed.
+
+Use **Run tools in** to choose **Task worktree** or **Task computer** for ordinary shell and file tools. Explicit computer and browser tools always use the computer. Files do not automatically sync: ask the agent to transfer code back to the worktree before reviewing or merging it. Agents configured with Scoped Files can still route file operations to the host, so that combination is not a confinement boundary.
+
+### Teach A Skill
+
+In the expanded preview, choose **Teach a skill**, start recording, and demonstrate the workflow. Pause and save to send selected screenshots and an action timeline into the task thread for the agent to create a reusable skill, or discard the recording.
+
+Recording stops after ten minutes. Pause before entering private information: screenshots can contain sensitive data even though typed text and clipboard values are omitted from the action log. Preview reconnects preserve the recording; restarting the computer loses an unsaved recording.
+
+### Import Chrome Sign-Ins
+
+Open **Chrome permissions → Import Chrome sign-ins** to search and select local Chrome cookies for explicit sharing with the task computer. Local import supports macOS and Linux; encrypted Linux cookies require access to an unlocked supported keyring. Enabling a computer does not import sign-ins automatically.
+
+Review each permission's scope and expiration. Select an existing permission to revoke it. Project-scoped permissions survive deletion of the task that created them. A remote hosted instance cannot read Chrome profiles on your laptop.
+
+Use the composer for uploads and ask the agent to transfer or publish files through the task's normal attachments. See [Attachments](attachments.html).
 
 ## Create And Review Visual Outputs
 
