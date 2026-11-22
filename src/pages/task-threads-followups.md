@@ -60,7 +60,7 @@ Use **Run tools in** to choose **Task worktree** or **Task computer** for ordina
 
 ### Teach A Skill
 
-In the expanded preview, choose **Teach a skill**, start recording, and demonstrate the workflow. Pause and save to send selected screenshots and an action timeline into the task thread for the agent to create a reusable skill, or discard the recording.
+In the expanded preview, choose **Teach a skill**, start recording, and demonstrate the workflow. Pause and save to send selected screenshots and an action timeline into the task thread for the agent to create a reusable skill, or discard the recording. See [Skill Curation](skills-and-learning.html#teach-a-skill) for skill-write permissions and managing the resulting skill.
 
 Recording stops after ten minutes. Pause before entering private information: screenshots can contain sensitive data even though typed text and clipboard values are omitted from the action log. Preview reconnects preserve the recording; restarting the computer loses an unsaved recording.
 

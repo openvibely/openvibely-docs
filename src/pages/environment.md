@@ -71,4 +71,4 @@ Project and task opt-in are saved settings, not environment variables. Local com
 
 The hosted client is an integration hook; this repository does not provide its external control-plane server. Setting a URL alone does not provision that service. Container-internal variables such as `OPENVIBELY_COMPUTER_TOKEN` and task user IDs are managed by the provisioner/runtime, not user configuration.
 
-See [project setup](project-setup-user-guide.md#project-computers) for engine requirements and [task controls](tasks-user-guide.md#using-a-task-computer) for tool targets and persistence.
+See [project setup](projects.html#project-computers) for engine requirements and [task controls](task-threads-followups.html#using-a-task-computer) for tool targets and persistence.

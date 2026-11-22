@@ -13,6 +13,7 @@ OpenVibely is **bring your own model access** across hosted providers, gateways,
 | Projects | Individual project tabs focus repository work; All projects combines work for management from one place. | [Projects](projects.html) |
 | Chat | A project-aware conversation for exploration, attachments, `Plan` mode, and `Orchestrate` mode. Chat can centrally create, run, and coordinate multiple tasks or swarms from one window. | [Chat](chat.html), [Runtime Capabilities](runtime-capabilities.html) |
 | Tasks | A vertical task list for everyday management, plus a board with columns, filters, and batch actions. Task threads provide execution, follow-ups, diffs, review, and swarm details. | [Tasks](tasks.html), [Swarm Orchestration](swarm-orchestration.html), [Task Threads & Follow-Ups](task-threads-followups.html), [Task Diffs & Review](task-diffs-review.html) |
+| Project computers | Give tasks a sandboxed Linux desktop and browser running locally, with live previews and interactive controls. | [Project Computers](projects.html#project-computers), [Task Computers](task-threads-followups.html#using-a-task-computer) |
 | Task goals | Set a completion condition and let a task continue across turns until achieved, paused, or blocked. | [Task Goals](task-goals.html) |
 | Swarms | Delegate one request across planner, worker, reviewer, and merger roles with inspectable child tasks. | [Swarm Orchestration](swarm-orchestration.html) |
 | Follow-ups and steering | Continue a task, queue another instruction, edit pending input, or steer an active turn where supported. | [Task Threads & Follow-Ups](task-threads-followups.html), [Prompt Queue & Steering](prompt-queue-steering.html) |
@@ -70,7 +71,7 @@ See [Multi-Agent Workflows](workflows.html) for practical examples and where to 
 
 ## Composer And Workspace Controls
 
-The [composer model menu](models.html#composer-model-menu) offers provider groups, search, favorites, and supported Reasoning effort and Fast mode controls. The [right-hand task panel](task-threads-followups.html#the-right-hand-task-panel) keeps Details, Schedule, Chaining, Files, and Lifecycle beside the conversation. Open **Settings → Shortcuts** for searchable keyboard controls, or read the [Keyboard Shortcuts](keyboard-shortcuts.html) reference.
+The [composer model menu](models.html#composer-model-menu) offers provider groups, search, favorites, and supported Reasoning effort and Fast mode controls. The [right-hand task panel](task-threads-followups.html#the-right-hand-task-panel) keeps Details, Schedule, Chaining, Files, Lifecycle, and the optional Computer tab beside the conversation. Open **Settings → Shortcuts** for searchable keyboard controls, or read the [Keyboard Shortcuts](keyboard-shortcuts.html) reference.
 
 ## Documents And Appearance
 

@@ -25,6 +25,8 @@ After merge, or when a worktree is no longer available, the UI falls back to pre
 
 For non-worktree tasks, the Changes tab uses the latest non-empty execution diff captured for that task.
 
+Saved changes remain available during reruns and page reloads while a new diff is being prepared.
+
 ## Live Diff Snapshots
 
 During task follow-up execution, OpenVibely can broadcast periodic `diff_snapshot` events. The task Changes view can refresh from those snapshots so reviewers see current file changes while work is still in progress instead of waiting for completion.
@@ -35,7 +37,7 @@ This is especially useful when a user sends a follow-up into a task thread and w
 
 Large diffs can be expensive to render all at once. The diff viewer parses unified git diff output into file cards, recognizes added, deleted, modified, renamed, copied, and binary changes, and supports per-file lazy loading.
 
-Use the sidebar file explorer to jump to a changed file. Diff content loads as needed, and offscreen content is unloaded to keep large reviews responsive and reduce memory use. Oversized files may show a placeholder instead of their full diff.
+Use the sidebar file explorer to jump to a changed file. Scroll toward the bottom to load more files automatically; expanded folders and keyboard focus are preserved as the list grows. Diff content loads as needed, and offscreen content is unloaded to keep large reviews responsive and reduce memory use. Oversized files may show a placeholder instead of their full diff.
 
 Sticky headers keep the current file controls visible. Switching diff layouts and receiving live updates preserve your reading position; review drafts and comments remain available as file content loads or refreshes.
 

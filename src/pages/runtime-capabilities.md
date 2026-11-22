@@ -24,6 +24,7 @@ OpenVibely uses runtime tool calls for action-capable providers. Legacy-looking 
 | Messaging | List saved outbound targets and send through Slack, Telegram, Discord, or Email. |
 | GitHub issues | Create, read, list, comment on, and label issues when GitHub is configured. |
 | GitHub review | Open or reuse a task pull request, forward authorized review feedback, and perform explicitly guarded branch replacement. |
+| Computer use | Enabled tasks can operate a Linux desktop and browser, take screenshots, and run shell and file tools in their task computer. See [Task Computers](task-threads-followups.html#using-a-task-computer). |
 | Discovery | List the capabilities currently exposed to the turn. |
 
 The exact list is dynamic. A turn may omit a capability because the provider cannot call tools, an integration is not configured, the current task has no required worktree or linkage, or the agent policy does not grant it.
@@ -37,6 +38,8 @@ The exact list is dynamic. A turn may omit a capability because the provider can
 - Pull request publication is tied to an OpenVibely task worktree and persisted task/PR linkage.
 - Replacing shared pull request branch history requires explicit confirmation and the exact current remote head SHA as a force-with-lease guard.
 - Runtime tools do not bypass worker capacity, task review, worktree isolation, or merge controls.
+
+Computer use requires both project and task opt-in. **Run tools in** selects the worktree or computer for ordinary shell and file tools; browser and desktop tools use the computer. Files do not sync automatically. See [Project Computers](projects.html#project-computers) for local Docker requirements.
 
 ## Agent Permissions
 
@@ -54,6 +57,7 @@ If an action affects an external system or is destructive, prefer an explicit in
 
 | Page | Why It Matters |
 |---|---|
+| [Task Computers](task-threads-followups.html#using-a-task-computer) | Desktop interaction, tool destinations, and file transfers. |
 | [Chat](chat.html) | Select Plan or Orchestrate mode. |
 | [Automations](automations.html) | Understand graph creation, confirmation, live state, and human review boundaries. |
 | [Agents](agents.html) | Configure reusable tool and permission policy. |
