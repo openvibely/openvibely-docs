@@ -39,7 +39,7 @@ In Appearance, choose Letters + rings, Logos + rings, Logo fill, or Logos + bars
 
 ## Project Computer
 
-Open **Settings → Project Computer** and select a project to enable computer use and configure resources, time zone, idle shutdown, and preview quality. See [Project Computers](projects.html#project-computers).
+Open **Settings → Project Computer** and select a project to enable computer use and configure resources, time zone, idle shutdown, and preview quality. See [Project Computers](project-computers.html).
 
 ## Appearance: Chat
 

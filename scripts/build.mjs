@@ -39,6 +39,7 @@ const nav = [
       ['Keyboard Shortcuts', 'keyboard-shortcuts.md', 'Keyboard controls and their focus requirements'],
       ['Settings', 'settings.md', 'Appearance controls and every Settings destination'],
       ['Projects', 'projects.md', 'Create, switch, and configure workspaces'],
+      ['Project Computers', 'project-computers.md', 'Local task desktops, browsers, and skill demonstrations'],
       ['Chat', 'chat.md', 'Plan and orchestrate from a project conversation'],
       ['Tasks', 'tasks.md', 'Run, monitor, and review AI coding work'],
       ['Custom Pages', 'custom-pages.md', 'Build project dashboards and tools with page-aware chat'],

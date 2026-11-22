@@ -83,7 +83,7 @@ Existing tasks open directly to their thread. Edit properties in the resizable D
 
 Open **Tag** in task Details to search built-in and existing project tags or add a new name. Matching ignores case while retaining your capitalization. Remove a tag with its badge's remove control. Tags are also supported through Chat, the API, and tag filters.
 
-For browser and desktop work, see [Task Computers](task-threads-followups.html#using-a-task-computer).
+For browser and desktop work, see [Task Computers](project-computers.html#using-a-task-computer).
 
 ## Swarm Tasks
 

@@ -71,19 +71,7 @@ Use Project Settings for repository details, defaults, worker limits, Skills & M
 
 ## Project Computers
 
-Give selected tasks a Linux desktop and Chromium browser for working with websites and desktop applications. Computer use is off by default.
-
-1. Start a local Docker-compatible engine and make its `docker` command available to OpenVibely.
-2. Open **Settings → Project Computer**, select the project, enable its computer, and save.
-3. Open the task's **Computer** tab and enable **Use computer for this task**.
-
-The first use may build the computer image and take several minutes. Each project has a container with separate task desktops, files, and browser profiles. CPU, memory, and process/thread limits are shared by that project's desktops. Settings also include time zone, idle shutdown, and Low, Balanced, or High preview quality. Saving settings can restart the computer, so save work in desktop applications first.
-
-Idle shutdown keeps files and browser profiles but closes applications. Disabling computer use preserves stored data. Deleting a provisioned project removes its computer and volume; if Docker cleanup fails, restore Docker access and retry.
-
-Docker Desktop must use Linux containers. Rancher Desktop must use **dockerd (Moby)**; containerd mode is unsupported. Windows provisioning, Rancher Desktop, and rootless engines have not been validated end to end. A hosted or containerized OpenVibely instance needs separate computer provisioning support; mounting the Docker socket is not the supported workaround.
-
-See [Task Computers](task-threads-followups.html#using-a-task-computer) for interaction, teaching, sign-ins, and file handling, and [Environment Variables](environment.html#project-computers) for image configuration.
+Give tasks a local Linux desktop and browser. See [Project Computers](project-computers.html) for setup, resource settings, and task controls.
 
 ## Repository Sources
 

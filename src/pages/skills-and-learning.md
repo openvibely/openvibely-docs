@@ -10,7 +10,7 @@ The bundled **openvibely-paperworks** skills cover Word DOCX, spreadsheets, PPTX
 
 ## Teach A Skill
 
-Demonstrate a workflow on a task computer, then send the recording to the task so the agent can turn it into a reusable skill. Open the expanded computer preview and choose **Teach a skill**. See [recording a demonstration](task-threads-followups.html#teach-a-skill) for saving, privacy, and recording limits. Skill creation still follows the project’s skill-write permissions.
+Demonstrate a workflow on a task computer, then send the recording to the task so the agent can turn it into a reusable skill. Open the expanded computer preview and choose **Teach a skill**. See [recording a demonstration](project-computers.html#teach-a-skill) for saving, privacy, and recording limits. Skill creation still follows the project’s skill-write permissions.
 
 ## Dependency Approval
 
@@ -142,7 +142,7 @@ Agent-owned skills are managed through after-complete curation for tasks that ra
 
 | Page | Why It Matters |
 |---|---|
-| [Teach A Skill](task-threads-followups.html#teach-a-skill) | Record a desktop demonstration for a task to turn into a skill. |
+| [Teach A Skill](project-computers.html#teach-a-skill) | Record a desktop demonstration for a task to turn into a skill. |
 | [Lifecycle Hooks](lifecycle-hooks.html) | Shows hook timing, boundaries, and supporting behavior in more detail. |
 | [Task Lifecycle](task-lifecycle.html) | Shows where hooks fit around task execution. |
 | [Agents](agents.html) | Explains agent profiles, lifecycle hooks, and agent-owned skills. |

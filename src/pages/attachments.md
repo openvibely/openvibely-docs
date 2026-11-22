@@ -66,7 +66,7 @@ After inspecting an output, send a follow-up describing the changes and identify
 
 Attachments should support the prompt. If a file contains important durable project knowledge, ask OpenVibely to extract and preserve the durable lesson through normal memory behavior instead of assuming the attachment itself becomes memory.
 
-New image attachments sent to OpenAI and Anthropic models are automatically resized to the selected model’s image limits. Use [task computer transfers](task-threads-followups.html#using-a-task-computer) when an agent needs a file inside its desktop environment.
+New image attachments sent to OpenAI and Anthropic models are automatically resized to the selected model’s image limits. Use [task computer transfers](project-computers.html#using-a-task-computer) when an agent needs a file inside its desktop environment.
 
 ## Good Attachment Use Cases
 

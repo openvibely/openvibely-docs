@@ -52,25 +52,7 @@ When creating a task in **All projects**, Details also provides the destination 
 
 ## Using A Task Computer
 
-After [enabling the project computer](projects.html#project-computers), open the task's **Computer** tab and turn on **Use computer for this task**. For a new task, the choice takes effect when you send its first message.
-
-The preview shows the task's live desktop. Expand it to interact with the same desktop as the agent; human input does not cancel the task. Agents can keep using the computer with the preview closed. Private login handoffs restrict agent access until completed.
-
-Use **Run tools in** to choose **Task worktree** or **Task computer** for ordinary shell and file tools. Explicit computer and browser tools always use the computer. Files do not automatically sync: ask the agent to transfer code back to the worktree before reviewing or merging it. Agents configured with Scoped Files can still route file operations to the host, so that combination is not a confinement boundary.
-
-### Teach A Skill
-
-In the expanded preview, choose **Teach a skill**, start recording, and demonstrate the workflow. Pause and save to send selected screenshots and an action timeline into the task thread for the agent to create a reusable skill, or discard the recording. See [Skill Curation](skills-and-learning.html#teach-a-skill) for skill-write permissions and managing the resulting skill.
-
-Recording stops after ten minutes. Pause before entering private information: screenshots can contain sensitive data even though typed text and clipboard values are omitted from the action log. Preview reconnects preserve the recording; restarting the computer loses an unsaved recording.
-
-### Import Chrome Sign-Ins
-
-Open **Chrome permissions → Import Chrome sign-ins** to search and select local Chrome cookies for explicit sharing with the task computer. Local import supports macOS and Linux; encrypted Linux cookies require access to an unlocked supported keyring. Enabling a computer does not import sign-ins automatically.
-
-Review each permission's scope and expiration. Select an existing permission to revoke it. Project-scoped permissions survive deletion of the task that created them. A remote hosted instance cannot read Chrome profiles on your laptop.
-
-Use the composer for uploads and ask the agent to transfer or publish files through the task's normal attachments. See [Attachments](attachments.html).
+Enable the task’s **Computer** tab after setting up its project computer. See [Project Computers](project-computers.html) for live interaction, tool destinations, file transfers, teaching skills, and Chrome sign-ins.
 
 ## Create And Review Visual Outputs
 
